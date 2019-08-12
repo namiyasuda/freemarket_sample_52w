@@ -13,6 +13,7 @@
 ### Association
 - gem device を使用する為、追加分のみ記述
 - has_one :address, dependent: :destroy
+- has_one :card, dependent: :destroy
 
 
 ## addressesテーブル
@@ -28,4 +29,16 @@
 |phone_number|string||
 
 ### Association
+- belongs_to :user
+
+
+## cardsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+
+### Association
+- gem payjp を使用する為、カード情報を直接保存しない
 - belongs_to :user
