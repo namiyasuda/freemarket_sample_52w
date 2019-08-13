@@ -20,6 +20,7 @@
 - gem device を使用する為、追加分のみ記述
 - has_one :delivery_address, dependent: :destroy
 - has_one :card, dependent: :destroy
+- belongs_to :prefecture
 
 
 ## delivery_addressesテーブル
@@ -40,7 +41,7 @@
 
 ### Association
 - belongs_to :user
-
+- belongs_to :prefecture
 
 ## cardsテーブル
 
@@ -52,3 +53,13 @@
 ### Association
 - gem payjp を使用する為、カード情報を直接保存しない
 - belongs_to :user
+
+## prefecturesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+
+### Association
+- has_one :user
+- has_one :delivery_address
