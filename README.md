@@ -18,11 +18,11 @@
 
 ### Association
 - gem device を使用する為、追加分のみ記述
-- has_one :address, dependent: :destroy
+- has_one :delivery_address, dependent: :destroy
 - has_one :card, dependent: :destroy
 
 
-## addressesテーブル
+## delivery_addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
