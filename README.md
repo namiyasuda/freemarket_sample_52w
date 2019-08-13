@@ -86,6 +86,8 @@
 - belongs_to :prefecture
 - belongs_to :brand
 - has_many :images
+- has_many :products_categorys
+- has_many :categorys, through products_categorys
 
 
 ## imagesテーブル
@@ -107,3 +109,26 @@
 
 ### Association
 - has_many :products
+
+
+## products_categorysテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|product_id|integer|null: false|
+|category_id|integer|null: false|
+
+### Association
+- belongs_to :product
+- belongs_to :category
+
+
+## categorysテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+
+### Association
+- has_many :products_categorys
+- has_many :products, through products_categorys
