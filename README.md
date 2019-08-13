@@ -73,6 +73,7 @@
 |user_id|integer|null: false|
 |name|string|null: false|
 |description|text|null: false|
+|brand_id|integer||
 |state|string|null: false|
 |size|string||
 |paying_side|string|null: false|
@@ -83,6 +84,7 @@
 ### Association
 - belongs_to :user
 - belongs_to :prefecture
+- belongs_to :brand
 - has_many :images
 
 
@@ -95,3 +97,13 @@
 
 ### Association
 - belongs_to :product
+
+
+## brandsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+
+### Association
+- has_many :products
