@@ -9,6 +9,12 @@
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |mobile_number|string|null: false, unique: true|
+|postcode|string||
+|prefecture_id|integer||
+|city|string||
+|block|string||
+|building|string||
+|profile|text||
 
 ### Association
 - gem device を使用する為、追加分のみ記述
