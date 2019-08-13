@@ -27,8 +27,12 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |postcode|string|null: false|
-|prefecture_id|string|null: false|
+|prefecture_id|integer|null: false|
 |city|string|null: false|
 |block|string|null: false|
 |building|string||
