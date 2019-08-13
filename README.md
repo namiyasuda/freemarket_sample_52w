@@ -61,9 +61,9 @@
 |name|string||
 
 ### Association
-- has_many :user
-- has_many :delivery_address
-- has_many :product
+- has_many :users
+- has_many :delivery_addresses
+- has_many :products
 
 
 ## productsテーブル
