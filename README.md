@@ -83,3 +83,15 @@
 ### Association
 - belongs_to :user
 - belongs_to :prefecture
+- has_many :images
+
+
+## imagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|product_id|integer|null: false|
+|name|string|null: false|
+
+### Association
+- belongs_to :product
