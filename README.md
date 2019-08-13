@@ -61,5 +61,25 @@
 |name|string||
 
 ### Association
-- has_one :user
-- has_one :delivery_address
+- has_many :user
+- has_many :delivery_address
+- has_many :product
+
+
+## productsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
+|name|string|null: false|
+|description|text|null: false|
+|state|string|null: false|
+|size|string||
+|paying_side|string|null: false|
+|prefecture_id|integer|null: false|
+|delivery_days|string|null: false|
+|price|integer|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :prefecture
