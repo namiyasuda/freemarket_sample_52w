@@ -73,7 +73,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
-|name|string|null: false|
+|name|text|null: false|
 |description|text|null: false|
 |brand_id|integer||
 |state|string|null: false|
@@ -82,6 +82,8 @@
 |prefecture_id|integer|null: false|
 |delivery_days|string|null: false|
 |price|integer|null: false|
+
+add_index :products, [:name, :description]
 
 ### Association
 - belongs_to :user
