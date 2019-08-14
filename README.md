@@ -85,7 +85,7 @@
 - belongs_to :user
 - belongs_to :prefecture
 - belongs_to :brand
-- has_many :images
+- has_many :images, dependent: :destroy
 - has_many :products_categorys
 - has_many :categorys, through products_categorys
 
