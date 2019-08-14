@@ -107,7 +107,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|index: true|
 
 ### Association
 - has_many :products
