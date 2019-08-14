@@ -15,6 +15,8 @@
 |block|string||
 |building|string||
 |profile|text||
+|sales_money|bigint|default: 0|
+|point|bigint|default: 0|
 
 ### Association
 - gem device を使用する為、追加分のみ記述
