@@ -87,6 +87,7 @@
 |prefecture_id|integer|null: false|
 |delivery_days|string|null: false|
 |price|integer|null: false|
+|listing_stop|boolean|null: false, default: false|
 
 add_index :products, [:name, :description]
 
