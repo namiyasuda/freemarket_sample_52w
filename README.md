@@ -23,7 +23,7 @@
 ### Association
 - has_one :delivery_address, dependent: :destroy
 - has_one :card, dependent: :destroy
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture
 - has_many :seller_transactions, class_name: 'Product'
 - has_many :buyer_transactions, class_name: 'Product'
 - has_many :sns_credentials, dependent: :destroy
@@ -47,7 +47,7 @@
 
 ### Association
 - belongs_to :user
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture
 
 ## cardsテーブル
 
@@ -65,13 +65,12 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|||
+
+​※gem active_hash で作成する​
 
 ### Association
-- has_many :users
-- has_many :delivery_addresses
-- has_many :products
-
+​※記述の必要無し​
 
 ## productsテーブル
 
@@ -94,7 +93,7 @@ add_index :products, [:name, :description]
 ### Association
 - belongs_to :seller, class_name: 'User'
 - belongs_to :buyer, class_name: 'User'
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture
 - belongs_to :brand
 - has_many :images, dependent: :destroy
 - has_many :products_categorys
