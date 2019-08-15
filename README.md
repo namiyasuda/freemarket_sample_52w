@@ -26,6 +26,7 @@
 - belongs_to :prefecture
 - has_many :seller_transactions, class_name: 'Product'
 - has_many :buyer_transactions, class_name: 'Product'
+- has_many :sns_credentials, dependent: :destroy
 
 
 ## delivery_addressesテーブル
@@ -141,3 +142,15 @@ add_index :products, [:name, :description]
 ### Association
 - has_many :products_categorys
 - has_many :products, through products_categorys
+
+
+## sns_credentialsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer||
+|uid|string||
+|provider|string||
+
+### Association
+- belongs_to :user
