@@ -18,11 +18,14 @@
 |sales_money|bigint|default: 0|
 |point|bigint|default: 0|
 
+※gem device を使用する為、追加分のみ記述
+
 ### Association
-- gem device を使用する為、追加分のみ記述
 - has_one :delivery_address, dependent: :destroy
 - has_one :card, dependent: :destroy
 - belongs_to :prefecture
+- has_many :seller_transactions, class_name: 'Product'
+- has_many :buyer_transactions, class_name: 'Product'
 
 
 ## delivery_addressesテーブル
@@ -72,7 +75,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
+|seller_id|integer|null: false|
+|buyer_id|integer||
 |name|text|null: false|
 |description|text|null: false|
 |brand_id|integer||
@@ -86,7 +90,8 @@
 add_index :products, [:name, :description]
 
 ### Association
-- belongs_to :user
+- belongs_to :seller, class_name: 'User'
+- belongs_to :buyer, class_name: 'User'
 - belongs_to :prefecture
 - belongs_to :brand
 - has_many :images, dependent: :destroy
