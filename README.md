@@ -56,8 +56,9 @@
 |user_id|integer|null: false|
 |customer_id|string|null: false|
 
+※gem payjp を使用する為、カード情報を直接保存しない
+
 ### Association
-- gem payjp を使用する為、カード情報を直接保存しない
 - belongs_to :user
 
 ## prefecturesテーブル
