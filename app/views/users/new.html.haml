@@ -1,8 +1,6 @@
-.header
-  .header__log
-    %hi
-      %a{:href => "https://www.mercari.com/jp/"}
-        %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?837758460"}/
+.warpper
+  = render 'shared/title'
+
 .main
   .create__new
     新規会員登録
@@ -26,18 +24,5 @@
           .btn__google
             Googleで登録する
 .footer
-  .footer__contents
-    .content
-      .content__fst
-        =link_to "#", class: "contents__btn--g" do
-          プライバシーポリシー
-      .content__sec
-        =link_to "#", class: "contents__btn--g" do
-          メルカリ利用規約
-      .content__thr
-        =link_to "#", class: "contents__btn--g" do
-          特定商取引に関する規約          
-  .footer__log
-    %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?837758460", :width => "80"}/
-  .footer__name
-    @ 2019 Mercari
+  = render 'shared/footer'
+ 

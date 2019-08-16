@@ -1,0 +1,50 @@
+.main{
+  width: 456px;
+
+.login_panel{
+  margin: 0 auto;
+  background-color: #fff;
+  }
+}
+.login_no_account{
+  font-size: 14px;
+  text-align: center;
+  padding: 40px 64px;
+}
+.signup_btn{
+  display: block;
+  margin: 8px 0 0;
+  border: 1px solid #0099e8;
+  background: #0099e8;
+  color: #fff;
+  line-height: 40px;
+}
+.login_form{
+  padding: 32px 64px;
+}
+.login_input{
+  padding: 24px 64px 32px;
+}
+#mail{
+  height: 30px;
+  width: 300px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.form__pass{
+  padding-top: 20px;
+}
+#pass{
+  height: 30px;
+  width: 300px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}

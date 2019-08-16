@@ -1,0 +1,35 @@
+.warpper
+  = render 'shared/title'
+
+.main
+  .login_panel
+    .login_no_account
+      %p アカウントをお持ちでない方はこちら
+
+      =link_to "#", class: "contents__btn" do
+        .signup_btn
+          新規会員登録
+    .login_form
+      =link_to "#", class: "contents__btn" do
+        .reg__fb
+          = fa_icon 'facebook-square'
+          .btn__fb
+            Facebookで登録する
+
+      =link_to "#", class: "contents__btn--g" do  
+        .reg__google
+          %img{:class =>"icon_google", :src => "https://img.icons8.com/color/48/000000/google-logo.png"}/
+          .btn__google
+            Googleで登録する
+    .login_input
+      
+      .form__contents
+        .form__mail
+          %input#mail{:name => "mail_address", :placeholder => "メールアドレス", :type => "text"}/
+        .form__pass
+          %input#pass{:name => "password", :placeholder => "パスワード", :type => "text"}/
+        .g_recapcha
+        .login_btn
+
+.footer
+  = render 'shared/footer'
