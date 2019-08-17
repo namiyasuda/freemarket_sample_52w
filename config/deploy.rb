@@ -26,14 +26,6 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
-# デプロイ処理が終わった後、Unicornを再起動するための記述
-after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-end
-
 #環境変数を明示的に指定する
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
@@ -43,3 +35,11 @@ set :default_env, {
   BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
   BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
 }
+
+# デプロイ処理が終わった後、Unicornを再起動するための記述
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
