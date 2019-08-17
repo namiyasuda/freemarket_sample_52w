@@ -29,7 +29,12 @@
         .form__pass
           %input#pass{:name => "password", :placeholder => "パスワード", :type => "text"}/
         .g_recapcha
+      =link_to "#", class: "contents_btn" do 
         .login_btn
+          ログイン
+      =link_to "#", class: "contents_pass" do  
+        .login_no
+          パスワードをお忘れの方
 
 .footer
   = render 'shared/footer'
