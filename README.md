@@ -82,7 +82,7 @@
 |description|text|null: false|
 |brand_id|integer||
 |state|string|null: false|
-|size|string||
+|size_id|integer||
 |paying_side|string|null: false|
 |prefecture_id|integer|null: false|
 |delivery_days|string|null: false|
@@ -96,6 +96,7 @@ add_index :products, [:name, :description]
 - belongs_to :buyer, class_name: 'User'
 - belongs_to_active_hash :prefecture
 - belongs_to :brand
+- belongs_to_active_hash :size
 - has_many :images, dependent: :destroy
 - has_many :products_categorys
 - has_many :categorys, through products_categorys
@@ -155,3 +156,15 @@ add_index :products, [:name, :description]
 
 ### Association
 - belongs_to :user
+
+
+## sizesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|||
+
+​※gem active_hash で作成する​
+
+### Association
+​※記述の必要無し​
