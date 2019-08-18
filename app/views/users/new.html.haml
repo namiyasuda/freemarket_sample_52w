@@ -1,28 +1,28 @@
-.warpper
-  = render 'shared/title'
+%header
+  = render 'shared/sub-header'
 
 .main
-  .create__new
-    新規会員登録
-  .registrarion__form
-    .registration__contents
-      =link_to "#", class: "contents__btn" do
-        .reg__mail
-          = fa_icon 'envelope'
-          .btn__mail
-            メールアドレスで登録する
-            
-      =link_to "#", class: "contents__btn" do
-        .reg__fb
-          = fa_icon 'facebook-square'
-          .btn__fb
-            Facebookで登録する
+  .registration-panel
+    .create-new
+      新規会員登録
+    .registration-form
+      .registration-form__contents
+        =link_to "#", class: "registration-form__contents__btn" do
+          .registration-form__contents__btn__reg-mail
+            = fa_icon 'far envelope'
+            .registration-form__contents__btn__reg-mail__btn-mail
+              メールアドレスで登録する
+              
+        =link_to "#", class: "registration-form__contents__btn" do
+          .registration-form__contents__btn__reg-fb
+            = fa_icon 'facebook-square'
+            .registration-form__contents__btn__reg-fb__btn-fb
+              Facebookで登録する
 
-      =link_to "#", class: "contents__btn--g" do  
-        .reg__google
-          %img{:class =>"icon_google", :src => "https://img.icons8.com/color/48/000000/google-logo.png"}/
-          .btn__google
+        =link_to "#", class: "registration-form__contents__btn--g" do  
+          .registration-form__contents__btn--g__reg-google
+            %img{class: "registration-form__contents__btn--g__reg-google__icon-google", :src => "https://img.icons8.com/color/48/000000/google-logo.png"}/
             Googleで登録する
-.footer
-  = render 'shared/footer'
+%footer
+  = render 'shared/sub-footer'
  
