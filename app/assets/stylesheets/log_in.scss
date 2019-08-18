@@ -1,16 +1,17 @@
-.main{
-  width: 456px;
-
 .login_panel{
+  width: 456px;
   margin: 0 auto;
   background-color: #fff;
+  &__no_account{
+    border-bottom: solid;
+    border-color: #f5f5f5;
+    border-width: 1px;
+    font-size: 14px;
+    text-align: center;
+    padding: 40px 64px;
   }
 }
-.login_no_account{
-  font-size: 14px;
-  text-align: center;
-  padding: 40px 64px;
-}
+
 .signup_btn{
   display: block;
   margin: 8px 0 0;

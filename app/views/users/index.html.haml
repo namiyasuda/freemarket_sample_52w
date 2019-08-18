@@ -1,9 +1,9 @@
-.warpper
-  = render 'shared/title'
+%header
+  = render 'shared/sub-header'
 
 .main
   .login_panel
-    .login_no_account
+    .login_panel__no-account
       %p アカウントをお持ちでない方はこちら
 
       =link_to "#", class: "contents__btn" do
@@ -18,17 +18,18 @@
 
       =link_to "#", class: "contents__btn--g" do  
         .reg__google
-          %img{:class =>"icon_google", :src => "https://img.icons8.com/color/48/000000/google-logo.png"}/
+          %img{class: "icon_google", src: "https://img.icons8.com/color/48/000000/google-logo.png"}/
           .btn__google
             Googleで登録する
     .login_input
       
       .form__contents
         .form__mail
-          %input#mail{:name => "mail_address", :placeholder => "メールアドレス", :type => "text"}/
+          %input#mail{name:  "mail_address", placeholder:  "メールアドレス", type:  "text"}/
         .form__pass
-          %input#pass{:name => "password", :placeholder => "パスワード", :type => "text"}/
+          %input#pass{name:  "password", placeholder:  "パスワード", type:  "text"}/
         .g_recapcha
+          = image_tag 'robo.png',class: "image_re"
       =link_to "#", class: "contents_btn" do 
         .login_btn
           ログイン
@@ -36,5 +37,5 @@
         .login_no
           パスワードをお忘れの方
 
-.footer
-  = render 'shared/footer'
+%footer
+  = render 'shared/sub-footer'
