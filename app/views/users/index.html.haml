@@ -23,9 +23,9 @@
     .login_panel__input
       .login_panel__input__form-contents
         .login_panel__input__form-contents__mail
-          %input#mail{name:  "mail_address", placeholder:  "メールアドレス", type:  "text"}/
+          %input#input{name:  "mail_address", placeholder:  "メールアドレス", type:  "text"}/
         .login_panel__input__form-contents__pass
-          %input#pass{name:  "password", placeholder:  "パスワード", type:  "text"}/
+          %input#input{name:  "password", placeholder:  "パスワード", type:  "text"}/
         .login_panel__input__form-contents__recapcha
           = image_tag 'robo.new.png',class: "login_panel__input__form-contents__recapcha__image"
       =link_to "#", class: "login_panel__input__form-contents__btn" do 
