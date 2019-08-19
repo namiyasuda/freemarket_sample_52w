@@ -1,0 +1,115 @@
+.login_panel{
+  width: 456px;
+  margin: 0 auto;
+  background-color: #fff;
+  &__no-account{
+    text-align: center;
+    border-bottom: solid;
+    border-color: #f5f5f5;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 40px 64px;
+    &__btn{
+      text-decoration: none;
+      &__signup{
+        display: block;
+        margin: 8px 0 0;
+        border: 1px solid #0099e8;
+        background: #0099e8;
+        color: #fff;
+        line-height: 40px;
+      }
+    }
+  }
+  &__form{
+    padding: 32px 64px;
+      &__contents{
+        margin: 0 auto;
+        max-width: 343px;
+        &__btn{
+          text-decoration: none;
+          color: #fff;
+          &__reg-mail{
+            position: relative;
+            background-color: #ea352d;
+            .fa{
+              position: absolute;
+              top: 15px;
+              left: 20px;
+              font-size: 16px;
+            }
+            &__btn-mail{
+              font-size: 16px;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              text-align: center;
+            }
+          }
+          &__reg-fb{
+            position: relative;
+            font-size: 26px;
+            margin: 16px 0 0;
+            background: #385185;
+            display: block;
+            .fa{
+              position: absolute;
+              top: 12px;
+              left: 18px;
+            }
+            &__btn-fb{
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              text-align: center;
+            }
+          }
+        }
+        &__btn--g{
+          text-decoration: none;
+          color: #333;
+          &__reg-google{
+            position: relative;
+            margin: 16px 0 0;
+            border: #979797 solid 1px;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            text-align: center;
+            &__icon-google{
+              position: absolute;
+              top: 15px;
+              left: 18px;
+              width: 20px;
+            }
+          }
+        }
+      }
+    }   
+    
+    &__input{
+      padding: 24px 64px 32px;
+      &__form-contents__pass{
+        padding-top: 24px;
+      }
+      &__form-contents__recapcha__image{
+        width: 300px;
+        margin-top: 23px
+      }
+      &__form-contents__btn{
+        text-decoration: none;
+      &__login{
+        background-color:#ea352d;;
+        color: #fff;
+        text-align: center;
+        margin-top: 24px;
+        line-height: 48px;
+        font-size: 14px;
+      }
+    }
+    &__form-contents__pass-no{
+      color: #0099e8;
+      margin-top: 40px;
+    }
+  }
+}

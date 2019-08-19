@@ -4,36 +4,35 @@
 .main
   .login_panel
     .login_panel__no-account
-      アカウントをお持ちでない方はこちら
-      =link_to "#", class: "login_panel__no-account" do
-        .signup_btn
+      %p アカウントをお持ちでない方はこちら
+      =link_to "#", class: "login_panel__no-account__btn" do
+        .login_panel__no-account__btn__signup
           新規会員登録
-    .login_form
-      =link_to "#", class: "contents__btn" do
-        .reg__fb
+    .login_panel__form
+      =link_to "#", class: "login_panel__form__contents__btn" do
+        .login_panel__form__contents__btn__reg-fb
           = fa_icon 'facebook-square'
-          .btn__fb
+          .login_panel__form__contents__btn__reg-fb__btn-fb
             Facebookで登録する
 
-      =link_to "#", class: "contents__btn--g" do  
-        .reg__google
-          %img{class: "icon_google", src: "https://img.icons8.com/color/48/000000/google-logo.png"}/
-          .btn__google
-            Googleで登録する
-    .login_input
-      
-      .form__contents
-        .form__mail
+      =link_to "#", class: "login_panel__form__contents__btn--g" do  
+        .login_panel__form__contents__btn--g__reg-google
+          %img{class: "login_panel__form__contents__btn--g__reg-google__icon-google", :src => "https://img.icons8.com/color/48/000000/google-logo.png"}/
+          Googleで登録する
+
+    .login_panel__input
+      .login_panel__input__form-contents
+        .login_panel__input__form-contents__mail
           %input#mail{name:  "mail_address", placeholder:  "メールアドレス", type:  "text"}/
-        .form__pass
+        .login_panel__input__form-contents__pass
           %input#pass{name:  "password", placeholder:  "パスワード", type:  "text"}/
-        .g_recapcha
-          = image_tag 'robo.png',class: "image_re"
-      =link_to "#", class: "contents_btn" do 
-        .login_btn
+        .login_panel__input__form-contents__recapcha
+          = image_tag 'robo.new.png',class: "login_panel__input__form-contents__recapcha__image"
+      =link_to "#", class: "login_panel__input__form-contents__btn" do 
+        .login_panel__input__form-contents__btn__login
           ログイン
-      =link_to "#", class: "contents_pass" do  
-        .login_no
+      =link_to "#", class: "login_panel__input__form-contents__btn" do  
+        .login_panel__input__form-contents__pass-no
           パスワードをお忘れの方
 
 %footer
