@@ -86,7 +86,7 @@
 |brand_id|references|index: true, foreign_key: true|
 |state_id|references|null: false, foreign_key: true|
 |size_id|references|foreign_key: true|
-|paying_side|string|null: false|
+|paying_side_id|references|null: false, foreign_key: true|
 |prefecture_id|references|null: false, foreign_key: true|
 |delivery_days|string|null: false|
 |price|integer|null: false|
@@ -101,6 +101,7 @@ add_index :products, [:name, :description]
 - belongs_to :brand
 - belongs_to_active_hash :size
 - belongs_to_active_hash :state
+- belongs_to_active_hash :paying_side
 - has_many :images, dependent: :destroy
 - has_many :products_categorys
 - has_many :categorys, through products_categorys
@@ -175,6 +176,18 @@ add_index :products, [:name, :description]
 
 
 ## statesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|||
+
+​※gem active_hash で作成する​
+
+### Association
+​※記述の必要無し​
+
+
+## paying_sidesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
