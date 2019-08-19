@@ -19,7 +19,6 @@
 |building|string||
 |profile|text||
 |sales_money|bigint|default: 0|
-|point|bigint|default: 0|
 
 ※gem device を使用する為、追加分のみ記述
 
@@ -30,6 +29,7 @@
 - has_many :seller_transactions, class_name: 'Product'
 - has_many :buyer_transactions, class_name: 'Product'
 - has_many :sns_credentials, dependent: :destroy
+- has_many :points
 
 
 ## delivery_addressesテーブル
@@ -210,3 +210,15 @@ add_index :products, [:name, :description]
 
 ### Association
 ​※記述の必要無し​
+
+
+## pointsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, index: true, foreign_key: true|
+|history|integer|null: false|
+|expiration_date|datetime|null: false|
+
+### Association
+- belongs_to :user
