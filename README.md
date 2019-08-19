@@ -8,6 +8,9 @@
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
 |mobile_number|string|null: false, unique: true|
 |postcode|string||
 |prefecture_id|references|foreign_key: true|
