@@ -88,7 +88,7 @@
 |size_id|references|foreign_key: true|
 |paying_side_id|references|null: false, foreign_key: true|
 |prefecture_id|references|null: false, foreign_key: true|
-|delivery_days|string|null: false|
+|delivery_day_id|references|null: false, foreign_key: true|
 |price|integer|null: false|
 |listing_stop|boolean|null: false, default: false|
 
@@ -102,6 +102,7 @@ add_index :products, [:name, :description]
 - belongs_to_active_hash :size
 - belongs_to_active_hash :state
 - belongs_to_active_hash :paying_side
+- belongs_to_active_hash :delivery_day
 - has_many :images, dependent: :destroy
 - has_many :products_categorys
 - has_many :categorys, through products_categorys
@@ -188,6 +189,18 @@ add_index :products, [:name, :description]
 
 
 ## paying_sidesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|||
+
+​※gem active_hash で作成する​
+
+### Association
+​※記述の必要無し​
+
+
+## delivery_daysテーブル
 
 |Column|Type|Options|
 |------|----|-------|
