@@ -10,7 +10,7 @@
 |first_name_kana|string|null: false|
 |mobile_number|string|null: false, unique: true|
 |postcode|string||
-|prefecture_id|integer||
+|prefecture_id|references|foreign_key: true|
 |city|string||
 |block|string||
 |building|string||
@@ -33,13 +33,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
+|user_id|integer|references|null: false, foreign_key: true|
 |last_name|string|null: false|
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |postcode|string|null: false|
-|prefecture_id|integer|null: false|
+|prefecture_id|references|null: false, foreign_key: true|
 |city|string|null: false|
 |block|string|null: false|
 |building|string||
@@ -53,7 +53,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
 |customer_id|string|null: false|
 
 ※gem payjp を使用する為、カード情報を直接保存しない
@@ -76,15 +76,15 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|seller_id|integer|null: false|
-|buyer_id|integer||
+|seller_id|references|null: false, index: true, foreign_key: true|
+|buyer_id|references|index: true, foreign_key: true|
 |name|text|null: false|
 |description|text|null: false|
-|brand_id|integer||
+|brand_id|references|index: true, foreign_key: true|
 |state|string|null: false|
-|size_id|integer||
+|size_id|references|foreign_key: true|
 |paying_side|string|null: false|
-|prefecture_id|integer|null: false|
+|prefecture_id|references|null: false, foreign_key: true|
 |delivery_days|string|null: false|
 |price|integer|null: false|
 |listing_stop|boolean|null: false, default: false|
@@ -106,7 +106,7 @@ add_index :products, [:name, :description]
 
 |Column|Type|Options|
 |------|----|-------|
-|product_id|integer|null: false|
+|product_id|references|null: false, index: true, foreign_key: true|
 |name|string|null: false|
 
 ### Association
@@ -127,8 +127,8 @@ add_index :products, [:name, :description]
 
 |Column|Type|Options|
 |------|----|-------|
-|product_id|integer|null: false|
-|category_id|integer|null: false|
+|product_id|references|null: false, index: true, foreign_key: true|
+|category_id|references|null: false, index: true, foreign_key: true|
 
 ### Association
 - belongs_to :product
@@ -150,7 +150,7 @@ add_index :products, [:name, :description]
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer||
+|user_id|references|null: false, foreign_key: true|
 |uid|string||
 |provider|string||
 
