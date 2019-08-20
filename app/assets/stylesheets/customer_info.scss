@@ -1,4 +1,4 @@
-.main-input{
+.customer-entry{
   width: 700px;
   margin: 0 auto;
   background-color: #fff;
@@ -19,7 +19,7 @@
     }
   }
 }
-.main-content{
+.entry-content{
   margin-top: 32px;
   &__require{
     background-color: #ea352d;
@@ -69,7 +69,7 @@
     }
   }
 }
-.main-content__birthday{
+.entry-content__birthday{
   display: flex;
   position: relative;
   &__date{
@@ -108,7 +108,7 @@
   color: #888;
 }  
 
-.main-bottom{
+.entry-bottom{
   width: 343px;
   margin: 0 auto;
   &__recapcha__image{
