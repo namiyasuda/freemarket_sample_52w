@@ -12,11 +12,6 @@
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
 |mobile_number|string|null: false, unique: true|
-|postcode|string||
-|prefecture_id|references|foreign_key: true|
-|city|string||
-|block|string||
-|building|string||
 |profile|text||
 |sales_money|bigint|default: 0|
 
@@ -25,7 +20,7 @@
 ### Association
 - has_one :delivery_address, dependent: :destroy
 - has_one :card, dependent: :destroy
-- belongs_to_active_hash :prefecture
+- has_one :user_addresse, dependent: :destroy
 - has_many :seller_transactions, class_name: 'Product'
 - has_many :buyer_transactions, class_name: 'Product'
 - has_many :sns_credentials, dependent: :destroy
@@ -222,3 +217,17 @@ add_index :products, [:name, :description]
 
 ### Association
 - belongs_to :user
+
+
+## user_addressesテーブル
+
+|user_id|references|null: false, index: true, foreign_key: true|
+|postcode|string||
+|prefecture_id|references|foreign_key: true|
+|city|string||
+|block|string||
+|building|string||
+
+### Association
+- belongs_to :user
+- belongs_to_active_hash :prefecture
