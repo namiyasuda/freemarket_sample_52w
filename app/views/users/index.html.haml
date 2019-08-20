@@ -3,37 +3,34 @@
 
 .main
   .login_panel
-    .login_panel__no-account
+    .no-account
       %p アカウントをお持ちでない方はこちら
-      =link_to "#", class: "login_panel__no-account__btn" do
-        .login_panel__no-account__btn__signup
+      =link_to "#", class: "no-account__btn" do
+        .no-account__btn__signup
           新規会員登録
-    .login_panel__form
-      =link_to "#", class: "login_panel__form__contents__btn" do
-        .login_panel__form__contents__btn__reg-fb
+    .login-method
+      =link_to "#", class: "fb-login" do
+        .fb-login__btn
           = fa_icon 'facebook-square'
-          .login_panel__form__contents__btn__reg-fb__btn-fb
+          .fb-login__btn__name
             Facebookでログイン
-
-      =link_to "#", class: "login_panel__form__contents__btn--g" do  
-        .login_panel__form__contents__btn--g__reg-google
-          %img{class: "login_panel__form__contents__btn--g__reg-google__icon-google", :src => "https://img.icons8.com/color/48/000000/google-logo.png"}/
+      =link_to "#", class: "google-login" do  
+        .google-login__btn
+          %img{class: "google-login__btn__icon", src: "https://img.icons8.com/color/48/000000/google-logo.png"}/
           Googleでログイン
 
-    .login_panel__input
-      .login_panel__input__form-contents
-        .login_panel__input__form-contents__mail
-          %input#input{name:  "mail_address", placeholder:  "メールアドレス", type:  "text"}/
-        .login_panel__input__form-contents__pass
-          %input#input{name:  "password", placeholder:  "パスワード", type:  "text"}/
-        .login_panel__input__form-contents__recapcha
-          = image_tag 'robo.new.png',class: "login_panel__input__form-contents__recapcha__image"
-      =link_to "#", class: "login_panel__input__form-contents__btn" do 
-        .login_panel__input__form-contents__btn__login
+    .login-input
+      .login-input__mail
+        %input{class:"login-input__form",name:  "mail_address", placeholder:  "メールアドレス", type:  "text"}/
+      .login-input__pass
+        %input{class:"login-input__form",name:  "password", placeholder:  "パスワード", type:  "text"}/
+      .login-input__recapcha
+        = image_tag 'robo.new.png',class: "login-input__recapcha__image"
+      =link_to "#", class: "login-input__btn" do 
+        .login-input__btn__login
           ログイン
-      =link_to "#", class: "login_panel__input__form-contents__btn" do  
-        .login_panel__input__form-contents__pass-no
-          パスワードをお忘れの方
+      .login-pass__lost
+        %a{href: '＃',class:"login-pass__lost__here"}パスワードをお忘れの方
 
 %footer
   = render 'shared/sub-footer'
