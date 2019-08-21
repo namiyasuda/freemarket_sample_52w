@@ -46,10 +46,10 @@
       .entry-content
         %a{class:"entry-content__text"} 生年月日
         %span{class: "entry-content__require"}必須
-      .entry-content__birthday
-        .entry-content__birthday__selectbox
+      .entry-content--birthday
+        .entry-content--birthday__selectbox
           = fa_icon 'chevron-down'   
-          %select{name:"year",class:"entry-content__birthday__box"}
+          %select{name:"year",class:"entry-content--birthday__box"}
             %option{value: "--"} --
             %option{value: "1991"} 1991
             %option{value: "1990"} 1990
@@ -77,10 +77,10 @@
             %option{value: "1980"} 1965
 
             
-        %span{class: "entry-content__birthday__date"}年
-        .entry-content__birthday__selectbox
+        %span{class: "entry-content--birthday__date"}年
+        .entry-content--birthday__selectbox
           = fa_icon 'chevron-down'
-          %select{name:"month",class:"entry-content__birthday__box"}
+          %select{name:"month",class:"entry-content--birthday__box"}
             %option{value: "--"} --
             %option{value: "1"} 1
             %option{value: "2"} 2
@@ -95,10 +95,10 @@
             %option{value: "11"} 11
             %option{value: "12"} 12  
             
-        %span{class: "entry-content__birthday__date"}月
-        .entry-content__birthday__selectbox
+        %span{class: "entry-content--birthday__date"}月
+        .entry-content--birthday__selectbox
           = fa_icon 'chevron-down'
-          %select{name:"day",class:"entry-content__birthday__box"}
+          %select{name:"day",class:"entry-content--birthday__box"}
             %option{value: "--"} --
             %option{value: "1"} 1
             %option{value: "2"} 2
@@ -131,7 +131,7 @@
             %option{value: "29"} 29
             %option{value: "30"} 30
             %option{value: "31"} 31     
-          %span{class: "entry-content__birthday__date"}日
+          %span{class: "entry-content--birthday__date"}日
       .form-info-text
         %p ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
