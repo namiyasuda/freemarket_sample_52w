@@ -1,0 +1,36 @@
+%header
+  = render 'shared/sub-header'
+
+%section
+  .login_panel
+    .no-account
+      %p アカウントをお持ちでない方はこちら
+      =link_to "#", class: "no-account__btn" do
+        .no-account__btn__signup
+          新規会員登録
+    .login-method
+      =link_to "#", class: "fb-login" do
+        .fb-login__btn
+          = fa_icon 'facebook-square'
+          .fb-login__btn__name
+            Facebookでログイン
+      =link_to "#", class: "google-login" do  
+        .google-login__btn
+          = image_tag 'https://img.icons8.com/color/48/000000/google-logo.png', alt: 'google-icon', class: 'google-login__btn__icon'
+          Googleでログイン
+
+    .login-input
+      .login-input__mail
+        %input{class:"login-input__form",name:  "mail_address", placeholder:  "メールアドレス", type:  "text"}/
+      .login-input__pass
+        %input{class:"login-input__form",name:  "password", placeholder:  "パスワード", type:  "text"}/
+      .login-input__recapcha
+        = image_tag 'robo.new.png',class: "login-input__recapcha__image"
+      =link_to "#", class: "login-input__btn" do 
+        .login-input__btn__login
+          ログイン
+      .login-pass__lost
+        = link_to 'パスワードをお忘れの方', '#', class:"login-pass__lost__here"
+
+%footer
+  = render 'shared/sub-footer'
