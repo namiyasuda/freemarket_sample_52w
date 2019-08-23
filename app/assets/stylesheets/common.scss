@@ -1,10 +1,13 @@
 // 共通で使用するSCSSはここに定義していきましょう。
 
-.sub-footer{
+.footer--bottom{
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
+}
+
+.sub-footer{
   width: 456px;
   height: 220px;
   margin: 0 auto;
