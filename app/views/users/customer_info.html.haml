@@ -8,21 +8,21 @@
     .customer-entry__body
       .customer-entry__body__form
         .entry-content
-          %a{class:"entry-content__text"} ニックネーム
+          %label(for="nickname"){class:"entry-content__text"}ニックネーム
           %span{class: "entry-content__require"}必須
           %input{type: "text",value_name:"nickename",placeholder:"例)メルカリ太郎",class:"entry-content__input-default"}
         .entry-content
-          %a{class:"entry-content__text"} メールアドレス
+          %label(for="email"){class:"entry-content__text"} メールアドレス
           %span{class: "entry-content__require"}必須
           %input{type: "text",value_name:"email",placeholder:"PC・携帯どちらでも可",class:"entry-content__input-default"}
 
         .entry-content
-          %a{class:"entry-content__text"} パスワード
+          %label(for="pass"){class:"entry-content__text"} パスワード
           %span{class: "entry-content__require"}必須
           %input{type: "text",value_name:"pass",placeholder:"7文字以上",class:"entry-content__input-default"}
 
         .entry-content
-          %a{class:"entry-content__text"} パスワード(確認)
+          %label(for="re-pass"){class:"entry-content__text"} パスワード(確認)
           %span{class: "entry-content__require"}必須
           %input{type: "text",value_name:"re_pass",placeholder:"7文字以上",class:"entry-content__input-default"}
 
@@ -30,21 +30,21 @@
           %h3{class:"entry-content__text__bold"}本人確認
           %p{class:"entry-content__text__word"} 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力くださいください。他のお客さまに公開されることはありません。
         .entry-content
-          %a{class:"entry-content__text"} お名前(全角)
+          %label(for="name-kanji"){class:"entry-content__text"} お名前(全角)
           %span{class: "entry-content__require"}必須
         .entry-content--namebox
           %input{type: "text",value_name:"family_name",placeholder:"例)山田",class:"entry-content--namebox__text"}
           %input{type: "text",value_name:"first_name",placeholder:"例)彩",class:"entry-content--namebox__text"}
 
         .entry-content
-          %a{class:"entry-content__text"} お名前カナ(全角)
+          %label(for="name-kana"){class:"entry-content__text"} お名前カナ(全角)
           %span{class: "entry-content__require"}必須
         .entry-content--namebox  
           %input{type: "text",value_name:"family_name_kana",placeholder:"例)ヤマダ",class:"entry-content--namebox__text"}
           %input{type: "text",value_name:"first_name_kana",placeholder:"例)アヤ",class:"entry-content--namebox__text"}
 
         .entry-content
-          %a{class:"entry-content__text"} 生年月日
+          %label(for="birthday"){class:"entry-content__text"} 生年月日
           %span{class: "entry-content__require"}必須
         .entry-content--birthday
           .entry-content--birthday__selectbox
@@ -140,13 +140,13 @@
           = image_tag 'robo.new.png',class: "entry-bottom__recapcha__image"
         .entry-bottom__text
           「次へ進む」のボタンを押すことにより、
-          %a{href: "#", class: "entry-bottom__text__rule"}> 利用規約
+          = link_to "利用規約", '#', class: "entry-bottom__text__rule"
           に同意したものとみなします
         =link_to "#", class: "entry-bottom__next__btn" do
           .entry-bottom__next
             次へ進む
         .entry-bottom__help
-          %a{href: '＃', class: 'entry-bottom__help'} 本人情報の登録について
+          = link_to '本人情報の登録について', '#', class: 'entry-bottom__help'
           =fa_icon'chevron-right'
 
 

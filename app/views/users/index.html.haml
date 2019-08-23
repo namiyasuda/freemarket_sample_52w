@@ -16,7 +16,7 @@
             Facebookでログイン
       =link_to "#", class: "google-login" do  
         .google-login__btn
-          %img{class: "google-login__btn__icon", src: "https://img.icons8.com/color/48/000000/google-logo.png"}/
+          = image_tag 'https://img.icons8.com/color/48/000000/google-logo.png', alt: 'google-icon', class: 'google-login__btn__icon'
           Googleでログイン
 
     .login-input
@@ -30,7 +30,7 @@
         .login-input__btn__login
           ログイン
       .login-pass__lost
-        %a{href: '＃',class:"login-pass__lost__here"}パスワードをお忘れの方
+        = link_to 'パスワードをお忘れの方', '#', class:"login-pass__lost__here"
 
 %footer
   = render 'shared/sub-footer'
