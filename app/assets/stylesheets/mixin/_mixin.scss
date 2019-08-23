@@ -1,0 +1,13 @@
+@mixin progress-bar-font-style {
+  color: $mrcr-red;
+  font-weight: bold;
+}
+
+@mixin progress-status-bar-style($width) {
+  height: 2px;
+  width: $width;
+  background: $progress-bar-gray;
+  position: absolute;
+  top: 31px;
+  left: 50%;
+}
