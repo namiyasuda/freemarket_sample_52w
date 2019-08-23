@@ -1,0 +1,24 @@
+@import "../variable";
+
+#member-info {
+  .progress__list__text__status {
+    background: $mrcr-red;
+  }
+  .progress__list__text__status-bar {
+    background: $mrcr-red;
+  }
+}
+#phone-number {
+  .progress__list__text__status {
+    background: $mrcr-red;
+  }
+  .progress__list__text__status-bar {
+    background: $mrcr-red;
+  }
+}
+#address {
+  @include progress-bar-font-style;
+  .progress__list__text__status {
+    background: $mrcr-red;
+  }
+} 

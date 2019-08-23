@@ -1,0 +1,8 @@
+@import "../variable";
+
+#member-info {
+  @include progress-bar-font-style;
+  .progress__list__text__status {
+    background: $mrcr-red;
+  }
+}
