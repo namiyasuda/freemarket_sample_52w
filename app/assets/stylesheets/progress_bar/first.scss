@@ -1,0 +1,9 @@
+@import "../config/variable";
+@import "../mixin/mixin";
+
+#member-info {
+  @include progress-bar-font-style;
+  .progress__list__text__status {
+    background: $mrcr-red;
+  }
+}
