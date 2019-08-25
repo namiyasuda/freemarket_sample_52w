@@ -78,7 +78,7 @@
 |buyer_id|references|index: true, foreign_key: true|
 |name|text|null: false|
 |description|text|null: false|
-|category_id|references|index: true, foreign_key: true|
+|category_id|references|null: false, index: true, foreign_key: true|
 |brand_id|references|index: true, foreign_key: true|
 |state_id|references|null: false, foreign_key: true|
 |size_id|references|foreign_key: true|
