@@ -210,6 +210,8 @@ add_index :products, [:name, :description]
 
 ## user_addressesテーブル
 
+|Column|Type|Options|
+|------|----|-------|
 |user_id|references|null: false, index: true, foreign_key: true|
 |postcode|string|
 |prefecture_id|references|foreign_key: true|
