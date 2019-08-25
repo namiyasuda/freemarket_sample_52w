@@ -78,6 +78,7 @@
 |buyer_id|references|index: true, foreign_key: true|
 |name|text|null: false|
 |description|text|null: false|
+|category_id|references|index: true, foreign_key: true|
 |brand_id|references|index: true, foreign_key: true|
 |state_id|references|null: false, foreign_key: true|
 |size_id|references|foreign_key: true|
@@ -93,14 +94,13 @@ add_index :products, [:name, :description]
 - belongs_to :seller, class_name: 'User'
 - belongs_to :buyer, class_name: 'User'
 - belongs_to_active_hash :prefecture
+- belongs_to :category
 - belongs_to :brand
 - belongs_to_active_hash :size
 - belongs_to_active_hash :state
 - belongs_to_active_hash :paying_side
 - belongs_to_active_hash :delivery_day
 - has_many :images, dependent: :destroy
-- has_many :products_categorys
-- has_many :categorys, through products_categorys
 
 
 ## imagesテーブル
@@ -124,27 +124,16 @@ add_index :products, [:name, :description]
 - has_many :products
 
 
-## products_categorysテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|product_id|references|null: false, index: true, foreign_key: true|
-|category_id|references|null: false, index: true, foreign_key: true|
-
-### Association
-- belongs_to :product
-- belongs_to :category
-
-
 ## categorysテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|null: false|
+|ancestry|string||
 
 ### Association
-- has_many :products_categorys
-- has_many :products, through products_categorys
+- has_many :products
+- has_ancestry
 
 
 ## sns_credentialsテーブル
