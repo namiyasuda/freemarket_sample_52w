@@ -15,4 +15,7 @@ Rails.application.routes.draw do
       get 'complete'
     end
   end
+
+  resources :products, only: [:new]
+
 end
