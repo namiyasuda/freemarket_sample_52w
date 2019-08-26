@@ -30,10 +30,19 @@
     font-size: 12px;
     vertical-align: top;
     }
+  &__any{
+    background-color: lightgrey;
+    margin-left:8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
   &__input-default{
     padding-left:15px; 
     width: 100%;
-    margin-top: 0;
+    margin-bottom: 8px;
     height: 48px;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -130,6 +139,7 @@
     }
   }
   &__next{
+    width: 360px;
     margin-top: 32px;
     background-color: #ea352d;
     text-align: center;
