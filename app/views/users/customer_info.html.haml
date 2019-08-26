@@ -143,14 +143,14 @@
           「次へ進む」のボタンを押すことにより、
           = link_to "利用規約", '#', class: "entry-bottom__text__rule"
           に同意したものとみなします
-        =link_to "#", class: "entry-bottom__next__btn" do
-          .entry-bottom__next
+        =link_to "#", class: "entry-bottom__next" do
+          .entry-bottom__next__btn
             次へ進む
         .entry-bottom__help
           = link_to '本人情報の登録について', '#', class: 'entry-bottom__help'
           =fa_icon'chevron-right'
 
 
-%footer
+%footer.footer--bottom
   = render 'shared/sub-footer'
  

@@ -138,14 +138,14 @@
     }
   }
   &__next{
-    width: 360px;
-    margin-top: 32px;
-    background-color: #ea352d;
-    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    line-height: 48px;
     &__btn{
-      text-decoration: none;
-      color: #fff;
-      line-height: 48px;
+      width: 360px;
+      margin-top: 32px;
+      background-color: #ea352d;
+      text-align: center;
     }
   }
   &__help{
