@@ -1,3 +1,5 @@
+# bundle exec rake db:seed:category を実行する
+
 Category.delete_all
 
 lady = Category.create(name: "レディース")
@@ -143,3 +145,27 @@ book_music_game_record = book_music_game.children.create(name: "レコード")
 book_music_game_record.children.create([{name: "邦楽"},{name: "洋楽"},{name: "その他"}])
 book_music_game_video_game = book_music_game.children.create(name: "テレビゲーム")
 book_music_game_video_game.children.create([{name: "家庭用ゲーム本体"},{name: "家庭用ゲームソフト"},{name: "携帯用ゲーム本体"},{name: "携帯用ゲームソフト"},{name: "PCゲーム"},{name: "その他"}])
+
+toy_hobby_goods = Category.create(name: "おもちゃ・ホビー・グッズ")
+toy_hobby_goods_toys = toy_hobby_goods.children.create(name: "おもちゃ")
+toy_hobby_goods_toys.children.create([{name: "キャラクターグッズ"},{name: "ぬいぐるみ"},{name: "小物/アクセサリー"},{name: "模型/プラモデル"},{name: "ミニカー"},{name: "トイラジコン"},{name: "プラモデル"},{name: "ホビーラジコン"},{name: "鉄道模型"},{name: "その他"}])
+toy_hobby_goods_talent = toy_hobby_goods.children.create(name: "タレントグッズ")
+toy_hobby_goods_talent.children.create([{name: "アイドル"},{name: "ミュージシャン"},{name: "タレント/お笑い芸人"},{name: "スポーツ選手"},{name: "その他"}])
+toy_hobby_goods_comic = toy_hobby_goods.children.create(name: "コミック/アニメグッズ")
+toy_hobby_goods_comic.children.create([{name: "ストラップ"},{name: "キーホルダー"},{name: "バッジ"},{name: "カード"},{name: "クリアファイル"},{name: "ポスター"},{name: "タオル"},{name: "その他"}])
+toy_hobby_goods_trading_card = toy_hobby_goods.children.create(name: "トレーディングカード")
+toy_hobby_goods_trading_card.children.create([{name: "遊戯王"},{name: "マジック：ザ・ギャザリング"},{name: "ポケモンカードゲーム"},{name: "デュエルマスターズ"},{name: "バトルスピリッツ"},{name: "プリパラ"},{name: "アイカツ"},{name: "カードファイト!! ヴァンガード"},{name: "ヴァイスシュヴァルツ"},{name: "プロ野球オーナーズリーグ"},{name: "ベースボールヒーローズ"},{name: "ドラゴンボール"},{name: "スリーブ"},{name: "その他"}])
+toy_hobby_goods_figure = toy_hobby_goods.children.create(name: "フィギュア")
+toy_hobby_goods_figure.children.create([{name: "コミック/アニメ"},{name: "特撮"},{name: "ゲームキャラクター"},{name: "SF/ファンタジー/ホラー"},{name: "アメコミ"},{name: "スポーツ"},{name: "ミリタリー"},{name: "その他"}])
+toy_hobby_goods_instrument = toy_hobby_goods.children.create(name: "楽器/器材")
+toy_hobby_goods_instrument.children.create([{name: "エレキギター"},{name: "アコースティックギター"},{name: "ベース"},{name: "エフェクター"},{name: "アンプ"},{name: "弦楽器"},{name: "管楽器"},{name: "鍵盤楽器"},{name: "打楽器"},{name: "和楽器"},{name: "楽譜/スコア"},{name: "レコーディング/PA機器"},{name: "DJ機器"},{name: "DTM/DAW"},{name: "その他"}])
+toy_hobby_goods_collection = toy_hobby_goods.children.create(name: "コレクション")
+toy_hobby_goods_collection.children.create([{name: "武具"},{name: "使用済切手/官製はがき"},{name: "旧貨幣/金貨/銀貨/記念硬貨"},{name: "印刷物"},{name: "ノベルティグッズ"},{name: "その他"}])
+toy_hobby_goods_military = toy_hobby_goods.children.create(name: "ミリタリー")
+toy_hobby_goods_military.children.create([{name: "トイガン"},{name: "個人装備"},{name: "その他"}])
+toy_hobby_goods_art_product = toy_hobby_goods.children.create(name: "美術品")
+toy_hobby_goods_art_product.children.create([{name: "陶芸"},{name: "ガラス"},{name: "漆芸"},{name: "金属工芸"},{name: "絵画/タペストリ"},{name: "版画"},{name: "彫刻/オブジェクト"},{name: "書"},{name: "写真"},{name: "その他"}])
+toy_hobby_goods_art_supplies = toy_hobby_goods.children.create(name: "アート用品")
+toy_hobby_goods_art_supplies.children.create([{name: "画材"},{name: "額縁"},{name: "その他"}])
+toy_hobby_goods_other = toy_hobby_goods.children.create(name: "その他")
+toy_hobby_goods_other.children.create([{name: "トランプ/UNO"},{name: "カルタ/百人一首"},{name: "ダーツ"},{name: "ビリヤード"},{name: "麻雀"},{name: "パズル/ジグソーパズル"},{name: "囲碁/将棋"},{name: "オセロ/チェス"},{name: "人生ゲーム"},{name: "野球/サッカーゲーム"},{name: "スポーツ"},{name: "三輪車/乗り物"},{name: "ヨーヨー"},{name: "模型製作用品"},{name: "鉄道"},{name: "航空機"},{name: "アマチュア無線"},{name: "パチンコ/パチスロ"},{name: "その他"}])
