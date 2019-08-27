@@ -3,19 +3,19 @@
   %iframe{:height => "0", :src => "https://www.googletagmanager.com/ns.html?id=GTM-KLPT5L5", :style => "display:none;visibility:hidden"}
 / End Google Tag Manager (noscript)
 /基本画面
-.default-container
-  %header.pc-header.visible-pc
-    .pc-header-inner
-      .pc-header-top
+.all-nav
+  %header
+    .header
+      .header__top
         %h1
           %a{:href => "https://www.mercari.com/jp/"}
             %img{:alt => "mercari", :height => "360", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2508029365"}/
-        %form.pc-header-form{:action => "https://www.mercari.com/jp/search/"}
+        %form.header__top--form{:action => "https://www.mercari.com/jp/search/"}
           %input.input-default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
           %i.icon-search
-      .pc-header-nav-box
-        %nav.l-left
-          %ul.pc-header-nav
+      .header__under
+        %nav.header__under--left
+          %ul.header__under--left--nav
             %li
               %h2
                 %a.pc-header-nav-root.list-parent{:href => "https://www.mercari.com/jp/category/"}
@@ -28,403 +28,403 @@
                   %i.icon-tag.pc-header-cat-brand-icon
                   %span ブランドから探す
                 
-        .l-right
-          %ul.pc-header-user-nav
-            %li
-              %i.icon-like-border
-              %span いいね！一覧
-            %li
-              %i.icon-bell
-              %span お知らせ
-            %li
-              %i.icon-check
-              %span やることリスト
-            %li
-              %span マイページ
+        %ul.header__under--right
+          %li
+            %i.icon-like-border
+            %span いいね！一覧
+          %li
+            %i.icon-bell
+            %span お知らせ
+          %li
+            %i.icon-check
+            %span やることリスト
+          %li
+            %span マイページ
               
   %main
-    %div
-      %h2
-        スマホでかんたん
-        %br>/
-        フリマアプリ
-      %p
-        メルカリはスマホカメラからすぐに出品できる
-        %br>/
-        購入時も安心な独自システムのアプリです
-      .top-main-visual-store.clearfix
-        %a.pull-left{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
-          %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2508029365"}/
-        %a.pull-left{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
-          %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2508029365"}/
-    %img.back{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?2508029365"}/          
-  %section.pickup-container
-    %h2.pickup-head ピックアップカテゴリー
-    %section.items-box-container.clearfix
-      %h3.text-center
+    .background
+      %div
+        %h2
+          スマホでかんたん
+          %br>/
+          フリマアプリ
+        %p
+          メルカリはスマホカメラからすぐに出品できる
+          %br>/
+          購入時も安心な独自システムのアプリです
+        .store
+          %a.store__left{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
+            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2508029365"}/
+          %a.store__left{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
+            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2508029365"}/
+      %img.back{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?2508029365"}/          
+  %section.pickup
+    %h2.pickup__head ピックアップカテゴリー
+    %section.pickup__container
+      %h3.pickup__container--text-center
         %a{:href => "/jp/category/1/"}
           レディース 新着アイテム
-      .items-box-content.clearfix
-        %section.items-box
+      .pickup__container--content
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m19577007294/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "スキニーデニム《美品》", "data-src" => "https://static.mercdn.net/thumb/photos/m19577007294_1.jpg?1561632550"}/
-            .items-box-body
-              %h3.items-box-name.font-2 スキニーデニム《美品》
-              .items-box-num
-                .items-box-price.font-5 ¥ 1,200
+            .item__body
+              %h3.item__body--name.font-2 スキニーデニム《美品》
+              .item__body--num
+                .price.font-5 ¥ 1,200
                 .font-2
                   %i.icon-like-border
                   %span 3
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m96756343309/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "ハリス Harris つば広 ハット 帽子", "data-src" => "https://static.mercdn.net/thumb/photos/m96756343309_1.jpg?1565586100"}/
-            .items-box-body
-              %h3.items-box-name.font-2 ハリス Harris つば広 ハット 帽子
-              .items-box-num
-                .items-box-price.font-5 ¥ 2,600
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 ハリス Harris つば広 ハット 帽子
+              .item__body--num
+                .price.font-5 ¥ 2,600
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m81236344559/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "ブラウス トップス", "data-src" => "https://static.mercdn.net/thumb/photos/m81236344559_1.jpg?1565586100"}/
-            .items-box-body
-              %h3.items-box-name.font-2 ブラウス トップス
-              .items-box-num
-                .items-box-price.font-5 ¥ 500
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 ブラウス トップス
+              .item__body--num
+                .price.font-5 ¥ 500
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m58661619650/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "金魚のサンダル", "data-src" => "https://static.mercdn.net/thumb/photos/m58661619650_1.jpg?1565524055"}/
-            .items-box-body
-              %h3.items-box-name.font-2 金魚のサンダル
-              .items-box-num
-                .items-box-price.font-5 ¥ 980
+            .item__body
+              %h3.item__body--name.font-2 金魚のサンダル
+              .item__body--num
+                .price.font-5 ¥ 980
                 .font-2
                   %i.icon-like-border
                   %span 5
       .view-all
         %a{:href => "/jp/category/1/"} すべての商品を見る
-    %section.items-box-container.clearfix
-      %h3.text-center
+    %section.pickup__container
+      %h3.pickup__container--text-center
         %a{:href => "/jp/category/2/"}
           メンズ 新着アイテム
-      .items-box-content.clearfix
-        %section.items-box
+      .pickup__container--content
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m14843343641/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "処分価格 Levi's レッドワイヤー ほぼ未使用品", "data-src" => "https://static.mercdn.net/thumb/photos/m14843343641_1.jpg?1556853562"}/
-            .items-box-body
-              %h3.items-box-name.font-2 処分価格 Levi's レッドワイヤー ほぼ未使用品
-              .items-box-num
-                .items-box-price.font-5 ¥ 6,500
+            .item__body
+              %h3.item__body--name.font-2 処分価格 Levi's レッドワイヤー ほぼ未使用品
+              .item__body--num
+                .price.font-5 ¥ 6,500
                 .font-2
                   %i.icon-like-border
                   %span 6
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m19074687641/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "supreme シュプリーム SWIM T 新品未使用", "data-src" => "https://static.mercdn.net/thumb/photos/m19074687641_1.jpg?1565585650"}/
-            .items-box-body
-              %h3.items-box-name.font-2 supreme シュプリーム SWIM T 新品未使用
-              .items-box-num
-                .items-box-price.font-5 ¥ 6,500
+            .item__body
+              %h3.item__body--name.font-2 supreme シュプリーム SWIM T 新品未使用
+              .item__body--num
+                .price.font-5 ¥ 6,500
                 .font-2
                   %i.icon-like-border
                   %span 2
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m65120677274/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "GIANCARLO MORELLI ジャンカルロモレリ ストレート 42 26", "data-src" => "https://static.mercdn.net/thumb/photos/m65120677274_1.jpg?1565586129"}/
-            .items-box-body
-              %h3.items-box-name.font-2 GIANCARLO MORELLI ジャンカルロモレリ ストレート 42 26
-              .items-box-num
-                .items-box-price.font-5 ¥ 6,200
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 GIANCARLO MORELLI ジャンカルロモレリ ストレート 42 26
+              .item__body--num
+                .price.font-5 ¥ 6,200
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m43084770356/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "チェックシャツ 半袖シャツ", "data-src" => "https://static.mercdn.net/thumb/photos/m43084770356_1.jpg?1565586128"}/
-            .items-box-body
-              %h3.items-box-name.font-2 チェックシャツ 半袖シャツ
-              .items-box-num
-                .items-box-price.font-5 ¥ 500
+            .item__body
+              %h3.item__body--name.font-2 チェックシャツ 半袖シャツ
+              .item__body--num
+                .price.font-5 ¥ 500
       .view-all
         %a{:href => "/jp/category/2/"} すべての商品を見る
-    %section.items-box-container.clearfix
-      %h3.text-center
+    %section.pickup__container
+      %h3.pickup__container--text-center
         %a{:href => "/jp/category/3/"}
           ベビー・キッズ 新着アイテム
-      .items-box-content.clearfix
-        %section.items-box
+      .pickup__container--content
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m49886014005/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "バナナチップス❤️キュロット   ピンク", "data-src" => "https://static.mercdn.net/thumb/photos/m49886014005_1.jpg?1565586100"}/
-            .items-box-body
-              %h3.items-box-name.font-2 バナナチップス❤️キュロット   ピンク
-              .items-box-num
-                .items-box-price.font-5 ¥ 3,980
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 バナナチップス❤️キュロット   ピンク
+              .item__body--num
+                .price.font-5 ¥ 3,980
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m15320122565/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "美品★Earth Magicバルーンスカート", "data-src" => "https://static.mercdn.net/thumb/photos/m15320122565_1.jpg?1565586099"}/
-            .items-box-body
-              %h3.items-box-name.font-2 美品★Earth Magicバルーンスカート
-              .items-box-num
-                .items-box-price.font-5 ¥ 1,888
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 美品★Earth Magicバルーンスカート
+              .item__body--num
+                .price.font-5 ¥ 1,888
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m23692175131/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "ナイキ NFTB", "data-src" => "https://static.mercdn.net/thumb/photos/m23692175131_1.jpg?1565586099"}/
-            .items-box-body
-              %h3.items-box-name.font-2 ナイキ NFTB
-              .items-box-num
-                .items-box-price.font-5 ¥ 1,400
+            .item__body
+              %h3.item__body--name.font-2 ナイキ NFTB
+              .item__body--num
+                .price.font-5 ¥ 1,400
                 .font-2
                   %i.icon-like-border
                   %span 12
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m58872223510/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "水着 ハーフパンツ ショートパンツ バードウェル", "data-src" => "https://static.mercdn.net/thumb/photos/m58872223510_1.jpg?1565064625"}/
-            .items-box-body
-              %h3.items-box-name.font-2 水着 ハーフパンツ ショートパンツ バードウェル
-              .items-box-num
-                .items-box-price.font-5 ¥ 1,999
+            .item__body
+              %h3.item__body--name.font-2 水着 ハーフパンツ ショートパンツ バードウェル
+              .item__body--num
+                .price.font-5 ¥ 1,999
                 .font-2
                   %i.icon-like-border
                   %span 2
       .view-all
         %a{:href => "/jp/category/3/"} すべての商品を見る
-    %section.items-box-container.clearfix
-      %h3.text-center
+    %section.pickup__container
+      %h3.pickup__container--text-center
         %a{:href => "/jp/category/6/"}
           コスメ・香水・美容 新着アイテム
-      .items-box-content.clearfix
-        %section.items-box
+      .pickup__container--content
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m72625704518/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "小顔 矯正 たるみ ほうれい線 美顔 顔痩せ フェイス マスク ベルト サポータ", "data-src" => "https://static.mercdn.net/thumb/photos/m72625704518_1.jpg?1561977432"}/
-            .items-box-body
-              %h3.items-box-name.font-2 小顔 矯正 たるみ ほうれい線 美顔 顔痩せ フェイス マスク ベルト サポータ
-              .items-box-num
-                .items-box-price.font-5 ¥ 1,470
+            .item__body
+              %h3.item__body--name.font-2 小顔 矯正 たるみ ほうれい線 美顔 顔痩せ フェイス マスク ベルト サポータ
+              .item__body--num
+                .price.font-5 ¥ 1,470
                 .font-2
                   %i.icon-like-border
                   %span 17
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m21667192336/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "フローフシリップグロス2set", "data-src" => "https://static.mercdn.net/thumb/photos/m21667192336_1.jpg?1558797297"}/
-            .items-box-body
-              %h3.items-box-name.font-2 フローフシリップグロス2set
-              .items-box-num
-                .items-box-price.font-5 ¥ 2,399
+            .item__body
+              %h3.item__body--name.font-2 フローフシリップグロス2set
+              .item__body--num
+                .price.font-5 ¥ 2,399
                 .font-2
                   %i.icon-like-border
                   %span 1
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m87732431884/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "[◎格安品] ボタニカル ハニーローション&ハニーエッセンス ３セット", "data-src" => "https://static.mercdn.net/thumb/photos/m87732431884_1.jpg?1565586100"}/
-            .items-box-body
-              %h3.items-box-name.font-2 [◎格安品] ボタニカル ハニーローション&amp;ハニーエッセンス ３セット
-              .items-box-num
-                .items-box-price.font-5 ¥ 4,500
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 [◎格安品] ボタニカル ハニーローション&amp;ハニーエッセンス ３セット
+              .item__body--num
+                .price.font-5 ¥ 4,500
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m23489235302/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "人気商品！生プラセンタ  セール中！！", "data-src" => "https://static.mercdn.net/thumb/photos/m23489235302_1.jpg?1565586099"}/
-            .items-box-body
-              %h3.items-box-name.font-2 人気商品！生プラセンタ  セール中！！
-              .items-box-num
-                .items-box-price.font-5 ¥ 600
+            .item__body
+              %h3.item__body--name.font-2 人気商品！生プラセンタ  セール中！！
+              .item__body--num
+                .price.font-5 ¥ 600
       .view-all
         %a{:href => "/jp/category/6/"} すべての商品を見る
-  %section.pickup-container
-    %h2.pickup-head ピックアップブランド
-    %section.items-box-container.clearfix
-      %h3.text-center
+  %section.pickup
+    %h2.pickup__head ピックアップブランド
+    %section.pickup__container
+      %h3.pickup__container--text-center
         %a{:href => "/jp/brand/658/"}
           シャネル 新着アイテム
-      .items-box-content.clearfix
-        %section.items-box
+      .pickup__container--content
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m62018656086/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "シャネル チャンス", "data-src" => "https://static.mercdn.net/thumb/photos/m62018656086_1.jpg?1565586031"}/
-            .items-box-body
-              %h3.items-box-name.font-2 シャネル チャンス
-              .items-box-num
-                .items-box-price.font-5 ¥ 2,250
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 シャネル チャンス
+              .item__body--num
+                .price.font-5 ¥ 2,250
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m51347550273/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "シャネル  アイシャドウ イレールデュオ", "data-src" => "https://static.mercdn.net/thumb/photos/m51347550273_1.jpg?1565586089"}/
-            .items-box-body
-              %h3.items-box-name.font-2 シャネル  アイシャドウ イレールデュオ
-              .items-box-num
-                .items-box-price.font-5 ¥ 2,000
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 シャネル  アイシャドウ イレールデュオ
+              .item__body--num
+                .price.font-5 ¥ 2,000
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m10087231591/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "CHANEL シャネル♡サヴォン N°5 100g", "data-src" => "https://static.mercdn.net/thumb/photos/m10087231591_1.jpg?1565586083"}/
-            .items-box-body
-              %h3.items-box-name.font-2 CHANEL シャネル♡サヴォン N°5 100g
-              .items-box-num
-                .items-box-price.font-5 ¥ 1,500
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 CHANEL シャネル♡サヴォン N°5 100g
+              .item__body--num
+                .price.font-5 ¥ 1,500
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m60556297104/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "シャネルジャケット❤️ＣoＣoマーク❤️レアなボタンの可愛いジャケットコート❤️", "data-src" => "https://static.mercdn.net/thumb/photos/m60556297104_1.jpg?1565372309"}/
-            .items-box-body
-              %h3.items-box-name.font-2 シャネルジャケット❤️ＣoＣoマーク❤️レアなボタンの可愛いジャケットコート❤️
-              .items-box-num
-                .items-box-price.font-4 ¥ 200,000
+            .item__body
+              %h3.item__body--name.font-2 シャネルジャケット❤️ＣoＣoマーク❤️レアなボタンの可愛いジャケットコート❤️
+              .item__body--num
+                .price.font-4 ¥ 200,000
                 .font-2
                   %i.icon-like-border
                   %span 6
       .view-all
         %a{:href => "/jp/brand/658/"} すべての商品を見る
-    %section.items-box-container.clearfix
-      %h3.text-center
+    %section.pickup__container
+      %h3.pickup__container--text-center
         %a{:href => "/jp/brand/1326/"}
           ルイ ヴィトン 新着アイテム
-      .items-box-content.clearfix
-        %section.items-box
+      .pickup__container--content
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m94223944599/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "ルイヴィトン ショルダーバッグ モノグラム", "data-src" => "https://static.mercdn.net/thumb/photos/m94223944599_1.jpg?1565586128"}/
-            .items-box-body
-              %h3.items-box-name.font-2 ルイヴィトン ショルダーバッグ モノグラム
-              .items-box-num
-                .items-box-price.font-5 ¥ 50,000
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 ルイヴィトン ショルダーバッグ モノグラム
+              .item__body--num
+                .price.font-5 ¥ 50,000
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m50696985883/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "未使用❗ルイヴィトン カードケース", "data-src" => "https://static.mercdn.net/thumb/photos/m50696985883_1.jpg?1563173609"}/
-            .items-box-body
-              %h3.items-box-name.font-2 未使用❗ルイヴィトン カードケース
-              .items-box-num
-                .items-box-price.font-5 ¥ 26,000
+            .item__body
+              %h3.item__body--name.font-2 未使用❗ルイヴィトン カードケース
+              .item__body--num
+                .price.font-5 ¥ 26,000
                 .font-2
                   %i.icon-like-border
                   %span 13
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m25513072190/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "【ルイヴィトン エピライン LOUIS VUITTON 綺麗】", "data-src" => "https://static.mercdn.net/thumb/photos/m25513072190_1.jpg?1565536305"}/
-            .items-box-body
-              %h3.items-box-name.font-2 【ルイヴィトン エピライン LOUIS VUITTON 綺麗】
-              .items-box-num
-                .items-box-price.font-5 ¥ 45,000
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 【ルイヴィトン エピライン LOUIS VUITTON 綺麗】
+              .item__body--num
+                .price.font-5 ¥ 45,000
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m97452539447/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "ルイヴィトン ダミエ 長財布", "data-src" => "https://static.mercdn.net/thumb/photos/m97452539447_1.jpg?1565586121"}/
-            .items-box-body
-              %h3.items-box-name.font-2 ルイヴィトン ダミエ 長財布
-              .items-box-num
-                .items-box-price.font-5 ¥ 20,000
+            .item__body
+              %h3.item__body--name.font-2 ルイヴィトン ダミエ 長財布
+              .item__body--num
+                .price.font-5 ¥ 20,000
       .view-all
         %a{:href => "/jp/brand/1326/"} すべての商品を見る
-    %section.items-box-container.clearfix
-      %h3.text-center
+    %section.pickup__container
+      %h3.pickup__container--text-center
         %a{:href => "/jp/brand/1620/"}
           シュプリーム 新着アイテム
-      .items-box-content.clearfix
-        %section.items-box
+      .pickup__container--content
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m47406998018/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "★値下げしました★LEON / マチルダ Tシャツ / リメイク", "data-src" => "https://static.mercdn.net/thumb/photos/m47406998018_1.jpg?1565491338"}/
-            .items-box-body
-              %h3.items-box-name.font-2 ★値下げしました★LEON / マチルダ Tシャツ / リメイク
-              .items-box-num
-                .items-box-price.font-5 ¥ 1,600
+            .item__body
+              %h3.item__body--name.font-2 ★値下げしました★LEON / マチルダ Tシャツ / リメイク
+              .item__body--num
+                .price.font-5 ¥ 1,600
                 .font-2
                   %i.icon-like-border
                   %span 5
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m66777057335/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "【key様専用】supreme 17ss Venus print T-shirt", "data-src" => "https://static.mercdn.net/thumb/photos/m66777057335_1.jpg?1565057296"}/
-            .items-box-body
-              %h3.items-box-name.font-2 【key様専用】supreme 17ss Venus print T-shirt
-              .items-box-num
-                .items-box-price.font-5 ¥ 4,000
+            .item__body
+              %h3.item__body--name.font-2 【key様専用】supreme 17ss Venus print T-shirt
+              .item__body--num
+                .price.font-5 ¥ 4,000
                 .font-2
                   %i.icon-like-border
                   %span 10
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m11185800566/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "Supreme 18aw SOG key chain", "data-src" => "https://static.mercdn.net/thumb/photos/m11185800566_1.jpg?1565586057"}/
-            .items-box-body
-              %h3.items-box-name.font-2 Supreme 18aw SOG key chain
-              .items-box-num
-                .items-box-price.font-5 ¥ 4,500
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 Supreme 18aw SOG key chain
+              .item__body--num
+                .price.font-5 ¥ 4,500
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m93859597890/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "新品 creative drug store cdg バックパック リュック", "data-src" => "https://static.mercdn.net/thumb/photos/m93859597890_1.jpg?1565586056"}/
-            .items-box-body
-              %h3.items-box-name.font-2 新品 creative drug store cdg バックパック リュック
-              .items-box-num
-                .items-box-price.font-5 ¥ 21,000
+            .item__body
+              %h3.item__body--name.font-2 新品 creative drug store cdg バックパック リュック
+              .item__body--num
+                .price.font-5 ¥ 21,000
       .view-all
         %a{:href => "/jp/brand/1620/"} すべての商品を見る
-    %section.items-box-container.clearfix
-      %h3.text-center
+    %section.pickup__container
+      %h3.pickup__container--text-center
         %a{:href => "/jp/brand/857/"}
           ナイキ 新着アイテム
-      .items-box-content.clearfix
-        %section.items-box
+      .pickup__container--content
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m41150049409/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "NIKE エアマックス95", "data-src" => "https://static.mercdn.net/thumb/photos/m41150049409_1.jpg?1561801406"}/
-            .items-box-body
-              %h3.items-box-name.font-2 NIKE エアマックス95
-              .items-box-num
-                .items-box-price.font-5 ¥ 17,200
+            .item__body
+              %h3.item__body--name.font-2 NIKE エアマックス95
+              .item__body--num
+                .price.font-5 ¥ 17,200
                 .font-2
                   %i.icon-like-border
                   %span 12
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m14437059165/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "新品 正規品 ナイキ NIKE アトレティコ atletico Sサイズ", "data-src" => "https://static.mercdn.net/thumb/photos/m14437059165_1.jpg?1565586120"}/
-            .items-box-body
-              %h3.items-box-name.font-2 新品 正規品 ナイキ NIKE アトレティコ atletico Sサイズ
-              .items-box-num
-                .items-box-price.font-5 ¥ 6,000
-        %section.items-box
+            .item__body
+              %h3.item__body--name.font-2 新品 正規品 ナイキ NIKE アトレティコ atletico Sサイズ
+              .item__body--num
+                .price.font-5 ¥ 6,000
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m59299120959/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "古着 90s ナイキ NIKE tシャツ 白t ビックロゴ nike sb", "data-src" => "https://static.mercdn.net/thumb/photos/m59299120959_1.jpg?1562596209"}/
-            .items-box-body
-              %h3.items-box-name.font-2 古着 90s ナイキ NIKE tシャツ 白t ビックロゴ nike sb
-              .items-box-num
-                .items-box-price.font-5 ¥ 3,300
+            .item__body
+              %h3.item__body--name.font-2 古着 90s ナイキ NIKE tシャツ 白t ビックロゴ nike sb
+              .item__body--num
+                .price.font-5 ¥ 3,300
                 .font-2
                   %i.icon-like-border
                   %span 4
-        %section.items-box
+        %section.item
           %a{:href => "https://item.mercari.com/jp/m67931468268/"}
-            %figure.items-box-photo
+            %figure.item__photo
               %img.lazyload{:alt => "ナイキ KAISHI 17cm", "data-src" => "https://static.mercdn.net/thumb/photos/m67931468268_1.jpg?1559919782"}/
-            .items-box-body
-              %h3.items-box-name.font-2 ナイキ KAISHI 17cm
-              .items-box-num
-                .items-box-price.font-5 ¥ 2,000
+            .item__body
+              %h3.item__body--name.font-2 ナイキ KAISHI 17cm
+              .item__body--num
+                .price.font-5 ¥ 2,000
                 .font-2
                   %i.icon-like-border
                   %span 3
       .view-all
         %a{:href => "/jp/brand/857/"} すべての商品を見る
-  %aside.app-banner
-    .app-banner-pc
-      .app-banner-pc-inner
+  %aside.banner-nav
+    .banner
+      .banner__left
         %h2 スマホでかんたんフリマアプリ
         %p 今すぐ無料ダウンロード！
-        .app-banner-icon.clearfix
+        .banner__left--icon
           %figure
             %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?2508029365", :width => "68"}/
           %ul.clearfix
@@ -436,10 +436,10 @@
                 %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2508029365", :width => "133"}/
       %figure
         %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?2508029365"}/
-  %footer.global-footer
-    %nav.clearfix
-      .footer-cell
-        %h2.footer-head メルカリについて
+  %footer
+    %nav
+      .footer
+        %h2.footer__head メルカリについて
         %ul
           %li
             %a{:href => "https://about.mercari.com/"} 会社概要（運営会社）
@@ -451,14 +451,14 @@
             %a{:href => "https://jp-news.mercari.com/", :target => "_blank"} 公式ブログ
           %li
             %a{:href => "https://www.mercari.com/jp/logo-guidelines/"} メルカリロゴ利用ガイドライン
-          %li.footer-social-link
+          %li.footer__social
             %a{:href => "https://twitter.com/mercari_jp", :target => "_blank"}
               %i.icon-twitter
-          %li.footer-social-link
+          %li.footer__social
             %a{:href => "https://www.facebook.com/mercarijp", :target => "_blank"}
               %i.icon-facebook
-      .footer-cell
-        %h2.footer-head ヘルプ＆ガイド
+      .footer
+        %h2.footer__head ヘルプ＆ガイド
         %ul
           %li
             %a{:href => "https://www.mercari.com/jp/help_center/"} メルカリガイド
@@ -476,9 +476,9 @@
             %a{:href => "https://www.mercari.com/jp/authenticity/"} 偽ブランド品撲滅への取り組み
           %li
             %a{:href => "https://www.mercari.com/jp/box/"} メルカリボックス
-      .footer-cell.full-width
-        %h2.footer-head プライバシーと利用規約
-        .inner-footer-cell
+      .footer.footer__fullwidth
+        %h2.footer__head プライバシーと利用規約
+        .footer__innercell
           %ul
             %li
               %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
@@ -488,7 +488,7 @@
               %a{:href => "https://www.mercari.com/jp/tos_smartphone_support/"} あんしんスマホサポート制度に関する利用特約
             %li
               %a{:href => "https://www.mercari.com/jp/compliance/"} コンプライアンスポリシー
-        .inner-footer-cell
+        .footer__innercell
           %ul
             %li
               %a{:href => "https://www.mercari.com/jp/data_security/"} 個人データの安全管理に係る基本方針
@@ -498,17 +498,17 @@
               %a{:href => "https://www.mercari.com/jp/shikin_kessai/"} 資金決済法に基づく表示
             %li
               %a{:href => "https://about.mercari.com/csr/safety/"} 法令順守と犯罪抑止のために
-      .footer-cell.footer-nav-lang
-        %h2.footer-head 国
+      .footer.footer__navlang
+        %h2.footer__head 国
         %ul
           %li
             %a.active{:href => "https://www.mercari.com/jp/"} 日本
           %li
             %a{:href => "https://www.mercari.com/"} United States
-    .footer-bottom
-      %a.footer-logo{:href => "https://www.mercari.com/jp/"}
+    .footer__bottom
+      %a.footer__bottom--logo{:href => "https://www.mercari.com/jp/"}
         %img{:alt => "mercari", :height => "33", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?2508029365", :width => "124"}/
-      %span.footer-copyright
+      %span.footer__bottom--copyright
         %small © 2019 Mercari
   %a.footer-sell-btn{:href => "https://www.mercari.com/jp/sell/"}
     %div 出品

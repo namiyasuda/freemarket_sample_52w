@@ -7,5 +7,75 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    / Anti-flicker snippet
+    :css
+      .async-hide { opacity: 0 !important}
+    :javascript
+      (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',4000,
+      {'GTM-KLPT5L5':true});
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title メルカリ スマホでかんたん フリマアプリ
+    %meta{:content => "CMで話題！フリマアプリ「メルカリ」は、スマホから誰でも簡単に売り買いが楽しめるフリマアプリです。購入時はクレジットカード・キャリア決済・コンビニ・銀行ATMで支払いでき、品物が届いてから出品者に入金される独自システムで安心です。", :name => "description"}/
+    %meta{:content => "website", :property => "og:type"}/
+    %meta{:content => "メルカリ スマホでかんたん フリマアプリ", :property => "og:site_name"}/
+    %meta{:content => "メルカリ スマホでかんたん フリマアプリ", :property => "og:title"}/
+    %meta{:content => "CMで話題！フリマアプリ「メルカリ」は、スマホから誰でも簡単に売り買いが楽しめるフリマアプリです。購入時はクレジットカード・キャリア決済・コンビニ・銀行ATMで支払いでき、品物が届いてから出品者に入金される独自システムで安心です。", :property => "og:description"}/
+    %meta{:content => "https://www.mercari.com/jp/?gclid=Cj0KCQjw-b7qBRDPARIsADVbUbWyLV9hl4SzY8nyesh-jfdqxp_qQcc-MdBD-n3IxuRWBS7y4RBaAyIaAq1hEALw_wcB", :property => "og:url"}/
+    %meta{:content => "https://www.mercari.com/jp/assets/img/common/jp/ogp_new.png", :property => "og:image"}/
+    %meta{:content => "フリマアプリ「メルカリ」", :property => "al:ios:app_name"}/
+    %meta{:content => "667861049", :property => "al:ios:app_store_id"}/
+    %meta{:content => "mercari://app/launch", :property => "al:ios:url"}/
+    %meta{:content => "フリマアプリ「メルカリ」", :property => "al:android:app_name"}/
+    %meta{:content => "com.kouzoh.mercari", :property => "al:android:package"}/
+    %meta{:content => "app", :name => "twitter:card"}/
+    %meta{:content => "@mercari_jp", :name => "twitter:site"}/
+    %meta{:content => "メルカリ スマホでかんたん フリマアプリ", :name => "twitter:title"}/
+    %meta{:content => "CMで話題！フリマアプリ「メルカリ」は、スマホから誰でも簡単に売り買いが楽しめるフリマアプリです。購入時はクレジットカード・キャリア決済・コンビニ・銀行ATMで支払いでき、品物が届いてから出品者に入金される独自システムで安心です。", :name => "twitter:description"}/
+    %meta{:content => "https://www.mercari.com/jp/assets/img/common/jp/ogp_new.png", :name => "twitter:image"}/
+    %meta{:content => "jp", :name => "twitter:app:country"}/
+    %meta{:content => "フリマアプリ「メルカリ」", :name => "twitter:app:name:iphone"}/
+    %meta{:content => "フリマアプリ「メルカリ」", :name => "twitter:app:name:ipad"}/
+    %meta{:content => "フリマアプリ「メルカリ」", :name => "twitter:app:name:googleplay"}/
+    %meta{:content => "667861049", :name => "twitter:app:id:iphone"}/
+    %meta{:content => "667861049", :name => "twitter:app:id:ipad"}/
+    %meta{:content => "667861049", :name => "twitter:app:id:ipad"}/
+    %meta{:content => "com.kouzoh.mercari", :name => "twitter:app:id:googleplay"}/
+    %meta{:content => "telephone=no", :name => "format-detection"}/
+    %link{:href => "https://www.mercari.com/jp/?gclid=Cj0KCQjw-b7qBRDPARIsADVbUbWyLV9hl4SzY8nyesh-jfdqxp_qQcc-MdBD-n3IxuRWBS7y4RBaAyIaAq1hEALw_wcB", :rel => "canonical"}/
+    %link{:href => "https://www.mercari.com/jp/", :hreflang => "ja", :rel => "alternate"}/
+    %link{:href => "https://www.mercari.com/", :hreflang => "en", :rel => "alternate"}/
+    %link{:href => "https://www.mercari.com/uk/", :hreflang => "en-GB", :rel => "alternate"}/
+    %link{:href => "/jp/assets/css/app.jp.css?4196320981", :rel => "stylesheet"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/favicon.ico?837758460", :rel => "shortcut icon"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon.png?837758460", :rel => "apple-touch-icon"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/favicon-16x16.png?837758460", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/favicon-32x32.png?837758460", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/favicon-194x194.png?837758460", :rel => "icon", :sizes => "194x194", :type => "image/png"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/android-chrome-192x192.png?837758460", :rel => "icon", :sizes => "192x192", :type => "image/png"}/
+    %link{:color => "#ea352d", :href => "//www-mercari-jp.akamaized.net/safari-pinned-tab.svg?837758460", :rel => "mask-icon"}/
+    %link{:href => "https://www.mercari.com/jp/manifest.json?837758460", :rel => "manifest"}/
+    %meta{:content => "#ffc40d", :name => "msapplication-TileColor"}/
+    %meta{:content => "//www-mercari-jp.akamaized.net/mstile-144x144.png?837758460", :name => "msapplication-TileImage"}/
+    %meta{:content => "#ea352d", :name => "theme-color"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-precomposed.png?837758460", :rel => "apple-touch-icon-precomposed"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-57x57.png?837758460", :rel => "apple-touch-icon", :sizes => "57x57"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-60x60.png?837758460", :rel => "apple-touch-icon", :sizes => "60x60"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-72x72.png?837758460", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-76x76.png?837758460", :rel => "apple-touch-icon", :sizes => "76x76"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-114x114.png?837758460", :rel => "apple-touch-icon", :sizes => "114x114"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-120x120.png?837758460", :rel => "apple-touch-icon", :sizes => "120x120"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-144x144.png?837758460", :rel => "apple-touch-icon", :sizes => "144x144"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-152x152.png?837758460", :rel => "apple-touch-icon", :sizes => "152x152"}/
+    %link{:href => "//www-mercari-jp.akamaized.net/apple-touch-icon-180x180.png?837758460", :rel => "apple-touch-icon", :sizes => "180x180"}/
+
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+    %script{:src => "https://kit.fontawesome.com/cec9ead5be.js"}
+
+
   %body
     = yield
