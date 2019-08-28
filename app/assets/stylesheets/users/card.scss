@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   &__date{
-    margin:26px 12px 0 8px;
+    margin: 26px 12px 0 8px;
     display: inline-block
   }
   &__selectbox{
@@ -69,10 +69,10 @@
   &:before{   
     content: '';
     position: absolute;
-    top:-8px;
+    top: -8px;
     left: 290px;
     width: 16px;
-    border:10px solid transparent;
+    border: 10px solid transparent;
     border-bottom-color:#eee;
     border-top-width: 0;
     width: 0;

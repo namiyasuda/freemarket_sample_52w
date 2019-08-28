@@ -9,24 +9,24 @@
 // 中身の文字とアイコン部分の定義
 .banner{
   position: absolute;
-  top:50px;
+  top: 50px;
   left: 30px;
   color: #fff;
   &__text1{
-    font-size:16px;
+    font-size: 16px;
     margin: 0 0 20px 50px;
   }
   &__text2{
     font-size: 26px;
     font-weight: bold;
-    margin-left:10px; 
+    margin-left: 10px; 
   }
   &__icon{
     display: flex;
-    margin-top:20px; 
+    margin-top: 20px; 
     &__app{
     display: flex;
-     margin-top:15px; 
+     margin-top: 15px; 
       &__apple{
         margin-left: 5px;
       }
@@ -39,6 +39,6 @@
 // 中身の右画像部分の定義
 .banner-image{
   position: absolute;
-  top:20px;
+  top: 20px;
   right: 15px;  
 }
