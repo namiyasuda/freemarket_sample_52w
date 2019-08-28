@@ -1,12 +1,12 @@
 .sell-container{
   width: 700px;
   margin: 0 auto;
-  background-color:#fff;
+  background-color: #fff;
   .sell-container__head{
     padding: 35px;
     font-size: 22px;
-    text-align: center;
     font-weight: bold;
+    text-align: center;
   }
   .sell-container__form{
     border-top: 1px solid #eee;
@@ -14,21 +14,22 @@
       width: 620px;
       padding: 40px;
       &__head{
-        font-weight: bold;
         font-size: 16px;
+        font-weight: bold;
       }
       p{
         margin-top: 8px;
         line-height: 1.5;
       }
       &__drop-box{
-        margin: 16px auto 0;
         position: relative;
         width: 100%;
         min-height: 162px;
+        margin: 16px auto 0;
         background: #f5f5f5;
         border: 1px dashed #ccc;
         text-align: center;
+        cursor: pointer;
         &__file{
           display: none;
         }
@@ -37,9 +38,9 @@
           top: 35%;
           left: 16px;
           right: 16px;
-          text-align: center;
           font-size: 14px;
           font-weight: bolder;
+          text-align: center;
           line-height: 1.5;
         }
       }
@@ -54,15 +55,15 @@
         }
         .entry-content__textarea-default{
           display: block;
+          box-sizing: border-box;
+          min-height: 104px;
           width: 100%;
           max-width: 100%;
-          min-height: 104px;
           padding: 10px;
           border: 1px solid #ccc;
           background: #fff;
           font-size: 16px;
           line-height: 1.5;
-          box-sizing: border-box;
         }
       }
       &--flex{
@@ -97,17 +98,17 @@
           position: relative;
           background: #fff;
           .entry-content__select-default{
-            -webkit-appearance: none;
             z-index: 2;
+            padding: 0 16px;
             height: 48px;
             width: 100%;
-            padding: 0 16px;
             border-radius: 4px;
             border: 1px solid #ccc;
             background: 0;
             font-size: 16px;
             line-height: 1.5;
             cursor: pointer;
+            -webkit-appearance: none;
           }
           .fa{
             position: absolute;
@@ -133,14 +134,14 @@
         &--thin{
           display: flex;
           justify-content: space-between;
+          height: 14px;
           padding: 24px 0;
           border-top: 1px solid #ccc;
-          height: 14px;
         }
         &__right{
-          width: 50%;
           display: flex;
           position: relative;
+          width: 50%;
           .entry-content__input-default{
             margin-left: 10px;
             padding-right: 10px;
@@ -159,8 +160,8 @@
         border-top: 1px solid #ccc;
         line-height: 48px;
         &__left{
-          font-weight: bold;
           font-size: 16px;
+          font-weight: bold;
         }
         &__right{
           font-size: 34px;
@@ -174,14 +175,14 @@
         line-height: 1.5;
       }
       &__submit{
+        display: block;
         margin-top: 40px;
+        width: 100%;
         background: #ea352d;
         border: 1px solid #ea352d;
         color: #fff;
-        display: block;
-        width: 100%;
-        line-height: 48px;
         font-size: 14px;
+        line-height: 48px;
         transition: all ease-out .3s;
         cursor: pointer;
         text-align: center;
