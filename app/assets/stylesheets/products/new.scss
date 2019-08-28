@@ -39,7 +39,7 @@
           right: 16px;
           text-align: center;
           font-size: 14px;
-          font-weight: bold;
+          font-weight: bolder;
           line-height: 1.5;
         }
       }
@@ -52,10 +52,6 @@
         &:first-child{
           margin-top: 0;
         }
-        .entry-content__input-default{
-          padding: 10px 16px 8px;
-          box-sizing: border-box;
-        }
         .entry-content__textarea-default{
           display: block;
           width: 100%;
@@ -67,7 +63,6 @@
           font-size: 16px;
           line-height: 1.5;
           box-sizing: border-box;
-          padding: 10px 16px 8px;
         }
       }
       &--flex{
@@ -142,8 +137,6 @@
           border-top: 1px solid #ccc;
           height: 14px;
         }
-        &__left{
-        }
         &__right{
           width: 50%;
           display: flex;
@@ -160,7 +153,11 @@
         }
       }
       &__group--flex--bold{
-        @extend .sell-container__form__content__group--flex;
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 0;
+        border-top: 1px solid #ccc;
+        line-height: 48px;
         &__left{
           font-weight: bold;
           font-size: 16px;
