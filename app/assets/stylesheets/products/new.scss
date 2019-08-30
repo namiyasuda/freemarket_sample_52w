@@ -125,7 +125,7 @@
         }
       }
     }
-    .sell-price{
+    .selling-price{
       display: flex;
       justify-content: space-between;
       padding: 40px;
@@ -152,7 +152,7 @@
         width: 400px;
         margin: 0;
       }
-      &__group--flex{
+      &__group{
         display: flex;
         justify-content: space-between;
         padding: 24px 0;
@@ -161,13 +161,6 @@
         &:first-of-type{
           padding: 0 0 24px;
           border: 0;
-        }
-        &--thin{
-          display: flex;
-          justify-content: space-between;
-          height: 14px;
-          padding: 24px 0;
-          border-top: 1px solid #ccc;
         }
         &__right{
           display: flex;
@@ -184,7 +177,14 @@
           }
         }
       }
-      &__group--flex--bold{
+      &__group--thin{
+        display: flex;
+        justify-content: space-between;
+        height: 14px;
+        padding: 24px 0;
+        border-top: 1px solid #ccc;
+      }
+      &__group--bold{
         display: flex;
         justify-content: space-between;
         padding: 24px 0;

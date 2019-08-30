@@ -113,29 +113,29 @@
               %option{valu: ""} 1~2日で発送
               %option{valu: ""} 2~3日で発送
               %option{valu: ""} 4~7日で発送
-    .sell-price
-      .sell-price__head
+    .selling-price
+      .selling-price__head
         販売価格(300〜9,999,999)
         =link_to '?', "#", {class: 'form-question', target: '_blank'}
-      .sell-price__form-box
-        .sell-price__group--flex
-          .sell-price__group--flex__left
+      .selling-price__form-box
+        .selling-price__group
+          .selling-price__group__left
             %label.entry-content__text
               価格
             %span.entry-content__require
               必須
-          .sell-price__group--flex__right
+          .selling-price__group__right
             ¥
             %input.entry-content__input-default{value_name:"price",placeholder:"例）300"}
-        .sell-price__group--flex--thin
-          .sell-price__group--flex__left
+        .selling-price__group--thin
+          .selling-price__group__left
             販売手数料 (10%)
-          .sell-price__group--flex__right 
+          .selling-price__group__right 
             %span -
-        .sell-price__group--flex--bold
-          .sell-price__group--flex--bold__left
+        .selling-price__group--bold
+          .selling-price__group--bold__left
             販売利益
-          .sell-price__group--flex--bold__right 
+          .selling-price__group--bold__right 
             %span -
     .sell-btn-box
       .sell-btn-box__text
