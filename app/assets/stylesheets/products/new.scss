@@ -10,7 +10,7 @@
   }
   .sell-container__form{
     border-top: 1px solid #eee;
-    &__upload-box{
+    .upload-box{
       width: 620px;
       padding: 40px;
       &__head{
@@ -45,13 +45,16 @@
         }
       }
     }
-    &__content{
+    .sell-content{
       padding: 40px;
       border-top: 1px solid #eee;
       &__group{
         margin-top: 40px;
         &:first-child{
           margin-top: 0;
+        }
+        .entry-content__input-default{
+          box-sizing: border-box;
         }
         .entry-content__textarea-default{
           display: block;
@@ -121,6 +124,34 @@
           }
         }
       }
+    }
+    .sell-price{
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      border-top: 1px solid #eee;
+      &__head{
+        color: #888;
+        font-size: 14px;
+        font-weight: bold;
+        .form-question{
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: #0099e8;
+          color: #fff;
+          line-height: 14px;
+          font-size: 12px;
+          font-weight: normal;
+          text-align: center;
+          text-decoration: none;
+        }
+      }
+      &__form-box{
+        width: 400px;
+        margin: 0;
+      }
       &__group--flex{
         display: flex;
         justify-content: space-between;
@@ -168,7 +199,7 @@
         }
       }
     }
-    &__btn-box{
+    .sell-btn-box{
       padding: 40px;
       border-top: 1px solid #eee;
       & p{
