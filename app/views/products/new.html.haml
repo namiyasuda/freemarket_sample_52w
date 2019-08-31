@@ -1,6 +1,5 @@
 %header
   = render 'shared/sub-header'
-
 %section.sell-container
   .sell-container__head
     商品の情報を入力
@@ -126,17 +125,17 @@
               必須
           .selling-price__group__right
             ¥
-            %input.entry-content__input-default{value_name:"price",placeholder:"例）300"}
+            %input.entry-content__input-default#sales-price{value_name:"price",placeholder:"例）300"}
         .selling-price__group--thin
           .selling-price__group__left
             販売手数料 (10%)
           .selling-price__group__right 
-            %span -
+            %span#sales-fee -
         .selling-price__group--bold
           .selling-price__group--bold__left
             販売利益
           .selling-price__group--bold__right 
-            %span -
+            %span#sales-profit -
     .sell-btn-box
       .sell-btn-box__text
         %p
