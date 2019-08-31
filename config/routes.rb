@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     collection do 
       get 'address'
       get 'customer_info'
-      get 'sms_confi'
+      get 'sms_comfi'
       get 'card'
       get 'complete'
     end
