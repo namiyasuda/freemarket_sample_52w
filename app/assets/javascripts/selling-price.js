@@ -9,5 +9,10 @@ $(function(){
     let SalesProfit = String(Math.ceil(SalsePrice * 0.9)).replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
     TagSalesFee.text('¥' + SalesFee);
     TagSalseProfit.text('¥' + SalesProfit);
+    //入力がない場合は-に、戻す。
+    if ($(this).val().length == 0) {
+      TagSalesFee.text('-');
+      TagSalseProfit.text('-');
+    }
   });
 });
