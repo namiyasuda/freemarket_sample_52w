@@ -2,13 +2,13 @@
   width: 700px;
   margin: 0 auto;
   background-color: #fff;
-  .sell-container__head{
+  &__head{
     padding: 35px;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
   }
-  .sell-container__form{
+  &__form{
     border-top: 1px solid #eee;
     .upload-box{
       width: 620px;
@@ -80,17 +80,7 @@
         font-size: 14px;
         font-weight: bold;
         .form-question{
-          display: inline-block;
-          width: 14px;
-          height: 14px;
-          border-radius: 50%;
-          background: #0099e8;
-          color: #fff;
-          line-height: 14px;
-          font-size: 12px;
-          font-weight: normal;
-          text-align: center;
-          text-decoration: none;
+          @include form-question;
         }
       }
       &__form-box{
@@ -100,7 +90,7 @@
           margin: 8px 0 0;
           position: relative;
           background: #fff;
-          .entry-content__select-default{
+          &__default{
             z-index: 2;
             padding: 0 16px;
             height: 48px;
@@ -135,17 +125,7 @@
         font-size: 14px;
         font-weight: bold;
         .form-question{
-          display: inline-block;
-          width: 14px;
-          height: 14px;
-          border-radius: 50%;
-          background: #0099e8;
-          color: #fff;
-          line-height: 14px;
-          font-size: 12px;
-          font-weight: normal;
-          text-align: center;
-          text-decoration: none;
+          @include form-question;
         }
       }
       &__form-box{
@@ -190,6 +170,7 @@
         padding: 24px 0;
         border-top: 1px solid #ccc;
         line-height: 48px;
+        
         &__left{
           font-size: 16px;
           font-weight: bold;
