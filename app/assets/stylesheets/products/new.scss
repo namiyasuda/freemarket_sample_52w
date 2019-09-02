@@ -55,6 +55,8 @@
         }
         .entry-content__input-default{
           box-sizing: border-box;
+          display: block;
+          width: 100%;
         }
         .entry-content__textarea-default{
           display: block;
@@ -111,6 +113,7 @@
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
             -webkit-text-stroke: 1px #fff;
+            pointer-events: none;
           }
         }
       }
