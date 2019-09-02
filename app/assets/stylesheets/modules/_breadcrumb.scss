@@ -1,0 +1,21 @@
+.breadcrumb {
+  height: 48px;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background-color: #fff;
+  &__list {
+    display: flex;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px;
+    &__item {
+      line-height: 14px;
+      letter-spacing: 0.5px;
+    }
+    &__icon {
+      margin: 0 8px;
+      color: #888;
+      font-weight: bold;
+    }
+  }
+}
