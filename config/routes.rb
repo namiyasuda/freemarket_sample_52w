@@ -14,5 +14,6 @@ Rails.application.routes.draw do
       get 'card'
       get 'complete'
     end
+    resource :mypage
   end
 end
