@@ -1,7 +1,8 @@
 class Users::AddressesController < ApplicationController
   def new
-  end
+end
 
   def create
+    
   end
 end

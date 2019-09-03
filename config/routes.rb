@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   resources :tops, only: [:index]
   resources :users, only: [:new,:index] do
     collection do 
-      get 'address'
       get 'customer_info'
       get 'sms_comfi'
+      get 'address'
       get 'card'
       get 'complete'
     end
