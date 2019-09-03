@@ -8,8 +8,18 @@
       padding: 16px;
       border-top: 1px solid #eee;
       box-sizing: border-box;
-      background-color: #fff;
+      background-color: $white;
       line-height: 14px;
+      &:hover {
+        background-color: #fafafa;
+      }
+      &:hover > .mypage-side-menu__list__item__icon {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        color: $font-black;
+        transition: all 0.5s ease 0s;
+      }
       &__btn {
         position: absolute;
         top: 0;
