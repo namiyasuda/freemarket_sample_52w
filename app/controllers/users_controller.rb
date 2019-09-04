@@ -24,12 +24,8 @@ class UsersController < ApplicationController
     session[:birth_day] = user_params[:birth_day]
     @user = User.new 
   end
+
   def address
-    session[:mobile_number] = user_params[:mobile_number]
-    @user = User.new
-    @user.save
-  end
-  def create
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -46,11 +42,10 @@ class UsersController < ApplicationController
     )
       if @user.save
         session[:id] = @user.id
-        redirect_to complete_users_path
+        redirect_to address_users_path
       else
-        render 'users/new'
+        render address_users_path
     end
-    
   end
 
   def card  
@@ -58,7 +53,6 @@ class UsersController < ApplicationController
 
   def complete  
   end
-
 end
 private
 
