@@ -4,3 +4,45 @@
   margin: 40px auto 0;
   padding-bottom: 40px;
 }
+
+.mypage {
+  width: 700px;
+}
+
+.user-info {
+  position: relative;
+  height: 200px;
+  background-image: url('bg-mypage.png');
+  &__btn {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    color: #333333;
+    text-align: center;
+    text-decoration: none;
+    &__icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    &__nickname {
+      margin-top: 6px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &__number {
+      margin-top: 6px;
+      font-size: 14px;
+      &__text {
+        display: inline-block;
+        margin-left: 6px;
+        &__count {
+          margin: 0 6px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
