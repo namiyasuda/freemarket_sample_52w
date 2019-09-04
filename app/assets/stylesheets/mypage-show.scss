@@ -21,6 +21,12 @@
     color: #333333;
     text-align: center;
     text-decoration: none;
+    &:hover {
+      opacity: 0.7;
+    }
+    &:hover > .user-info__btn__nickname {
+      text-decoration: underline;
+    }
     &__icon {
       width: 60px;
       height: 60px;
