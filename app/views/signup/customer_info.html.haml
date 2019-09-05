@@ -8,7 +8,7 @@
       会員情報入力
     .customer-entry__body
       .customer-entry__body__form
-        = form_for@user, url: sms_comfi_users_path, method: :get, html: {class: 'customer-entry__body__form'} do |f|
+        = form_with model: @user, local:true, url:sms_comfi_signup_index_path,method: :get,class: 'customer-entry__body__form' do |f|
           .entry-content
             %label.entry-content__text ニックネーム
             %span.entry-content__require 必須

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class SignupController < ApplicationController
  
   def index
   end
@@ -24,8 +24,10 @@ class UsersController < ApplicationController
     session[:birth_day] = user_params[:birth_day]
     @user = User.new 
   end
-
   def address
+  end
+
+  def create
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -42,9 +44,9 @@ class UsersController < ApplicationController
     )
       if @user.save
         session[:id] = @user.id
-        redirect_to address_users_path
+        redirect_to address_signup_index_path
       else
-        render address_users_path
+        render address_signup_index_path
     end
   end
 

@@ -7,7 +7,7 @@
       電話番号の確認
     .customer-entry__body
       .customer-entry__body__form
-        = form_for @user, url: address_users_path, method: :get, html: {class: 'customer-entry__body__form'} do |f|
+        = form_with model:@user,local:true,url:signup_index_path,class: "customer-entry__body__form" do |f|
           .entry-content
             .entry-content__text
               携帯電話の番号

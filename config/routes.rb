@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :tops, only: [:index]
-  resources :users, only: [:new,:index] do
+  resources :signup, only: [:new,:index,:create] do
     collection do 
       get 'customer_info'
       get 'sms_comfi'
