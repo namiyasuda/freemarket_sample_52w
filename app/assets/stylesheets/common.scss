@@ -4,17 +4,17 @@ a{
   text-decoration: none;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
-.footer--bottom{
+.footer--bottom {
   height: 220px;
   margin: 0 auto;
   text-align: center;
 }
 
-.sub-footer{
+.sub-footer {
   width: 456px;
   margin: 0 auto;
   text-align: center;
@@ -23,7 +23,7 @@ a{
   bottom: 0;
   right: 0;
   left: 0;
-  &__contents{
+  &__contents {
     font-size: 12px;
     display: flex;
     & a {
@@ -37,7 +37,7 @@ a{
       margin-left: 16px;
     }
   }
-  &__logo{
+  &__logo {
     width: 80px;
     height: 65px;
     margin: 40px auto 0;
@@ -45,7 +45,7 @@ a{
       opacity: 0.8;
     }
   }
-  &__copyright{
+  &__copyright {
     margin-top: 10px;
     font-size: 12px;
     color: #333;
