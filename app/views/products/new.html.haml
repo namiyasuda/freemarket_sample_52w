@@ -3,33 +3,28 @@
 %section.sell-container
   .sell-container__head
     商品の情報を入力
-  = form_for '@user', html:{class:'sell-container__form'} do |f|
+  = form_with model:@product, local: true, html:{class:'sell-container__form'} do |f|
     .upload-box
       .upload-box__head
         出品画像
-        %span.entry-content__require
-          必須
+        %span.entry-content__require 必須
       %p
         最大10枚までアップロードできます
       .upload-box__drop-box
-        %input.upload-box__drop-box__file{type: "file", name: "name"}
+        = f.file_field :image_name, class:'upload-box__drop-box__file'
         .upload-box__drop-box__text
           ドラッグアンドドロップ
           %br
           またはクリックしてファイルをアップロード
     .sell-content
       .sell-content__group
-        %label.entry-content__text
-          商品名
-        %span.entry-content__require
-          必須
-        %input.entry-content__input-default{type: "text",value_name:"name",placeholder:"商品名（必須 40文字まで)"}
+        %label.entry-content__text 商品名
+        %span.entry-content__require 必須
+        = f.text_field :name, class: 'entry-content__input-default', placeholder:"商品名（必須 40文字まで)"
       .sell-content__group
-        %label.entry-content__text
-          商品の説明
-        %span.entry-content__require
-          必須
-        %textarea.entry-content__textarea-default{rows: "5",value_name:"description",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+        %label.entry-content__text 商品の説明
+        %span.entry-content__require 必須
+        = f.text_area :description, class:'entry-content__textarea-default', rows: '5', placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
     .sell-content--flex
       .sell-content__head
         商品の詳細
@@ -55,7 +50,7 @@
         .sell-content__group.hide#product-brand
           %label.entry-content__text ブランド
           %span.entry-content__any 任意
-          %input.entry-content__input-default{type: "text",value_name:"brand",placeholder:"例）シャネル"}
+          = f.text_field :brand_name, class: 'entry-content__input-default', placeholder: "例）シャネル"
         .sell-content__group
           %label.entry-content__text 商品の状態
           %span.entry-content__require 必須
@@ -96,7 +91,7 @@
             %span.entry-content__require 必須
           .selling-price__group__right
             ¥
-            %input.entry-content__input-default#sales-price{value_name:"price",placeholder:"例）300"}
+            = f.text_field :price, class:'entry-content__input-default',id:'sales-price', placeholder:"例）300"
         .selling-price__group--thin
           .selling-price__group__left 販売手数料 (10%)
           .selling-price__group__right 
@@ -120,8 +115,7 @@
           また、出品をもちまして
           =link_to '加盟店規約', "https://www.mercari.com/jp/seller_terms/", target: '_blank'
           に同意したことになります。
-      %button.sell-btn-box__submit
-        出品する
+      = f.submit '出品する', class:'sell-btn-box__submit'
       =link_to 'もどる', 'javascript:history.back();', class:'sell-btn-box__return'
 
 %footer.footer--bottom
