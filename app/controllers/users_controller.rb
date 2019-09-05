@@ -38,7 +38,7 @@ class UsersController < ApplicationController
       birth_year: session[:birth_year], 
       birth_month: session[:birth_month], 
       birth_day: session[:birth_day], 
-      mobile_number: session[:mobile_number]
+      mobile_number: user_params[:mobile_number]
     )
       if @user.save
         session[:id] = @user.id
@@ -70,7 +70,7 @@ private
       :birth_month,
       :birth_day,
       :mobile_number,
-      :profile,
+      :sales_money,
       :profile
   )
   end
