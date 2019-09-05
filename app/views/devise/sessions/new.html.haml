@@ -27,9 +27,8 @@
           = f.password_field :password, autocomplete: "current-password",placeholder:"パスワード",class:"login-input__form"
         .login-input__recapcha
           = image_tag 'robo.new.png',class: "login-input__recapcha__image"
-        =link_to "#", class: "login-input__btn" do 
-          .login-input__btn__login
-            ログイン
+        .entry-bottom__next
+          = f.submit "ログイン", class: "entry-bottom__next__btn"
         .login-pass__lost
           = link_to 'パスワードをお忘れの方', 'devise/shared/links', class:"login-pass__lost__here"
 
