@@ -38,3 +38,10 @@
             10日前
     %li.notice-list__go-list
       = link_to  "一覧を見る", request.fullpath, class: "notice-list__go-list__btn"
+
+  %ul.todo-list.tab-contents--notice-todo
+    %li.todo-list__item
+      %section.not-found
+        = image_tag "logo-gray.png", class: 'not-found__icon'
+        .not-found__text
+          現在、やることリストはありません
