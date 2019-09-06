@@ -4,21 +4,21 @@
 
 %section.tab-container
   %ul.tab-container__list
-    %li.tab-container__list__item
+    %li.tab-container__list__item.tab--purchased.active--purchased
       %span.tab-container__list__item__text
         取引中
-    %li.tab-container__list__item
+    %li.tab-container__list__item.tab--purchased
       %span.tab-container__list__item__text
         過去の取引
 
 %section.tab-contents
-  %ul.trade-list
+  %ul.trade-list.tab-contents--purchased.show--purchased
     %li.trade-list__item
       %section.not-found
         = image_tag "logo-gray.png", class: 'not-found__icon'
         .not-found__text
           取引中の商品がありません
-  %ul.past-trade-list
+  %ul.past-trade-list.tab-contents--purchased
     %li.past-trade-list__item
       %section.not-found
         = image_tag "logo-gray.png", class: 'not-found__icon'

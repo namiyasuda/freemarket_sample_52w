@@ -1,14 +1,14 @@
 %section.tab-container
   %ul.tab-container__list
-    %li.tab-container__list__item
+    %li.tab-container__list__item.tab--notice-todo.active--notice-todo
       %span.tab-container__list__item__text
         お知らせ
-    %li.tab-container__list__item
+    %li.tab-container__list__item.tab--notice-todo
       %span.tab-container__list__item__text
         やることリスト
 
 %section.tab-contents
-  %ul.notice-list
+  %ul.notice-list.tab-contents--notice-todo.show--notice-todo
     %li.notice-list__item
       = image_tag '//static.mercdn.net/images/mercari_profile.png', class: 'notice-list__item__icon'
       = fa_icon "angle-right", class: "notice-list__item__arrow"
