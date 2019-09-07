@@ -1,8 +1,14 @@
 class ProductsController < ApplicationController
 
+  def show
+    @product = Product.find(params[:id])
+    # binding.pry
+  end
+
   def new
     @category_parents = Category.where(ancestry: nil)
     @product = Product.new
+    @image = Image.new
   end
 
    # 親カテゴリーが選択された後に動くアクションAjax
@@ -18,11 +24,20 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to new_product_path
+      params[:images][:image].each do |image|
+        # binding.pry
+        @product.images.create(name: image, product_id: @product.id)
+      end
+      redirect_to new_product_path, notice: '出品が成功しました'
     else
       @category_parents = Category.where(ancestry: nil)
-      render :new
+      flash.now[:alert] = '出品が失敗しました'
+      format.html{render action: 'new'}
     end
+  end
+
+  def dropzone
+    @product = Product.new
   end
 
   private
@@ -37,6 +52,8 @@ class ProductsController < ApplicationController
       :paying_side_id, 
       :prefecture_id, 
       :delivery_day_id, 
-      :price)
+      :price,
+      images_attributes: [:image]
+      ).merge(seller_id: 1)
   end
 end

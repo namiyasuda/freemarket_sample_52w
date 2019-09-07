@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: [:new, :create, :edit, :update, :destroy] do
+  resources :products, only: [:show, :new, :create, :edit, :update, :destroy] do
     # Ajaxで動作するルーティングを設定
     collection do
       get 'get_category_children', defaults: { format: 'json' }

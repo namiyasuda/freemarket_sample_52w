@@ -1,3 +1,6 @@
+.notifications
+  - flash.each do |key, value|
+    = content_tag(:div, value, class: key)
 %header
   = render 'shared/sub-header'
 %section.sell-container
@@ -10,12 +13,13 @@
         %span.entry-content__require 必須
       %p
         最大10枚までアップロードできます
-      .upload-box__drop-box
-        = f.file_field :image_name, class:'upload-box__drop-box__file'
-        .upload-box__drop-box__text
-          ドラッグアンドドロップ
-          %br
-          またはクリックしてファイルをアップロード
+      = f.fields_for :image do |image|
+        .upload-box__drop-box
+          = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image"
+          .upload-box__drop-box__text
+            ドラッグアンドドロップ
+            %br
+            またはクリックしてファイルをアップロード
     .sell-content
       .sell-content__group
         %label.entry-content__text 商品名
