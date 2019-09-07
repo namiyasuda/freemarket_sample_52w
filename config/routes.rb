@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   namespace :users do
     get 'addresses/new'
     get 'addresses/create'
@@ -10,10 +11,13 @@ Rails.application.routes.draw do
     collection do 
       get 'address'
       get 'customer_info'
-      get 'sms_confi'
+      get 'sms_comfi'
       get 'card'
       get 'complete'
     end
     resource :mypage
   end
+
+  resources :products, only: [:new]
+
 end
