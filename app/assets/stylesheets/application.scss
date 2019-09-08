@@ -15,13 +15,4 @@
 @import "./products/new.scss";
 @import "./modules/breadcrumb";
 @import "./modules/mypage-side-menu";
-@import "./mypage/mypage-show";
-@import "./mypage/mypage-tab-container";
-@import "./mypage/mypage-notice-list";
-@import "./mypage/mypage-not-found";
-@import "./mypage/mypage-todo-list";
-@import "./mypage/mypage-tab-head";
-@import "./mypage/mypage-trade-list";
-@import "./mypage/mypage-past-trade-list";
-@import "./mypage/mypage-tab-active";
-@import "./mypage/mypage-sidemenu-current";
+@import "./mypage/*";
