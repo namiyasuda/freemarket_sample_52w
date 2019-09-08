@@ -31,13 +31,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|references|null: false, foreign_key: true|
+|user_id|integer|integer|null: false, foreign_key: true|
 |last_name|string|null: false|
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |postcode|string|null: false|
-|prefecture_id|references|null: false, foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
 |city|string|null: false|
 |block|string|null: false|
 |building|string||
@@ -51,7 +51,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |customer_id|string|null: false|
 
 ※gem payjp を使用する為、カード情報を直接保存しない
@@ -74,19 +74,21 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|seller_id|references|null: false, index: true, foreign_key: true|
-|buyer_id|references|index: true, foreign_key: true|
+|seller_id|integer|null: false, index: true, foreign_key: true|
+|buyer_id|integer|index: true, foreign_key: true, optional: true|
 |name|text|null: false|
 |description|text|null: false|
-|category_id|references|null: false, index: true, foreign_key: true|
-|brand_id|references|index: true, foreign_key: true|
-|state_id|references|null: false, foreign_key: true|
-|size_id|references|foreign_key: true|
-|paying_side_id|references|null: false, foreign_key: true|
-|prefecture_id|references|null: false, foreign_key: true|
-|delivery_day_id|references|null: false, foreign_key: true|
+|category_id|integer|null: false, index: true, foreign_key: true|
+|brand_id|integer|index: true, foreign_key: true, optional: true|
+|state_id|integer|null: false, foreign_key: true|
+|size_id|integer|foreign_key: true|
+|paying_side_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
+|delivery_day_id|integer|null: false, foreign_key: true|
 |price|integer|null: false|
 |listing_stop|boolean|null: false, default: false|
+|parent_id|integer|null: false, index: true|
+|child_id|integer|null: false, index: true|
 
 add_index :products, [:name, :description]
 
@@ -100,14 +102,17 @@ add_index :products, [:name, :description]
 - belongs_to_active_hash :state
 - belongs_to_active_hash :paying_side
 - belongs_to_active_hash :delivery_day
+- belongs_to_active_hash :delivery_method
 - has_many :images, dependent: :destroy
+- accepts_nested_attributes_for :images
+- accepts_nested_attributes_for :brand
 
 
 ## imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|product_id|references|null: false, index: true, foreign_key: true|
+|product_id|integer|null: false, index: true, foreign_key: true|
 |name|string|null: false|
 
 ### Association
@@ -134,13 +139,14 @@ add_index :products, [:name, :description]
 ### Association
 - has_many :products
 - has_ancestry
+- has_many :sizes, through: :category_sizes
 
 
 ## sns_credentialsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |uid|string||
 |provider|string||
 
@@ -152,12 +158,25 @@ add_index :products, [:name, :description]
 
 |Column|Type|Options|
 |------|----|-------|
-|name|||
-
-​※gem active_hash で作成する​
+|name|string|null: false|
+|ancestry|string||
 
 ### Association
-​※記述の必要無し​
+- has_many :products
+- has_ancestry
+- has_many :categories, through: :category_sizes
+
+
+## category_sizesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|category_id|integer|null: false, index: true, foreign_key: true|
+|size_id|integer|null: false, index: true, foreign_key: true|
+
+### Association
+- belongs_to :category
+- belongs_to :size
 
 
 ## statesテーブル
@@ -196,11 +215,22 @@ add_index :products, [:name, :description]
 ​※記述の必要無し​
 
 
+## delivery_methodテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|||
+
+​※gem active_hash で作成する​
+
+### Association
+​※記述の必要無し​
+
+
 ## pointsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, index: true, foreign_key: true|
+|user_id|integer|null: false, index: true, foreign_key: true|
 |history|integer|null: false|
 |expiration_date|datetime|null: false|
 
@@ -212,9 +242,9 @@ add_index :products, [:name, :description]
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, index: true, foreign_key: true|
+|user_id|integer|null: false, index: true, foreign_key: true|
 |postcode|string|
-|prefecture_id|references|foreign_key: true|
+|prefecture_id|integer|foreign_key: true|
 |city|string||
 |block|string||
 |building|string||
