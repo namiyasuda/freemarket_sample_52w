@@ -10,6 +10,12 @@
   .mypage
     %h2.mypage__head
       プロフィール
+    
     %section.user-image
       = image_tag "user-icon.png", class: 'user-image__icon'
       %input.user-image__nickname
+
+    %section.profile
+      %textarea.profile__textarea{placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+      %button.profile__submit
+        変更する
