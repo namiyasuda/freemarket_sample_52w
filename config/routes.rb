@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get 'card'
       get 'complete'
     end
+    resource :mypage
   end
 
   resources :products, only: [:new]

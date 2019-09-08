@@ -1,0 +1,47 @@
+%section.tab-container
+  %ul.tab-container__list
+    %li.tab-container__list__item.tab--notice-todo.active--notice-todo
+      %span.tab-container__list__item__text
+        お知らせ
+    %li.tab-container__list__item.tab--notice-todo
+      %span.tab-container__list__item__text
+        やることリスト
+
+%section.tab-contents
+  %ul.notice-list.tab-contents--notice-todo.show--notice-todo
+    %li.notice-list__item
+      = image_tag '//static.mercdn.net/images/mercari_profile.png', class: 'notice-list__item__icon'
+      = fa_icon "angle-right", class: "notice-list__item__arrow"
+      .notice-list__item__message
+        まもなく終了！販売手数料全額ポイントバックのチャンス！お得なキャンペーンはこちらから♬
+        .notice-list__item__message__time
+          = fa_icon "clock-o", class: "notice-list__item__message__time__icon"
+          %span.notice-list__item__message__time__text
+            5日前
+    %li.notice-list__item
+      = image_tag '//static.mercdn.net/images/mercari_profile.png', class: 'notice-list__item__icon'
+      = fa_icon "angle-right", class: "notice-list__item__arrow"
+      .notice-list__item__message
+        《ご登録記念》¥1,000の商品を「実質1円」でご購入いただけます！
+        .notice-list__item__message__time
+          = fa_icon "clock-o", class: "notice-list__item__message__time__icon"
+          %span.notice-list__item__message__time__text
+            7日前
+    %li.notice-list__item
+      = image_tag '//static.mercdn.net/images/mercari_profile.png', class: 'notice-list__item__icon'
+      = fa_icon "angle-right", class: "notice-list__item__arrow"
+      .notice-list__item__message
+        事務局から個別メッセージ「ログイン通知」
+        .notice-list__item__message__time
+          = fa_icon "clock-o", class: "notice-list__item__message__time__icon"
+          %span.notice-list__item__message__time__text
+            10日前
+    %li.notice-list__go-list
+      = link_to  "一覧を見る", request.fullpath, class: "notice-list__go-list__btn"
+
+  %ul.todo-list.tab-contents--notice-todo
+    %li.todo-list__item
+      %section.not-found
+        = image_tag "logo-gray.png", class: 'not-found__icon'
+        .not-found__text
+          現在、やることリストはありません

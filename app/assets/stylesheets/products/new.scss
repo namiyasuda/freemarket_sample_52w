@@ -1,7 +1,7 @@
 .sell-container{
   width: 700px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: $white;
   &__head{
     padding: 35px;
     font-size: 22px;
@@ -9,7 +9,7 @@
     text-align: center;
   }
   &__form{
-    border-top: 1px solid #eee;
+    border-top: 1px solid $light-gray;
     .upload-box{
       width: 620px;
       padding: 40px;
@@ -26,8 +26,8 @@
         width: 100%;
         min-height: 162px;
         margin: 16px auto 0;
-        background: #f5f5f5;
-        border: 1px dashed #ccc;
+        background: $bg-gray;
+        border: 1px dashed $gray;
         text-align: center;
         cursor: pointer;
         &__file{
@@ -47,7 +47,7 @@
     }
     .sell-content{
       padding: 40px;
-      border-top: 1px solid #eee;
+      border-top: 1px solid $light-gray;
       &__group{
         margin-top: 40px;
         &:first-child{
@@ -63,8 +63,8 @@
           width: 100%;
           max-width: 100%;
           padding: 10px;
-          border: 1px solid #ccc;
-          background: #fff;
+          border: 1px solid $gray;
+          background: $white;
           font-size: 16px;
           line-height: 1.5;
         }
@@ -73,10 +73,10 @@
         display: flex;
         justify-content: space-between;
         padding: 40px;
-        border-top: 1px solid #eee;
+        border-top: 1px solid $light-gray;
       }
       &__head{
-        color: #888;
+        color: $font-gray;
         font-size: 14px;
         font-weight: bold;
         .form-question{
@@ -89,14 +89,14 @@
         .entry-content__select-box{
           margin: 8px 0 0;
           position: relative;
-          background: #fff;
+          background: $white;
           &__default{
             z-index: 2;
             padding: 0 16px;
             height: 48px;
             width: 100%;
             border-radius: 4px;
-            border: 1px solid #ccc;
+            border: 1px solid $gray;
             background: 0;
             font-size: 16px;
             line-height: 1.5;
@@ -107,10 +107,10 @@
             position: absolute;
             right: 16px;
             top: 35%;
-            color: #888;
+            color: $font-gray;
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
-            -webkit-text-stroke: 1px #fff;
+            -webkit-text-stroke: 1px $white;
           }
         }
       }
@@ -119,9 +119,9 @@
       display: flex;
       justify-content: space-between;
       padding: 40px;
-      border-top: 1px solid #eee;
+      border-top: 1px solid $light-gray;
       &__head{
-        color: #888;
+        color: $font-gray;
         font-size: 14px;
         font-weight: bold;
         .form-question{
@@ -136,7 +136,7 @@
         display: flex;
         justify-content: space-between;
         padding: 24px 0;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid $gray;
         line-height: 48px;
         &:first-of-type{
           padding: 0 0 24px;
@@ -162,13 +162,13 @@
         justify-content: space-between;
         height: 14px;
         padding: 24px 0;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid $gray;
       }
       &__group--bold{
         display: flex;
         justify-content: space-between;
         padding: 24px 0;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid $gray;
         line-height: 48px;
         
         &__left{
@@ -182,7 +182,7 @@
     }
     .sell-btn-box{
       padding: 40px;
-      border-top: 1px solid #eee;
+      border-top: 1px solid $light-gray;
       & p{
         line-height: 1.5;
       }
@@ -190,9 +190,9 @@
         display: block;
         margin-top: 40px;
         width: 100%;
-        background: #ea352d;
-        border: 1px solid #ea352d;
-        color: #fff;
+        background: $red;
+        border: 1px solid $red;
+        color: $white;
         font-size: 14px;
         line-height: 48px;
         transition: all ease-out .3s;
@@ -203,9 +203,9 @@
         display: block;
         margin: 24px auto 0;
         width: 45%;
-        background: #aaa;
-        border: 1px solid #aaa;
-        color: #fff;
+        background: $btn-gray;
+        border: 1px solid $btn-gray;
+        color: $white;
         font-size: 14px;
         line-height: 48px;
         text-align: center;
