@@ -6,12 +6,12 @@
       position: relative;
       height: 49px;
       padding: 16px;
-      border-top: 1px solid #eee;
+      border-top: 1px solid $light-gray;
       box-sizing: border-box;
       background-color: $white;
       line-height: 14px;
       &:hover {
-        background-color: #fafafa;
+        background-color: $high-light-gray;
       }
       &:hover > .mypage-side-menu__list__item__icon {
         position: absolute;
@@ -32,7 +32,7 @@
         position: absolute;
         top: 12px;
         right: 15px;
-        color: #ccc;
+        color: $gray;
         font-size: 25px;
       }
     }

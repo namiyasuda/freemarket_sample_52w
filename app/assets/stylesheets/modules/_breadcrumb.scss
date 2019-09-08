@@ -1,8 +1,8 @@
 .breadcrumb {
   height: 48px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $light-gray;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .16);
-  background-color: #fff;
+  background-color: $white;
   &__list {
     display: flex;
     width: 1020px;
@@ -14,7 +14,7 @@
     }
     &__icon {
       margin: 0 8px;
-      color: #888;
+      color: $font-gray;
       font-weight: bold;
     }
   }
