@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
     @category_parents = Category.where(ancestry: nil)
     @product = Product.new
     @image = Image.new
+    @brand = Brand.new
   end
 
    # 親カテゴリーが選択された後に動くアクションAjax
@@ -22,11 +23,19 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    if @product.save
-      params[:images][:image].each do |image|
-        # binding.pry
-        @product.images.create(name: image, product_id: @product.id)
+    product = Product.new(product_params)
+    if product.save
+      if params[:product][:brand][:name]
+        unless brand=Brand.find_by(name: params[:product][:brand][:name])
+          brand = Brand.create(name: params[:product][:brand][:name])
+          product.update(brand_id: brand.id)
+        else
+          product.update(brand_id: brand.id)
+        end
+        
+      end
+        params[:images][:image].each do |image|
+        product.images.create(name: image, product_id: product.id)
       end
       redirect_to new_product_path, notice: '出品が成功しました'
     else
@@ -53,7 +62,8 @@ class ProductsController < ApplicationController
       :prefecture_id, 
       :delivery_day_id, 
       :price,
-      images_attributes: [:image]
+      images_attributes: [:image],
+      brand_attributes: [:brand]
       ).merge(seller_id: 1)
   end
 end

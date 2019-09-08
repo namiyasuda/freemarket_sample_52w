@@ -52,9 +52,10 @@
             = fa_icon 'chevron-down'
             = f.collection_select :size_id, Size.all, :id, :name, {prompt: "---"}, class:'entry-content__select-box__default'
         .sell-content__group.hide#product-brand
-          %label.entry-content__text ブランド
-          %span.entry-content__any 任意
-          = f.text_field :brand_name, class: 'entry-content__input-default', placeholder: "例）シャネル"
+          = f.fields model: @brand do |brand|
+            %label.entry-content__text ブランド
+            %span.entry-content__any 任意
+            = brand.text_field :name, class: 'entry-content__input-default', placeholder: "例）シャネル"
         .sell-content__group
           %label.entry-content__text 商品の状態
           %span.entry-content__require 必須

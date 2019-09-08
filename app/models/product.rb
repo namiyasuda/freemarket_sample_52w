@@ -11,4 +11,5 @@ class Product < ApplicationRecord
   belongs_to :brand, optional: true
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images #一つのフォームで関連したテーブルにも保存させるため
+  accepts_nested_attributes_for :brand
 end
