@@ -1,18 +1,7 @@
-.mypage-main {
-  display: flex;
-  width: 1020px;
-  margin: 40px auto 0;
-  padding-bottom: 40px;
-}
-
-.mypage {
-  width: 700px;
-}
-
 .user-info {
   position: relative;
   height: 200px;
-  background-image: url('bg-mypage.png');
+  background-image: image-url('bg-mypage.png');
   &__btn {
     position: absolute;
     top: 40px;
@@ -28,9 +17,7 @@
       text-decoration: underline;
     }
     &__icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+      @include mypage-user-icon;
     }
     &__nickname {
       margin-top: 6px;

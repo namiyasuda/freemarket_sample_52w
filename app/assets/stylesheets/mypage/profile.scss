@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.user-image {
+  height: 156px;
+  padding: 72px 0 24px;
+  background-image: image-url('bg-mypage.png');
+  text-align: center;
+  &__icon {
+    @include mypage-user-icon;
+  }
+  &__nickname {
+    width: 220px;
+    height: 48px;
+    margin-left: 8px;
+    padding: 10px 16px 8px;;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+}
+
