@@ -1,0 +1,9 @@
+.dz-container
+  = form_with model:@product, html:{multipart: true, class: 'dropzone', id:'my-dropzone'} do |f|
+    = f.file_field :file_name, multiple: true
+  %ul.upload-box__drop-box.dz-previews
+    .preview{style:'display:none'}
+      %li
+      .dz-message.needsclick
+        .dz-preview.dz-file-preview.fallback
+        = image_tag '', {data:{dz: {thumbnail: ''}}}
