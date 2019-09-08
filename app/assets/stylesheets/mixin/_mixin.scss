@@ -31,3 +31,17 @@
   height: 60px;
   border-radius: 50%;
 }
+
+@mixin submit-btn($margin, $width, $b-color) {
+  display: block;
+  margin: $margin;
+  width: $width;
+  background: $b-color;
+  border: 1px solid $b-color;
+  color: $white;
+  font-size: 14px;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+  transition: all ease-out .3s;
+}
