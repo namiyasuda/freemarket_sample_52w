@@ -1,0 +1,8 @@
+.active--notice-todo, .active--purchased {
+  background: $white;
+  border-top: 2px solid $red; 
+}
+
+.show--notice-todo, .show--purchased {
+  display: block;
+}

@@ -14,10 +14,10 @@ html {
 body {
   position: relative;
   min-height: 100%;
-  background: #f5f5f5;
+  background: $bg-gray;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   font-size: 14px;
-  color: #333;
+  color: $font-black;
   line-height: 1;
 }
 
@@ -25,7 +25,7 @@ body {
 .pc-header {
   position: relative;
   z-index: 1001;
-  background: #fff;
+  background: $white;
 }
 
 .pc-header-inner {
