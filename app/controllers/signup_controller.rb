@@ -47,7 +47,7 @@ class SignupController < ApplicationController
         redirect_to address_signup_index_path
       else
         render address_signup_index_path
-    end
+      end
   end
 
   def card  
@@ -55,7 +55,7 @@ class SignupController < ApplicationController
 
   def complete  
   end
-end
+
 private
 
   def user_params
@@ -76,3 +76,4 @@ private
       :profile
   )
   end
+ end 
