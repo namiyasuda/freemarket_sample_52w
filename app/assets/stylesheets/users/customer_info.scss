@@ -32,7 +32,6 @@
 }
 .entry-content{
   margin-top: 32px;
-  
   &__require{
     background-color: #ea352d;
     margin-left: 8px;
@@ -65,7 +64,7 @@
       border: 1px solid #0099e8;
     }
     &:invalid {
-      border: 1px solid red;
+      border: 1px solid #ff0000;
     }
   }
   &__text{
@@ -114,25 +113,7 @@
     display: flex;
     position: relative;
   }
-    #user_birth_year,#user_birth_month,#user_birth_day{
-      -webkit-appearance: none;
-      width: 76px;
-      margin: 8px 8px 0 0;
-      height: 48px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      background: #fff;
-      line-height: 1.5;
-      font-size: 16px;
-      padding: 0 16px;
-      &:valid {
-        border: 1px solid #0099e8;
-      }
-      &:invalid {
-        border: 1px solid red;
-      } 
-    }
-    .fa{
+     .fa{
       position: absolute;
       left: 50px;
       top: 24px;
@@ -142,7 +123,26 @@
       -webkit-text-stroke: 1px #fff;
       pointer-events: none;
     } 
-  }  
+  }
+#user_birth_year,#user_birth_month,#user_birth_day{
+  -webkit-appearance: none;
+  width: 76px;
+  margin: 8px 8px 0 0;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  padding: 0 16px;
+  &:valid {
+    border: 1px solid #0099e8;
+  }
+  &:invalid {
+    border: 1px solid red;
+  } 
+}
+    
 .form-info-text{
   margin: 8px 0 0;
   line-height: 1.5;
