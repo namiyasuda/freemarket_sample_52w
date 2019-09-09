@@ -85,7 +85,7 @@
 |paying_side_id|integer|null: false, foreign_key: true|
 |prefecture_id|integer|null: false, foreign_key: true|
 |delivery_day_id|integer|null: false, foreign_key: true|
-|delivery_method|integer|null: false, foreign_key: true|
+|delivery_method_id|integer|null: false, foreign_key: true|
 |price|integer|null: false|
 |listing_stop|boolean|null: false, default: false|
 |parent_id|integer|null: false, index: true|
