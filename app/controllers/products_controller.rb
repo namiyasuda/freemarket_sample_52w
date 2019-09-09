@@ -39,9 +39,7 @@ class ProductsController < ApplicationController
       end
       redirect_to new_product_path, notice: '出品が成功しました'
     else
-      @category_parents = Category.where(ancestry: nil)
-      flash.now[:alert] = '出品が失敗しました'
-      format.html{render action: 'new'}
+      redirect_to new_product_path, alert: '出品が失敗しました'
     end
   end
 
