@@ -32,8 +32,8 @@
             %label.entry-content__text お名前(全角)
             %span.entry-content__require 必須
           .entry-content--namebox
-            = f.text_field :last_name, autocomplete: "last_name",placeholder:"例)山田",class:"entry-content--namebox__text",required:""
-            = f.text_field :first_name, autocomplete: "first_name",placeholder:"例)彩",class:"entry-content--namebox__text",required:""
+            = f.text_field :last_name, autocomplete: "last_name",placeholder:"例)山田",class:"entry-content--namebox__text",required:"",pattern:"[^\x20-\x7E]*"
+            = f.text_field :first_name, autocomplete: "first_name",placeholder:"例)彩",class:"entry-content--namebox__text",required:"",pattern:"[^\x20-\x7E]*"
           .entry-content
             %label.entry-content__text お名前カナ(全角)
             %span.entry-content__require 必須
