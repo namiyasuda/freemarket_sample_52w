@@ -43,7 +43,7 @@ class SignupController < ApplicationController
       mobile_number: user_params[:mobile_number]
     )
       if @user.save
-        session[:id] = @user.id
+        sign_in(@user)
         redirect_to address_signup_index_path
       else
         render address_signup_index_path

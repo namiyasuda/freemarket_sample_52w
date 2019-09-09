@@ -22,9 +22,9 @@
     .login-input
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .login-input__mail
-          = f.email_field :email, autocomplete: "email",placeholder:"メールアドレス",class:"login-input__form"
+          = f.email_field :email,placeholder:"メールアドレス",class:"login-input__form"
         .login-input__pass
-          = f.password_field :password, autocomplete: "current-password",placeholder:"パスワード",class:"login-input__form"
+          = f.password_field :password,placeholder:"パスワード",class:"login-input__form"
         .login-input__recapcha
           = image_tag 'robo.new.png',class: "login-input__recapcha__image"
         .entry-bottom__next

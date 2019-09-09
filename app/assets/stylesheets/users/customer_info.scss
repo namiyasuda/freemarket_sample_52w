@@ -32,6 +32,7 @@
 }
 .entry-content{
   margin-top: 32px;
+  
   &__require{
     background-color: #ea352d;
     margin-left: 8px;
@@ -60,6 +61,12 @@
     background: #fff;
     line-height: 1.5;
     font-size: 16px;
+    &:valid {
+      border: 1px solid #0099e8;
+    }
+    &:invalid {
+      border: 1px solid red;
+    }
   }
   &__text{
     font-weight: bold;
@@ -87,6 +94,12 @@
       background: #fff;
       line-height: 1.5;
       font-size: 16px;
+      &:valid {
+        border: 1px solid #0099e8;
+      }
+      &:invalid {
+        border: 1px solid red;
+      }
     }
   }
 }
@@ -101,7 +114,7 @@
     display: flex;
     position: relative;
   }
-    &__box{
+    #user_birth_year,#user_birth_month,#user_birth_day{
       -webkit-appearance: none;
       width: 76px;
       margin: 8px 8px 0 0;
@@ -112,6 +125,12 @@
       line-height: 1.5;
       font-size: 16px;
       padding: 0 16px;
+      &:valid {
+        border: 1px solid #0099e8;
+      }
+      &:invalid {
+        border: 1px solid red;
+      } 
     }
     .fa{
       position: absolute;
@@ -123,7 +142,7 @@
       -webkit-text-stroke: 1px #fff;
       pointer-events: none;
     } 
-}  
+  }  
 .form-info-text{
   margin: 8px 0 0;
   line-height: 1.5;

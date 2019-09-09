@@ -11,7 +11,7 @@
           .entry-content
             .entry-content__text
               携帯電話の番号
-            = f.text_field :mobile_number, autocomplete: "mobile_number",placeholder:"携帯電話の番号を入力",class:"entry-content__input-default"
+            = f.text_field :mobile_number, autocomplete: "mobile_number",placeholder:"携帯電話の番号を入力",class:"entry-content__input-default",required:"",pattern:"[0-9]{3}-[0-9]{4}-[0-9]{4}"
             %p.entry-content__text__word 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
             .entry-bottom__next
               = f.submit "SMSを送信する", class: "entry-bottom__next__btn"
