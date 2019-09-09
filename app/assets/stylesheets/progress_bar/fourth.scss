@@ -3,31 +3,31 @@
 
 #member-info {
   .progress__list__text__status {
-    background: $mrcr-red;
+    background: $red;
   }
   .progress__list__text__status-bar {
-    background: $mrcr-red;
+    background: $red;
   }
 }
 #phone-number {
   .progress__list__text__status {
-    background: $mrcr-red;
+    background: $red;
   }
   .progress__list__text__status-bar {
-    background: $mrcr-red;
+    background: $red;
   }
 }
 #address {
   .progress__list__text__status {
-    background: $mrcr-red;
+    background: $red;
   }
   .progress__list__text__status-bar {
-    background: $mrcr-red;
+    background: $red;
   }
 }
 #payment {
   @include progress-bar-font-style;
   .progress__list__text__status {
-    background: $mrcr-red;
+    background: $red;
   }
 }
