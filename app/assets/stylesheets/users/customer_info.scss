@@ -113,15 +113,15 @@
     display: flex;
     position: relative;
   }
-     .fa{
-      position: absolute;
-      left: 50px;
-      top: 24px;
-      color: #888;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      -webkit-text-stroke: 1px #fff;
-      pointer-events: none;
+    .fa{
+    position: absolute;
+    left: 50px;
+    top: 24px;
+    color: #888;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke: 1px #fff;
+    pointer-events: none;
     } 
   }
 #user_birth_year,#user_birth_month,#user_birth_day{
@@ -142,7 +142,7 @@
     border: 1px solid red;
   } 
 }
-    
+  
 .form-info-text{
   margin: 8px 0 0;
   line-height: 1.5;
