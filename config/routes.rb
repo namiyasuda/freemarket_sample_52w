@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :tops, only: [:index]
-  resources :users, only: [:new,:index] do
+  resources :signup, only: [:new,:index,:create] do
     collection do 
-      get 'address'
       get 'customer_info'
       get 'sms_comfi'
+      get 'address'
       get 'card'
       get 'complete'
     end
@@ -23,5 +23,9 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: [:new]
+
+  devise_scope :user do   
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
 end

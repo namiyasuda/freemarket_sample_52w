@@ -28,6 +28,7 @@
       color: $font-gray;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
+      pointer-events: none;
       -webkit-text-stroke: 1px $white;
     }
   }
