@@ -1,0 +1,12 @@
+%header
+  = render 'shared/sub-header'
+
+%section
+  = render 'shared/breadcrumb'
+
+.mypage-main
+  = render 'shared/mypage-side-menu'
+
+  .mypage
+    %section.logout
+      = link_to 'ログアウト', destroy_user_session_path, { class: "logout__btn" }

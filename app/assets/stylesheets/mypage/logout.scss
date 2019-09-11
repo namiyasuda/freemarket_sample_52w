@@ -1,0 +1,7 @@
+.logout {
+  padding: 64px;
+  background-color: $white;
+  &__btn {
+    @include submit-btn(0 auto, 320px, $red)
+  }
+}
