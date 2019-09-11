@@ -197,6 +197,7 @@
     }
   }
   &__help{
+    position: relative;
     margin-top: 32px;
     color: $blue;
     text-decoration: none;
@@ -206,6 +207,10 @@
       opacity: 0.8;
     }
     .fa{
+      position: absolute;
+      top: 0px;
+      left: 330px;
+      color: $blue;
       -webkit-font-smoothing: antialiased;
       -webkit-text-stroke: 1px $white;
     }

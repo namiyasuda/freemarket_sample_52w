@@ -42,9 +42,9 @@ def create
   )
   if @user.save
     sign_in(@user)
-    redirect_to address_signup_index_path
+    redirect_to new_address_path
   else
-    render address_signup_index_path
+    render new_address_path
   end
 end
 def address
