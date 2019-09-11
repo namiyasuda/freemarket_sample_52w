@@ -26,7 +26,7 @@
             %label.entry-content__text 都道府県
             %span.entry-content__require 必須
             = fa_icon 'chevron-down'
-            = f.select :prefecture_id,[['北海道'],['愛知']],{include_blank:'--'},required:true,class:'entry-content__input-default'
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name,class:'entry-content__input-default',required:""
           .entry-content
             %label.entry-content__text 市区町村
             %span.entry-content__require 必須
