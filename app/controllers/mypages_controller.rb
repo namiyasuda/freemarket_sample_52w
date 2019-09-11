@@ -7,4 +7,7 @@ class MypagesController < ApplicationController
 
   def logout
   end
+
+  def personal_info
+  end
 end
