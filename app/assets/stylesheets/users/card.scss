@@ -23,11 +23,9 @@
       &:valid {
         border: 1px solid $blue;
       }
-      
       &:invalid {
         border: 1px solid $red;
       }
-      
     }
     .fa{
       position: absolute;
