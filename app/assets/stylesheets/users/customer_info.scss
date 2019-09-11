@@ -32,6 +32,7 @@
 }
 .entry-content{
   margin-top: 32px;
+  position: relative;
   &__require{
     background-color: $red;
     margin-left: 8px;
@@ -51,6 +52,7 @@
     vertical-align: top;
   }
   &__input-default{
+    -webkit-appearance: none;
     padding-left: 15px; 
     width: 320px;
     margin-bottom: 8px;
@@ -67,6 +69,16 @@
       border: 1px solid #ff0000;
     }
   }
+  .fa{
+    position: absolute;
+    left: 290px;
+    top: 36px;
+    color: #888;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke: 1px $white;
+    pointer-events: none;
+    } 
   &__text{
     font-weight: bold;
     margin-bottom: 8px;
@@ -142,7 +154,6 @@
     border: 1px solid red;
   } 
 }
-  
 .form-info-text{
   margin: 8px 0 0;
   line-height: 1.5;
