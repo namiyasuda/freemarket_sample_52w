@@ -8,17 +8,17 @@
       margin-top: 8px;
       line-height: 1.5;
     }
-    &__help{
+    &__help {
       margin-top: 8px;
       text-align: right;
       &__text {
         color: $blue;
         text-decoration: none;
-        &:hover{
+        &:hover {
           text-decoration: underline;
-          opacity: 0.8;
+          opacity: .8;
         }
-        .fa{
+        .fa {
           -webkit-font-smoothing: antialiased;
           -webkit-text-stroke: 1px $white;
         }
@@ -41,9 +41,9 @@
       &__submit {
         @include submit-btn(0 0 40px 0, 100%, $red);
       }
-      &__prefecture{
+      &__prefecture {
         position: relative;
-        .fa{
+        .fa {
           position: absolute;
           right: 5px;
           top: 40%;
