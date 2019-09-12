@@ -1,0 +1,5 @@
+# bundle exec rake db:seed:category_size を実行する
+
+CategorySize.delete_all
+
+CategorySize.create([{size_id: 1, category_id: 2},{size_id: 1, category_id: 21},{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: },{size_id: 1, category_id: }])
