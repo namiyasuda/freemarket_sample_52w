@@ -1,0 +1,17 @@
+@import "../config/variable";
+@import "../mixin/mixin";
+
+#member-info {
+  .progress__list__text__status {
+    background: $red;
+  }
+  .progress__list__text__status-bar {
+    background: $red;
+  }
+}
+#phone-number {
+  @include progress-bar-font-style;
+  .progress__list__text__status {
+    background: $red;
+  }
+}

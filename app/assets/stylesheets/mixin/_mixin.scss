@@ -1,0 +1,47 @@
+@mixin progress-bar-font-style {
+  color: $red;
+  font-weight: bold;
+}
+
+@mixin progress-status-bar-style($width) {
+  height: 2px;
+  width: $width;
+  background: $gray;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+}
+
+@mixin form-question{
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: $blue;
+  color: $white;
+  line-height: 14px;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+}
+
+@mixin mypage-user-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+@mixin submit-btn($margin, $width, $b-color) {
+  display: block;
+  margin: $margin;
+  width: $width;
+  background: $b-color;
+  border: 1px solid $b-color;
+  color: $white;
+  font-size: 14px;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+  transition: all ease-out .3s;
+}
