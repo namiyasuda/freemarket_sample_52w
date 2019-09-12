@@ -8,7 +8,7 @@ class AddressesController < ApplicationController
     @delivery_address = DeliveryAddress.new(delivery_address_params)
     @delivery_address.user = current_user
     if @delivery_address.save!
-      redirect_to card_signup_index_path
+      redirect_to new_card_path
     else
       render new_address_path
     end

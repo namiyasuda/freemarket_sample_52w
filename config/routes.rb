@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  namespace :users do
-    get 'addresses/new'
-    get 'addresses/create'
-  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :tops, only: [:index]
   resources :addresses, only: [:new,:create]
+  resources :card, only: [:new,:show,:create]
   resources :signup, only: [:new,:index,:create] do
     collection do 
       get 'customer_info'
