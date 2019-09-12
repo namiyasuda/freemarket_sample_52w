@@ -220,6 +220,7 @@ add_index :products, [:name, :description]
 |Column|Type|Options|
 |------|----|-------|
 |name|||
+|payside|||
 
 ​※gem active_hash で作成する​
 
