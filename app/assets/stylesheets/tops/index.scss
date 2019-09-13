@@ -3,18 +3,20 @@
   position: relative;
   margin-top: 8px;
   background: #f5f5f5;
-  
   font-family: 'Source Sans Pro', Helvetica, Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   font-size: 14px;
+
   header {
     position: relative;
     z-index: 1001;
     height: 100px;
     width: 100%;
     background: #fff;
+
     .header {
       position: static;
-      margin: 0px 80px;
+      margin: 0 80px;
+
       &__top {
         align-items: center;
         display: -webkit-box;
@@ -25,88 +27,102 @@
         -ms-flex-align: center;
         -ms-flex-pack: justify;
         width: 1021px;
-        margin: 0px 80px;
+        margin: 0 80px;
         box-pack: justify;
+
         h1 a img {
-          height: 40px;          
+          height: 40px;
           width: 200px;
           vertical-align: middle;
         }
-        &--form {   
-          width: 100%;
+
+        &--form {
           height: 48px;
+          width: 100%;
           border: 1px solid #ccc;
-          border-radius: 4px; 
-          background: #f5f5f5;  
-          input.input-default {
+          border-radius: 4px;
+          background: #f5f5f5;
+
+          input{
             width: 790px;
-            border: none;
+            border: 0;
             padding: 0 42px 0 10px;
-            background: #f5f5f5;  
+            background: #f5f5f5;
             font-size: 16px;
             line-height: 48px;
-            i{
+
+            i {
               padding: 10px 16px 88px;
               cursor: pointer;
             }
           }
-          
         }
       }
+
       &__under {
         align-items: center;
-        box-pack: justify; 
+        box-pack: justify;
         display: flex;
         justify-content: space-between;
         height: 44px;
         width: 1020px;
-        margin: 0px 80px;
+        margin: 0 80px;
         padding: 0;
         line-height: 44px;
+
         &--left {
           float: left;
+
           &--nav {
             display: inline-block;
             position: relative;
             padding: 0 11px;
             line-height: 44px;
             cursor: pointer;
-            li {              
+
+            li {
               display: inline-block;
               position: relative;
-              height: 44px;              
+              height: 44px;
               margin: 7px 3px 0;
               padding: 22px 11px 0;
-              line-height: 44px;              
+              line-height: 44px;
               cursor: pointer;
+
               h2 {
                 font-size: 14px;
                 font-weight: 400;
                 line-height: 1.4;
-                i.fas{
-                  color: red;
+
+                i {
+                  color:#ff0000;
                 }
-                span{
-                  color: black;
+
+                span {
+                  color: #000000;
                 }
               }
-              
             }
           }
         }
+
         &--right {
           float: right;
+
           li {
             display: inline-block;
             height: 44px;
-            margin: 7px 3px 3px auto;            
-            i{
+            margin: 7px 3px 3px auto;
+
+            i {
               opacity: .7;
             }
-            span{
+
+            span {
               padding-right: 14px;
             }
-            .face{
+
+            .face {
               width: 32px;
               margin-right: 10px;
               border-radius: 50%;
@@ -115,36 +131,41 @@
           }
         }
       }
-    } 
+    }
   }
 
   main {
     height: 390px;
     width: 100%;
     background: url(https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg);
+
     .background {
       width: 1030px;
       margin: 0 auto;
       div {
         float: left;
         margin-top: 30px;
+
         h2 {
           font-size: 60px;
           font-weight: bold;
           line-height: 1.2;
         }
+
         p {
           margin-top: 16px;
           font-size: 16px;
-          line-height: 1.77778;        
+          line-height: 1.77778;
         }
+
         .store {
           &__left {
             margin-top: 24px;
-            line-height: 0;          
+            line-height: 0;
           }
         }
       }
+      
       .back {
         height: 390px;
         width: 440px;
@@ -169,8 +190,8 @@
         margin: 26px 11px;
         margin-block-start: 1em;
         margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
         font-weight: bold;
         font-size: 1.17em;
         text-align: center;
@@ -188,7 +209,7 @@
         white-space: nowrap;        
         .item {
           display: inline-block;
-          margin: 0px 20px;
+          margin: 0 20px;
           overflow: hidden;
           width: 20%;
             &__photo {
