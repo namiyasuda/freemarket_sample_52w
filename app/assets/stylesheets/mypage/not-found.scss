@@ -1,0 +1,18 @@
+.not-found {
+  position: relative;
+  padding-bottom: 50px;
+  background-color: $white;
+  &__icon {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    width: 85px;
+    transform: translateX(-50%);
+  }
+  &__text {
+    padding-top: 160px;
+    color: $gray;
+    font-weight: bold;
+    text-align: center;
+  }
+}
