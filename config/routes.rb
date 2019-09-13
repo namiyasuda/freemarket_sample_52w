@@ -15,10 +15,14 @@ Rails.application.routes.draw do
       get 'card'
       get 'complete'
     end
+  end
+
+  resources :users do
     resource :mypage do
       collection do 
         get 'profile'
         get 'logout'
+        get 'personal_info'
       end
     end
   end
