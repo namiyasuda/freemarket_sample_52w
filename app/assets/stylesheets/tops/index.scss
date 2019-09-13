@@ -142,7 +142,7 @@
     .background {
       width: 1030px;
       margin: 0 auto;
-      
+
       div {
         float: left;
         margin-top: 30px;
@@ -200,7 +200,7 @@
         text-align: center;
 
         a {
-          color: #149;
+          color: #00f;
           font-size: 22px;
           text-decoration: none;
         }
@@ -279,11 +279,11 @@
           }
         }
       }
-      
+
       .view-all {
         width: 91%;
         padding-bottom: 30px;
-        color: #ea352d;
+        color: #f00;
         text-align: right;
         text-decoration: none;
       }
@@ -434,7 +434,7 @@ footer {
     }
     &--copyright {
       display: block;
-      width: 745px;  
+      width: 745px;
       font-size: 12px;
       text-align: center;
     }
@@ -454,13 +454,14 @@ a.footer-sell-btn {
   font-size: 22px;
   text-align: center;
   line-height: 44px;
-  
-  div{
+
+  div {
     margin-top: 10px;
   }
-  .fas.fa-camera{
+
+  .fas.fa-camera {
     margin: auto;
-    
+
   }
 }
 
