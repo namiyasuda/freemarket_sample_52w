@@ -43,7 +43,7 @@
           border-radius: 4px;
           background: #f5f5f5;
 
-          input{
+          input {
             width: 790px;
             border: 0;
             padding: 0 42px 0 10px;
@@ -95,7 +95,7 @@
                 line-height: 1.4;
 
                 i {
-                  color:#ff0000;
+                  color: #ff0000;
                 }
 
                 span {
@@ -142,6 +142,7 @@
     .background {
       width: 1030px;
       margin: 0 auto;
+      
       div {
         float: left;
         margin-top: 30px;
@@ -165,7 +166,7 @@
           }
         }
       }
-      
+
       .back {
         height: 390px;
         width: 440px;
@@ -175,16 +176,18 @@
   }
 
   .pickup {
-    &__head {    
+    &__head {
       margin-top: 13px;
       font-size: 28px;
       line-height: 1.4;
       text-align: center;
     }
+
     &__container {
       width: 940px;
       margin: 0 auto;
-      text-align: center;      
+      text-align: center;
+
       &--text-center {
         display: block;
         margin: 26px 11px;
@@ -195,77 +198,88 @@
         font-weight: bold;
         font-size: 1.17em;
         text-align: center;
+
         a {
           color: #0099e8;
           font-size: 22px;
           text-decoration: none;
         }
       }
+
       &--content {
         width: auto;
         padding: 0 10px;
         overflow-x: auto;
-        overflow-y: hidden;        
-        white-space: nowrap;        
+        overflow-y: hidden;
+        white-space: nowrap;
+
         .item {
           display: inline-block;
           margin: 0 20px;
           overflow: hidden;
           width: 20%;
-            &__photo {
+
+          &__photo {
+            position: relative;
+            height: 0;
+            width: 100%;
+            padding-bottom: 100%;
+            overflow: hidden;
+            margin: 0;
+
+              .lazyload {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+              }
+          }
+
+          &__body {
+            height: 110px;
+            padding: 8px;
+            background-color: #fff;
+
+            &--name {
               position: relative;
-              height: 0;
-              width: 100%;  
-              padding-bottom: 100%;
-              overflow: hidden;    
-              margin: 0;                  
-                .lazyload {
-                  position: absolute;
-                  top: 0;
-                  right: 0;
-                  bottom: 0;
-                  left: 0;
-                  z-index: 1;
+              height: 3em;
+              overflow: hidden;
+              font-weight: 400;
+              line-height: 1.5;
+              white-space: normal;
+              word-break: break-word;
+
+              .font-2 {
+                color: #333;
+                font-size: 16px;
+                font-weight: 400;
               }
             }
-            &__body {
-              height: 110px;
-              padding: 8px;
-              background-color: #fff;              
-              &--name {
-                position: relative;
-                height: 3em;
-                overflow: hidden;
-                font-weight: 400;                
-                line-height: 1.5;                                
-                white-space: normal;
-                word-break: break-word;
-                .font-2 {
-                  color: #333;
-                  font-size: 16px;
-                  font-weight: 400;
-                }
-              }
-              &--num {
-                align-items: center;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                justify-content: space-between;
-                -ms-flex-align: center;
-                -ms-flex-pack: justify;
-                -webkit-box-align: center;
-                -webkit-box-pack: justify;
-                margin-top: 8px; 
-                .price.font-5 {
-                  color: #333;
-                  font-size: 20px;
-                  font-weight: 600;
-                }         
+
+            &--num {
+              align-items: center;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              justify-content: space-between;
+              -ms-flex-align: center;
+              -ms-flex-pack: justify;
+              -webkit-box-align: center;
+              -webkit-box-pack: justify;
+              margin-top: 8px;
+
+              .price.font-5 {
+                color: #333;
+                font-size: 20px;
+                font-weight: 600;
               }
             }
+          }
         }
       }
+      
       .view-all {
         width: 91%;
         padding-bottom: 30px;
