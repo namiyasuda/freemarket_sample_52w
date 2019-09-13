@@ -95,11 +95,11 @@
                 line-height: 1.4;
 
                 i {
-                  color: #ff0000;
+                  color: #f00;
                 }
 
                 span {
-                  color: #000000;
+                  color: #000;
                 }
               }
             }
@@ -200,7 +200,7 @@
         text-align: center;
 
         a {
-          color: #0099e8;
+          color: #149;
           font-size: 22px;
           text-decoration: none;
         }
@@ -240,7 +240,7 @@
           &__body {
             height: 110px;
             padding: 8px;
-            background-color: #fff;
+            background-color: #f5f5f5;
 
             &--name {
               position: relative;
@@ -283,7 +283,7 @@
       .view-all {
         width: 91%;
         padding-bottom: 30px;
-        color: red;
+        color: #ea352d;
         text-align: right;
         text-decoration: none;
       }
@@ -291,10 +291,11 @@
   }
 }
 
-.banner-nav{
+.banner-nav {
   height: 260px;
   width: 100%;
   background: url(https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?40435716);
+
 .banner {
   position: relative;
   height: 260px;
@@ -302,18 +303,22 @@
   margin: 0 auto;
   overflow: hidden;
   color: #fff;
+
     &__left {
       float: left;
       width: 420px;
+
       h2 {
         margin: 0;
         font-size: 24px;
         line-height: 1.4;
       }
+
       p {
         margin-top: 10px;
         font-size: 35px;
       }
+
       &--icon {
         display: block;
         float: left;
@@ -321,14 +326,17 @@
         width: 420px;
         margin-top: 20px;
         line-height: 68px;
+
         figure img {
           float: left;
           vertical-align: middle;
         }
-        ul { 
+
+        ul {
           list-style: none;
           margin-left: 24px;
           line-height: 68px;
+
           li {
             display: block;
             float: left;
@@ -338,11 +346,13 @@
         }
       }
     }
+
     >figure {
       top: 0;
       right: 0;
       bottom: 0;
       vertical-align: middle;
+
       width: 760px;
       >img {
         width: 300px;
@@ -352,48 +362,58 @@
 }
 }
 
-footer {  
-  padding: 0 20px 10px 20px;
+footer {
+  padding: 0 20px 10px;
   background: #212121;
   color: #fff;
+
   nav {
     width: 1020px;
     margin: 0 182.5px;
+
     .footer {
       display: block;
       float: left;
       margin-top: 18px;
       padding-right: 20px;
+
       &__head {
         color: #fff;
         font-size: 16px;
         font-weight: 100;
       }
+
       &__fullwidth {
         padding-right: 50px;
       }
+
       &__navlang {
         margin-top: 18px;
-        padding: 0
+        padding: 0;
       }
+
       &__innercell {
         float: left;
         padding-left: 10px;
         vertical-align: top;
       }
+
       ul li {
         height: 18px;
         margin-top: 14px;
         font-size: 12px;
+
         a {
           color: #fff;
           height: 18px;
           opacity: .7;
         }
       }
-      &__social{
+
+      &__social {
         display: inline-block;
-        .fab{
+
+        .fab {
           margin-top: 30px;
           margin-right: 20px;
           color: #fff;
