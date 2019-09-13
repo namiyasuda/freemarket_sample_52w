@@ -294,72 +294,72 @@
 .banner-nav {
   height: 260px;
   width: 100%;
-  background: url(https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?40435716);
+  background: url("https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?40435716");
 
-.banner {
-  position: relative;
-  height: 260px;
-  width: 760px;
-  margin: 0 auto;
-  overflow: hidden;
-  color: #fff;
+  .banner {
+    position: relative;
+    height: 260px;
+    width: 760px;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #fff;
 
-    &__left {
-      float: left;
-      width: 420px;
-
-      h2 {
-        margin: 0;
-        font-size: 24px;
-        line-height: 1.4;
-      }
-
-      p {
-        margin-top: 10px;
-        font-size: 35px;
-      }
-
-      &--icon {
-        display: block;
+      &__left {
         float: left;
-        height: 68px;
         width: 420px;
-        margin-top: 20px;
-        line-height: 68px;
 
-        figure img {
-          float: left;
-          vertical-align: middle;
+        h2 {
+          margin: 0;
+          font-size: 24px;
+          line-height: 1.4;
         }
 
-        ul {
-          list-style: none;
-          margin-left: 24px;
+        p {
+          margin-top: 10px;
+          font-size: 35px;
+        }
+
+        &--icon {
+          display: block;
+          float: left;
+          height: 68px;
+          width: 420px;
+          margin-top: 20px;
           line-height: 68px;
 
-          li {
-            display: block;
+          figure img {
             float: left;
-            margin-left: 20px;
+            vertical-align: middle;
+          }
+
+          ul {
+            list-style: none;
+            margin-left: 24px;
             line-height: 68px;
+
+            li {
+              display: block;
+              float: left;
+              margin-left: 20px;
+              line-height: 68px;
+            }
           }
         }
       }
-    }
 
-    >figure {
-      top: 0;
-      right: 0;
-      bottom: 0;
-      vertical-align: middle;
+      >figure {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        vertical-align: middle;
+        width: 760px;
 
-      width: 760px;
-      >img {
-        width: 300px;
-        padding-left: 20px;
+        >img {
+          width: 300px;
+          padding-left: 20px;
+        }
       }
-    }
-}
+  }
 }
 
 footer {
@@ -428,10 +428,12 @@ footer {
     margin: 30px 180px 20px;
     background-color: #212121;
     text-align: center;
+
     &--logo {
       display: block;
       float: left;
     }
+
     &--copyright {
       display: block;
       width: 745px;
@@ -441,7 +443,7 @@ footer {
   }
 }
 
-a.footer-sell-btn {
+.footer-sell-btn {
   position: fixed;
   right: 32px;
   bottom: 32px;
