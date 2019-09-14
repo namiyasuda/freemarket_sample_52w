@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :user_addresses, only: [:update]
+
   resources :products, only: [:new]
 
   devise_scope :user do   
