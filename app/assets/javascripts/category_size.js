@@ -1,5 +1,5 @@
 $(function(){
-  // ドロップダウンリストを追加する関数を定義
+  // カテゴリーボックスのオプションを作成
   function appendOption(category){
     var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;

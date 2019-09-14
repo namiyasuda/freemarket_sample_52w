@@ -31,6 +31,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  # 配送料の負担を選択された後に動くajax
+  def get_delivery_method
+    @delivery_methods = DeliveryMethod.where(payside_id: params[:paySide_id].to_i)
+  end
+
   def create
     product = Product.new(product_params)
     if product.save
