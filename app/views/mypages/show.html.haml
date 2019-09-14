@@ -12,7 +12,7 @@
       = link_to request.fullpath, class: "user-info__btn" do
         = image_tag "user-icon.png", class: 'user-info__btn__icon'
         %h2.user-info__btn__nickname
-          ニックネーム
+          = @user.nickname
         .user-info__btn__number
           %p.user-info__btn__number__text
             評価 
@@ -21,7 +21,7 @@
           %p.user-info__btn__number__text
             出品数
             %span.user-info__btn__number__text__count
-              0
+              = @products.count
     .notice-todo
       = render 'norice-todo'
 
