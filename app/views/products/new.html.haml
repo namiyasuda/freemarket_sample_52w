@@ -78,7 +78,7 @@
           %span.entry-content__require 必須
           .entry-content__select-box
             = fa_icon 'chevron-down'
-            = f.collection_select :paying_side_id, {}, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default',id:'delivery-method-selection'}
+            = f.collection_select :delivery_method_id, {}, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default',id:'delivery-method-selection'}
         .sell-content__group
           %label.entry-content__text 発送元の地域
           %span.entry-content__require 必須

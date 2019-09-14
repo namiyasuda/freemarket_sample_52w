@@ -39,14 +39,11 @@ class ProductsController < ApplicationController
   def create
     product = Product.new(product_params)
     if product.save
-      if params[:product][:brand][:name]
-        unless brand=Brand.find_by(name: params[:product][:brand][:name])
-          brand = Brand.create(name: params[:product][:brand][:name])
-          product.update(brand_id: brand.id)
-        else
-          product.update(brand_id: brand.id)
+      if (brand_name = params[:product][:brand][:name]).present?
+        unless brand=Brand.find_by(name: brand_name)
+          brand = Brand.create(name: brand_name)
         end
-        
+        product.update(brand_id: brand.id)
       end
         params[:images][:image].each do |image|
         product.images.create(name: image, product_id: product.id)
@@ -74,6 +71,9 @@ class ProductsController < ApplicationController
       :prefecture_id, 
       :delivery_day_id, 
       :price,
+      :parent_id,
+      :child_id,
+      :delivery_method_id,
       images_attributes: [:image],
       brand_attributes: [:brand]
       ).merge(seller_id: 1)

@@ -9,7 +9,7 @@ $(function(){
   function appendSizeOption(size){
     var html = `<option value="${size.id}">${size.name}</option>`;
     return html;
-  };
+  }
 
   function appearSizeBox(category_id){
     if (category_id != 0){
@@ -36,7 +36,7 @@ $(function(){
     } else {
       $('#product-size').addClass('hide');
     }
-  };
+  }
 
   // 親カテゴリー選択で子カテゴリーを生成
   $('#parent_category').change(function () {
