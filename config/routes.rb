@@ -17,8 +17,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users do
-    resource :mypage do
+  resources :users, only: [:update] do
+    resource :mypage, only: [:show] do
       collection do 
         get 'profile'
         get 'logout'
