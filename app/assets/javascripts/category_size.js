@@ -1,9 +1,42 @@
 $(function(){
-  // カテゴリーセレクションにオプションを追加する関数を定義
+  // ドロップダウンリストを追加する関数を定義
   function appendOption(category){
     var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
+  
+  // サイズセレクトボックスのオプションを作成
+  function appendSizeOption(size){
+    var html = `<option value="${size.id}">${size.name}</option>`;
+    return html;
+  };
+
+  function appearSizeBox(category_id){
+    if (category_id != 0){
+      $.ajax({
+        url: 'get_size',
+        type: 'Get',
+        data: {category_id: category_id},
+        dataType: 'json'
+      }).done(function(sizes){
+        if (sizes.length != 0){
+          $('#select-size option').remove();
+          $('#product-size').removeClass('hide');
+          var insertHTML = `<option value="">---</option>`;
+          sizes.forEach(function(size){
+            insertHTML += appendSizeOption(size);
+          })
+          $('#select-size').append(insertHTML);
+        } else {
+          $('#product-size').addClass('hide');
+        }
+      }).fail(function(){
+        alert('サイズ取得に失敗しました');
+      })
+    } else {
+      $('#product-size').addClass('hide');
+    }
+  };
 
   // 親カテゴリー選択で子カテゴリーを生成
   $('#parent_category').change(function () {
@@ -45,12 +78,17 @@ $(function(){
         data: {child_id: child_id},
         dataType: 'json'
       }).done(function(grandchildren){
-        $('#category-child-2 option').remove();
-        var insertHTML = `<option value="">---</option>`;
-        grandchildren.forEach(function(grandchild){
-          insertHTML += appendOption(grandchild);
-        })
-        $('#grandchild_category').append(insertHTML);
+        if (grandchildren.length != 0) {
+          $('#category-child-2 option').remove();
+          var insertHTML = `<option value="">---</option>`;
+          grandchildren.forEach(function(grandchild){
+            insertHTML += appendOption(grandchild);
+          })
+          $('#grandchild_category').append(insertHTML);
+        } else {   //孫カテゴリーがない場合はサイズを表示させる
+          $('#category-child-2').addClass('hide');
+          appearSizeBox(child_id);
+        }
       }).fail(function(){
         alert('カテゴリー取得に失敗しました');
       })
@@ -58,12 +96,11 @@ $(function(){
       $('#category-child-2').addClass('hide');
     }
   });
-  
-  // 孫カテゴリー選択でサイズセレクトボックスを表示
-  $('#grandchild_category').change(function(){
-    var grandchild_id = $('#grandchild_category option:selected').val();
-    if ((grandchild_id >= 3 && grandchild_id <= 80) || (grandchild_id >= 202 && grandchild_id <= 247)){
-      $('#product-size').removeClass('hide');
-    }
-  })
+
+    // 孫カテゴリー選択でサイズレクトボックス生成
+    $('#grandchild_category').change(function(){
+      var grandchild_id = $('#grandchild_category option:selected').val();
+      appearSizeBox(grandchild_id);
+    });
+
 })

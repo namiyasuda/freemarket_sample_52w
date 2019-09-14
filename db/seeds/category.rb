@@ -3,7 +3,7 @@
 Category.delete_all
 
 # mysqlのautoincrementを初期化 id=1からデータを作成
-ActiveRecord::Base.connection.execute "ALTER TABLE `sizes` auto_increment = 1"
+ActiveRecord::Base.connection.execute "ALTER TABLE `categories` auto_increment = 1"
 
 lady = Category.create(name: "レディース")
 lady_tops = lady.children.create(name: "トップス")
