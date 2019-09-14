@@ -15,10 +15,19 @@ class MypagesController < ApplicationController
 
   def personal_info
     @user = User.find(current_user.id)
+    @user_address = UserAddress.find_by(user_id: current_user.id)
+  end
+
+  def create_user_address
+    UserAddress.create(user_address_params)
   end
 
   private
   def move_to_login
     redirect_to controller: :signup, action: :index unless user_signed_in?
+  end
+
+  def user_address_params
+    params.permit(:postcode, :prefecture_id, :city, :block, :building).merge(user_id: current_user.id)
   end
 end

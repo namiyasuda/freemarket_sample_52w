@@ -23,6 +23,7 @@ Rails.application.routes.draw do
         get 'profile'
         get 'logout'
         get 'personal_info'
+        post 'personal_info' => 'mypages#create_user_address'
       end
     end
   end
