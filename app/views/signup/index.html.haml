@@ -5,7 +5,7 @@
   .login_panel
     .no-account
       %p アカウントをお持ちでない方はこちら
-      =link_to new_user_registration_path, class: "no-account__btn" do
+      =link_to customer_info_signup_index_path, class: "no-account__btn" do
         .no-account__btn__signup
           新規会員登録
     .login-method
@@ -26,7 +26,7 @@
         %input.login-input__form{name:  "password", placeholder:  "パスワード", type:  "text"}/
       .login-input__recapcha
         = image_tag 'robo.new.png',class: "login-input__recapcha__image"
-      =link_to "#", class: "login-input__btn" do 
+      =link_to new_user_session_path, class: "login-input__btn" do 
         .login-input__btn__login
           ログイン
       .login-pass__lost
