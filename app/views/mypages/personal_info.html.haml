@@ -12,7 +12,7 @@
       本人情報の登録
 
     %section.personal-info
-      .personal-info__form
+      = form_with model: @user_address, local: true, class: 'personal-info__form' do |f|
         .personal-info__form__description
           お客さまの本人情報をご登録ください。</br>
           登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
@@ -26,60 +26,65 @@
           %label.personal-info__form__content__text
             お名前
           %p.personal-info__form__content__data
-            ユーザー
+            = @user.last_name 
+            = @user.first_name
 
         .personal-info__form__content
           %label.personal-info__form__content__text
             お名前カナ
           %p.personal-info__form__content__data
-            ユーザー
+            = @user.last_name_kana
+            = @user.first_name_kana
 
         .personal-info__form__content
           %label.personal-info__form__content__text
             生年月日
           %p.personal-info__form__content__data
-            2000/1/23
+            = @user.birth_year
+            \/
+            = @user.birth_month
+            \/
+            = @user.birth_day
 
         .personal-info__form__content
           %label.personal-info__form__content__text
             郵便番号
           %span{class: "personal-info__form__content__require"}
             任意
-          %input{type: "text",value_name:"nickename",placeholder:"例）1234567",class:"personal-info__form__content__input"}
- 
+          = f.text_field :postcode, class: 'personal-info__form__content__input', placeholder: "例）1234567", pattern:"[0-9]{7}"
+
         .personal-info__form__content
           %label.personal-info__form__content__text
             都道府県
           %span{class: "personal-info__form__content__require"}
             任意
           .personal-info__form__content__prefecture
-            = form_for '' do |f|
-              = f.collection_select :prefecture_id, Prefecture.where.not(id: 48), :id, :name, {prompt: "--"}, class:"personal-info__form__content__input"
-              = fa_icon 'chevron-down'
+            = f.collection_select :prefecture_id, Prefecture.where.not(id: 48), :id, :name, {prompt: "--"}, class:"personal-info__form__content__input"
+            = fa_icon 'chevron-down'
  
         .personal-info__form__content
           %label.personal-info__form__content__text
             市区町村
           %span{class: "personal-info__form__content__require"}
             任意
-          %input{type: "text",value_name:"nickename",placeholder:"例) 横浜市緑区",class:"personal-info__form__content__input"}
+          = f.text_field :city, class: 'personal-info__form__content__input', placeholder: "例) 横浜市緑区"
  
         .personal-info__form__content
           %label.personal-info__form__content__text
             番地
           %span{class: "personal-info__form__content__require"}
             任意
-          %input{type: "text",value_name:"nickename",placeholder:"例) 青山1−1−1",class:"personal-info__form__content__input"}
+          = f.text_field :block, class: 'personal-info__form__content__input', placeholder: "例) 青山1−1−1"
  
         .personal-info__form__content
           %label.personal-info__form__content__text
             建物名
           %span{class: "personal-info__form__content__require"}
             任意
-          %input{type: "text",value_name:"nickename",placeholder:"例) 柳ビル103",class:"personal-info__form__content__input"}
+          = f.text_field :building, class: 'personal-info__form__content__input', placeholder: "例) 柳ビル103"
  
         .personal-info__form__content
-          = link_to "登録する", "#", class: "personal-info__form__content__submit"
+          = f.submit '登録する', class:'personal-info__form__content__submit'
 
         .personal-info__form__help
           = link_to "#", class: "personal-info__form__help__text" do

@@ -12,5 +12,6 @@ class MypagesController < ApplicationController
   end
 
   def personal_info
+    @user = User.find(current_user.id)
   end
 end
