@@ -24,7 +24,7 @@ class MypagesController < ApplicationController
 
   private
   def move_to_login
-    redirect_to controller: :signup, action: :index unless user_signed_in?
+    redirect_to user_session_path unless user_signed_in?
   end
 
   def user_address_params
