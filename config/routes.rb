@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     get 'addresses/create'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  root 'tops#index'
   resources :tops, only: [:index]
+
   resources :signup, only: [:new,:index,:create] do
     collection do 
       get 'customer_info'
@@ -32,5 +35,6 @@ Rails.application.routes.draw do
   devise_scope :user do   
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+
 
 end
