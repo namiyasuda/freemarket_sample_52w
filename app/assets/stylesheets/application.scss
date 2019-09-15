@@ -1,7 +1,8 @@
 @import "./reset";
+
 @import "./config/variable";
 @import "./mixin/mixin";
-@import "./tops/tops";
+@import './tops/index';
 @import "font-awesome";
 @import "./signup/*";
 @import "./common.scss";
@@ -10,3 +11,4 @@
 @import "./modules/breadcrumb";
 @import "./modules/mypage-side-menu";
 @import "./mypage/*";
+

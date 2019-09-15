@@ -34,13 +34,7 @@
   margin-top: 32px;
   position: relative;
   &__require{
-    background-color: $red;
-    margin-left: 8px;
-    padding: 2px 4px;
-    border-radius: 2px;
-    color: $white;
-    font-size: 12px;
-    vertical-align: top;
+    @include require-mark($red);
     }
   &__any{
     background-color: lightgrey;
@@ -100,15 +94,7 @@
   &--namebox{
     display: flex;
     &__text{
-      width: 100%;
-      padding-left: 15px; 
-      margin-right: 8px;
-      height: 48px;
-      border-radius: 4px;
-      border: 1px solid $gray;
-      background: $white;
-      line-height: 1.5;
-      font-size: 16px;
+      @include form-input(0 8px 0 0);
       &:valid {
         border: 1px solid $blue;
       }
