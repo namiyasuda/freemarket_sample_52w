@@ -1,34 +1,31 @@
-document.addEventListener(
-  "DOMContentLoaded", (e) => {
-    Payjp.setPublicKey("pk_test_70d52ef41d3ca47b27f10d99");
-    const btn = document.getElementById('token_submit'); //IDがtoken_submitの場合に取得されます
-    btn.addEventListener("click", (e) => { //ボタンが押されたときに作動します
-      e.preventDefault();//ボタンを一旦無効化します
+$(document).on('turbolinks:load', function() {
+  let form = $("#charge-form");
+  Payjp.setPublicKey('pk_test_70d52ef41d3ca47b27f10d99');
+  $(document).on("click", "#token_submit", function(e) {
 
-      //カード情報生成
-      const card = {
-        card_number: document.getElementById("card_number").value,
-        cvc: document.getElementById("cvc").value,
-        exp_month: document.getElementById("exp_month").value,
-        exp_year: document.getElementById("exp_year").value
-      }; //入力されたデータを取得します。
-      
+    e.preventDefault();
+    form.find("input[type=submit]").prop("disabled", true);
 
-      //トークン生成
-      Payjp.createToken(card, function(status, response) {
-        if (status === 200) { //成功した場合
-          $("#card_number").removeAttr("name");
-          $("#cvc").removeAttr("name");
-          $("#exp_month").removeAttr("name");
-          $("#exp_year").removeAttr("name"); //カード情報を自分のサーバにpostせず削除します
-          $("#card_token").append(
-            $('<input type="hidden" name="payjp-token">').val(response.id)
-          ); //トークンを送信できるように隠しタグを生成
-          document.inputForm.submit();
-          alert("登録が完了しました"); //確認用
-        } else {
-          alert("カード情報が正しくありません。"); //確認用
-        }
-      });
+    let card = {
+        number: $("#card_number").val(),
+        cvc: $("#cvc").val(),
+        exp_month: $("#exp_month").val(),
+        exp_year: $("#exp_year").val(),
+    };
+    Payjp.createToken(card, function(s, response) {
+      if (response.error) {
+        alert('トークン作成エラー発生');
+      }
+      else {
+        $("#card_number").removeAttr("name");
+        $("#cvc").removeAttr("name");
+        $("#exp_month").removeAttr("name");
+        $("#exp_year").removeAttr("name");
+        let token = response.id;
+
+        form.append($('<input type="hidden" name="payjp-token" />').val(token));
+        form.get(0).submit();
+      }
     });
-  },false);
+  });
+});
