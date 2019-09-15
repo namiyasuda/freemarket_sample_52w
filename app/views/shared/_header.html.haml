@@ -1,33 +1,32 @@
-%header
-  .header
-    .header__top
-      %h1
-        = link_to "tops" do
-          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2508029365", alt: "mercari"
-      %form.header__top--form{ action: "https //www.mercari.com/jp/search/"}
-        %input.input-default{ name: "keyword",  placeholder: "何かお探しですか？",  type: "search",  value: ""}/
-        %i.fas.fa-search
-    .header__under
-      %nav.header__under--left
-        %ul.header__under--left--nav
-          %li
-            %h2
-              = link_to "https://www.mercari.com/jp/category/" do
-                %i.fas.fa-list
-                %span カテゴリーから探す              
-          %li
-            %h2
-              = link_to "https://www.mercari.com/jp/brand/" do
-                %i.fas.fa-tag
-                %span ブランドから探す
-              
-      %ul.header__under--right
+.main-header
+  .main-header__top
+    %h1
+      = link_to "tops" do
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2508029365", alt: "mercari"
+    %form.main-header__top--form{ action: "https //www.mercari.com/jp/search/"}
+      %input.input-default{ name: "keyword",  placeholder: "何かお探しですか？",  type: "search",  value: ""}/
+      %i.fas.fa-search
+  .main-header__under
+    %nav.main-header__under--left
+      %ul.main-header__under--left--nav
         %li
-          %i.far.fa-bell
-          %span お知らせ
+          %h2
+            = link_to "https://www.mercari.com/jp/category/" do
+              %i.fas.fa-list
+              %span カテゴリーから探す              
         %li
-          %i.fa.fa-check
-          %span やることリスト
-        %li
-          = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "face"
-          %span マイページ
+          %h2
+            = link_to "https://www.mercari.com/jp/brand/" do
+              %i.fas.fa-tag
+              %span ブランドから探す
+            
+    %ul.main-header__under--right
+      %li
+        %i.far.fa-bell
+        %span お知らせ
+      %li
+        %i.fa.fa-check
+        %span やることリスト
+      %li
+        = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "face"
+        %span マイページ
