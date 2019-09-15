@@ -29,12 +29,14 @@ $(function(){
           $('#select-size').append(insertHTML);
         } else {
           $('#product-size').addClass('hide');
+          $('#select-size option:selected').val('');
         }
       }).fail(function(){
         alert('サイズ取得に失敗しました');
       })
     } else {
       $('#product-size').addClass('hide');
+      $('#select-size option:selected').val('');
     }
   }
 
@@ -44,6 +46,7 @@ $(function(){
     if (parent_id.length != 0){
       $('#category-child-1').removeClass('hide');
       $('#product-size').addClass('hide');
+      $('#select-size option:selected').val('');
       $('#product-brand').removeClass('hide');
       $.ajax({
         url: 'get_category_children',
@@ -72,6 +75,8 @@ $(function(){
     var child_id = $('#child_category option:selected').val();
     if (child_id.length != 0){
       $('#category-child-2').removeClass('hide');
+      $('#product-size').addClass('hide');
+      $('#select-size option:selected').val('');
       $.ajax({
         url: 'get_category_grandchildren',
         type: 'Get',
