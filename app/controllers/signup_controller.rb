@@ -44,7 +44,7 @@ def create
     sign_in(@user)
     redirect_to new_address_path
   else
-    render new_address_path
+    render customer_info_signup_index_path
   end
 end
 def address
