@@ -3,13 +3,7 @@
 @import "./mixin/mixin";
 @import "./tops/tops";
 @import "font-awesome";
-@import "./users/new";
-@import "./users/index";
-@import "./users/address";
-@import "./users/card";
-@import "./users/customer_info";
-@import "./users/complete";
-@import "./users/sms_confi";
+@import "./signup/*";
 @import "./common.scss";
 @import "./modules/signup-header";
 @import "./products/new.scss";
