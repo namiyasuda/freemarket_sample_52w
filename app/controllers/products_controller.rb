@@ -76,6 +76,6 @@ class ProductsController < ApplicationController
       :delivery_method_id,
       images_attributes: [:image],
       brand_attributes: [:brand]
-      ).merge(seller_id: 1)
+      ).merge(seller_id: current_user.id)
   end
 end
