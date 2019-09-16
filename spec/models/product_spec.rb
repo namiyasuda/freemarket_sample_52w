@@ -74,8 +74,8 @@ describe Product do
 
     it "is valid with a name that has less than 40 characters " do
       product = build(:product, name: "1234567890123456789012345678901234567890")
-      seller = build(:user)
-      category = build(:category)
+      user = User.find(2)
+      category = Category.find(20)
       expect(product).to be_valid
     end
 

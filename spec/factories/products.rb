@@ -2,7 +2,7 @@ FactoryBot.define do
 
   factory :product do
     id                    {nil}
-    seller_id             {1}
+    seller_id             {2}
     buyer_id              {nil}
     name                  {"itigo"}
     description           {"aaaaa"}
