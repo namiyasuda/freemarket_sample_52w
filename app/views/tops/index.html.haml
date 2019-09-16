@@ -24,44 +24,21 @@
       %h3.pickup__container--text-center
         = link_to "レディース 新着アイテム", "/jp/category/1/"
       .pickup__container--content
-        %section.item
-          = link_to "https://item.mercari.com/jp/m19577007294/" do
+        - @products.each do |product|
+          %section.item
             %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m19577007294_1.jpg?1561632550", alt: "スキニーデニム《美品》", class: "lazyload"
+              = image_tag @images.name, alt: "実装その1", class: "lazyload"
             .item__body
-              %h3.item__body--name.font-2 スキニーデニム《美品》
+              %h3.item__body--name.font-2 
+                = product.name
               .item__body--num
-                .price.font-5 ¥ 1,200
+                .price.font-5 
+                  ¥
+                  = product.price
+              -#
                 .font-2
                   %i.far.fa-heart
                   %span 3
-        %section.item
-          = link_to "https://item.mercari.com/jp/m96756343309/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m96756343309_1.jpg?1565586100", alt: "ハリス Harris つば広 ハット 帽子", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 ハリス Harris つば広 ハット 帽子
-              .item__body--num
-                .price.font-5 ¥ 2,600
-        %section.item
-          = link_to "https://item.mercari.com/jp/m81236344559/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m81236344559_1.jpg?1565586100", alt: "ブラウス トップス", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 ブラウス トップス
-              .item__body--num
-                .price.font-5 ¥ 500
-        %section.item
-          = link_to "https://item.mercari.com/jp/m58661619650/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m58661619650_1.jpg?1565524055", alt: "金魚のサンダル", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 金魚のサンダル
-              .item__body--num
-                .price.font-5 ¥ 980
-                .font-2
-                  %i.far.fa-heart
-                  %span 5
       .view-all
         = link_to("すべての商品を見る", "/jp/category/1/")
     %section.pickup__container
