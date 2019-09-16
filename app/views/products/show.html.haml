@@ -1,4 +1,6 @@
+-# 画像表示確認用ページ
 .product
   = @product.name
   = @product.images.each do |image|
-    = image.to_s
+    = image.name.url
+    = image_tag image.name.url
