@@ -1,0 +1,24 @@
+= stylesheet_link_tag  'progress_bar/second', media: 'all'
+%header
+  = render 'shared/signup-header'
+%section 
+  .customer-entry
+    .customer-entry__top
+      電話番号の確認
+    .customer-entry__body
+      .customer-entry__body__form
+        = form_with model:@user,local:true,url:signup_index_path,class: "customer-entry__body__form" do |f|
+          .entry-content
+            .entry-content__text
+              携帯電話の番号
+            = f.text_field :mobile_number, autocomplete: "mobile_number",placeholder:"携帯電話の番号を入力",class:"entry-content__input-default",required:"",pattern:"[0-9]{3}-[0-9]{4}-[0-9]{4}"
+            %p.entry-content__text__word 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+            .entry-bottom__next
+              = f.submit "SMSを送信する", class: "entry-bottom__next__btn"
+            %p.entry-content__text__word ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+            .entry-bottom__help
+              = link_to '電話番号の確認が必要な理由', '#', class: 'entry-bottom__help'
+              =fa_icon'chevron-right'
+
+%footer.footer--bottom
+  = render 'shared/sub-footer'

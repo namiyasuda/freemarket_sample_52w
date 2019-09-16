@@ -194,30 +194,10 @@
         line-height: 1.5;
       }
       &__submit{
-        display: block;
-        margin-top: 40px;
-        width: 100%;
-        background: $red;
-        border: 1px solid $red;
-        color: $white;
-        font-size: 14px;
-        line-height: 48px;
-        transition: all ease-out .3s;
-        cursor: pointer;
-        text-align: center;
+        @include submit-btn(40px 0 0 0, 100%, $red)
       }
       &__return{
-        display: block;
-        margin: 24px auto 0;
-        width: 45%;
-        background: $btn-gray;
-        border: 1px solid $btn-gray;
-        color: $white;
-        font-size: 14px;
-        line-height: 48px;
-        text-align: center;
-        transition: all ease-out .3s;
-        cursor: pointer;
+        @include submit-btn(24px auto 0, 45%, $btn-gray)
       }
     }
   }

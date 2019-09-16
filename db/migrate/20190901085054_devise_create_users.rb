@@ -14,7 +14,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string  :mobile_number, null: false, unique: true
       t.text    :profile
       t.bigint  :sales_money, default: 0
-
+      
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

@@ -1,0 +1,88 @@
+%header
+  = render 'shared/sub-header'
+
+%section
+  = render 'shared/breadcrumb'
+
+.mypage-main
+  = render 'shared/mypage-side-menu'
+
+  .mypage
+    %h2.mypage__head
+      本人情報の登録
+
+    %section.personal-info
+      .personal-info__form
+        .personal-info__form__description
+          お客さまの本人情報をご登録ください。</br>
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        .personal-info__form__help
+          = link_to "#", class: "personal-info__form__help__text" do
+            本人確認書類のアップロードについて
+            = fa_icon 'chevron-right'
+            %span<>
+
+        .personal-info__form__content
+          %label.personal-info__form__content__text
+            お名前
+          %p.personal-info__form__content__data
+            ユーザー
+
+        .personal-info__form__content
+          %label.personal-info__form__content__text
+            お名前カナ
+          %p.personal-info__form__content__data
+            ユーザー
+
+        .personal-info__form__content
+          %label.personal-info__form__content__text
+            生年月日
+          %p.personal-info__form__content__data
+            2000/1/23
+
+        .personal-info__form__content
+          %label.personal-info__form__content__text
+            郵便番号
+          %span{class: "personal-info__form__content__require"}
+            任意
+          %input{type: "text",value_name:"nickename",placeholder:"例）1234567",class:"personal-info__form__content__input"}
+ 
+        .personal-info__form__content
+          %label.personal-info__form__content__text
+            都道府県
+          %span{class: "personal-info__form__content__require"}
+            任意
+          .personal-info__form__content__prefecture
+            = form_for '' do |f|
+              = f.collection_select :prefecture_id, Prefecture.where.not(id: 48), :id, :name, {prompt: "--"}, class:"personal-info__form__content__input"
+              = fa_icon 'chevron-down'
+ 
+        .personal-info__form__content
+          %label.personal-info__form__content__text
+            市区町村
+          %span{class: "personal-info__form__content__require"}
+            任意
+          %input{type: "text",value_name:"nickename",placeholder:"例) 横浜市緑区",class:"personal-info__form__content__input"}
+ 
+        .personal-info__form__content
+          %label.personal-info__form__content__text
+            番地
+          %span{class: "personal-info__form__content__require"}
+            任意
+          %input{type: "text",value_name:"nickename",placeholder:"例) 青山1−1−1",class:"personal-info__form__content__input"}
+ 
+        .personal-info__form__content
+          %label.personal-info__form__content__text
+            建物名
+          %span{class: "personal-info__form__content__require"}
+            任意
+          %input{type: "text",value_name:"nickename",placeholder:"例) 柳ビル103",class:"personal-info__form__content__input"}
+ 
+        .personal-info__form__content
+          = link_to "登録する", "#", class: "personal-info__form__content__submit"
+
+        .personal-info__form__help
+          = link_to "#", class: "personal-info__form__help__text" do
+            本人情報の登録について
+            = fa_icon 'chevron-right'
+            %span<>

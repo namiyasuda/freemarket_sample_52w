@@ -14,8 +14,8 @@
       margin: 8px 8px 0 0;
       height: 48px;
       border-radius: 4px;
-      border: 1px solid #ccc;
-      background: #fff;
+      border: 1px solid $gray;
+      background: $white;
       line-height: 1.5;
       font-size: 16px;
       padding: 0 16px;
@@ -25,18 +25,19 @@
       position: absolute;
       left: 100px;
       top: 24px;
-      color: #888;
+      color: $font-gray;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
-      -webkit-text-stroke: 1px #fff;
+      pointer-events: none;
+      -webkit-text-stroke: 1px $white;
     }
   }
 }  
 .entry-bottom--card{
   position: relative;
-  color: #0099e8;
+  color: $blue;
   &__help{
-    color: #0099e8;
+    color: $blue;
     text-decoration: none;
     text-align: right;
     &__icon{
@@ -45,8 +46,8 @@
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background: #0099e8;
-      color: #fff;
+      background: $blue;
+      color: $white;
       line-height: 14px;
       font-size: 12px;
       text-align: center;
@@ -61,8 +62,8 @@
   z-index: 1;
   padding: 16px;
   border-radius: 6px;
-  background: #eee;
-  color: #333;
+  background: $light-gray;
+  color: $font-black;
   line-height: 1.5;
   text-align: center;
   // 吹き出しの三角部分を疑似要素で定義
@@ -73,7 +74,7 @@
     left: 290px;
     width: 16px;
     border: 10px solid transparent;
-    border-bottom-color: #eee;
+    border-bottom-color: $light-gray;
     border-top-width: 0;
     width: 0;
   }

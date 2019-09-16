@@ -1,7 +1,8 @@
 @import "./reset";
+
 @import "./config/variable";
 @import "./mixin/mixin";
-@import "./tops/tops";
+@import './tops/index';
 @import "font-awesome";
 @import "./users/new";
 @import "./users/index";
@@ -16,3 +17,8 @@
 @import "./modules/sub-footer";
 @import "./products/new";
 @import "dropzone/dropzone";
+@import "./products/new.scss";
+@import "./modules/breadcrumb";
+@import "./modules/mypage-side-menu";
+@import "./mypage/*";
+

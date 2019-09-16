@@ -1,0 +1,101 @@
+%nav.mypage-side-menu
+  %ul.mypage-side-menu__list
+    %li.mypage-side-menu__list__item
+      マイページ
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', user_mypage_path, { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      お知らせ
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      やることリスト
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      いいね！一覧
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      出品する
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      出品した商品 - 出品中
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      出品した商品 - 取引中
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      出品した商品 - 売却済み
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      購入した商品 - 取引中
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      購入した商品 - 過去の取引
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      ニュース一覧
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      評価一覧
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      ガイド
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+    %li.mypage-side-menu__list__item
+      お問い合わせ
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+  %h3.mypage-side-menu__heading
+    メルペイ
+  %ul.mypage-side-menu__list
+    %li.mypage-side-menu__list__item
+      売上・振込申請
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+    %li.mypage-side-menu__list__item
+      ポイント
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+  %h3.mypage-side-menu__heading
+    設定
+  %ul.mypage-side-menu__list
+    %li.mypage-side-menu__list__item
+      プロフィール
+      = link_to '', profile_user_mypage_path, { class: "mypage-side-menu__list__item__btn" }
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+    %li.mypage-side-menu__list__item
+      発送元・お届け先住所変更
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+    %li.mypage-side-menu__list__item
+      支払い方法
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+    %li.mypage-side-menu__list__item
+      メール/パスワード
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+    %li.mypage-side-menu__list__item
+      本人情報
+      = link_to '', personal_info_user_mypage_path, { class: "mypage-side-menu__list__item__btn" }
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+    %li.mypage-side-menu__list__item
+      電話番号の確認
+      = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+    %li.mypage-side-menu__list__item
+      ログアウト
+      = link_to '', logout_user_mypage_path, { class: "mypage-side-menu__list__item__btn" }
+      = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
+
