@@ -20,4 +20,12 @@ FactoryBot.define do
     delivery_method_id    {1}
   end
 
+  factory :user do
+    id                    {1}
+  end
+
+  factory :category do
+    id                    {20}
+  end
+
 end

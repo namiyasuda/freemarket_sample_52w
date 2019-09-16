@@ -66,7 +66,7 @@ describe Product do
       expect(product.errors[:delivery_method_id]).to include("can't be blank")
     end
     
-    it "is invalid with a kname that has more than 40 characters " do
+    it "is invalid with a name that has more than 40 characters " do
       product = build(:product, name: "12345678901234567890123456789012345678901")
       product.valid?
       expect(product.errors[:name][0]).to include("is too long")
@@ -74,7 +74,33 @@ describe Product do
 
     it "is valid with a name that has less than 40 characters " do
       product = build(:product, name: "1234567890123456789012345678901234567890")
+      seller = build(:user)
+      category = build(:category)
       expect(product).to be_valid
+    end
+
+    it "is invalid with a name that has more than 1000 characters " do
+      product = build(:product, description: "ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃい！")
+      product.valid?
+      expect(product.errors[:description][0]).to include("is too long")
+    end
+
+    it "is invalid with a price that has less than 300 " do
+      product = build(:product, price: 299)
+      product.valid?
+      expect(product.errors[:price][0]).to include("must be greater than or equal to 300")
+    end
+
+    it "is invalid with a price that has more than 9999999 " do
+      product = build(:product, price: 10000000)
+      product.valid?
+      expect(product.errors[:price][0]).to include("must be less than or equal to 9999999")
+    end
+
+    it "is invalid with a price not to be number " do
+      product = build(:product, price: "a")
+      product.valid?
+      expect(product.errors[:price][0]).to include("is not a number")
     end
 
   end

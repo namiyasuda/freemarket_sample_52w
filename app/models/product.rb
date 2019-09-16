@@ -24,6 +24,6 @@ class Product < ApplicationRecord
   validates :parent_id, presence: true, numericality: { only_integer: true}
   validates :child_id, presence: true, numericality: { only_integer: true}
   validates :delivery_method_id, presence: true, numericality: { only_integer: true}
-  validates :listing_stop, inclusion: { in: [true, false] }
+  validates :listing_stop, inclusion: {in: [true, false]}
 
 end
