@@ -11,6 +11,14 @@ $(function(){
     return html;
   }
 
+  // サイズボックスを隠す・valを消す・バリデーションを消す
+  function disappearSizeBox() {
+    $('#product-size').addClass('hide');
+    $('#select-size option:selected').val('');
+    $('#select-size').removeAttr('required');
+  }
+
+  // サイズボックスを表示させる
   function appearSizeBox(category_id){
     if (category_id != 0){
       $.ajax({
@@ -22,21 +30,20 @@ $(function(){
         if (sizes.length != 0){
           $('#select-size option').remove();
           $('#product-size').removeClass('hide');
+          $('#select-size').attr('required', 'required');
           var insertHTML = `<option value="">---</option>`;
           sizes.forEach(function(size){
             insertHTML += appendSizeOption(size);
           })
           $('#select-size').append(insertHTML);
         } else {
-          $('#product-size').addClass('hide');
-          $('#select-size option:selected').val('');
+          disappearSizeBox();
         }
       }).fail(function(){
         alert('サイズ取得に失敗しました');
       })
     } else {
-      $('#product-size').addClass('hide');
-      $('#select-size option:selected').val('');
+      disappearSizeBox();
     }
   }
 
@@ -45,8 +52,7 @@ $(function(){
     var parent_id = $('#parent_category option:selected').val();
     if (parent_id.length != 0){
       $('#category-child-1').removeClass('hide');
-      $('#product-size').addClass('hide');
-      $('#select-size option:selected').val('');
+      disappearSizeBox();
       $('#product-brand').removeClass('hide');
       $.ajax({
         url: 'get_category_children',
@@ -75,8 +81,7 @@ $(function(){
     var child_id = $('#child_category option:selected').val();
     if (child_id.length != 0){
       $('#category-child-2').removeClass('hide');
-      $('#product-size').addClass('hide');
-      $('#select-size option:selected').val('');
+      disappearSizeBox();
       $.ajax({
         url: 'get_category_grandchildren',
         type: 'Get',
