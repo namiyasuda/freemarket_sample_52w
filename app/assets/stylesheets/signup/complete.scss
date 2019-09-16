@@ -1,43 +1,43 @@
 // footer部分の背景の定義
-.complete-bottom{
+.complete-bottom {
   width: 700px;
   margin: 0 auto;
-  &__banner{
+  &__banner {
    position: relative; 
   }
 }
 // 中身の文字とアイコン部分の定義
-.banner{
+.banner {
   position: absolute;
   top: 50px;
   left: 30px;
   color: $white;
-  &__text1{
+  &__text1 {
     font-size: 16px;
     margin: 0 0 20px 50px;
   }
-  &__text2{
+  &__text2 {
     font-size: 26px;
     font-weight: bold;
     margin-left: 10px; 
   }
-  &__icon{
+  &__icon {
     display: flex;
     margin-top: 20px; 
     &__app{
     display: flex;
      margin-top: 15px; 
-      &__apple{
+      &__apple {
         margin-left: 5px;
       }
-      &__google{
+      &__google {
         margin-left: 3px;
       }
     }
   }  
 }
 // 中身の右画像部分の定義
-.banner-image{
+.banner-image {
   position: absolute;
   top: 20px;
   right: 15px;  
