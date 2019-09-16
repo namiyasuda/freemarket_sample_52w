@@ -1,14 +1,18 @@
 @import "./reset";
-
 @import "./config/variable";
 @import "./mixin/mixin";
-@import './tops/index';
+@import "./tops/tops";
 @import "font-awesome";
-@import "./signup/*";
+@import "./signup/new";
+@import "./signup/index";
+@import "./signup/address";
+@import "./signup/card";
+@import "./signup/customer_info";
+@import "./signup/complete";
+@import "./signup/sms_confi";
 @import "./common.scss";
 @import "./modules/signup-header";
 @import "./products/new.scss";
 @import "./modules/breadcrumb";
 @import "./modules/mypage-side-menu";
 @import "./mypage/*";
-
