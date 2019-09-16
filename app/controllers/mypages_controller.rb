@@ -23,10 +23,6 @@ class MypagesController < ApplicationController
   end
 
   private
-  def move_to_login
-    redirect_to user_session_path unless user_signed_in?
-  end
-
   def user_address_params
     params.permit(:postcode, :prefecture_id, :city, :block, :building).merge(user_id: current_user.id)
   end
