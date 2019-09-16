@@ -24,155 +24,68 @@
       %h3.pickup__container--text-center
         = link_to "レディース 新着アイテム", "/jp/category/1/"
       .pickup__container--content
-        - @products.each do |product|
+        - @images.each do |image|
           %section.item
             %figure.item__photo
-              = image_tag @images.name, alt: "実装その1", class: "lazyload"
+              = image_tag image.name, alt: "実装その1", class: "lazyload"
             .item__body
               %h3.item__body--name.font-2 
-                = product.name
+                = image.product.name
               .item__body--num
                 .price.font-5 
                   ¥
-                  = product.price
-              -#
-                .font-2
-                  %i.far.fa-heart
-                  %span 3
+                  = image.product.price
       .view-all
         = link_to("すべての商品を見る", "/jp/category/1/")
     %section.pickup__container
       %h3.pickup__container--text-center
         = link_to("メンズ 新着アイテム", "/jp/category/2/")
       .pickup__container--content
-        %section.item
-          = link_to "https://item.mercari.com/jp/m14843343641/" do
+        - @images.each do |image|
+          %section.item
             %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m14843343641_1.jpg?1556853562", alt: "処分価格 Levi's レッドワイヤー ほぼ未使用品", class: "lazyload"
+              = image_tag image.name, alt: "実装その1", class: "lazyload"
             .item__body
-              %h3.item__body--name.font-2 処分価格 Levi's レッドワイヤー ほぼ未使用品
+              %h3.item__body--name.font-2 
+                = image.product.name
               .item__body--num
-                .price.font-5 ¥ 6,500
-                .font-2
-                  %i.far.fa-heart
-                  %span 6
-        %section.item
-          = link_to "https://item.mercari.com/jp/m19074687641/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m19074687641_1.jpg?1565585650", alt: "supreme シュプリーム SWIM T 新品未使用", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 supreme シュプリーム SWIM T 新品未使用
-              .item__body--num
-                .price.font-5 ¥ 6,500
-                .font-2
-                  %i.far.fa-heart
-                  %span 2
-        %section.item
-          = link_to "https://item.mercari.com/jp/m65120677274/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m65120677274_1.jpg?1565586129", alt: "GIANCARLO MORELLI ジャンカルロモレリ ストレート 42 26", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 GIANCARLO MORELLI ジャンカルロモレリ ストレート 42 26
-              .item__body--num
-                .price.font-5 ¥ 6,200
-        %section.item
-          = link_to "https://item.mercari.com/jp/m43084770356/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m43084770356_1.jpg?1565586128", alt: "チェックシャツ 半袖シャツ", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 チェックシャツ 半袖シャツ
-              .item__body--num
-                .price.font-5 ¥ 500
+                .price.font-5 
+                  ¥
+                  = image.product.price
       .view-all
         = link_to("すべての商品を見る", "/jp/category/2/")
     %section.pickup__container
       %h3.pickup__container--text-center
         = link_to(" ベビー・キッズ 新着アイテム", "/jp/category/3/")
       .pickup__container--content
-        %section.item
-          = link_to "https://item.mercari.com/jp/m49886014005/" do
+        - @images.each do |image|
+          %section.item
             %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m49886014005_1.jpg?1565586100", alt: "バナナチップス❤️キュロット   ピンク", class: "lazyload"
+              = image_tag image.name, alt: "実装その1", class: "lazyload"
             .item__body
-              %h3.item__body--name.font-2 バナナチップス❤️キュロット   ピンク
+              %h3.item__body--name.font-2 
+                = image.product.name
               .item__body--num
-                .price.font-5 ¥ 3,980
-        %section.item
-          = link_to "https://item.mercari.com/jp/m15320122565/" do          
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m15320122565_1.jpg?1565586099", alt: "美品★Earth Magicバルーンスカート", class: "lazyload"
-              lt: "美品★Earth Magicバルーンスカート", "data-src": "https://static.mercdn.net/thumb/photos/m15320122565_1.jpg?1565586099"}/
-            .item__body
-              %h3.item__body--name.font-2 美品★Earth Magicバルーンスカート
-              .item__body--num
-                .price.font-5 ¥ 1,888
-        %section.item
-          = link_to "https://item.mercari.com/jp/m23692175131/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m23692175131_1.jpg?1565586099", alt: "ナイキ NFTB", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 ナイキ NFTB
-              .item__body--num
-                .price.font-5 ¥ 1,400
-                .font-2
-                  %i.far.fa-heart
-                  %span 12
-        %section.item
-          = link_to "https://item.mercari.com/jp/m58872223510/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m58872223510_1.jpg?1565064625", alt: "水着 ハーフパンツ ショートパンツ バードウェル", class: "lazyload"
-
-            .item__body
-              %h3.item__body--name.font-2 水着 ハーフパンツ ショートパンツ バードウェル
-              .item__body--num
-                .price.font-5 ¥ 1,999
-                .font-2
-                  %i.far.fa-heart
-                  %span 2
+                .price.font-5 
+                  ¥
+                  = image.product.price
       .view-all
         = link_to("すべての商品を見る", "/jp/category/3/")
     %section.pickup__container
       %h3.pickup__container--text-center
         = link_to("コスメ・香水・美容 新着アイテム", "/jp/category/6/")
       .pickup__container--content
-        %section.item
-          = link_to "https://item.mercari.com/jp/m72625704518/" do
+        - @images.each do |image|
+          %section.item
             %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m72625704518_1.jpg?1561977432", alt: "小顔 矯正 たるみ ほうれい線 美顔 顔痩せ フェイス マスク ベルト サポータ", class: "lazyload"
+              = image_tag image.name, alt: "実装その1", class: "lazyload"
             .item__body
-              %h3.item__body--name.font-2 小顔 矯正 たるみ ほうれい線 美顔 顔痩せ フェイス マスク ベルト サポータ
+              %h3.item__body--name.font-2 
+                = image.product.name
               .item__body--num
-                .price.font-5 ¥ 1,470
-                .font-2
-                  %i.far.fa-heart
-                  %span 17
-        %section.item
-          = link_to "https://item.mercari.com/jp/m21667192336/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m21667192336_1.jpg?1558797297", alt: "フローフシリップグロス2set", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 フローフシリップグロス2set
-              .item__body--num
-                .price.font-5 ¥ 2,399
-                .font-2
-                  %i.far.fa-heart
-                  %span 1
-        %section.item
-          = link_to "https://item.mercari.com/jp/m87732431884/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m87732431884_1.jpg?1565586100", alt: "[◎格安品] ボタニカル ハニーローション&ハニーエッセンス ３セット", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 [◎格安品] ボタニカル ハニーローション&amp;ハニーエッセンス ３セット
-              .item__body--num
-                .price.font-5 ¥ 4,500
-        %section.item
-          = link_to "https://item.mercari.com/jp/m23489235302/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m23489235302_1.jpg?1565586099", alt: "人気商品！生プラセンタ  セール中！！", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 人気商品！生プラセンタ  セール中！！
-              .item__body--num
-                .price.font-5 ¥ 600
+                .price.font-5 
+                  ¥
+                  = image.product.price
       .view-all
         = link_to("すべての商品を見る", "/jp/category/6/")
   %section.pickup
@@ -181,175 +94,70 @@
       %h3.pickup__container--text-center
         = link_to 'シャネル 新着アイテム', "/jp/brand/658/"
       .pickup__container--content
-        %section.item
-          = link_to "https://item.mercari.com/jp/m62018656086/" do
+        - @images.each do |image|
+          %section.item
             %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m62018656086_1.jpg?1565586031", alt: "シャネル チャンス", class: "lazyload"
+              = image_tag image.name, alt: "実装その1", class: "lazyload"
             .item__body
-              %h3.item__body--name.font-2 シャネル チャンス
+              %h3.item__body--name.font-2 
+                = image.product.name
               .item__body--num
-                .price.font-5 ¥ 2,250
-        %section.item
-          = link_to "https://item.mercari.com/jp/m51347550273/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m51347550273_1.jpg?1565586089", alt: "シャネル  アイシャドウ イレールデュオ", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 シャネル  アイシャドウ イレールデュオ
-              .item__body--num
-                .price.font-5 ¥ 2,000
-        %section.item
-          = link_to "https://item.mercari.com/jp/m10087231591/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m10087231591_1.jpg?1565586083", alt: "CHANEL シャネル♡サヴォン N°5 100g", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 CHANEL シャネル♡サヴォン N°5 100g
-              .item__body--num
-                .price.font-5 ¥ 1,500
-        %section.item
-          = link_to "https://item.mercari.com/jp/m60556297104/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m60556297104_1.jpg?1565372309", alt: "シャネルジャケット❤️ＣoＣoマーク❤️レアなボタンの可愛いジャケットコート❤️", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 シャネルジャケット❤️ＣoＣoマーク❤️レアなボタンの可愛いジャケットコート❤️
-              .item__body--num
-                .price.font-4 ¥ 200,000
-                .font-2
-                  %i.far.fa-heart
-                  %span 6
+                .price.font-5 
+                  ¥
+                  = image.product.price
       .view-all
-        = link_to("すべての商品を見る", "/jp/brand/658/")
+        = link_to("すべての商品を見る", "/jp/category/6/")
     %section.pickup__container
       %h3.pickup__container--text-center
         = link_to("ルイ ヴィトン 新着アイテム", "/jp/brand/1326/")
       .pickup__container--content
-        %section.item
-          = link_to "https://item.mercari.com/jp/m94223944599/" do
+        - @images.each do |image|
+          %section.item
             %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m94223944599_1.jpg?1565586128", alt: "ルイヴィトン ショルダーバッグ モノグラム", class: "lazyload"
+              = image_tag image.name, alt: "実装その1", class: "lazyload"
             .item__body
-              %h3.item__body--name.font-2 ルイヴィトン ショルダーバッグ モノグラム
+              %h3.item__body--name.font-2 
+                = image.product.name
               .item__body--num
-                .price.font-5 ¥ 50,000
-        %section.item
-          = link_to "https://item.mercari.com/jp/m50696985883/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m50696985883_1.jpg?1563173609", alt: "未使用❗ルイヴィトン カードケース", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 未使用❗ルイヴィトン カードケース
-              .item__body--num
-                .price.font-5 ¥ 26,000
-                .font-2
-                  %i.far.fa-heart
-                  %span 13
-        %section.item
-          = link_to "https://item.mercari.com/jp/m25513072190/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m25513072190_1.jpg?1565536305", alt: "ルイヴィトン エピライン LOUIS VUITTON 綺麗】", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 【ルイヴィトン エピライン LOUIS VUITTON 綺麗】
-              .item__body--num
-                .price.font-5 ¥ 45,000
-        %section.item
-          = link_to "https://item.mercari.com/jp/m97452539447/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m97452539447_1.jpg?1565586121", alt: "ルイヴィトン ダミエ 長財布", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 ルイヴィトン ダミエ 長財布
-              .item__body--num
-                .price.font-5 ¥ 20,000
+                .price.font-5 
+                  ¥
+                  = image.product.price
       .view-all
-        = link_to("すべての商品を見る", "/jp/brand/1326/")
+        = link_to("すべての商品を見る", "/jp/category/6/")
     %section.pickup__container
       %h3.pickup__container--text-center
         = link_to("シュプリーム 新着アイテム", "/jp/brand/1620/")
       .pickup__container--content
-        %section.item
-          = link_to "https://item.mercari.com/jp/m47406998018/" do
+        - @images.each do |image|
+          %section.item
             %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m47406998018_1.jpg?1565491338", alt: "★値下げしました★LEON / マチルダ Tシャツ / リメイク", class: "lazyload"
+              = image_tag image.name, alt: "実装その1", class: "lazyload"
             .item__body
-              %h3.item__body--name.font-2 ★値下げしました★LEON / マチルダ Tシャツ / リメイク
+              %h3.item__body--name.font-2 
+                = image.product.name
               .item__body--num
-                .price.font-5 ¥ 1,600
-                .font-2
-                  %i.far.fa-heart
-                  %span 5
-        %section.item
-          = link_to "https://item.mercari.com/jp/m66777057335/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m66777057335_1.jpg?1565057296", alt: "【key様専用】supreme 17ss Venus print T-shirt", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 【key様専用】supreme 17ss Venus print T-shirt
-              .item__body--num
-                .price.font-5 ¥ 4,000
-                .font-2
-                  %i.far.fa-heart
-                  %span 10
-        %section.item
-          = link_to "https://item.mercari.com/jp/m11185800566/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m11185800566_1.jpg?1565586057", alt: "Supreme 18aw SOG key chain", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 Supreme 18aw SOG key chain
-              .item__body--num
-                .price.font-5 ¥ 4,500
-        %section.item
-          = link_to "https://item.mercari.com/jp/m93859597890/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m93859597890_1.jpg?1565586056", alt: "新品 creative drug store cdg バックパック リュック", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 新品 creative drug store cdg バックパック リュック
-              .item__body--num
-                .price.font-5 ¥ 21,000
+                .price.font-5 
+                  ¥
+                  = image.product.price
       .view-all
-        = link_to("すべての商品を見る", "/jp/brand/1620/")
+        = link_to("すべての商品を見る", "/jp/category/6/")
     %section.pickup__container
       %h3.pickup__container--text-center
         = link_to("ナイキ 新着アイテム", "/jp/brand/857/")
       .pickup__container--content
-        %section.item
-          = link_to "https://item.mercari.com/jp/m41150049409/" do
+        - @images.each do |image|
+          %section.item
             %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m41150049409_1.jpg?1561801406", alt: "NIKE エアマックス95", class: "lazyload"
+              = image_tag image.name, alt: "実装その1", class: "lazyload"
             .item__body
-              %h3.item__body--name.font-2 NIKE エアマックス95
+              %h3.item__body--name.font-2 
+                = image.product.name
               .item__body--num
-                .price.font-5 ¥ 17,200
-                .font-2
-                  %i.far.fa-heart
-                  %span 12
-        %section.item
-          = link_to "https://item.mercari.com/jp/m14437059165/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m14437059165_1.jpg?1565586120", alt: "新品 正規品 ナイキ NIKE アトレティコ atletico Sサイズ", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 新品 正規品 ナイキ NIKE アトレティコ atletico Sサイズ
-              .item__body--num
-                .price.font-5 ¥ 6,000
-        %section.item
-          = link_to "https://item.mercari.com/jp/m59299120959/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m59299120959_1.jpg?1562596209", alt: "古着 90s ナイキ NIKE tシャツ 白t ビックロゴ nike sb", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 古着 90s ナイキ NIKE tシャツ 白t ビックロゴ nike sb
-              .item__body--num
-                .price.font-5 ¥ 3,300
-                .font-2
-                  %i.far.fa-heart
-                  %span 4
-        %section.item
-          = link_to "https://item.mercari.com/jp/m67931468268/" do
-            %figure.item__photo
-              = image_tag "https://static.mercdn.net/thumb/photos/m67931468268_1.jpg?1559919782", alt: "ナイキ KAISHI 17cm", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 ナイキ KAISHI 17cm
-              .item__body--num
-                .price.font-5 ¥ 2,000
-                .font-2
-                  %i.far.fa-heart
-                  %span 3
+                .price.font-5 
+                  ¥
+                  = image.product.price
       .view-all
-        = link_to("すべての商品を見る", "/jp/brand/857/")
+        = link_to("すべての商品を見る", "/jp/category/6/")
   %aside.banners-nav
     .banners
       .banners__left
