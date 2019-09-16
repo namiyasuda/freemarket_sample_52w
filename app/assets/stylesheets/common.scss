@@ -3,6 +3,20 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  background: $bg-gray;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: $font-black;
+  line-height: 1;
+}
+
 a{
   color: #0099e8;
   text-decoration: none;
@@ -12,7 +26,7 @@ a{
   display: none;
 }
 
-.footer--bottom {
+.footer--bottom{
   height: 220px;
   margin: 0 auto;
   text-align: center;
