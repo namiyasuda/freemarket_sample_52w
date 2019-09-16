@@ -3,7 +3,7 @@
   position: relative;
   &__date {
     margin: 26px 12px 0 8px;
-    display: inline-block
+    display: inline-block;
   }
   &__selectbox {
     display: flex;
@@ -27,7 +27,7 @@
         border: 1px solid $red;
       }
     }
-    .fa{
+    .fa {
       position: absolute;
       left: 100px;
       top: 24px;
@@ -38,7 +38,7 @@
       -webkit-text-stroke: 1px $white;
     }
   }
-}  
+}
 .entry-bottom--card {
   position: relative;
   color: $blue;
@@ -73,7 +73,7 @@
   line-height: 1.5;
   text-align: center;
   // 吹き出しの三角部分を疑似要素で定義
-  &:before {   
+  &:before {
     content: '';
     position: absolute;
     bottom: -15px;
@@ -82,7 +82,6 @@
     border: 10px solid transparent;
     border-bottom-color: $light-gray;
     border-top-width: 0;
-    width: 0;
   }
 }
 // 中身を非表示にしておく
@@ -92,7 +91,7 @@
   overflow: hidden;
   opacity: 0;
   transition-property: all;
-  transition-duration: 0.3s;
+  transition-duration: .3s;
   transition-timing-function: ease-out;
   transition-delay: 0s;
 }
