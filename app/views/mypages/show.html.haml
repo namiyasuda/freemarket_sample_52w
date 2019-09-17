@@ -12,7 +12,7 @@
       = link_to request.fullpath, class: "user-info__btn" do
         = image_tag "user-icon.png", class: 'user-info__btn__icon'
         %h2.user-info__btn__nickname
-          = @user.nickname
+          = current_user.nickname
         .user-info__btn__number
           %p.user-info__btn__number__text
             評価 
