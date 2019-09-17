@@ -2,6 +2,9 @@
 
 Category.delete_all
 
+# mysqlのautoincrementを初期化 id=1からデータを作成
+ActiveRecord::Base.connection.execute "ALTER TABLE `categories` auto_increment = 1"
+
 lady = Category.create(name: "レディース")
 lady_tops = lady.children.create(name: "トップス")
 lady_tops.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"},{name: "Tシャツ/カットソー(七分/長袖)"},{name: "シャツ/ブラウス(半袖/袖なし)"},{name: "シャツ/ブラウス(七分/長袖)"},{name: "ポロシャツ"},{name: "キャミソール"},{name: "タンクトップ"},{name: "ホルターネック"},{name: "ニット/セーター"},{name: "チュニック"},{name: "カーディガン/ボレロ"},{name: "アンサンブル"},{name: "ベスト/ジレ"},{name: "パーカー"},{name: "トレーナー/スウェット"},{name: "ベアトップ/チューブトップ"},{name: "ジャージ"},{name: "その他"}])

@@ -11,8 +11,12 @@
 @import "./users/customer_info";
 @import "./users/complete";
 @import "./users/sms_confi";
-@import "./common.scss";
+@import "./common";
 @import "./modules/signup-header";
+@import "./modules/notifications";
+@import "./modules/sub-footer";
+@import "./products/new";
+@import "dropzone/dropzone";
 @import "./products/new.scss";
 @import "./modules/breadcrumb";
 @import "./modules/mypage-side-menu";
