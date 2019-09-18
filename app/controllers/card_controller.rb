@@ -2,7 +2,7 @@ class CardController < ApplicationController
   require "payjp"
 
   def new
-    @card = Card.find_by(user_id: current_user.id)
+    current_user.card
     redirect_to tops_path if @card.present?
   end
 
