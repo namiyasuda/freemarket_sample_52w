@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_one :delivery_address, dependent: :destroy
   has_one :card, dependent: :destroy
   # has_one :user_addresse, dependent: :destroy
+  belongs_to_active_hash :birth_year
 end
