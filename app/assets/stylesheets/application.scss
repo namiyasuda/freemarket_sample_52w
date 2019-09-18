@@ -1,7 +1,7 @@
 @import "./reset";
 @import "./config/variable";
 @import "./mixin/mixin";
-@import "./tops/tops";
+@import "./tops/index";
 @import "font-awesome";
 @import "./signup/new";
 @import "./signup/index";
@@ -10,7 +10,7 @@
 @import "./signup/customer_info";
 @import "./signup/complete";
 @import "./signup/sms_confi";
-@import "./common.scss";
+@import "./common";
 @import "./modules/signup-header";
 @import "./modules/notifications";
 @import "./modules/sub-footer";
