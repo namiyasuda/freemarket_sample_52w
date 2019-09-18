@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def update
-    current_user.update(profile_params)
-    if current_user.save
+    if current_user.update(profile_params)
       flash[:success] = '変更しました。'
       redirect_to profile_user_mypage_path(user_id: params[:id])
     else
