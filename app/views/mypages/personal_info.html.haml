@@ -29,25 +29,25 @@
           %label.personal-info__form__content__text
             お名前
           %p.personal-info__form__content__data
-            = @user.last_name 
-            = @user.first_name
+            = current_user.last_name 
+            = current_user.first_name
 
         .personal-info__form__content
           %label.personal-info__form__content__text
             お名前カナ
           %p.personal-info__form__content__data
-            = @user.last_name_kana
-            = @user.first_name_kana
+            = current_user.last_name_kana
+            = current_user.first_name_kana
 
         .personal-info__form__content
           %label.personal-info__form__content__text
             生年月日
           %p.personal-info__form__content__data
-            = @user.birth_year
+            = current_user.birth_year
             \/
-            = @user.birth_month
+            = current_user.birth_month
             \/
-            = @user.birth_day
+            = current_user.birth_day
 
         .personal-info__form__content
           %label.personal-info__form__content__text
