@@ -12,7 +12,6 @@ class MypagesController < ApplicationController
   end
 
   def personal_info
-    @user = User.find(current_user.id)
     @user_address = UserAddress.find_by(user_id: current_user.id)
   end
 
