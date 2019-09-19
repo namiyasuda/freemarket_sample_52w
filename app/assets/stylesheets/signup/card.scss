@@ -1,14 +1,14 @@
-.entry-content--card{
+.entry-content--card {
   display: flex;
   position: relative;
-  &__date{
+  &__date {
     margin: 26px 12px 0 8px;
-    display: inline-block
+    display: inline-block;
   }
-  &__selectbox{
+  &__selectbox {
     display: flex;
     position: relative;
-    &__box{
+    &__box {
       -webkit-appearance: none;
       width: 130px;
       margin: 8px 8px 0 0;
@@ -19,9 +19,15 @@
       line-height: 1.5;
       font-size: 16px;
       padding: 0 16px;
-      
+
+      &:valid {
+        border: 1px solid $blue;
+      }
+      &:invalid {
+        border: 1px solid $red;
+      }
     }
-    .fa{
+    .fa {
       position: absolute;
       left: 100px;
       top: 24px;
@@ -32,15 +38,15 @@
       -webkit-text-stroke: 1px $white;
     }
   }
-}  
-.entry-bottom--card{
+}
+.entry-bottom--card {
   position: relative;
   color: $blue;
-  &__help{
+  &__help {
     color: $blue;
     text-decoration: none;
     text-align: right;
-    &__icon{
+    &__icon {
       margin: 0 0 0 150px;
       display: inline-block;
       width: 14px;
@@ -55,7 +61,7 @@
   }
 }
 // 吹き出し部分
-.hidden-show{
+.hidden-show {
   margin-top: 15px;
   visibility: visible;
   opacity: 1;
@@ -67,36 +73,35 @@
   line-height: 1.5;
   text-align: center;
   // 吹き出しの三角部分を疑似要素で定義
-  &:before{   
+  &:before {
     content: '';
     position: absolute;
-    top: -8px;
+    bottom: -15px;
     left: 290px;
     width: 16px;
     border: 10px solid transparent;
     border-bottom-color: $light-gray;
     border-top-width: 0;
-    width: 0;
   }
 }
 // 中身を非表示にしておく
-.entry-bottom--card .hidden-show{
+.entry-bottom--card .hidden-show {
   height: 0;
   padding: 0;
   overflow: hidden;
   opacity: 0;
   transition-property: all;
-  transition-duration: 0.3s;
+  transition-duration: .3s;
   transition-timing-function: ease-out;
   transition-delay: 0s;
 }
 // クリックで中身表示
-.entry-bottom--card input:checked ~.hidden-show{
+.entry-bottom--card input:checked ~.hidden-show {
   padding: 15px 0;
   height: auto;
   opacity: 1;  
 }
 //チェックボックスを非表示
-.entry-bottom--card input{
+.entry-bottom--card input {
   display: none; 
 }
