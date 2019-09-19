@@ -1,16 +1,15 @@
 @import "./reset";
-
 @import "./config/variable";
 @import "./mixin/mixin";
-@import './tops/index';
+@import "./tops/index";
 @import "font-awesome";
-@import "./users/new";
-@import "./users/index";
-@import "./users/address";
-@import "./users/card";
-@import "./users/customer_info";
-@import "./users/complete";
-@import "./users/sms_confi";
+@import "./signup/new";
+@import "./signup/index";
+@import "./signup/address";
+@import "./signup/card";
+@import "./signup/customer_info";
+@import "./signup/complete";
+@import "./signup/sms_confi";
 @import "./common";
 @import "./modules/signup-header";
 @import "./modules/notifications";
@@ -21,4 +20,3 @@
 @import "./modules/breadcrumb";
 @import "./modules/mypage-side-menu";
 @import "./mypage/*";
-
