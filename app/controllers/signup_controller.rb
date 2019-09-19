@@ -1,7 +1,4 @@
 class SignupController < ApplicationController
- 
-def index
-end
 
 def new  
 end
@@ -19,7 +16,7 @@ def sms_comfi
   session[:first_name] = user_params[:first_name]
   session[:last_name_kana] = user_params[:last_name_kana]
   session[:first_name_kana] = user_params[:first_name_kana]
-  session[:birth_year] = user_params[:birth_year]
+  session[:birth_year_id] = user_params[:birth_year_id]
   session[:birth_month] = user_params[:birth_month]
   session[:birth_day] = user_params[:birth_day]
   @user = User.new 
@@ -35,7 +32,7 @@ def create
     first_name: session[:first_name], 
     last_name_kana: session[:last_name_kana], 
     first_name_kana: session[:first_name_kana],
-    birth_year: session[:birth_year], 
+    birth_year_id: session[:birth_year_id], 
     birth_month: session[:birth_month], 
     birth_day: session[:birth_day], 
     mobile_number: user_params[:mobile_number]
@@ -47,15 +44,6 @@ def create
     render customer_info_signup_index_path
   end
 end
-def address
-end
-
-def card  
-end
-
-def complete  
-end
-
 private
 
 def user_params
@@ -68,7 +56,7 @@ def user_params
     :first_name, 
     :last_name_kana, 
     :first_name_kana, 
-    :birth_year,
+    :birth_year_id,
     :birth_month,
     :birth_day,
     :mobile_number,

@@ -46,7 +46,7 @@
           .entry-content--birthday
             .entry-content--birthday__selectbox
               = fa_icon 'chevron-down'
-              = f.collection_select :birth_year, Birth_Year.all, :id, :name,{include_blank:'--'},required:true
+              = f.collection_select :birth_year_id, BirthYear.all, :id, :name,{include_blank:'--'},required:true
             %span.entry-content--birthday__date 年
             .entry-content--birthday__selectbox
               = fa_icon 'chevron-down'
