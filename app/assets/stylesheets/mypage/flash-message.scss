@@ -1,0 +1,7 @@
+.success {
+  @include flash-message($flash-bg-green, $flash-font-green);
+}
+
+.danger {
+  @include flash-message($flash-bg-red, $flash-font-red);
+}

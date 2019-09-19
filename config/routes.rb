@@ -29,20 +29,21 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users do
-    resource :mypage do
+  resources :users, only: [:update] do
+    resource :mypage, only: [:show] do
       collection do 
         get 'profile'
         get 'logout'
         get 'personal_info'
+        post 'personal_info' => 'mypages#create_user_address'
       end
     end
   end
 
+  resources :user_addresses, only: [:update]
 
   devise_scope :user do   
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-
 
 end

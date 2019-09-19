@@ -103,6 +103,18 @@ ActiveRecord::Schema.define(version: 2019_09_19_004833) do
     t.index ["ancestry"], name: "index_sizes_on_ancestry"
   end
 
+  create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "postcode"
+    t.integer "prefecture_id"
+    t.string "city"
+    t.string "block"
+    t.string "building"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_addresses_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "last_name", null: false
