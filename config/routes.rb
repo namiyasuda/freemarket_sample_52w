@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :tops, only: [:index]
 
   resources :addresses, only: [:new,:create]
-  resources :card, only: [:new,:show,:create]
+  resources :card, only: [:new,:show,:create,:delete]
   resources :signup, only: [:new,:index,:create] do
     collection do 
       get 'customer_info'
@@ -35,6 +35,7 @@ Rails.application.routes.draw do
         get 'profile'
         get 'logout'
         get 'personal_info'
+        get 'payment'
         post 'personal_info' => 'mypages#create_user_address'
       end
     end

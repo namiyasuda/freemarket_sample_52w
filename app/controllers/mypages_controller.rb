@@ -8,6 +8,10 @@ class MypagesController < ApplicationController
   def profile
   end
 
+  def payment
+    
+  end
+
   def logout
   end
 
