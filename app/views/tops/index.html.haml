@@ -1,5 +1,6 @@
 .all-nav
-  = render partial: 'shared/header'
+  %header
+    = render partial: 'shared/header'
               
   %main
     .background
@@ -124,7 +125,8 @@
                 = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2508029365",  size: "133*40"
       %figures
         = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?2508029365"
-  = render partial: 'shared/footer'
+  %footer
+    = render partial: 'shared/footer'
   = render partial: 'shared/camera'
   
 

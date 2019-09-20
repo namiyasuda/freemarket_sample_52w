@@ -1,10 +1,10 @@
-.sub-header{
+.sub-header {
   height: 128px;
   text-align: center;
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
-  &__logo{
+  &__logo {
     width: 185px;
     height: 49px;
     margin: 0 auto;
@@ -12,13 +12,13 @@
   }
 }
 
-.registration-panel{
+.registration-panel {
   width: 700px;
   margin: 0 auto;
   background-color:$white;
 }
 
-.create-new{
+.create-new {
   border-bottom: solid;
   border-color: $bg-gray;
   border-width: 1px;
@@ -29,44 +29,44 @@
   text-align: center;
 }
 
-.registration-form{
+.registration-form {
   padding: 40px 40px 64px;
-  &__contents{
+  &__contents {
     margin: 0 auto;
     max-width: 343px;
-    &__btn{
+    &__btn {
       text-decoration: none;
       color: $white;
-      &__reg-mail{
+      &__reg-mail {
         position: relative;
         border-radius: 4px;
         background-color: $red;
-        .fa{
+        .fa {
           position: absolute;
           top: 15px;
           left: 20px;
-          font-size: 16px;
+          font-size: 18px;
         }
-        &__btn-mail{
+        &__btn-mail {
           width: 100%;
           line-height: 48px;
           font-size: 14px;
           text-align: center;
         }
       }
-      &__reg-fb{
+      &__reg-fb {
         position: relative;
         font-size: 26px;
         border-radius: 4px;
         margin: 16px 0 0;
         background: $fb-blue;
         display: block;
-        .fa{
+        i {
           position: absolute;
           top: 12px;
           left: 18px;
         }
-        &__btn-fb{
+        &__btn-fb {
           width: 100%;
           line-height: 48px;
           font-size: 14px;
@@ -74,10 +74,10 @@
         }
       }
     }
-    &__btn--g{
+    &__btn--g {
       text-decoration: none;
       color: $font-black;
-      &__reg-google{
+      &__reg-google {
         position: relative;
         border-radius: 4px;
         margin: 16px 0 0;
@@ -86,7 +86,7 @@
         line-height: 48px;
         font-size: 14px;
         text-align: center;
-        &__icon-google{
+        &__icon-google {
           position: absolute;
           top: 15px;
           left: 18px;

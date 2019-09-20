@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
-    new_user_session_path
+    tops_path 
   end
   
 
@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_sign_out_path_for(resource)
-    tops_path 
+  def move_to_login
+    redirect_to user_session_path unless user_signed_in?
   end
 end

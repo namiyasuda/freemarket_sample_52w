@@ -13,9 +13,9 @@
             .registration-form__contents__btn__reg-mail__btn-mail
               メールアドレスで登録する
               
-        =link_to destroy_user_session_path, class: "registration-form__contents__btn" do
+        =link_to destroy_user_session_path, method: :delete,class: "registration-form__contents__btn" do
           .registration-form__contents__btn__reg-fb
-            = fa_icon 'facebook-square'
+            %i.fab.fa-facebook-square
             .registration-form__contents__btn__reg-fb__btn-fb
               Facebookで登録する
 
