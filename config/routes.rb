@@ -48,4 +48,8 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  resources :auth_signup, only: [:create] do
+    collection do 
+      get 'auth_sms_comfi'
+    end
 end
