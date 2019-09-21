@@ -14,4 +14,23 @@ class User < ApplicationRecord
   belongs_to_active_hash :birth_year
 
   devise :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+  
+  def self.find_oauth(auth)
+    uid = auth.uid
+    provider = auth.provider
+    snscredential = SnsCredential.where(uid: uid, provider: provider).first
+    if snscredential.present?
+      user = User.where(id: snscredential.user_id).first
+    else
+      user = User.where(email: auth.info.email).first
+      if user.present?
+        SnsCredential.create(
+          uid: uid,
+          provider: provider,
+          user_id: user.id
+          )
+      end
+    end
+    return user
+  end
 end

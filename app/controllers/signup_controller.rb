@@ -1,6 +1,13 @@
 class SignupController < ApplicationController
 
-def new  
+def new
+  if Rails.env.production?
+    @facebook_path = "#"
+    @google_path = "#"
+  else
+    @facebook_path = user_facebook_omniauth_authorize_path
+    @google_path = user_google_oauth2_omniauth_authorize_path
+  end
 end
 
 def customer_info 

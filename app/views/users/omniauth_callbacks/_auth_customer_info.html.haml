@@ -1,0 +1,64 @@
+.customer-entry
+  .customer-entry__top
+    会員情報入力
+  .customer-entry__body
+    .customer-entry__body__form
+      = form_with model: user, local:true, url:auth_sms_comfi_auth_signup_index_path,method: :get,class: 'customer-entry__body__form' do |f|
+        = f.hidden_field :password, value: Devise.friendly_token[0, 20]
+        = f.hidden_field :uid, value: auth.uid
+        = f.hidden_field :provider, value: auth.provider
+
+        .entry-content
+          %label.entry-content__text ニックネーム
+          %span.entry-content__require 必須
+          = f.text_field :nickname, value: auth.info.name, autofocus: true, autocomplete: "nickname",placeholder:"例)メルカリ太郎",class:"entry-content__input-default",type:"text",required:""
+        .entry-content
+          %label.entry-content__text メールアドレス
+          %span.entry-content__require 必須
+          = f.email_field :email, value: auth.info.email, autocomplete: "email",placeholder:"PC・携帯どちらでも可",class:"entry-content__input-default",required:"",type:"email"
+        .entry-content
+          %h3.entry-content__text__bold 本人確認
+          %p.entry-content__text__word 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力くださいください。他のお客さまに公開されることはありません。
+        .entry-content
+          %label.entry-content__text お名前(全角)
+          %span.entry-content__require 必須
+        .entry-content--namebox
+          = f.text_field :last_name, autocomplete: "last_name",placeholder:"例)山田",class:"entry-content--namebox__text",required:"",pattern:"[^\x20-\x7E]*"
+          = f.text_field :first_name, autocomplete: "first_name",placeholder:"例)彩",class:"entry-content--namebox__text",required:"",pattern:"[^\x20-\x7E]*"
+        .entry-content
+          %label.entry-content__text お名前カナ(全角)
+          %span.entry-content__require 必須
+        .entry-content--namebox  
+          = f.text_field :last_name_kana, autocomplete: "last_name_kana",placeholder:"例)ヤマダ",class:"entry-content--namebox__text",required:"",pattern:"[\u30A1-\u30FF]*"
+          = f.text_field :first_name_kana, autocomplete: "first_name_kana",placeholder:"例)アヤ",class:"entry-content--namebox__text",required:"",pattern:"[\u30A1-\u30FF]*"
+        .entry-content
+          %label.entry-content__text 生年月日
+          %span.entry-content__require 必須
+        .entry-content--birthday
+          .entry-content--birthday__selectbox
+            = fa_icon 'chevron-down'
+            = f.collection_select :birth_year_id, BirthYear.all, :id, :name,{include_blank:'--'},required:true
+          %span.entry-content--birthday__date 年
+          .entry-content--birthday__selectbox
+            = fa_icon 'chevron-down'
+            = f.select :birth_month,[['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8'],['9'],['10'],['11'],['12']],{include_blank:'--'},required:true
+          %span.entry-content--birthday__date 月
+          .entry-content--birthday__selectbox
+            = fa_icon 'chevron-down'
+            = f.select :birth_day,[['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8'],['9'],['10'],['11'],['12'],['13'],['14'],['15'],['16'],['17'],['18'],['19'],['20'],['21'],['22'],['23'],['24'],['25'],['26'],['27'],['28'],['29'],['30'],['31']],{include_blank:'--'},required:true
+            %span.entry-content--birthday__date 日
+        .form-info-text
+          %p ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+        .entry-bottom
+          .entry-bottom__recaptcha
+            = image_tag 'robo.new.png',class: "entry-bottom__recapcha__image"
+          .entry-bottom__text
+            「次へ進む」のボタンを押すことにより、
+            = link_to "利用規約", '#', class: "entry-bottom__text__rule"
+            に同意したものとみなします
+          .entry-bottom__next
+            = f.submit "次へ進む", class: "entry-bottom__next__btn"
+          .entry-bottom__help
+            = link_to '本人情報の登録について', '#', class: 'entry-bottom__help'
+            =fa_icon'chevron-right'

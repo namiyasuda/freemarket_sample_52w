@@ -9,12 +9,12 @@
         .no-account__btn__signup
           新規会員登録
     .login-method
-      =link_to "#", class: "fb-login" do
+      =link_to user_facebook_omniauth_authorize_path, class: "fb-login" do
         .fb-login__btn
           = fa_icon 'facebook-square'
           .fb-login__btn__name
             Facebookでログイン
-      =link_to "#", class: "google-login" do  
+      =link_to user_google_oauth2_omniauth_authorize_path, class: "google-login" do  
         .google-login__btn
           = image_tag 'https://img.icons8.com/color/48/000000/google-logo.png', alt: 'google-icon', class: 'google-login__btn__icon'
           Googleでログイン
