@@ -17,6 +17,7 @@ class AuthSignupController < ApplicationController
   end
 
   def create
+  # 例外処理とトランザクションを使用し片方のみレコードが登録される事を防止
     begin
       ActiveRecord::Base.transaction do
         @user = User.create!(
@@ -33,7 +34,7 @@ class AuthSignupController < ApplicationController
           birth_day: session[:birth_day], 
           mobile_number: sns_user_params[:mobile_number]
         )
-        sns = SnsCredential.create!(
+        SnsCredential.create!(
           uid: session[:uid],
           provider: session[:provider],
           user_id: @user.id
@@ -45,34 +46,6 @@ class AuthSignupController < ApplicationController
       redirect_to new_signup_path
     end
   end
-
-  # def create
-  #   @user = User.create(
-  #     nickname: session[:nickname],
-  #     email: session[:email],
-  #     password: session[:password],
-  #     password_confirmation: session[:password],
-  #     last_name: session[:last_name], 
-  #     first_name: session[:first_name], 
-  #     last_name_kana: session[:last_name_kana], 
-  #     first_name_kana: session[:first_name_kana],
-  #     birth_year_id: session[:birth_year_id], 
-  #     birth_month: session[:birth_month], 
-  #     birth_day: session[:birth_day], 
-  #     mobile_number: sns_user_params[:mobile_number]
-  #   )
-  #   sns = SnsCredential.new(
-  #     uid: session[:uid],
-  #     provider: session[:provider],
-  #     user_id: @user.id
-  #   )
-  #   if @user.save && sns.save
-  #     sign_in(@user)
-  #     redirect_to new_address_path
-  #   else
-  #     render new_signup_path
-  #   end
-  # end
 
   private
   def sns_user_params
