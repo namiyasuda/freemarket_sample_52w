@@ -4,10 +4,10 @@ class UserAddressesController < ApplicationController
 
     if user_address.update(user_address_params)
       flash[:success] = '変更しました。'
-      redirect_to personal_info_user_mypage_path(user_id: params[:id])
+      redirect_to personal_info_user_mypage_path(current_user)
     else
       flash.now[:danger] = '変更できませんでした。'
-      render personal_info_user_mypage_path(user_id: params[:id])
+      render personal_info_user_mypage_path(current_user)
     end
   end
 
