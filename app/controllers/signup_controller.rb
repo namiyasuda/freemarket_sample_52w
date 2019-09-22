@@ -1,6 +1,7 @@
 class SignupController < ApplicationController
 
 def new
+  redirect_to :root if user_signed_in?
 # application_controllerで定義した本番ではauth認証機能を使用させないメソッド
   not_used_auth_production
 end
