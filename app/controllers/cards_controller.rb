@@ -1,4 +1,4 @@
-class CardController < ApplicationController
+class CardsController < ApplicationController
   require "payjp"
 
   def new
@@ -24,6 +24,7 @@ class CardController < ApplicationController
   def delete
   end
   def show
+    
   end
 end
 
