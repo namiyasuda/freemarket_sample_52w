@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :delivery_method
   belongs_to :seller, class_name: 'User'
   belongs_to :buyer, class_name: 'User', optional: true
-  belongs_to :category
+  belongs_to :category, optional: true
   belongs_to :brand, optional: true
   belongs_to :size, optional: true
   has_many :images, dependent: :destroy

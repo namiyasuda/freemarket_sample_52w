@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
+  before_action :move_to_login , except: :show
 
   def show
     @product = Product.find(params[:id])
+    @images = @product.images
   end
 
   def new
@@ -9,6 +11,51 @@ class ProductsController < ApplicationController
     @product = Product.new
     @image = Image.new
     @brand = Brand.new
+  end
+
+  def create
+    product = Product.new(product_params)
+    if product.save
+      if (brand_name = params[:product][:brand][:name]).present?
+        unless brand=Brand.find_by(name: brand_name)
+          brand = Brand.create(name: brand_name)
+        end
+        product.update(brand_id: brand.id)
+      end
+        params[:images][:image].each do |image|
+        product.images.create(name: image, product_id: product.id)
+      end
+      redirect_to new_product_path, notice: '出品が成功しました'
+    else
+      redirect_to new_product_path, alert: '出品が失敗しました'
+    end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+    redirect_to tops_path if @product.seller_id != current_user.id
+    @images = @product.images
+    @category_parents = Category.where(ancestry: nil)
+    @category_children = Category.where(ancestry: @product.parent_id)
+    @category_grandchildren = Category.where(ancestry: "#{@product.parent_id}"+"/"+"#{@product.child_id}")
+    @sizes = Size.find(@product.size_id).siblings
+    @brand = @product.brand.present? ? @product.brand : Brand.new
+    @delivery_methods = DeliveryMethod.where(payside_id: @product.paying_side_id)
+  end
+
+  def update
+    product = Product.find(params[:id])
+    product.update(product_params) if product.seller_id == current_user.id
+    if (brand_name = params[:product][:brand][:name]).present?
+      unless brand=Brand.find_by(name: brand_name)
+        brand = Brand.create(name: brand_name)
+      end
+      product.update(brand_id: brand.id)
+    end
+      params[:images][:image].each do |image|
+      product.images.update(name: image, product_id: product.id)
+    end
+    redirect_to edit_product_path(product), notice: '変更が完了しました'
   end
 
    # 親カテゴリーが選択された後に動くアクションAjax
@@ -34,24 +81,6 @@ class ProductsController < ApplicationController
   # 配送料の負担を選択された後に動くajax
   def get_delivery_method
     @delivery_methods = DeliveryMethod.where(payside_id: params[:paySide_id].to_i)
-  end
-
-  def create
-    product = Product.new(product_params)
-    if product.save
-      if (brand_name = params[:product][:brand][:name]).present?
-        unless brand=Brand.find_by(name: brand_name)
-          brand = Brand.create(name: brand_name)
-        end
-        product.update(brand_id: brand.id)
-      end
-        params[:images][:image].each do |image|
-        product.images.create(name: image, product_id: product.id)
-      end
-      redirect_to new_product_path, notice: '出品が成功しました'
-    else
-      redirect_to new_product_path, alert: '出品が失敗しました'
-    end
   end
 
   def dropzone
