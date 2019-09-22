@@ -33,7 +33,7 @@ class AuthSignupController < ApplicationController
           birth_day: session[:birth_day], 
           mobile_number: sns_user_params[:mobile_number]
         )
-        sns = SnsCredential.create!(
+        SnsCredential.create!(
           uid: session[:uid],
           provider: session[:provider],
           user_id: @user.id
