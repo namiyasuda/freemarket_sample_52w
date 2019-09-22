@@ -1,0 +1,33 @@
+%header
+  = render 'shared/sub-header'
+
+%section
+  = render 'shared/breadcrumb'
+
+- flash.each do |message_type, message|
+  %div{class: "flash #{message_type}"}= message
+
+.mypage-main
+  = render 'shared/mypage-side-menu'
+
+  .mypage
+    %h2.mypage__title
+      支払い方法
+    %section
+      = form_with model:@card,local:true,url:user_mypage_path,method: :delete,class: "payment", id: 'charge-form' do |f|
+        .payment__list
+          クレジットカード一覧
+        .card-addbox 
+          .card-add
+            = image_tag "#{@card_src}", width: '49', height: '20', alt: @card_brand, id: "card_image"
+            .card-add__number
+            = "**** **** **** " + @default_card_information.last4
+            .card-add__number
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            = f.submit "削除する", {class: "card-add__delete"}
+        
+        .payment-about
+          = link_to '支払い方法について', '#', class: '.payment-about'
+          =fa_icon'chevron-right'
