@@ -4,9 +4,11 @@ class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+  # application_controllerで定義した本番ではauth認証機能を使用させないメソッド
+    not_used_auth_production
+    super
+  end
 
   # POST /resource/sign_in
   # def create
