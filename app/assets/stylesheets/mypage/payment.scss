@@ -45,19 +45,19 @@
     .fa {
       margin-right: 16px;
     }
-    &__red{
+    &__red {
       color: $white;
     }
   }
-  &__number{
+  &__number {
     margin: 10px;
   }
-  &__delete{
+  &__delete {
     position: absolute;
     top: 100px;
     right: 200px;
     padding: 1px 4px;
-    background: #fff;
+    background: $white;
     border-radius: 3px;
     border: 1px solid $red;
     color: $red;
@@ -71,12 +71,11 @@
   text-align: right;
   &:hover {
     text-decoration: underline;
-    opacity: 0.8;
+    opacity: .8;
   }
   .fa {
     position: absolute;
     top: 0;
-    margin-left: 8px;
-    
+    margin-left: 8px;  
   }
 }
