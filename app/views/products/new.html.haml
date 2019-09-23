@@ -13,13 +13,18 @@
         %span.entry-content__require 必須
       %p
         最大10枚までアップロードできます
-      = f.fields_for :image do |image|
-        .upload-box__drop-box
-          = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", required: true
-          .upload-box__drop-box__text
-            ドラッグアンドドロップ
-            %br
-            またはクリックしてファイルをアップロード
+      .upload-box__body
+        = f.fields_for :image do |image|
+          -# .upload-box__body__item-container
+          %ul.upload-box__body__items#item-container1
+          %ul.upload-box__body__items#item-container2.hide
+          .upload-box__body__drop-box
+            = image.file_field :image, multiple: true , name: 'images[image][]', id: "upload-image1", class: "upload-image", required: true
+            .upload-box__body__drop-box__text
+              -# ドラッグアンドドロップ
+              %br
+              -# または
+              クリックしてファイルをアップロード
     .sell-content
       .sell-content__group
         %label.entry-content__text 商品名

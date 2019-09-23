@@ -20,27 +20,87 @@
         margin-top: 8px;
         line-height: 1.5;
       }
-      &__drop-box{
-        position: relative;
-        width: 100%;
-        min-height: 162px;
-        margin: 16px auto 0;
-        background: $bg-gray;
-        border: 1px dashed $gray;
-        text-align: center;
-        cursor: pointer;
-        &__file{
-          display: none;
+      &__body{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 16px;
+        &__items{
+          display: flex;
+          flex-wrap: wrap;
+          // float: left;
+          max-width: 620px;
         }
-        &__text{
-          position: absolute;
-          top: 35%;
-          left: 16px;
-          right: 16px;
-          font-size: 14px;
-          font-weight: bolder;
+        &__item{
+          margin: 0 0 10px 10px;
+          display: inline-block;
+          background-color: $bg-gray;
+          border: 1px solid $light-gray;
+          &__figure{
+            height: 116px;
+            width: 112px;
+            & img {
+              margin: auto;
+              max-height: 116px;
+              max-width: 112px;
+              transform: none;
+            }
+          }
+          &__button{
+            display: flex;
+            &__edit{
+              border-right: 1px solid $light-gray;
+            }
+            a {
+              display: inline-block;
+              width: 50%;
+              line-height: 44px;
+              text-align: center;
+              cursor: pointer;
+            }
+          }
+        }
+        &__drop-box{
+          // float: right;
+          position: relative;
+          width: 100%;
+          min-height: 162px;
+          margin: 0 0 10px 10px;
+          background: $bg-gray;
+          border: 1px dashed $gray;
           text-align: center;
-          line-height: 1.5;
+          .upload-image{
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+          }
+          &__text{
+            position: absolute;
+            top: 35%;
+            left: 16px;
+            right: 16px;
+            font-size: 14px;
+            font-weight: bolder;
+            text-align: center;
+            line-height: 1.5;
+            pointer-events: none;
+          }
+        }
+        .have-item-1, .have-item-6 {
+        width: calc(100% - 134px);
+        }
+        .have-item-2, .have-item-7 {
+        width: calc(100% - 258px);
+        }
+        .have-item-3, .have-item-8 {
+        width: calc(100% - 128px * 3);
+        }
+        .have-item-4, .have-item-9 {
+        width: calc(100% - 127px * 4);
+          .upload-box__body__drop-box__text {
+            top: 10%;
+            font-size: 13px;
+          }
         }
       }
     }
