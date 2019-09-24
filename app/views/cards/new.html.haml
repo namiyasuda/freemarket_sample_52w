@@ -8,7 +8,7 @@
       支払い方法
     .customer-entry__body
       .customer-entry__body__form
-        = form_with model:@card,local:true,url:card_index_path,class: "customer-entry__body__form", id: 'charge-form' do |f|
+        = form_with model:@card,local:true,url:cards_path,class: "customer-entry__body__form", id: 'charge-form' do |f|
           .entry-content
             %label.entry-content__text カード番号
             %span.entry-content__require 必須
