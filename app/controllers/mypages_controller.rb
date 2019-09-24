@@ -1,5 +1,5 @@
 class MypagesController < ApplicationController
-  before_action :move_to_login
+  before_action :move_to_login, :set_card_path
 
   def show
     @products = Product.where(seller_id: current_user.id)
@@ -12,6 +12,7 @@ class MypagesController < ApplicationController
   end
 
   def card_reg
+    @card_path = card_reg_user_mypage_path
   end
   
   def create_card
@@ -76,5 +77,14 @@ class MypagesController < ApplicationController
   private
   def user_address_params
     params.permit(:postcode, :prefecture_id, :city, :block, :building).merge(user_id: current_user.id)
+  end
+
+  def set_card_path
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+      @card_path = payment_user_mypage_path
+    else
+      @card_path = card_show_user_mypage_path
+    end
   end
 end
