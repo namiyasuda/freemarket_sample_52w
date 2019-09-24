@@ -14,7 +14,7 @@
     %h2.mypage__title
       支払い方法
     %section
-      = form_with model:@card,local:true,url:user_mypage_path,method: :delete,class: "payment", id: 'charge-form' do |f|
+      .payment
         .payment__list
           クレジットカード一覧
         .card-addbox 
@@ -26,8 +26,8 @@
             - exp_month = @default_card_information.exp_month.to_s
             - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
             = exp_month + " / " + exp_year
-            = f.submit "削除する", {class: "card-add__delete"}
+            = link_to '削除する', "/cards/#{current_user.id}", class: "card-add__delete", method: :delete
         
         .payment-about
-          = link_to '支払い方法について', '#', class: '.payment-about'
-          =fa_icon'chevron-right'
+          = link_to '支払い方法について', '#', class: 'payment-about'
+          = fa_icon'chevron-right'

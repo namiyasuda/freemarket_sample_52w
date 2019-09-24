@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :tops, only: [:index]
 
   resources :addresses, only: [:new,:create]
-  resources :cards, only: [:new,:show,:create,:delete]
+  resources :cards, only: [:new,:show,:create,:destroy]
   resources :signup, only: [:new,:index,:create] do
     collection do 
       get 'customer_info'
@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:update] do
-    resource :mypage, only: [:show,:destroy] do
+    resource :mypage, only: [:show] do
       collection do 
         get 'profile'
         get 'logout'

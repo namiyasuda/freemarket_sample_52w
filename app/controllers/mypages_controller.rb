@@ -55,17 +55,7 @@ class MypagesController < ApplicationController
       end
     end
     end
-  def destroy #PayjpとCardのデータベースを削除
-    @card = current_user.card
-    Payjp.api_key = "sk_test_d186521dfc37df79995c04e3"
-    customer = Payjp::Customer.retrieve(@card.customer_id)
-    customer.delete
-    if @card.destroy #削除に成功した時にポップアップを表示します。
-      redirect_to payment_user_mypage_path, notice: "削除しました"
-    else #削除に失敗した時にアラートを表示します。
-      redirect_to action: "index", alert: "削除できませんでした"
-    end
-end
+  
   def logout
   end
 
