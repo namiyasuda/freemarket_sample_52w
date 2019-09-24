@@ -50,4 +50,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  resources :users do
+    resource :buys, only: [:show]
+    end
 end
