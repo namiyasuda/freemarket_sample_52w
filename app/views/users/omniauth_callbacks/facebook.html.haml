@@ -1,0 +1,10 @@
+= stylesheet_link_tag  'progress_bar/first', media: 'all'
+%header
+  = render 'shared/signup-header'
+
+%section
+  = render partial: 'auth_customer_info', locals: { user: @user, auth: @auth }
+
+%footer
+  = render 'shared/sub-footer'
+ 

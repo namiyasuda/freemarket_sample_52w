@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => {
+    omniauth_callbacks:  "users/omniauth_callbacks",
+    sessions: "users/sessions"
+  }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   root 'tops#index'
@@ -48,6 +51,12 @@ Rails.application.routes.draw do
 
   devise_scope :user do   
     get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
+  resources :auth_signup, only: [:create] do
+    collection do 
+      get 'auth_sms_comfi'
+    end
   end
 
 end
