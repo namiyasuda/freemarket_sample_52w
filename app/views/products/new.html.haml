@@ -15,11 +15,10 @@
         最大10枚までアップロードできます
       .upload-box__body
         = f.fields_for :image do |image|
-          -# .upload-box__body__item-container
           %ul.upload-box__body__items#item-container1
           %ul.upload-box__body__items#item-container2.hide
-          .upload-box__body__drop-box
-            = image.file_field :image, multiple: true , name: 'images[image][]', id: "upload-image1", class: "upload-image", required: true
+          .upload-box__body__drop-box{data:{image: 1}}
+            = image.file_field :image , name: 'images[image][]', id: "upload-image1", class: "upload-image", required: true
             .upload-box__body__drop-box__text
               -# ドラッグアンドドロップ
               %br

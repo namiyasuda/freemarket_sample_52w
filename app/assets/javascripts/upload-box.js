@@ -1,25 +1,5 @@
-// 現在凍結中。ドラック＆ドロップ機能
-
-// $(function() {
-//   // disable auto discover
-//   Dropzone.autoDiscover = false;
-
-//   $("#my-dropzone").dropzone({
-//     dictDefaultMessage: 'ここにファイルをドラッグ＆ドロップ、または、クリックしてファイルを選択',
-//     maxFilesize: 10,
-//     addRemoveLinks: true,
-//     previewsContainer: '.dz-previews',
-//     // previewTemplate : $('.preview').html()
-//   });
-  
-//   // $('body').on('click', function(){
-//   //   console.log('aaa');
-//    });
-// });
-
 $(function() {  
-  var image_count = 1;
-  // var have_item_num = ;
+  var image_count = 1;  //アップロードされた画像の通し番号
 
   // プレビュー画像HTMLを生成する
   function buildPreviewHTML(e, order) {
@@ -28,8 +8,8 @@ $(function() {
                     <img src='${e.target.result}' class='img-prev' data-image=${order}>
                   </div>
                   <div class='upload-box__body__item__button'>
-                    <a class='upload-box__body__item__button__edit'>編集</a>
-                    <a class='upload-box__body__item__button__delete' data-image=${order}>削除</a>
+                    <span class='upoad-box__body__item__button__edit'>編集</span>
+                    <span class='upload-box__body__item__button__delete' data-image=${order}>削除</span>
                   </div>
                 </li>`;
     return html;
@@ -37,18 +17,12 @@ $(function() {
 
   // インプットボックスを生成する
   function buildInputImageBox(order){
-    var html = `<div class="upload-box__body__drop-box have-item-${$('.upload-box__body').find('li.upload-box__body__item').length + 1}">
+    var html = `<div class="upload-box__body__drop-box have-item-${$('.upload-box__body').find('li.upload-box__body__item').length + 1}" data-image=${order}>
                   <input name="images[image][]" id="upload-image${order}" class="upload-image" type="file">
                   <div class="upload-box__body__drop-box__text">
                     クリックしてファイルをアップロード
                   </div>
                 </div>`
-    return html
-  }
-
-  // アイテムコンテナーを生成する
-  function buildItemContainer(order){
-    var html = `<ul class="upload-box__body__items #item-container2"></ul>`
     return html
   }
 
@@ -85,10 +59,28 @@ $(function() {
     var target_list = $(this).parent().parent();
     var target_upload_num = $(this).attr('data-image');
     target_list.remove();
+    console.log()
+    // クリックしたプレビューと同じ番号のアップロードボックスを削除する
     $('#upload-image'+target_upload_num).parent().remove();
-    // 10枚目の画像を消すとインプットボックスがなくなる
+    // 現在表示中のupload-boxの大きさを変更
+    $('.upload-box__body__drop-box').last().removeClass(function(index, className) {
+      return (className.match(/\bhave-item-\S+/g) || []).join(' ');
+    });
+    $('.upload-box__body__drop-box').last().addClass('have-item-'+$('.upload-box__body').find('li.upload-box__body__item').length);
+    // 削除した時に上の段に移動させる
+    if ($('#item-container2 li').length > 0 && $('#item-container1 li').length < 5){
+      $('#item-container1').append($('#item-container2 li').first());
+    }
+    // 10枚目の画像を消した時はインプットボックを生成する
     if ($('.upload-box__body').find('li.upload-box__body__item').length == 9){
-      $('.upload-box__body').append(buildInputImageBox(5));
+      $('.upload-box__body').append(
+        `<div class="upload-box__body__drop-box have-item-${$('.upload-box__body').find('li.upload-box__body__item').length}" data-image="${$('.upload-box__body__drop-box').last().data('image')+1}">
+          <input name="images[image][]" id="upload-image${$('.upload-box__body__drop-box').last().data('image')+1}" class="upload-image" type="file">
+          <div class="upload-box__body__drop-box__text">
+            クリックしてファイルをアップロード
+          </div>
+        </div>`
+      );
     }
   })
 })

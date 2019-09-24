@@ -50,11 +50,13 @@
             &__edit{
               border-right: 1px solid $light-gray;
             }
-            a {
+            span {
               display: inline-block;
+              color: $blue;
               width: 50%;
               line-height: 44px;
               text-align: center;
+              text-decoration: none;
               cursor: pointer;
             }
           }

@@ -14,21 +14,43 @@
       %p
         最大10枚までアップロードできます
       .upload-box__body
-        = f.fields_for :image do |image|
-          .upload-box__body__item-container
-            %ul.upload-box__body__items
+        = f.fields_for :image do |i|
+          %ul.upload-box__body__items#item-container1
+            - @images.each_with_index do |image, index|
               %li.upload-box__body__item
                 .upload-box__body__item__figure
-                  = image_tag @images[0].name.url ,class: 'upload-box__body__image', id: 'img-prev'
+                  = image_tag image.name.url, data: {image: index+1}, class: 'img-prev'
                 .upload-box__body__item__button
-                  = link_to('編集', {}, class:'upload-box__body__item__button__edit')
-                  = link_to('削除', {}, class:'upload-box__body__item__button__delete')
-          .upload-box__body__drop-box
-            = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", required: true
-            .upload-box__body__drop-box__text
-              ドラッグアンドドロップ
-              %br
-              またはクリックしてファイルをアップロード
+                  %span.upoad-box__body__item__button__edit 編集
+                  %span.upload-box__body__item__button__delete{data: {image: index+1}} 削除
+              - break if index==4
+          - if @images.length <=5    # 画像が5枚以下の場合
+            %ul.upload-box__body__items#item-container2.hide
+          -else   # 画像が5枚より多い場合
+            %ul.upload-box__body__items#item-container2
+              - 6.upto(@images.length) do |num|
+                %li.upload-box__body__item
+                  .upload-box__body__item__figure
+                    = image_tag @images[num-1].name.url, data: {image: num}, class: 'img-prev'
+                  .upload-box__body__item__button
+                    %span.upoad-box__body__item__button__edit 編集
+                    %span.upload-box__body__item__button__delete{data: {image: num}} 削除
+          - 1.upto(@images.length) do |num|
+            .upload-box__body__drop-box.hide{class:"have-item-#{num}", data: {image: num}}
+              = i.file_field :image , name: 'images[image][]', id: "upload-image#{num}", class: "upload-image", required: true
+              .upload-box__body__drop-box__text
+                -# ドラッグアンドドロップ
+                %br
+                -# または
+                クリックしてファイルをアップロード
+          - unless @images.length == 10
+            .upload-box__body__drop-box{class:"have-item-#{@images.length}", data: {image: @images.length+1}}
+              = i.file_field :image , name: 'images[image][]', id: "upload-image#{@images.length+1}", class: "upload-image", required: true
+              .upload-box__body__drop-box__text
+                -# ドラッグアンドドロップ
+                %br
+                -# または
+                クリックしてファイルをアップロード
     .sell-content
       .sell-content__group
         %label.entry-content__text 商品名
