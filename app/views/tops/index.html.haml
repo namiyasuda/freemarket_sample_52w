@@ -22,143 +22,160 @@
   %section.pickup
     %h2.pickup__head 商品一覧
     %section.pickup__container
-      %h3.pickup__container--text-center
-        = link_to(@category1.name+" 新着アイテム" , "/jp/category/1/")
-      .pickup__container--content
-        - @products1.each do |product|
-          %section.item
-            %figure.item__photo
-              = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 
-                = product.name
-              .item__body--num
-                .price.font-5 
-                  ¥
-                  = product.price
-      .view-all
-        = link_to("すべての商品を見る", "/jp/category/1/")
+      -if @products1.nil?
+      - else
+        %h3.pickup__container--text-center
+          = link_to(@category1.name+" 新着アイテム" , "/jp/category/1/")
+        .pickup__container--content
+          - @products1.each do |product|
+            %section.item
+              %figure.item__photo
+                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
+              .item__body
+                %h3.item__body--name.font-2 
+                  = product.name
+                .item__body--num
+                  .price.font-5 
+                    ¥
+                    = product.price
+          .view-all
+            = link_to("すべての商品を見る", "/jp/category/1/")
+        
     %section.pickup__container
-      %h3.pickup__container--text-center
-        = link_to(@category2.name+" 新着アイテム" , "/jp/category/1/")
-      .pickup__container--content
-        - @products2.each do |product|
-          %section.item
-            %figure.item__photo
-              = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 
-                = product.name
-              .item__body--num
-                .price.font-5 
-                  ¥
-                  = product.price
-      .view-all
-        = link_to("すべての商品を見る", "/jp/category/2/")
+      -if @products2.nil?
+      - else
+        %h3.pickup__container--text-center
+          = link_to(@category2.name+" 新着アイテム" , "/jp/category/1/")
+        .pickup__container--content
+          - @products2.each do |product|
+            %section.item
+              %figure.item__photo
+                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
+              .item__body
+                %h3.item__body--name.font-2 
+                  = product.name
+                .item__body--num
+                  .price.font-5 
+                    ¥
+                    = product.price
+        .view-all
+          = link_to("すべての商品を見る", "/jp/category/2/")
     %section.pickup__container
-      %h3.pickup__container--text-center
-        = link_to(@category3.name+" 新着アイテム" , "/jp/category/1/")
-      .pickup__container--content
-        - @products3.each do |product|
-          %section.item
-            %figure.item__photo
-              = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 
-                = product.name
-              .item__body--num
-                .price.font-5 
-                  ¥
-                  = product.price
-      .view-all
-        = link_to("すべての商品を見る", "/jp/category/3/")
+      -if @products3.nil?
+      - else
+        %h3.pickup__container--text-center
+          = link_to(@category3.name+" 新着アイテム" , "/jp/category/1/")
+        .pickup__container--content
+          - @products3.each do |product|
+            %section.item
+              %figure.item__photo
+                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
+              .item__body
+                %h3.item__body--name.font-2 
+                  = product.name
+                .item__body--num
+                  .price.font-5 
+                    ¥
+                    = product.price
+        .view-all
+          = link_to("すべての商品を見る", "/jp/category/3/")
     %section.pickup__container
-      %h3.pickup__container--text-center
-        = link_to(@category4.name+" 新着アイテム" , "/jp/category/1/")
-      .pickup__container--content
-        - @products4.each do |product|
-          %section.item
-            %figure.item__photo
-              = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 
-                = product.name
-              .item__body--num
-                .price.font-5 
-                  ¥
-                  = product.price
-      .view-all
-        = link_to("すべての商品を見る", "/jp/category/6/")
+      -if @products4.nil?
+      - else
+        %h3.pickup__container--text-center
+          = link_to(@category4.name+" 新着アイテム" , "/jp/category/1/")
+        .pickup__container--content
+          - @products4.each do |product|
+            %section.item
+              %figure.item__photo
+                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
+              .item__body
+                %h3.item__body--name.font-2 
+                  = product.name
+                .item__body--num
+                  .price.font-5 
+                    ¥
+                    = product.price
+        .view-all
+          = link_to("すべての商品を見る", "/jp/category/6/")
   %section.pickup
-    %h2.pickup__head ピックアップブランド
+    -if @products5.nil?
+    - else
+      %h2.pickup__head ピックアップブランド
+      %section.pickup__container
+        %h3.pickup__container--text-center
+          = link_to(@brand1.name+" 新着アイテム" , "/jp/category/1/")
+        .pickup__container--content
+          - @products5.each do |product|
+            %section.item
+              %figure.item__photo
+                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
+              .item__body
+                %h3.item__body--name.font-2 
+                  = product.name
+                .item__body--num
+                  .price.font-5 
+                    ¥
+                    = product.price
+        .view-all
+          = link_to("すべての商品を見る", "/jp/category/6/")
     %section.pickup__container
-      %h3.pickup__container--text-center
-        = link_to(@brand1.name+" 新着アイテム" , "/jp/category/1/")
-      .pickup__container--content
-        - @products5.each do |product|
-          %section.item
-            %figure.item__photo
-              = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 
-                = product.name
-              .item__body--num
-                .price.font-5 
-                  ¥
-                  = product.price
-      .view-all
-        = link_to("すべての商品を見る", "/jp/category/6/")
+      -if @products6.nil?
+      - else
+        %h3.pickup__container--text-center
+          = link_to(@brand2.name+" 新着アイテム" , "/jp/category/1/")
+        .pickup__container--content
+          - @products6.each do |product|
+            %section.item
+              %figure.item__photo
+                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
+              .item__body
+                %h3.item__body--name.font-2 
+                  = product.name
+                .item__body--num
+                  .price.font-5 
+                    ¥
+                    = product.price
+        .view-all
+          = link_to("すべての商品を見る", "/jp/category/6/")
     %section.pickup__container
-      %h3.pickup__container--text-center
-        = link_to(@brand2.name+" 新着アイテム" , "/jp/category/1/")
-      .pickup__container--content
-        - @products6.each do |product|
-          %section.item
-            %figure.item__photo
-              = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 
-                = product.name
-              .item__body--num
-                .price.font-5 
-                  ¥
-                  = product.price
-      .view-all
-        = link_to("すべての商品を見る", "/jp/category/6/")
+      -if @products7.nil?
+      - else
+        %h3.pickup__container--text-center
+          = link_to(@brand3.name+" 新着アイテム" , "/jp/category/1/")
+        .pickup__container--content
+          - @products7.each do |product|
+            %section.item
+              %figure.item__photo
+                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
+              .item__body
+                %h3.item__body--name.font-2 
+                  = product.name
+                .item__body--num
+                  .price.font-5 
+                    ¥
+                    = product.price
+        .view-all
+          = link_to("すべての商品を見る", "/jp/category/6/")
     %section.pickup__container
-      %h3.pickup__container--text-center
-        = link_to(@brand3.name+" 新着アイテム" , "/jp/category/1/")
-      .pickup__container--content
-        - @products7.each do |product|
-          %section.item
-            %figure.item__photo
-              = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 
-                = product.name
-              .item__body--num
-                .price.font-5 
-                  ¥
-                  = product.price
-      .view-all
-        = link_to("すべての商品を見る", "/jp/category/6/")
-    %section.pickup__container
-      %h3.pickup__container--text-center
-        = link_to(@brand4.name+" 新着アイテム" , "/jp/category/1/")
-      .pickup__container--content
-        - @products8.each do |product|
-          %section.item
-            %figure.item__photo
-              = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-            .item__body
-              %h3.item__body--name.font-2 
-                = product.name
-              .item__body--num
-                .price.font-5 
-                  ¥
-                  = product.price
-      .view-all
-        = link_to("すべての商品を見る", "/jp/category/6/")
+      -if @products8.nil?
+      - else
+        %h3.pickup__container--text-center
+          = link_to(@brand4.name+" 新着アイテム" , "/jp/category/1/")
+        .pickup__container--content
+          - @products8.each do |product|
+            %section.item
+              %figure.item__photo
+                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
+              .item__body
+                %h3.item__body--name.font-2 
+                  = product.name
+                .item__body--num
+                  .price.font-5 
+                    ¥
+                    = product.price
+        .view-all
+          = link_to("すべての商品を見る", "/jp/category/6/")
   %aside.banners-nav
     .banners
       .banners__left

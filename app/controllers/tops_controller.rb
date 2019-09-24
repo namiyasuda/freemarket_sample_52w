@@ -2,7 +2,7 @@ class TopsController < ApplicationController
   before_action :index
   def index
     ranking1 = Product.group(:parent_id).order('count_parent_id DESC').limit(4).count(:parent_id).keys
-
+    
     @category1 = Category.find(ranking1[0])
     @products1 = Product.where(parent_id: ranking1[0]).order('id DESC').limit(4)
     
