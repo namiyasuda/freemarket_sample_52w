@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:update] do
+    resource :buys, only: [:show]
     resource :mypage, only: [:show] do
       collection do 
         get 'profile'
@@ -52,11 +53,6 @@ Rails.application.routes.draw do
   devise_scope :user do   
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-
-
-  resources :users do
-    resource :buys, only: [:show]
-    end
   
   resources :auth_signup, only: [:create] do
     collection do 
