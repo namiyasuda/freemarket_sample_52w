@@ -44,25 +44,31 @@ class ProductsController < ApplicationController
   end
 
   def update
-    # トランザクションで行いたい
     product = Product.find(params[:id])
     images = product.images
-    product.update(product_params) if product.seller_id == current_user.id
-    params[:images][:saved_images].each_with_index do |enum, index|
-      images[index].destroy if enum == "0"
-    end
-    if (brand_name = params[:product][:brand][:name]).present?
-      unless brand=Brand.find_by(name: brand_name)
-        brand = Brand.create(name: brand_name)
+
+    Product.transaction do
+      product.update(product_params) if product.seller_id == current_user.id
+      params[:images][:saved_images].each_with_index do |enum, index|
+        images[index].destroy if enum == "0" 
       end
-      product.update(brand_id: brand.id)
-    end
-    if params[:images][:image].present?
-      params[:images][:image].each do |image| 
-        product.images.create(name: image, product_id: product.id)
+
+      if (brand_name = params[:product][:brand][:name]).present?
+        unless (brand=Brand.find_by(name: brand_name)).present?
+          brand = Brand.create(name: brand_name)
+        end
+        product.update(brand_id: brand.id)
+      end
+
+      if params[:images][:image] != [""]
+        params[:images][:image].each do |image| 
+          product.images.create(name: image, product_id: product.id)
+        end
       end
     end
-    redirect_to edit_product_path(product), notice: '変更しました'
+      redirect_to edit_product_path(product), notice: '変更に成功しました'
+    rescue => e
+      redirect_to edit_product_path(product), alert: '変更に失敗しました'
   end
 
    # 親カテゴリーが選択された後に動くアクションAjax

@@ -67,19 +67,19 @@ $(function() {
     }
     // クリックしたプレビューと同じ番号のアップロードボックスを削除する
     $("upload-box__body__drop-box[data-image = target_upload_num]").remove();
-    // 現在表示中のupload-boxの大きさを変更
+    // 現在表示中のupload-boxの大きさを調整するためクラス名を削除・追加
     $('.upload-box__body__drop-box').last().removeClass(function(index, className) {
       return (className.match(/\bhave-item-\S+/g) || []).join(' ');
     });
-    $('.upload-box__body__drop-box').last().addClass('have-item-'+$('.upload-box__body').find('li.upload-box__body__item').length);
+    $('.upload-box__body__drop-box').last().addClass('have-item-'+$('.upload-box__body__item').length);
     // 削除した時に上の段に移動させる
     if ($('#item-container2 li').length > 0 && $('#item-container1 li').length < 5){
       $('#item-container1').append($('#item-container2 li').first());
     }
     // 10枚目の画像を消した時はインプットボックを生成する
-    if ($('.upload-box__body').find('li.upload-box__body__item').length == 9){
+    if ($('.upload-box__body__item').length == 9){
       $('.upload-box__body').append(
-        `<div class="upload-box__body__drop-box have-item-${$('.upload-box__body').find('li.upload-box__body__item').length}" data-image="${$('.upload-box__body__drop-box').last().data('image')+1}">
+        `<div class="upload-box__body__drop-box have-item-${$('.upload-box__body__item').length}" data-image="${$('.upload-box__body__drop-box').last().data('image')+1}">
           <input name="images[image][]" id="upload-image${$('.upload-box__body__drop-box').last().data('image')+1}" class="upload-image" type="file">
           <div class="upload-box__body__drop-box__text">
             クリックしてファイルをアップロード
