@@ -13,13 +13,13 @@
             .registration-form__contents__btn__reg-mail__btn-mail
               メールアドレスで登録する
               
-        =link_to destroy_user_session_path, method: :delete,class: "registration-form__contents__btn" do
+        =link_to @facebook_path, class: "registration-form__contents__btn" do
           .registration-form__contents__btn__reg-fb
             %i.fab.fa-facebook-square
             .registration-form__contents__btn__reg-fb__btn-fb
               Facebookで登録する
 
-        =link_to "#", class: "registration-form__contents__btn--g" do  
+        =link_to @google_path, class: "registration-form__contents__btn--g" do  
           .registration-form__contents__btn--g__reg-google
             = image_tag 'https://img.icons8.com/color/48/000000/google-logo.png', alt: 'google-icon', class: 'registration-form__contents__btn--g__reg-google__icon-google'
             Googleで登録する

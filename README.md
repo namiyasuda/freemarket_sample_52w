@@ -148,8 +148,8 @@ add_index :products, [:name, :description]
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|uid|string||
-|provider|string||
+|uid|string|null: false|
+|provider|string|null: false|
 
 ### Association
 - belongs_to :user
