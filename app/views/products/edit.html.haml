@@ -36,8 +36,8 @@
                     %span.upoad-box__body__item__button__edit 編集
                     %span.upload-box__body__item__button__delete{data: {image: num}} 削除
           - 1.upto(@images.length) do |num|
-            .upload-box__body__drop-box.hide{class:"have-item-#{num}", data: {image: num}}
-              = i.file_field :image , name: 'images[image][]', id: "upload-image#{num}", class: "upload-image", required: true
+            .upload-box__body__drop-box.hide{class:"have-item-#{num-1}", data: {image: num}}
+              = i.text_field :saved_images, name: 'images[saved_images][]', id: "saved-image-#{num}", class: 'saved-image',value: 1
               .upload-box__body__drop-box__text
                 -# ドラッグアンドドロップ
                 %br
@@ -45,7 +45,7 @@
                 クリックしてファイルをアップロード
           - unless @images.length == 10
             .upload-box__body__drop-box{class:"have-item-#{@images.length}", data: {image: @images.length+1}}
-              = i.file_field :image , name: 'images[image][]', id: "upload-image#{@images.length+1}", class: "upload-image", required: true
+              = i.file_field :image , name: 'images[image][]', id: "upload-image#{@images.length+1}", class: "upload-image"
               .upload-box__body__drop-box__text
                 -# ドラッグアンドドロップ
                 %br

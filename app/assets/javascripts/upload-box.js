@@ -1,24 +1,25 @@
 $(function() {  
-  var image_count = 1;  //アップロードされた画像の通し番号
+  var saved_image_num = $('.upload-box__body__item').length; //DBに保存してある画像の数
+  var image_count = saved_image_num + 1;  //アップロードされた画像の通し番号
 
   // プレビュー画像HTMLを生成する
-  function buildPreviewHTML(e, order) {
+  function buildPreviewHTML(e, image_count) {
     var html = `<li class='upload-box__body__item'>
                   <div class='upload-box__body__item__figure'>
-                    <img src='${e.target.result}' class='img-prev' data-image=${order}>
+                    <img src='${e.target.result}' class='img-prev' data-image=${image_count}>
                   </div>
                   <div class='upload-box__body__item__button'>
                     <span class='upoad-box__body__item__button__edit'>編集</span>
-                    <span class='upload-box__body__item__button__delete' data-image=${order}>削除</span>
+                    <span class='upload-box__body__item__button__delete' data-image=${image_count}>削除</span>
                   </div>
                 </li>`;
     return html;
   }
 
-  // インプットボックスを生成する
-  function buildInputImageBox(order){
-    var html = `<div class="upload-box__body__drop-box have-item-${$('.upload-box__body').find('li.upload-box__body__item').length + 1}" data-image=${order}>
-                  <input name="images[image][]" id="upload-image${order}" class="upload-image" type="file">
+  // アップロードボックスを生成する
+  function buildInputImageBox(image_count){
+    var html = `<div class="upload-box__body__drop-box have-item-${$('.upload-box__body__item').length+1}" data-image=${image_count}>
+                  <input name="images[image][]" id="upload-image${image_count}" class="upload-image" type="file">
                   <div class="upload-box__body__drop-box__text">
                     クリックしてファイルをアップロード
                   </div>
@@ -59,9 +60,13 @@ $(function() {
     var target_list = $(this).parent().parent();
     var target_upload_num = $(this).attr('data-image');
     target_list.remove();
-    console.log()
+    
+    // DBから存在する、プレビュー表示から消した画像を配列に記録
+    if (target_upload_num <= saved_image_num) {
+      $('#saved-image-'+target_upload_num).val(0);
+    }
     // クリックしたプレビューと同じ番号のアップロードボックスを削除する
-    $('#upload-image'+target_upload_num).parent().remove();
+    $("upload-box__body__drop-box[data-image = target_upload_num]").remove();
     // 現在表示中のupload-boxの大きさを変更
     $('.upload-box__body__drop-box').last().removeClass(function(index, className) {
       return (className.match(/\bhave-item-\S+/g) || []).join(' ');

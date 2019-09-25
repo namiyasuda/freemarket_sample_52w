@@ -44,18 +44,25 @@ class ProductsController < ApplicationController
   end
 
   def update
+    # トランザクションで行いたい
     product = Product.find(params[:id])
+    images = product.images
     product.update(product_params) if product.seller_id == current_user.id
+    params[:images][:saved_images].each_with_index do |enum, index|
+      images[index].destroy if enum == "0"
+    end
     if (brand_name = params[:product][:brand][:name]).present?
       unless brand=Brand.find_by(name: brand_name)
         brand = Brand.create(name: brand_name)
       end
       product.update(brand_id: brand.id)
     end
-      params[:images][:image].each do |image|
-      product.images.update(name: image, product_id: product.id)
+    if params[:images][:image].present?
+      params[:images][:image].each do |image| 
+        product.images.create(name: image, product_id: product.id)
+      end
     end
-    redirect_to edit_product_path(product), notice: '変更が完了しました'
+    redirect_to edit_product_path(product), notice: '変更しました'
   end
 
    # 親カテゴリーが選択された後に動くアクションAjax
@@ -108,3 +115,4 @@ class ProductsController < ApplicationController
       ).merge(seller_id: current_user.id)
   end
 end
+
