@@ -1,4 +1,4 @@
-.buy-comfi{
+.buy-comfi {
   width: 700px;
   margin: 0 auto;
   background-color: $white;
@@ -11,15 +11,13 @@
     line-height: 2.5;
     border-bottom: 2px solid $bg-gray;
   }
-  &__body{
+  &__body {
     text-align: center;
   }
 }
-.body-item{
+.body-item {
   display: flex;
   margin: 20px 200px 0;
-  &__image{  
-  }
   &__title{
     margin:10px 0 0 10px;
     font-weight: bold;
@@ -28,63 +26,65 @@
 }
 
 .body-payment{
-  &__item{
+  &__item {
     display: flex;
     margin: 20px 280px 0;
-    &__price{
+    &__price {
       font-size: 22px;
       font-weight: bold;
     }
-    &__postage{
+    &__postage {
       margin: 8px 0 0 8px;
       font-size: 14px;
       font-weight: 400;
     }
   }
-  &__point{
-    background-color: #ccc;
+  &__point {
+    background-color: $gray;
     max-width: 320px;
     margin: 20px 200px 0;
     line-height: 50px;
-    &__btn{
-    }
   }
-  &__price{
+  &__price {
     display: flex;
     font-weight: bold;
     margin: 25px 200px 0;
-    &__text{
+    &__text {
       font-size: 18px;
       margin-top: 5px;
     }
-    &__total{
+    &__total {
       margin: 0 0 0 135px;
       font-size: 24px;
     }
   }
-  &__buy{
-    background-color: #888;
+  &__buy {
+    background-color: $red;
     max-width: 320px;
     margin: 20px 200px 0;
     line-height: 50px;
-    &__btn{
-      color: #fff;
+    &__btn {
+      color: $white;
       font-weight: bold;
     }
   }
 }
-.address{
+.address {
   margin: 40px 0 0;
   padding: 24px 12.5% 0;
-  border-top: 1px solid #f5f5f5; 
-  &__box{
+  border-top: 1px solid $bg-gray; 
+  &__box {
     margin:0 120px;
-    &__title{
+    &__title {
       margin-bottom: 8px;
       font-weight: bold;
       font-size: 14px;
     }
-    &__change{
+    &__input {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    &__change {
       position: relative;
       margin-top: 32px;
       color: $blue;
@@ -102,18 +102,22 @@
     }
   }
 }
-.payment-card{
+.payment-card {
   margin: 40px 0 0;
   padding: 24px 12.5% 40px;
-  border-top: 1px solid #f5f5f5; 
-  &__box{
+  border-top: 1px solid $bg-gray; 
+  &__box {
     margin:0 120px;
     &__title{
       margin-bottom: 8px;
       font-weight: bold;
       font-size: 14px;
     }
-    &__change{
+    &__input {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    &__change {
       position: relative;
       margin-top: 32px;
       color: $blue;
