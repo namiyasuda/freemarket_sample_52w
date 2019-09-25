@@ -1,0 +1,60 @@
+%header
+  = render 'shared/sub-header'
+%section
+  .buy-comfi
+    .buy-comfi__title
+      購入内容の確認
+    .buy-comfi__body
+      .body-item
+        .body-item__image
+          = image_tag 'https://static.mercdn.net/thumb/photos/m52055569730_1.jpg?1569329423', height: '80', width: '70'
+        .body-item__title
+          レディーストップス
+      .body-payment
+        .body-payment__item
+          .body-payment__item__price
+            ¥1,800
+          .body-payment__item__postage
+            送料込み
+        .body-payment__point
+          .body-payment__point__btn
+            ポイントはありません
+        .body-payment__price
+          .body-payment__price__text
+            支払い金額
+          .body-payment__price__total
+            ¥1,800
+        =link_to "#", class: "body-payment" do  
+          .body-payment__buy
+            .body-payment__buy__btn
+              購入する
+    .address
+      .address__box
+        .address__box__title
+          配送先
+        .address__box__input
+          .address__box__input__postcode
+            〒123-1234
+          .address__box__input__address
+            東京都新宿区3-4-1
+          .address__box__input__name
+            山田 綾
+        .address__box__change
+          変更する
+          =fa_icon'chevron-right'
+    .payment-card
+      .payment-card__box
+        .payment-card__box__title
+          支払い方法
+        .payment-card__box__input
+          .payment-card__box__input__number
+            **********1234
+          .payment-card__box__input__date
+            01/23
+          .payment-card__box__input__image
+            = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3296506464', alt: 'visa', height: '15', width: '49', class: 'payment-card__box__input__image'
+        .payment-card__box__change
+          変更する
+          =fa_icon'chevron-right'
+%footer
+  = render 'shared/sub-footer'
