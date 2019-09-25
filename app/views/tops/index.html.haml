@@ -22,10 +22,9 @@
   %section.pickup
     %h2.pickup__head 商品一覧
     %section.pickup__container
-      -if @products1.nil?
-      - else
+      -unless @category1.nil?
         %h3.pickup__container--text-center
-          = link_to(@category1.name+" 新着アイテム" , "/jp/category/1/")
+          = link_to(@category1.name+" 新着アイテム" , "")
         .pickup__container--content
           - @products1.each do |product|
             %section.item
@@ -39,13 +38,12 @@
                     ¥
                     = product.price
           .view-all
-            = link_to("すべての商品を見る", "/jp/category/1/")
+            = link_to("すべての商品を見る", "")
         
     %section.pickup__container
-      -if @products2.nil?
-      - else
+      -unless @category2.nil?
         %h3.pickup__container--text-center
-          = link_to(@category2.name+" 新着アイテム" , "/jp/category/1/")
+          = link_to(@category2.name+" 新着アイテム" , "")
         .pickup__container--content
           - @products2.each do |product|
             %section.item
@@ -59,12 +57,11 @@
                     ¥
                     = product.price
         .view-all
-          = link_to("すべての商品を見る", "/jp/category/2/")
+          = link_to("すべての商品を見る", "")
     %section.pickup__container
-      -if @products3.nil?
-      - else
+      -unless @category3.nil?
         %h3.pickup__container--text-center
-          = link_to(@category3.name+" 新着アイテム" , "/jp/category/1/")
+          = link_to(@category3.name+" 新着アイテム" , "")
         .pickup__container--content
           - @products3.each do |product|
             %section.item
@@ -78,12 +75,11 @@
                     ¥
                     = product.price
         .view-all
-          = link_to("すべての商品を見る", "/jp/category/3/")
+          = link_to("すべての商品を見る", "")
     %section.pickup__container
-      -if @products4.nil?
-      - else
+      -unless @category4.nil?
         %h3.pickup__container--text-center
-          = link_to(@category4.name+" 新着アイテム" , "/jp/category/1/")
+          = link_to(@category4.name+" 新着アイテム" , "")
         .pickup__container--content
           - @products4.each do |product|
             %section.item
@@ -97,14 +93,13 @@
                     ¥
                     = product.price
         .view-all
-          = link_to("すべての商品を見る", "/jp/category/6/")
+          = link_to("すべての商品を見る", "")
   %section.pickup
-    -if @products5.nil?
-    - else
+    -unless @brand1.nil?
       %h2.pickup__head ピックアップブランド
       %section.pickup__container
         %h3.pickup__container--text-center
-          = link_to(@brand1.name+" 新着アイテム" , "/jp/category/1/")
+          = link_to(@brand1.name+" 新着アイテム" , "")
         .pickup__container--content
           - @products5.each do |product|
             %section.item
@@ -118,12 +113,11 @@
                     ¥
                     = product.price
         .view-all
-          = link_to("すべての商品を見る", "/jp/category/6/")
+          = link_to("すべての商品を見る", "")
     %section.pickup__container
-      -if @products6.nil?
-      - else
+      -unless @brand2.nil?
         %h3.pickup__container--text-center
-          = link_to(@brand2.name+" 新着アイテム" , "/jp/category/1/")
+          = link_to(@brand2.name+" 新着アイテム" , "")
         .pickup__container--content
           - @products6.each do |product|
             %section.item
@@ -137,12 +131,11 @@
                     ¥
                     = product.price
         .view-all
-          = link_to("すべての商品を見る", "/jp/category/6/")
+          = link_to("すべての商品を見る", "")
     %section.pickup__container
-      -if @products7.nil?
-      - else
+      -unless @brand3.nil?
         %h3.pickup__container--text-center
-          = link_to(@brand3.name+" 新着アイテム" , "/jp/category/1/")
+          = link_to(@brand3.name+" 新着アイテム" , "")
         .pickup__container--content
           - @products7.each do |product|
             %section.item
@@ -156,12 +149,11 @@
                     ¥
                     = product.price
         .view-all
-          = link_to("すべての商品を見る", "/jp/category/6/")
+          = link_to("すべての商品を見る", "")
     %section.pickup__container
-      -if @products8.nil?
-      - else
+      -unless @brand4.nil?
         %h3.pickup__container--text-center
-          = link_to(@brand4.name+" 新着アイテム" , "/jp/category/1/")
+          = link_to(@brand4.name+" 新着アイテム" , "/")
         .pickup__container--content
           - @products8.each do |product|
             %section.item
@@ -175,7 +167,7 @@
                     ¥
                     = product.price
         .view-all
-          = link_to("すべての商品を見る", "/jp/category/6/")
+          = link_to("すべての商品を見る", "")
   %aside.banners-nav
     .banners
       .banners__left
