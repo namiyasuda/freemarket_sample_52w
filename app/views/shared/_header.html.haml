@@ -1,7 +1,7 @@
 .main-header
   .main-header__top
     %h1
-      = link_to "tops" do
+      = link_to root_path do
         = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2508029365", alt: "mercari"
     %form.main-header__top--form{ action: "https //www.mercari.com/jp/search/"}
       %input.input-default{ name: "keyword",  placeholder: "何かお探しですか？",  type: "search",  value: ""}/
