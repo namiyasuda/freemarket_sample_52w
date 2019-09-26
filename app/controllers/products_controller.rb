@@ -14,21 +14,25 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.new(product_params)
-    if product.save
-      if (brand_name = params[:product][:brand][:name]).present?
-        unless brand=Brand.find_by(name: brand_name)
-          brand = Brand.create(name: brand_name)
+    Product.transaction do
+      product = Product.new(product_params)
+      product.save!
+      params[:images][:image].each do |image|
+        product.images.create!(name: image, product_id: product.id)
+      end
+      Brand.transaction do
+        if (brand_name = params[:product][:brand][:name]).present?
+          # 既に保存されているブランドは追加で登録しない。
+          unless (brand=Brand.find_by(name: brand_name)).present?
+            brand = Brand.create!(name: brand_name)
+          end
+          product.update!(brand_id: brand.id)
         end
-        product.update(brand_id: brand.id)
       end
-        params[:images][:image].each do |image|
-        product.images.create(name: image, product_id: product.id)
-      end
-      redirect_to new_product_path, notice: '出品が成功しました'
-    else
-      redirect_to new_product_path, alert: '出品が失敗しました'
     end
+      redirect_to new_product_path, notice: '出品が成功しました'
+    rescue => e
+      redirect_to new_product_path, alert: '出品が失敗しました'
   end
 
   def edit
@@ -38,7 +42,7 @@ class ProductsController < ApplicationController
     @category_parents = Category.where(ancestry: nil)
     @category_children = Category.where(ancestry: @product.parent_id)
     @category_grandchildren = Category.where(ancestry: "#{@product.parent_id}"+"/"+"#{@product.child_id}")
-    @sizes = Size.find(@product.size_id).siblings
+    @sizes = Size.find(@product.size_id).siblings if @product.size_id.present?
     @brand = @product.brand.present? ? @product.brand : Brand.new
     @delivery_methods = DeliveryMethod.where(payside_id: @product.paying_side_id)
   end
@@ -46,23 +50,29 @@ class ProductsController < ApplicationController
   def update
     product = Product.find(params[:id])
     images = product.images
-
+    # トランザクションを設定して、保存に失敗したらロールバックする
     Product.transaction do
-      product.update(product_params) if product.seller_id == current_user.id
+      # productsテーブルをアップデート
+      product.update!(product_params) if product.seller_id == current_user.id
+      # 保存済みの画像のうちプレビューで削除されたものをDBからも削除
       params[:images][:saved_images].each_with_index do |enum, index|
-        images[index].destroy if enum == "0" 
+        images[index].destroy! if enum == "0" 
       end
-
-      if (brand_name = params[:product][:brand][:name]).present?
-        unless (brand=Brand.find_by(name: brand_name)).present?
-          brand = Brand.create(name: brand_name)
-        end
-        product.update(brand_id: brand.id)
-      end
-
-      if params[:images][:image] != [""]
+      # 追加された画像を登録
+      if params[:images][:image].present?
         params[:images][:image].each do |image| 
-          product.images.create(name: image, product_id: product.id)
+          product.images.create!(name: image, product_id: product.id)
+        end
+      end
+      # ブランド情報のアップデート
+      Brand.transaction do  
+        if (brand_name = params[:product][:brand][:name]).present?
+          unless (brand=Brand.find_by(name: brand_name)).present?
+            brand = Brand.create!(name: brand_name)
+          end
+          product.update!(brand_id: brand.id)
+        else
+          product.update!(brand_id: "")
         end
       end
     end

@@ -76,12 +76,13 @@
           .entry-content__select-box#category-child-2
             = fa_icon 'chevron-down'
             = f.collection_select :category_id, @category_grandchildren, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'grandchild_category', required: true}
-        .sell-content__group#product-size
-          %label.entry-content__text サイズ
-          %span.entry-content__require 必須
-          .entry-content__select-box
-            = fa_icon 'chevron-down'
-            = f.collection_select :size_id, @sizes, :id, :name, {prompt: "---"}, class:'entry-content__select-box__default', id: 'select-size'
+        - if @product.size_id.present?
+          .sell-content__group#product-size
+            %label.entry-content__text サイズ
+            %span.entry-content__require 必須
+            .entry-content__select-box
+              = fa_icon 'chevron-down'
+              = f.collection_select :size_id, @sizes, :id, :name, {prompt: "---"}, class:'entry-content__select-box__default', id: 'select-size'
         .sell-content__group#product-brand
           = f.fields model: @brand do |brand|
             %label.entry-content__text ブランド
