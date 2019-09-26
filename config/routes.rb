@@ -30,10 +30,11 @@ Rails.application.routes.draw do
       get 'get_delivery_method', defaults: { format: 'json' }
       get 'dropzone'
     end
+    resource :buys, only: [:show] do
   end
+end  
   
   resources :users, only: [:update] do
-    resource :buys, only: [:show]
     resource :mypage, only: [:show] do
       collection do 
         get 'profile'
