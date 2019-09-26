@@ -5,7 +5,7 @@ class BuysController < ApplicationController
     @delivery_addresses = DeliveryAddress.find_by(user_id: current_user.id)
     card = Card.where(user_id: current_user.id).first
     if card.blank?
-      redirect_to action: "payment" 
+      redirect_to payment_user_mypage_path
     else
       Payjp.api_key = 'sk_test_d186521dfc37df79995c04e3'
       customer = Payjp::Customer.retrieve(card.customer_id)
