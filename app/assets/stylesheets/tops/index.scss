@@ -205,10 +205,11 @@
 
         .item {
           display: inline-block;
+          box-shadow: -1px 1px 10px #979797;
           margin: 0 20px;
           overflow: hidden;
           width: 20%;
-
+          
           &__photo {
             position: relative;
             height: 0;
@@ -272,6 +273,7 @@
 
       .view-all {
         width: 91%;
+        padding-top: 10px;
         padding-bottom: 30px;
         color: #00f;
         text-align: right;
