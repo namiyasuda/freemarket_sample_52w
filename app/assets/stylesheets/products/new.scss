@@ -230,7 +230,7 @@
               margin: 0;
             }
           }
-          & span {
+          span {
             position: absolute;
             right: 0;
           }
@@ -262,7 +262,7 @@
     .sell-btn-box {
       padding: 40px;
       border-top: 1px solid $light-gray;
-      & p {
+      p {
         line-height: 1.5;
       }
       &__submit {
