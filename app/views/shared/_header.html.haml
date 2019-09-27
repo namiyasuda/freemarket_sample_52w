@@ -28,5 +28,6 @@
         %i.fa.fa-check
         %span やることリスト
       %li
-        = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "face"
-        %span マイページ
+        = link_to "profile_user_mypage_path" do
+          = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "face"
+          %span マイページ
