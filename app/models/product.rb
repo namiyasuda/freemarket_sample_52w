@@ -5,8 +5,8 @@ class Product < ApplicationRecord
   belongs_to_active_hash :paying_side
   belongs_to_active_hash :delivery_day
   belongs_to_active_hash :delivery_method
-  belongs_to :seller, class_name: 'User'
-  belongs_to :buyer, class_name: 'User', optional: true
+  belongs_to :seller, class_name: 'User', :foreign_key => 'seller_id'
+  belongs_to :buyer, class_name: 'User', :foreign_key => 'buyer_id', optional: true
   belongs_to :category, optional: true
   belongs_to :brand, optional: true
   belongs_to :size, optional: true
