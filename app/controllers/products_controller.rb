@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :move_to_login , except: :show
+  # before_action :move_to_login , except: :show
 
   def show
     @product = Product.find(params[:id])
