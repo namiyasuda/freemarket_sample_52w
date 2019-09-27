@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  # before_action :move_to_login , except: :show
+  before_action :move_to_login , except: :show
 
   def show
     @product = Product.find(params[:id])
@@ -36,24 +36,27 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
-    redirect_to tops_path if @product.seller_id != current_user.id
-    @images = @product.images
-    @category_parents = Category.where(ancestry: nil)
-    @category_children = Category.where(ancestry: @product.parent_id)
-    @category_grandchildren = Category.where(ancestry: "#{@product.parent_id}"+"/"+"#{@product.child_id}")
-    @sizes = Size.find(@product.size_id).siblings if @product.size_id.present?
-    @brand = @product.brand.present? ? @product.brand : Brand.new
-    @delivery_methods = DeliveryMethod.where(payside_id: @product.paying_side_id)
+    # 出品者以外が商品情報を編集しようとするとトップにリダイレクトする
+    if @product = current_user.seller_products.find_by(id: params[:id])
+      @images = @product.images
+      @category_parents = Category.where(ancestry: nil)
+      @category_children = Category.where(ancestry: @product.parent_id)
+      @category_grandchildren = Category.where(ancestry: "#{@product.parent_id}"+"/"+"#{@product.child_id}")
+      @sizes = Size.find(@product.size_id).siblings if @product.size_id.present?
+      @brand = @product.brand.present? ? @product.brand : Brand.new
+      @delivery_methods = DeliveryMethod.where(payside_id: @product.paying_side_id)
+    else
+      redirect_to tops_path 
+    end
   end
 
   def update
-    product = Product.find(params[:id])
+    product = current_user.seller_products.find_by(id: params[:id])
     images = product.images
     # トランザクションを設定して、保存に失敗したらロールバックする
     Product.transaction do
       # productsテーブルをアップデート
-      product.update!(product_params) if product.seller_id == current_user.id
+      product.update!(product_params) 
       # 保存済みの画像のうちプレビューで削除されたものをDBからも削除
       params[:images][:saved_images].each_with_index do |enum, index|
         images[index].destroy! if enum == "0" 

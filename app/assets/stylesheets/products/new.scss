@@ -1,53 +1,52 @@
-.sell-container{
+.sell-container {
   width: 700px;
   margin: 0 auto;
   background-color: $white;
-  &__head{
+  &__head {
     padding: 35px;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
   }
-  &__form{
+  &__form {
     border-top: 1px solid $light-gray;
-    .upload-box{
+    .upload-box {
       padding: 40px;
-      &__head{
+      &__head {
         font-size: 16px;
         font-weight: bold;
       }
-      p{
+      p {
         margin-top: 8px;
         line-height: 1.5;
       }
-      &__body{
+      &__body {
         display: flex;
         flex-wrap: wrap;
         margin-top: 16px;
-        &__items{
+        &__items {
           display: flex;
           flex-wrap: wrap;
-          // float: left;
           max-width: 620px;
         }
-        &__item{
-          margin: 0 0 10px 10px;
+        &__item {
           display: inline-block;
           background-color: $bg-gray;
+          margin: 0 0 10px 10px;
           border: 1px solid $light-gray;
-          &__figure{
+          &__figure {
             height: 116px;
             width: 112px;
-            & img {
+            img {
               margin: auto;
               max-height: 116px;
               max-width: 112px;
               transform: none;
             }
           }
-          &__button{
+          &__button {
             display: flex;
-            &__edit{
+            &__edit {
               border-right: 1px solid $light-gray;
             }
             span {
@@ -61,8 +60,7 @@
             }
           }
         }
-        &__drop-box{
-          // float: right;
+        &__drop-box {
           position: relative;
           width: 100%;
           min-height: 162px;
@@ -70,13 +68,13 @@
           background: $bg-gray;
           border: 1px dashed $gray;
           text-align: center;
-          .upload-image{
+          .upload-image {
             width: 100%;
             height: 100%;
             opacity: 0;
             cursor: pointer;
           }
-          &__text{
+          &__text {
             position: absolute;
             top: 35%;
             left: 16px;
@@ -89,16 +87,16 @@
           }
         }
         .have-item-1, .have-item-6 {
-        width: calc(100% - 134px);
+          width: calc(100% - 134px);
         }
         .have-item-2, .have-item-7 {
-        width: calc(100% - 258px);
+          width: calc(100% - 129px * 2);
         }
         .have-item-3, .have-item-8 {
-        width: calc(100% - 128px * 3);
+          width: calc(100% - 128px * 3);
         }
         .have-item-4, .have-item-9 {
-        width: calc(100% - 127px * 4);
+          width: calc(100% - 127px * 4);
           .upload-box__body__drop-box__text {
             top: 10%;
             font-size: 13px;
@@ -106,19 +104,19 @@
         }
       }
     }
-    .sell-content{
+    .sell-content {
       padding: 40px;
       border-top: 1px solid $light-gray;
-      &__group{
+      &__group {
         margin-top: 40px;
-        &:first-child{
+        &:first-child {
           margin-top: 0;
         }
-        .entry-content__input-default{
+        .entry-content__input-default {
           display: block;
           width: 100%;
         }
-        .entry-content__textarea-default{
+        .entry-content__textarea-default {
           display: block;
           box-sizing: border-box;
           min-height: 104px;
@@ -133,37 +131,33 @@
           &:valid {
             border: 1px solid $blue;
           }
-      
           &:invalid {
             border: 1px solid $red;
           }
         }
       }
-      &--flex{
+      &--flex {
         display: flex;
         justify-content: space-between;
         padding: 40px;
         border-top: 1px solid $light-gray;
       }
-      &__head{
+      &__head {
         color: $font-gray;
         font-size: 14px;
         font-weight: bold;
-        .form-question{
+        .form-question {
           @include form-question;
         }
       }
-      &__form-box{
+      &__form-box {
         width: 400px;
         margin: 0;
-        #product_brand_name {
-          width: 100%;
-        }
-        .entry-content__select-box{
+        .entry-content__select-box {
           margin: 8px 0 0;
           position: relative;
           background: $white;
-          &__default{
+          &__default {
             z-index: 2;
             padding: 0 16px;
             height: 48px;
@@ -175,16 +169,14 @@
             line-height: 1.5;
             cursor: pointer;
             -webkit-appearance: none;
-
             &:valid {
               border: 1px solid $blue;
             }
-        
             &:invalid {
               border: 1px solid $red;
             }
           }
-          .fa{
+          .fa {
             position: absolute;
             right: 16px;
             top: 35%;
@@ -197,38 +189,38 @@
         }
       }
     }
-    .selling-price{
+    .selling-price {
       display: flex;
       justify-content: space-between;
       padding: 40px;
       border-top: 1px solid $light-gray;
-      &__head{
+      &__head {
         color: $font-gray;
         font-size: 14px;
         font-weight: bold;
-        .form-question{
+        .form-question {
           @include form-question;
         }
       }
-      &__form-box{
+      &__form-box {
         width: 400px;
         margin: 0;
       }
-      &__group{
+      &__group {
         display: flex;
         justify-content: space-between;
         padding: 24px 0;
         border-top: 1px solid $gray;
         line-height: 48px;
-        &:first-of-type{
+        &:first-of-type {
           padding: 0 0 24px;
           border: 0;
         }
-        &__right{
+        &__right {
           display: flex;
           position: relative;
           width: 50%;
-          .entry-content__input-default{
+          .entry-content__input-default {
             width: 100%;
             margin-left: 10px;
             padding-right: 10px;
@@ -238,45 +230,45 @@
               margin: 0;
             }
           }
-          & span{
+          & span {
             position: absolute;
             right: 0;
           }
         }
       }
-      &__group--thin{
+      &__group--thin {
         display: flex;
         justify-content: space-between;
         height: 14px;
         padding: 24px 0;
         border-top: 1px solid $gray;
       }
-      &__group--bold{
+      &__group--bold {
         display: flex;
         justify-content: space-between;
         padding: 24px 0;
         border-top: 1px solid $gray;
         line-height: 48px;
         
-        &__left{
+        &__left {
           font-size: 16px;
           font-weight: bold;
         }
-        &__right{
+        &__right {
           font-size: 34px;
         }
       }
     }
-    .sell-btn-box{
+    .sell-btn-box {
       padding: 40px;
       border-top: 1px solid $light-gray;
-      & p{
+      & p {
         line-height: 1.5;
       }
-      &__submit{
+      &__submit {
         @include submit-btn(40px 0 0 0, 100%, $red)
       }
-      &__return{
+      &__return {
         @include submit-btn(24px auto 0, 45%, $btn-gray)
       }
     }
