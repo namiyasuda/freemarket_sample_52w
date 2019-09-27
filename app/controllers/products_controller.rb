@@ -62,7 +62,7 @@ class ProductsController < ApplicationController
         images[index].destroy! if enum == "0" 
       end
       # 追加された画像を登録
-      if params[:images][:image].present?
+      if params[:images][:image].present? && params[:images][:image] != [""]
         params[:images][:image].each do |image| 
           product.images.create!(name: image, product_id: product.id)
         end
