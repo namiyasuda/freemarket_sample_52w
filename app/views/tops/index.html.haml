@@ -1,7 +1,9 @@
 .all-nav
   %header
-    = render partial: 'shared/header'
-              
+    -if user_signed_in?
+      = render partial: 'shared/header-log'
+    -else
+      = render partial: 'shared/header-notlog'
   %main
     .background
       %div
