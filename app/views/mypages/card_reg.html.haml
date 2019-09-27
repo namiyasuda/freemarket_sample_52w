@@ -1,0 +1,56 @@
+%header
+  = render 'shared/sub-header'
+
+%section
+  - breadcrumb :card_show
+  = render 'shared/breadcrumb'
+
+.mypage-main
+  = render 'shared/mypage-side-menu'
+
+  .mypage
+    %h2.mypage__title
+      クレジットカード情報入力
+    %section
+      .customer-entry  
+        .customer-entry__body
+          .customer-entry__body__form
+            = form_with model:@card,local:true,url:create_card_user_mypage_path,class: "customer-entry__body__form", id: 'charge-form' do |f|
+              .entry-content
+                %label.entry-content__text カード番号
+                %span.entry-content__require 必須
+                = f.text_field :card_number, autocomplete: "card_number",placeholder:"半角数字のみ",class:"entry-content__input-default",required:"",pattern:"(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6011[0-9]{12}|3(?:0[0-5]|[68][0-9])[0-9]{11}|3[47][0-9]{13}|(?:2131|1800|35[0-9]{3})[0-9]{11})"
+              .card-list
+                = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?575670517', height: '20', width: '49'
+                = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?575670517', height: '20', width: '34'
+                = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?575670517', height: '20', width: '30'    
+                = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?575670517',height: '20', width: '32'    
+                = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?575670517',height: '20', width: '21'
+                = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?575670517',height: '20', width: '32' 
+                = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?575670517',height: '20', width: '32'   
+              .entry-content
+                %label.entry-content__text 有効期間
+                %span.entry-content__require 必須
+              .entry-content--card
+                .entry-content--card__selectbox
+                  = fa_icon 'chevron-down'
+                  = f.select :exp_month,[['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8'],['9'],['10'],['11'],['12']],{include_blank:'--'},required:true,class:"entry-content--card__selectbox__box"  
+
+                %span.entry-content--card__date 月
+                .entry-content--card__selectbox
+                  = fa_icon 'chevron-down'
+                  = f.select :exp_year,[['19', 2019],['20', 2020],['21', 2021],['22', 2022],['23', 2023],['24', 2024],['25', 2025],['26', 2026]],{include_blank:'--'},required:true,class:"entry-content--card__selectbox__box"  
+                %span.entry-content--card__date 年
+              .entry-content
+                %label.entry-content__text セキュリティコード
+                %span.entry-content__require 必須
+                = f.text_field :cvc, autocomplete: "cvc",placeholder:"カード背面4桁もしくは3桁の番号",class:"entry-content__input-default",required:"",pattern:"[0-9]{3}|[0-9]{4}"
+              %label.entry-bottom--card{for:'label1'}
+                %input.entry-bottom--card__help{id:'label1',type:"checkbox"}
+                  .entry-bottom--card__help__icon ?
+                  カード裏面の番号とは？
+                .hidden-show
+                  カードの裏面をご参照ください。
+                  = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/signup/seq-card.png?575670517', width: '240'
+              .entry-bottom__next#card_token
+                = f.submit "追加する", class: "entry-bottom__next__btn",id:'token_submit'

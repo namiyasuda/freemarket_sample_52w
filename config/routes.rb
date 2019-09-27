@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => {
+    omniauth_callbacks:  "users/omniauth_callbacks",
+    sessions: "users/sessions"
+  }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   root 'tops#index'
   resources :tops, only: [:index]
 
   resources :addresses, only: [:new,:create]
-  resources :card, only: [:new,:show,:create]
+  resources :cards, only: [:new,:show,:create,:destroy]
   resources :signup, only: [:new,:index,:create] do
     collection do 
       get 'customer_info'
@@ -30,11 +33,16 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:update] do
+    resource :buys, only: [:show]
     resource :mypage, only: [:show] do
       collection do 
         get 'profile'
         get 'logout'
         get 'personal_info'
+        get 'payment'
+        get 'card_reg'
+        get 'card_show'
+        post 'create_card'
         post 'personal_info' => 'mypages#create_user_address'
       end
     end
@@ -45,5 +53,10 @@ Rails.application.routes.draw do
   devise_scope :user do   
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-
+  
+  resources :auth_signup, only: [:create] do
+    collection do 
+      get 'auth_sms_comfi'
+    end
+  end
 end

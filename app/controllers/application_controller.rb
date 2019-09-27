@@ -30,4 +30,14 @@ class ApplicationController < ActionController::Base
   def move_to_login
     redirect_to user_session_path unless user_signed_in?
   end
+
+  def not_used_auth_production
+    if Rails.env.production?
+      @facebook_path = "#"
+      @google_path = "#"
+    else
+      @facebook_path = user_facebook_omniauth_authorize_path
+      @google_path = user_google_oauth2_omniauth_authorize_path
+    end
+  end
 end
