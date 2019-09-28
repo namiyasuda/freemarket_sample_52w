@@ -1,0 +1,12 @@
+%header
+  = render 'shared/sub-header'
+
+%section
+  - breadcrumb :delivery_address
+  = render 'shared/breadcrumb'
+
+- flash.each do |message_type, message|
+  %div{class: "flash #{message_type}"}= message
+
+.mypage-main
+  = render 'shared/mypage-side-menu'
