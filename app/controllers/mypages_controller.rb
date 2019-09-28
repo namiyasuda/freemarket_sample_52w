@@ -30,7 +30,7 @@ class MypagesController < ApplicationController
   end
 
   def card_show
-    card = Card.where(user_id: current_user.id).first
+    card = current_user.card
     if card.blank?
       redirect_to action: "payment" 
     else
