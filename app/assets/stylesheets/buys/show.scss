@@ -18,17 +18,29 @@
 .body-item {
   display: flex;
   margin: 20px 200px 0;
+  &__image {
+    width: 70px;
+    height: 80px;
+    &__fig {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
   &__title {
     margin:10px 0 0 10px;
     font-weight: bold;
     font-size: 16px;
   }
 }
-
-.body-payment{
+.error-text {
+  color: $red;
+  margin-top: 20px;
+}
+.body-payment {
   &__item {
     display: flex;
-    margin: 20px 280px 0;
+    margin: 20px 270px 0;
     &__price {
       font-size: 22px;
       font-weight: bold;
@@ -54,7 +66,7 @@
       margin-top: 5px;
     }
     &__total {
-      margin-left: 135px;
+      margin-left: 110px;
       font-size: 24px;
     }
   }
@@ -66,8 +78,8 @@
     &__btn {
       color: $white;
       font-weight: bold;
-      &--not{
-        background-color: $btn_gray;
+      &--not {
+        background-color: $font-gray;
         color: $white;
         font-weight: bold;
       }

@@ -7,7 +7,7 @@
     .buy-comfi__body
       .body-item
         .body-item__image
-          = image_tag "#{@image.name}", height: '80', width: '70'
+          = image_tag "#{@image.name}",class:"body-item__image__fig"
         .body-item__title
           = "#{@product.name}"
       .body-payment
@@ -24,11 +24,13 @@
             支払い金額
           .body-payment__price__total
             = "¥""#{@product.price}"
-        - if @delivery_addresses.nil? && @card.blank?
-          .body-payment
-            .body-payment__buy
-              .body-payment__buy__btn--not
-                購入する
+        - if @delivery_addresses.nil? || @card.blank?
+          .error-text
+            配送先と支払い方法の入力を完了してください。
+            .body-payment
+              .body-payment__buy
+                .body-payment__buy__btn--not
+                  購入する
         - else
           =link_to "#", class: "body-payment" do  
             .body-payment__buy
