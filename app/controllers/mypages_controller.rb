@@ -74,6 +74,9 @@ class MypagesController < ApplicationController
     end
   end
 
+  def delivery_address
+  end
+
   private
   def user_address_params
     params.permit(:postcode, :prefecture_id, :city, :block, :building).merge(user_id: current_user.id)
