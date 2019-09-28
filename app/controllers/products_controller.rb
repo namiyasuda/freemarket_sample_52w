@@ -30,8 +30,10 @@ class ProductsController < ApplicationController
         end
       end
     end
-      redirect_to new_product_path, notice: '出品が成功しました'
+      flash[:product_success] = '変更に成功しました'
+      redirect_to new_product_path
     rescue
+      flash[:product_danger] = '変更に失敗しました'
       redirect_to new_product_path, alert: '出品が失敗しました'
   end
 
@@ -81,9 +83,11 @@ class ProductsController < ApplicationController
         end
       end
     end
-      redirect_to edit_product_path(product), notice: '変更に成功しました'
+      flash[:product_success] = '変更に成功しました'
+      redirect_to edit_product_path(product)
     rescue
-      redirect_to edit_product_path(product), alert: '変更に失敗しました'
+      flash[:product_danger] = '変更に失敗しました'
+      redirect_to edit_product_path(product)
   end
 
    # 親カテゴリーが選択された後に動くアクションAjax
