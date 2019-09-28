@@ -54,6 +54,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    # 暫定的にログインユーザーの出品した商品で一番古い物を消す様にしてあります
+    my_product = Product.where(seller_id: current_user.id).first
+    begin
+      my_product.destroy!
+      flash[:success] = '商品を削除しました'
+    rescue
+      flash[:danger] = '商品を削除できませんでした'
+    end
+    redirect_to listing_product_user_mypage_path(current_user)
+  end
+
   def dropzone
     @product = Product.new
   end

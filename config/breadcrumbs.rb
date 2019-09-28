@@ -25,3 +25,8 @@ crumb :card_show do
   link "支払い方法", card_show_user_mypage_path
   parent :mypage
 end
+
+crumb :listing_product do
+  link "出品した商品 - 出品中", listing_product_user_mypage_path
+  parent :mypage
+end
