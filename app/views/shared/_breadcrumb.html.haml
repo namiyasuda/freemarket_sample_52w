@@ -1,6 +1,3 @@
 %nav.breadcrumb
   %ul.breadcrumb__list
-    %li.breadcrumb__list__item
-      メルカリ
-    = fa_icon "angle-right", class: "breadcrumb__list__icon"
-    %li.breadcrumb__list__item マイページ
+    = breadcrumbs pretext: "", separator: "#{content_tag(:i, '', class: 'fa fa-angle-right')}", class: "breadcrumb__list__item"

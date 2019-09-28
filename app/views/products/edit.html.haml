@@ -14,16 +14,43 @@
       %p
         最大10枚までアップロードできます
       .upload-box__body
-        = f.fields_for :image do |image|
+        = f.fields_for :image do |i|
           %ul.upload-box__body__items#item-container1
-          %ul.upload-box__body__items#item-container2.hide
-          .upload-box__body__drop-box{data:{image: 1}}
-            = image.file_field :image , name: 'images[image][]', id: "upload-image1", class: "upload-image", required: true
-            .upload-box__body__drop-box__text
-              -# ドラッグアンドドロップ
-              %br
-              -# または
-              クリックしてファイルをアップロード
+            - @images.each_with_index do |image, index|
+              %li.upload-box__body__item
+                .upload-box__body__item__figure
+                  = image_tag image.name.url, data: {image: index+1}, class: 'img-prev'
+                .upload-box__body__item__button
+                  %span.upoad-box__body__item__button__edit 編集
+                  %span.upload-box__body__item__button__delete{data: {image: index+1}} 削除
+              - break if index==4
+          - if @images.length <=5    # 画像が5枚以下の場合
+            %ul.upload-box__body__items#item-container2.hide
+          -else   # 画像が5枚より多い場合
+            %ul.upload-box__body__items#item-container2
+              - 6.upto(@images.length) do |num|
+                %li.upload-box__body__item
+                  .upload-box__body__item__figure
+                    = image_tag @images[num-1].name.url, data: {image: num}, class: 'img-prev'
+                  .upload-box__body__item__button
+                    %span.upoad-box__body__item__button__edit 編集
+                    %span.upload-box__body__item__button__delete{data: {image: num}} 削除
+          - 1.upto(@images.length) do |num|
+            .upload-box__body__drop-box.hide{class:"have-item-#{num-1}", data: {image: num}}
+              = i.text_field :saved_images, name: 'images[saved_images][]', id: "saved-image-#{num}", class: 'saved-image',value: 1
+              .upload-box__body__drop-box__text
+                -# ドラッグアンドドロップ
+                %br
+                -# または
+                クリックしてファイルをアップロード
+          - unless @images.length == 10
+            .upload-box__body__drop-box{class:"have-item-#{@images.length}", data: {image: @images.length+1}}
+              = i.file_field :image , name: 'images[image][]', id: "upload-image#{@images.length+1}", class: "upload-image"
+              .upload-box__body__drop-box__text
+                -# ドラッグアンドドロップ
+                %br
+                -# または
+                クリックしてファイルをアップロード
     .sell-content
       .sell-content__group
         %label.entry-content__text 商品名
@@ -43,19 +70,20 @@
           .entry-content__select-box
             = fa_icon 'chevron-down'
             = f.collection_select :parent_id, @category_parents, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'parent_category', required: true}
-          .entry-content__select-box.hide#category-child-1
+          .entry-content__select-box#category-child-1
             = fa_icon 'chevron-down'
-            = f.collection_select :child_id, {}, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'child_category', required: true}
-          .entry-content__select-box.hide#category-child-2
+            = f.collection_select :child_id, @category_children, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'child_category', required: true}
+          .entry-content__select-box#category-child-2
             = fa_icon 'chevron-down'
-            = f.collection_select :category_id, {}, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'grandchild_category'}
-        .sell-content__group.hide#product-size
-          %label.entry-content__text サイズ
-          %span.entry-content__require 必須
-          .entry-content__select-box
-            = fa_icon 'chevron-down'
-            = f.collection_select :size_id, {}, :id, :name, {prompt: "---"}, class:'entry-content__select-box__default', id: 'select-size'
-        .sell-content__group.hide#product-brand
+            = f.collection_select :category_id, @category_grandchildren, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'grandchild_category', required: true}
+        - if @product.size_id.present?
+          .sell-content__group#product-size
+            %label.entry-content__text サイズ
+            %span.entry-content__require 必須
+            .entry-content__select-box
+              = fa_icon 'chevron-down'
+              = f.collection_select :size_id, @sizes, :id, :name, {prompt: "---"}, class:'entry-content__select-box__default', id: 'select-size'
+        .sell-content__group#product-brand
           = f.fields model: @brand do |brand|
             %label.entry-content__text ブランド
             %span.entry-content__any 任意
@@ -77,12 +105,12 @@
           .entry-content__select-box
             = fa_icon 'chevron-down'
             = f.collection_select :paying_side_id, PayingSide.all, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id:'paying-side-selection', required: true}
-        .sell-content__group.hide#delivery-method-box
+        .sell-content__group#delivery-method-box
           %label.entry-content__text 配送の方法
           %span.entry-content__require 必須
           .entry-content__select-box
             = fa_icon 'chevron-down'
-            = f.collection_select :delivery_method_id, {}, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default',id:'delivery-method-selection', required: true}
+            = f.collection_select :delivery_method_id, @delivery_methods, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default',id:'delivery-method-selection', required: true}
         .sell-content__group
           %label.entry-content__text 発送元の地域
           %span.entry-content__require 必須
@@ -130,8 +158,8 @@
           また、出品をもちまして
           =link_to '加盟店規約', "https://www.mercari.com/jp/seller_terms/", target: '_blank'
           に同意したことになります。
-      = f.submit '出品する', class:'sell-btn-box__submit'
-      =link_to 'もどる', 'javascript:history.back();', class:'sell-btn-box__return'
+      = f.submit '変更する', class:'sell-btn-box__submit'
+      =link_to 'キャンセル',  listing_product_user_mypage_path(current_user), class:'sell-btn-box__return'
 
 %footer
   = render 'shared/sub-footer'

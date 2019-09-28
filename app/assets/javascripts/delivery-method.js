@@ -10,7 +10,7 @@ $(function(){
     if (paySide_id.length != 0){
       $('#delivery-method-box').removeClass('hide');
       $.ajax({
-        url: 'get_delivery_method',
+        url: '/products/get_delivery_method',
         type: 'Get',
         data: {paySide_id: paySide_id},
         dataType: 'json'

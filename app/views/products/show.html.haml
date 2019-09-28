@@ -1,6 +1,8 @@
 -# 画像表示確認用ページ
 .product
-  = @product.name
-  = @product.images.each do |image|
-    = image.name.url
+  -# = image_tag @product.images[0].name.url
+  -# = @product.name
+  - @images.each do |image|
     = image_tag image.name.url
+    %p ------------------------------
+

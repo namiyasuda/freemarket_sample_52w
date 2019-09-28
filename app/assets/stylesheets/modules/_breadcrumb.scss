@@ -5,17 +5,28 @@
   background-color: $white;
   &__list {
     display: flex;
-    width: 1020px;
-    margin: 0 auto;
-    padding: 16px;
+    padding: 0 16px;
     &__item {
-      line-height: 14px;
+      font-size: 18px;
+      line-height: 48px;
       letter-spacing: .5px;
-    }
-    &__icon {
-      margin: 0 8px;
-      color: $font-gray;
-      font-weight: bold;
+      a {
+        color: $font-black;
+        font-size: 14px;
+        &:hover{
+          text-decoration: underline;
+          opacity: .7;
+        }
+      }
+      .current {
+        font-size: 14px;
+        background-color: $white !important;
+      }
+      i {
+        margin: 0 8px;
+        color: $font-gray;
+        font-weight: bold;
+      }
     }
   }
 }

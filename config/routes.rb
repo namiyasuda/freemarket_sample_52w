@@ -45,6 +45,7 @@ end
         get 'card_show'
         post 'create_card'
         post 'personal_info' => 'mypages#create_user_address'
+        get 'listing_product'
       end
     end
   end
