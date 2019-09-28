@@ -28,6 +28,6 @@
         %i.fa.fa-check
         %span やることリスト
       %li
-        = link_to "profile_user_mypage_path" do
+        =link_to user_mypage_path(current_user) do
           = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "face"
           %span マイページ

@@ -22,9 +22,9 @@
             
     %ul.main-header__under--right
       %li.new
-        = link_to "new_signup_path" do
+        = link_to new_signup_path(current_user) do
           %span 新規会員登録
       %li.logged
-        = link_to "new_user_registration_path" do
+        = link_to new_user_session_path(current_user) do
           %span ログイン
       
