@@ -66,6 +66,11 @@
     &__btn {
       color: $white;
       font-weight: bold;
+      &--not{
+        background-color: $btn_gray;
+        color: $white;
+        font-weight: bold;
+      }
     }
   }
 }
@@ -85,7 +90,7 @@
       line-height: 1.4;
     }
     &__change {
-      position: relative;
+      display: block;
       margin-top: 32px;
       color: $blue;
       text-decoration: none;
@@ -93,11 +98,6 @@
       &:hover {
         text-decoration: underline;
         opacity: .8;
-      }
-      .fa {
-        position: absolute;
-        top: 0;
-        margin-left: 8px;  
       }
     }
   }
@@ -118,7 +118,7 @@
       line-height: 1.4;
     }
     &__change {
-      position: relative;
+      display: block;
       margin-top: 32px;
       color: $blue;
       text-decoration: none;
@@ -126,11 +126,6 @@
       &:hover {
         text-decoration: underline;
         opacity: .8;
-      }
-      .fa {
-        position: absolute;
-        top: 0;
-        margin-left: 8px;  
       }
     }
   }

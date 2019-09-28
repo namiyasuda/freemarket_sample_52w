@@ -24,15 +24,24 @@
             支払い金額
           .body-payment__price__total
             = "¥""#{@product.price}"
-        =link_to "#", class: "body-payment" do  
-          .body-payment__buy
-            .body-payment__buy__btn
-              購入する
+        - if @delivery_addresses.nil? && @card.blank?
+          .body-payment
+            .body-payment__buy
+              .body-payment__buy__btn--not
+                購入する
+        - else
+          =link_to "#", class: "body-payment" do  
+            .body-payment__buy
+              .body-payment__buy__btn
+                購入する
     .address
       .address__box
         .address__box__title
           配送先
         .address__box__input
+        - if @delivery_addresses.nil?
+          〒-
+        -else
           .address__box__input__postcode
           = "〒""#{@delivery_addresses.postcode}"
           .address__box__input__address
@@ -43,7 +52,8 @@
           .address__box__input__name
           = current_user.last_name 
           = current_user.first_name
-        .address__box__change
+          
+        =link_to "#", class: "address__box__change" do  
           変更する
           =fa_icon'chevron-right'
     .payment-card
@@ -51,6 +61,9 @@
         .payment-card__box__title
           支払い方法
         .payment-card__box__input
+        - if @card.blank?
+          \/
+        - else  
           .payment-card__box__input__number
           = "**** **** **** " + @default_card_information.last4
           .payment-card__box__input__date
@@ -59,7 +72,7 @@
           = exp_month + " / " + exp_year
           .payment-card__box__input__image
             = image_tag "#{@card_src}", width: '40', height: '20', alt: @card_brand, id: "card_image"
-        .payment-card__box__change
+        =link_to "#", class: "payment-card__box__change" do
           変更する
           =fa_icon'chevron-right'
 %footer

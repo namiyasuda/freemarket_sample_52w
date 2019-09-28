@@ -3,13 +3,13 @@ class BuysController < ApplicationController
     @product = Product.find_by(id: 1)
     @image = Image.find_by(id: 1)
     @delivery_addresses = DeliveryAddress.find_by(user_id: current_user.id)
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
-      redirect_to payment_user_mypage_path
+    @card = Card.where(user_id: current_user.id).first
+    if @card.blank?
+      # redirect_to  product_buys_path(user_id: current_user.id)
     else
       Payjp.api_key = 'sk_test_d186521dfc37df79995c04e3'
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
       @card_brand = @default_card_information.brand
       case @card_brand
       when "Visa"
