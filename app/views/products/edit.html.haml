@@ -19,7 +19,7 @@
             - @images.each_with_index do |image, index|
               %li.upload-box__body__item
                 .upload-box__body__item__figure
-                  = image_tag image.name.url, data: {image: index+1}, class: 'img-prev'
+                  = image_tag "#{image.name}", data: {image: index+1}, class: 'img-prev'
                 .upload-box__body__item__button
                   %span.upoad-box__body__item__button__edit 編集
                   %span.upload-box__body__item__button__delete{data: {image: index+1}} 削除
