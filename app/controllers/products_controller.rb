@@ -89,7 +89,19 @@ class ProductsController < ApplicationController
       flash[:product_danger] = '変更に失敗しました'
       redirect_to edit_product_path(product)
   end
-
+  
+  def destroy
+    # 暫定的にログインユーザーの出品した商品で一番古い物を消す様にしてあります
+    my_product = Product.where(seller_id: current_user.id).first
+    begin
+      my_product.destroy!
+      flash[:success] = '商品を削除しました'
+    rescue
+      flash[:danger] = '商品を削除できませんでした'
+    end
+    redirect_to listing_product_user_mypage_path(current_user)
+  end
+  
    # 親カテゴリーが選択された後に動くアクションAjax
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
@@ -114,6 +126,7 @@ class ProductsController < ApplicationController
   def get_delivery_method
     @delivery_methods = DeliveryMethod.where(payside_id: params[:paySide_id].to_i)
   end
+
 
   def dropzone
     @product = Product.new
