@@ -1,8 +1,84 @@
--# 画像表示確認用ページ
-.product
-  -# = image_tag @product.images[0].name.url
-  -# = @product.name
-  - @images.each do |image|
-    = image_tag image.name.url
-    %p ------------------------------
+%header
+  = render 'shared/sub-header'
+%section
+  .product-details
+    .product-details__title
+      レディーストップス
+    .details  
+    .details-photo
+      .details-photo__main
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_1.jpg?1569592534",class:"details-photo__main__image"
+      .details-photo__under
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_2.jpg?1569592534",class:"details-photo__under__image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details-photo__under__image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_6.jpg?1569592534",class:"details-photo__under__image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details-photo__under__image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_1.jpg?1569592534",class:"details-photo__under__image"
+      .detaile-list
+        .detaile-list__box
+          .detaile-list__box__left
+            出品者
+          .detaile-list__box__right
+            .detaile-list__box__right__name
+            .detaile-list__box__right__face
+            .detaile-list__box__right__face
+            .detaile-list__box__right__face
+        .detaile-list__box    
+          .detaile-list__box__left
+            カテゴリー
+          .detaile-list__box__right
+            .detaile-list__box__right__name
+            .detaile-list__box__right__name
+            .detaile-list__box__right__name
+        .detaile-list__box    
+          .detaile-list__box__left
+            ブランド
+          .detaile-list__box__right
+        .detaile-list__box    
+          .detaile-list__box__left
+            商品サイズ
+          .detaile-list__box__right
+        .detaile-list__box    
+          .detaile-list__box__left
+            商品の状態
+          .detaile-list__box__right
+        .detaile-list__box    
+          .detaile-list__box__left
+            配送料の負担
+          .detaile-list__box__right
+        .detaile-list__box    
+          .detaile-list__box__left
+            配送の方法
+          .detaile-list__box__right
+        .detaile-list__box    
+          .detaile-list__box__left
+            配送元地域
+          .detaile-list__box__right
+            .detaile-list__box__right__name
+        .detaile-list__box    
+          .detaile-list__box__left
+            配送日の目安
+          .detaile-list__box__right
+      .pricebox
+        .pricebox__price
+          ¥1800
+        .pricebox__tax
+          (税込)
+        .pricebox__postage
+          送料込み
+      .buybtn
+        .buybtn__next
+      .comment
+      .underlist
+        .underlist__box
+          .underlist__box__iine
+            ♡いいね！ 0
+          .underlist__box__report
+            不適切な商品の報告
+        .underlist__box__safty
+          あんしん・あんぜんへの取り組み
 
+
+
+%footer
+  = render 'shared/sub-footer'

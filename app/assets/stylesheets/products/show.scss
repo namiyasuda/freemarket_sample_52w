@@ -1,0 +1,25 @@
+.product-details{
+  width: 700px;
+  padding: 24px 40px 40px;
+  background: #fff;
+  margin: 40px auto 0;
+  &__title{
+    font-size: 24px;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.4;
+  }
+}
+.details-photo{
+  display:  flex;
+  &__main__image{
+      width:250px;
+      height:300px;
+    }
+  &__under__image{
+    width: 50px;
+    height: 60px;
+  }
+}
+.detaile-list{
+}
