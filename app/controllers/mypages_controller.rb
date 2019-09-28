@@ -28,6 +28,7 @@ class MypagesController < ApplicationController
       end
     end
   end
+  
   def card_show
     card = Card.where(user_id: current_user.id).first
     if card.blank?
@@ -54,7 +55,7 @@ class MypagesController < ApplicationController
         @card_src = "https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?575670517"
       end
     end
-    end
+  end
   
   def logout
   end
