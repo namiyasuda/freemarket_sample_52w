@@ -7,13 +7,13 @@
     .buy-comfi__body
       .body-item
         .body-item__image
-          = image_tag 'https://static.mercdn.net/thumb/photos/m52055569730_1.jpg?1569329423', height: '80', width: '70'
+          = image_tag "#{@image.name}",class:"body-item__image__fig"
         .body-item__title
-          レディーストップス
+          = @product.name
       .body-payment
         .body-payment__item
           .body-payment__item__price
-            ¥1,800
+            = "¥#{@product.price}"
           .body-payment__item__postage
             送料込み
         .body-payment__point
@@ -23,23 +23,39 @@
           .body-payment__price__text
             支払い金額
           .body-payment__price__total
-            ¥1,800
-        =link_to "#", class: "body-payment" do  
-          .body-payment__buy
-            .body-payment__buy__btn
-              購入する
+            = "¥#{@product.price}"
+        - if @delivery_addresses.nil? || @card.blank?
+          .error-text
+            配送先と支払い方法の入力を完了してください。
+            .body-payment
+              .body-payment__buy
+                .body-payment__buy__btn--not
+                  購入する
+        - else
+          =link_to "#", class: "body-payment" do  
+            .body-payment__buy
+              .body-payment__buy__btn
+                購入する
     .address
       .address__box
         .address__box__title
           配送先
         .address__box__input
+        - if @delivery_addresses.nil?
+          〒-
+        -else
           .address__box__input__postcode
-            〒123-1234
+          = "〒#{@delivery_addresses.postcode}"
           .address__box__input__address
-            東京都新宿区3-4-1
+          = @delivery_addresses.prefecture.name
+          = @delivery_addresses.city
+          = @delivery_addresses.block
+          = @delivery_addresses.building
           .address__box__input__name
-            山田 綾
-        .address__box__change
+          = current_user.last_name 
+          = current_user.first_name
+          
+        =link_to "#", class: "address__box__change" do  
           変更する
           =fa_icon'chevron-right'
     .payment-card
@@ -47,13 +63,18 @@
         .payment-card__box__title
           支払い方法
         .payment-card__box__input
+        - if @card.blank?
+          \/
+        - else  
           .payment-card__box__input__number
-            **********1234
+          = "**** **** **** " + @default_card_information.last4
           .payment-card__box__input__date
-            01/23
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
           .payment-card__box__input__image
-            = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3296506464', alt: 'visa', height: '15', width: '49', class: 'payment-card__box__input__image'
-        .payment-card__box__change
+            = image_tag "#{@card_src}", width: '40', height: '20', alt: @card_brand, id: "card_image"
+        =link_to "#", class: "payment-card__box__change" do
           変更する
           =fa_icon'chevron-right'
 %footer
