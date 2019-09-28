@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
       end
     end
       redirect_to new_product_path, notice: '出品が成功しました'
-    rescue => e
+    rescue
       redirect_to new_product_path, alert: '出品が失敗しました'
   end
 
@@ -80,7 +80,7 @@ class ProductsController < ApplicationController
       end
     end
       redirect_to edit_product_path(product), notice: '変更に成功しました'
-    rescue => e
+    rescue
       redirect_to edit_product_path(product), alert: '変更に失敗しました'
   end
 
