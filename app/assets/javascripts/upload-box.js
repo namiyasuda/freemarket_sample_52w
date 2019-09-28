@@ -87,5 +87,9 @@ $(function() {
         </div>`
       );
     }
+    // 画像を全て削除した場合はバリデーションをかける
+    if ($('.upload-box__body__item').length == 0){
+      $('.upload-image').last().attr('required', 'required');
+    }
   })
 })

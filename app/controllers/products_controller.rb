@@ -69,7 +69,9 @@ class ProductsController < ApplicationController
       end
       # ブランド情報のアップデート
       Brand.transaction do  
+        # フォームにブランドが入力されているかチェック
         if (brand_name = params[:product][:brand][:name]).present?
+          # 登録済みのブランド名は追加登録させない
           unless (brand=Brand.find_by(name: brand_name)).present?
             brand = Brand.create!(name: brand_name)
           end
