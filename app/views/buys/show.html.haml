@@ -9,11 +9,11 @@
         .body-item__image
           = image_tag "#{@image.name}",class:"body-item__image__fig"
         .body-item__title
-          = "#{@product.name}"
+          = @product.name
       .body-payment
         .body-payment__item
           .body-payment__item__price
-            = "¥""#{@product.price}"
+            = "¥#{@product.price}"
           .body-payment__item__postage
             送料込み
         .body-payment__point
@@ -23,7 +23,7 @@
           .body-payment__price__text
             支払い金額
           .body-payment__price__total
-            = "¥""#{@product.price}"
+            = "¥#{@product.price}"
         - if @delivery_addresses.nil? || @card.blank?
           .error-text
             配送先と支払い方法の入力を完了してください。
@@ -45,12 +45,12 @@
           〒-
         -else
           .address__box__input__postcode
-          = "〒""#{@delivery_addresses.postcode}"
+          = "〒#{@delivery_addresses.postcode}"
           .address__box__input__address
-          = "#{@delivery_addresses.prefecture.name}"
-          = "#{@delivery_addresses.city}"
-          = "#{@delivery_addresses.block}"
-          = "#{@delivery_addresses.building}"
+          = @delivery_addresses.prefecture.name
+          = @delivery_addresses.city
+          = @delivery_addresses.block
+          = @delivery_addresses.building
           .address__box__input__name
           = current_user.last_name 
           = current_user.first_name
