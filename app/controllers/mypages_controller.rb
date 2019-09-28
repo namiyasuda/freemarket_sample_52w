@@ -75,8 +75,7 @@ class MypagesController < ApplicationController
   end
 
   def delivery_address
-    @delivery_address = current_user.delivery_address
-    @delivery_address = DeliveryAddress.new if @delivery_address.nil?
+    @delivery_address = current_user.delivery_address.nil? ? DeliveryAddress.new : current_user.delivery_address
   end
 
   private
