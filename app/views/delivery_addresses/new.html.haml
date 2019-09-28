@@ -7,7 +7,7 @@
       発送元・お届け先住所入力
     .customer-entry__body
       .customer-entry__body__form
-        = form_with model:@delivery_address,local:true, url:addresses_path,class: 'customer-entry__body__form' do |f|
+        = form_with model:@delivery_address,local:true, class: 'customer-entry__body__form' do |f|
           .entry-content
             %label.entry-content__text お名前
             %span.entry-content__require 必須

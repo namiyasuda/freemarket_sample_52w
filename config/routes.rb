@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'tops#index'
   resources :tops, only: [:index]
 
-  resources :addresses, only: [:new,:create]
+  resources :delivery_addresses, only: [:new,:create,:update]
   resources :cards, only: [:new,:show,:create,:destroy]
   resources :signup, only: [:new,:index,:create] do
     collection do 

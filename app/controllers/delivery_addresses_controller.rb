@@ -1,4 +1,4 @@
-class AddressesController < ApplicationController
+class DeliveryAddressesController < ApplicationController
   before_action :authenticate_user!
   def new
     @delivery_address = DeliveryAddress.new
