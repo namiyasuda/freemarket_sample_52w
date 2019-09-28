@@ -21,8 +21,8 @@
 - has_one :delivery_address, dependent: :destroy
 - has_one :card, dependent: :destroy
 - has_one :user_addresse, dependent: :destroy
-- has_many :seller_transactions, class_name: 'Product'
-- has_many :buyer_transactions, class_name: 'Product'
+- has_many :seller_products, class_name: 'Product', :foreign_key => 'seller_id'
+- has_many :buyer_products, class_name: 'Product', :foreign_key => 'buyer_id'
 - has_many :sns_credentials, dependent: :destroy
 - has_many :points
 
@@ -94,8 +94,8 @@
 add_index :products, [:name, :description]
 
 ### Association
-- belongs_to :seller, class_name: 'User'
-- belongs_to :buyer, class_name: 'User'
+- belongs_to :seller, class_name: 'User', :foreign_key => 'seller_id'
+- belongs_to :buyer, class_name: 'User', :foreign_key => 'buyer_id', optional: true
 - belongs_to_active_hash :prefecture
 - belongs_to :category
 - belongs_to :brand

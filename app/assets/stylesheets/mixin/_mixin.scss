@@ -68,9 +68,9 @@
   line-height: 1.5;
 }
 
-@mixin flash-message($bg-color, $color) {
+@mixin flash-message($bg-color, $color, $top) {
   position: absolute;
-  top: 130px;
+  top: $top;
   width: 100vw;
   height: 60px;
   background: $bg-color;

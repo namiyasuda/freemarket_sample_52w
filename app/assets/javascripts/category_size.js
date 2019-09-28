@@ -18,11 +18,17 @@ $(function(){
     $('#select-size').removeAttr('required');
   }
 
+  function disapperGrandchild(){
+    $('#category-child-2').addClass('hide');
+    $('#grandchild_category option:selected').val('');
+    $('#grandchild_category').removeAttr('required');
+  }
+
   // サイズボックスを表示させる
   function appearSizeBox(category_id){
     if (category_id != 0){
       $.ajax({
-        url: 'get_size',
+        url: '/products/get_size',
         type: 'Get',
         data: {category_id: category_id},
         dataType: 'json'
@@ -53,9 +59,10 @@ $(function(){
     if (parent_id.length != 0){
       $('#category-child-1').removeClass('hide');
       disappearSizeBox();
+      disapperGrandchild();
       $('#product-brand').removeClass('hide');
       $.ajax({
-        url: 'get_category_children',
+        url: '/products/get_category_children',
         type: 'Get',
         data: {parent_id: parent_id},
         dataType: 'json'
@@ -66,13 +73,13 @@ $(function(){
         children.forEach(function(child){
           insertHTML += appendOption(child);
         })
-        $('#child_category').append(insertHTML);        
+        $('#child_category').append(insertHTML);
       }).fail(function(){
         alert('カテゴリー取得に失敗しました');
       })
     } else {
       $('#category-child-1').addClass('hide');
-      $('#category-child-2').addClass('hide');
+      disapperGrandchild();
     }
   });
   
@@ -83,7 +90,7 @@ $(function(){
       $('#category-child-2').removeClass('hide');
       disappearSizeBox();
       $.ajax({
-        url: 'get_category_grandchildren',
+        url: '/products/get_category_grandchildren',
         type: 'Get',
         data: {child_id: child_id},
         dataType: 'json'
@@ -95,15 +102,16 @@ $(function(){
             insertHTML += appendOption(grandchild);
           })
           $('#grandchild_category').append(insertHTML);
+          $('#grandchild_category').attr('required', 'required');
         } else {   //孫カテゴリーがない場合はサイズを表示させる
-          $('#category-child-2').addClass('hide');
+          disapperGrandchild();
           appearSizeBox(child_id);
         }
       }).fail(function(){
         alert('カテゴリー取得に失敗しました');
       })
     } else {
-      $('#category-child-2').addClass('hide');
+      disapperGrandchild();
     }
   });
 

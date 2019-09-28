@@ -67,10 +67,10 @@ class MypagesController < ApplicationController
   def create_user_address
     if UserAddress.create(user_address_params)
       flash[:success] = '登録しました。'
-      redirect_to personal_info_user_mypage_path(user_id: params[:user_id])
+      redirect_to personal_info_user_mypage_path(current_user)
     else
       flash.now[:danger] = '登録できませんでした。'
-      render personal_info_user_mypage_path(user_id: params[:user_id])
+      render personal_info_user_mypage_path(current_user)
     end
   end
 
