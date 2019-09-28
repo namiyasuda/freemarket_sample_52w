@@ -1,7 +1,15 @@
 .success {
-  @include flash-message($flash-bg-green, $flash-font-green);
+  @include flash-message($flash-bg-green, $flash-font-green, 130px);
 }
 
 .danger {
-  @include flash-message($flash-bg-red, $flash-font-red);
+  @include flash-message($flash-bg-red, $flash-font-red, 130px);
+}
+
+.product_success {
+  @include flash-message($flash-bg-green, $flash-font-green, 0);
+}
+
+.product_danger {
+  @include flash-message($flash-bg-red, $flash-font-red, 0);
 }

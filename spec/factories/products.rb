@@ -2,7 +2,7 @@ FactoryBot.define do
 
   factory :product do
     id                    {nil}
-    seller_id             {2}
+    seller_id             {nil}
     buyer_id              {nil}
     name                  {"itigo"}
     description           {"aaaaa"}
@@ -18,14 +18,7 @@ FactoryBot.define do
     parent_id             {1}
     child_id              {2}
     delivery_method_id    {1}
+    association :seller
   end
-
-  factory :user do
-    id                    {1}
-  end
-
-  factory :category do
-    id                    {20}
-  end
-
+  
 end
