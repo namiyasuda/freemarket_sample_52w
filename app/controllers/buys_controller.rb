@@ -1,5 +1,5 @@
 class BuysController < ApplicationController
-  before_action :get_product
+  before_action :get_product, :forbid_buy_myself, only: [:show, :pay]
 
   def show
     @image = @product.images.first
@@ -28,8 +28,14 @@ class BuysController < ApplicationController
 
 end
 
+private
+
 def get_product
   @product = Product.find(params[:product_id])
+end
+
+def forbid_buy_myself
+  redirect_to product_path(@product) if current_user.id == @product.seller_id
 end
 
 # カスタマー情報で支払いを行う。
