@@ -1,0 +1,30 @@
+.main-header
+  .main-header__top
+    %h1
+      = link_to root_path do
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2508029365", alt: "mercari"
+    %form.main-header__top--form{ action: "https //www.mercari.com/jp/search/"}
+      %input.input-default{ name: "keyword",  placeholder: "何かお探しですか？",  type: "search",  value: ""}/
+      %i.fas.fa-search
+  .main-header__under
+    %nav.main-header__under--left
+      %ul.main-header__under--left--nav
+        %li
+          %h2
+            = link_to "" do
+              %i.fas.fa-list
+              %span カテゴリーから探す              
+        %li
+          %h2
+            = link_to "" do
+              %i.fas.fa-tag
+              %span ブランドから探す
+            
+    %ul.main-header__under--right
+      %li.new
+        = link_to new_signup_path(current_user) do
+          %span 新規会員登録
+      %li.logged
+        = link_to new_user_session_path(current_user) do
+          %span ログイン
+      
