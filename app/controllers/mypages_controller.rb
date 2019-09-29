@@ -35,11 +35,9 @@ class MypagesController < ApplicationController
     if card.blank?
       redirect_to action: "payment" 
     else
-      Payjp.api_key = 'sk_test_d186521dfc37df79995c04e3'
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
-      @card_brand = @default_card_information.brand
-      @card_src = Card.set_card_brand_icon(@card_brand)
+      customer = Card.get_payjp_customer_info(card)
+      # application_controllerで定義したメソッドを呼び出し
+      set_card_info(customer, card)
     end
   end
   
