@@ -31,8 +31,11 @@ Rails.application.routes.draw do
       get 'dropzone'
     end
     resource :buys, only: [:show] do
-  end
-end  
+      collection do
+        patch 'pay'
+      end
+    end
+  end  
   
   resources :users, only: [:update] do
     resource :mypage, only: [:show] do
@@ -61,4 +64,5 @@ end
       get 'auth_sms_comfi'
     end
   end
+
 end
