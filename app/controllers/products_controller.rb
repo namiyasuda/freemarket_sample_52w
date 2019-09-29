@@ -30,11 +30,11 @@ class ProductsController < ApplicationController
         end
       end
     end
-      flash[:product_success] = '変更に成功しました'
+      flash[:product_success] = '出品に成功しました'
       redirect_to new_product_path
     rescue
-      flash[:product_danger] = '変更に失敗しました'
-      redirect_to new_product_path, alert: '出品が失敗しました'
+      flash[:product_danger] = '出品に失敗しました'
+      redirect_to new_product_path
   end
 
   def edit

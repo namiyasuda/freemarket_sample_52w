@@ -40,4 +40,11 @@ class ApplicationController < ActionController::Base
       @google_path = user_google_oauth2_omniauth_authorize_path
     end
   end
+
+  def set_card_info(customer, card)
+    @default_card_information = customer.cards.retrieve(card.card_id)
+    @card_brand = @default_card_information.brand
+    @card_src = Card.set_card_brand_icon(@card_brand)
+  end
+  
 end

@@ -1,5 +1,11 @@
 class Card < ApplicationRecord
   belongs_to :user
+
+  def self.get_payjp_customer_info(card)
+    Payjp.api_key = 'sk_test_d186521dfc37df79995c04e3'
+    return Payjp::Customer.retrieve(card.customer_id)
+  end
+
   def self.set_card_brand_icon(card_brand)
     case card_brand
     when "Visa"

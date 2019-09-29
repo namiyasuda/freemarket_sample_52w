@@ -1,3 +1,6 @@
+- flash.each do |message_type, message|
+  %div{class: "flash #{message_type}"}= message
+
 %header
   = render 'shared/sub-header'
 %section
@@ -13,7 +16,7 @@
       .body-payment
         .body-payment__item
           .body-payment__item__price
-            = "¥#{@product.price}"
+            = "¥#{@product.price.to_s(:delimited, delimiter: ',')}"
           .body-payment__item__postage
             送料込み
         .body-payment__point
@@ -23,19 +26,16 @@
           .body-payment__price__text
             支払い金額
           .body-payment__price__total
-            = "¥#{@product.price}"
+            = "¥#{@product.price.to_s(:delimited, delimiter: ',')}"
         - if @delivery_addresses.nil? || @card.blank?
           .error-text
             配送先と支払い方法の入力を完了してください。
             .body-payment
-              .body-payment__buy
-                .body-payment__buy__btn--not
-                  購入する
-        - else
-          =link_to "#", class: "body-payment" do  
-            .body-payment__buy
-              .body-payment__buy__btn
+              .body-payment__btn--not
                 購入する
+        - else
+          .body-payment  
+            = link_to "購入する", pay_product_buys_path, method: :patch, id: 'payment_btn', class: 'body-payment__btn'
     .address
       .address__box
         .address__box__title
