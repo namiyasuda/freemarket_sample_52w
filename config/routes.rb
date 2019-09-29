@@ -9,14 +9,12 @@ Rails.application.routes.draw do
   root 'tops#index'
   resources :tops, only: [:index]
 
-  resources :addresses, only: [:new,:create]
-  resources :cards, only: [:new,:show,:create,:destroy]
-  resources :signup, only: [:new,:index,:create] do
+  resources :delivery_addresses, only: [:new, :create, :update]
+  resources :cards, only: [:new, :show,:create, :destroy]
+  resources :signup, only: [:new, :create] do
     collection do 
       get 'customer_info'
       get 'sms_comfi'
-      get 'address'
-      get 'card'
       get 'complete'
     end
   end
@@ -46,6 +44,7 @@ end
         post 'create_card'
         post 'personal_info' => 'mypages#create_user_address'
         get 'listing_product'
+        get 'delivery_address'
       end
     end
   end

@@ -42,7 +42,7 @@ def create
   )
   if @user.save
     sign_in(@user)
-    redirect_to new_address_path
+    redirect_to new_delivery_address_path
   else
     render customer_info_signup_index_path
   end

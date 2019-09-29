@@ -60,6 +60,10 @@ class MypagesController < ApplicationController
     end
   end
 
+  def delivery_address
+    @delivery_address = current_user.delivery_address.nil? ? DeliveryAddress.new : current_user.delivery_address
+  end
+
   private
   def user_address_params
     params.permit(:postcode, :prefecture_id, :city, :block, :building).merge(user_id: current_user.id)
