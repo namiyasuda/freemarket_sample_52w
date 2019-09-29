@@ -5,11 +5,10 @@ class DeliveryAddressesController < ApplicationController
   end
 
   def create
-    @delivery_address = DeliveryAddress.new(delivery_address_params)
-    @delivery_address.user = current_user
+    delivery_address = DeliveryAddress.new(delivery_address_params)
     # マイページで登録した場合はマイページへリダイレクトさせる
     if Rails.application.routes.recognize_path(request.referer)[:controller] == "mypages"
-      if @delivery_address.save!
+      if delivery_address.save!
         flash[:success] = '登録しました。'
       else
         flash.now[:danger] = '登録できませんでした。'
@@ -17,7 +16,7 @@ class DeliveryAddressesController < ApplicationController
       redirect_to delivery_address_user_mypage_path(current_user)
     # 新規登録フォームで登録した場合はカード登録へリダイレクトさせる
     else
-      if @delivery_address.save!
+      if delivery_address.save!
         redirect_to new_card_path
       else
         render new_address_path
@@ -38,7 +37,6 @@ private
 
   def delivery_address_params
     params.require(:delivery_address).permit(
-      :user_id,
       :last_name,
       :first_name,
       :last_name_kana,
@@ -49,6 +47,6 @@ private
       :block,
       :building,
       :phone_number
-    )
+    ).merge(user_id: current_user.id)
   end
 end
