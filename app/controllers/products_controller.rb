@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
       redirect_to new_product_path
     rescue
       flash[:product_danger] = '変更に失敗しました'
-      redirect_to new_product_path, alert: '出品が失敗しました'
+      redirect_to new_product_path
   end
 
   def edit
