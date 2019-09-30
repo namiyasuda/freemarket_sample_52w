@@ -1,5 +1,4 @@
 .all-nav {
-  display: inline-block;
 
   .main-header {
     height: 100px;
@@ -384,12 +383,11 @@
   color: #fff;
 
   nav {
-    width: 1020px;
     margin: 0 182.5px;
+    display: flex;
 
     .footer {
       display: block;
-      float: left;
       margin-top: 18px;
       padding-right: 20px;
 
@@ -398,25 +396,25 @@
         font-size: 16px;
         font-weight: 100;
       }
-
+      
       &__fullwidth {
         padding-right: 50px;
       }
-
+      
       &__navlang {
         margin-top: 18px;
         padding: 0;
       }
-
+      
       &__innercell {
-        float: left;
+        display: flex;
         padding-left: 10px;
         vertical-align: top;
       }
 
       ul li {
         height: 18px;
-        margin-top: 14px;
+        margin: 14px 18px 0 0;
         font-size: 12px;
 
         a {
@@ -427,7 +425,7 @@
       }
 
       &__social {
-        display: inline-block;
+        display: flex;
 
         .fab {
           margin-top: 30px;
@@ -440,7 +438,6 @@
 
   .footer-bottom {
     display: inline-block;
-    width: 1020px;
     margin: 30px 180px 20px;
     background-color: #212121;
     text-align: center;
