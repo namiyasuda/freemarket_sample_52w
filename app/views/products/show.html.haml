@@ -5,78 +5,125 @@
     .product-details__title
       レディーストップス
     .details  
-    .details-photo
-      .details-photo__main
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_1.jpg?1569592534",class:"details-photo__main__image"
-      .details-photo__under
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_2.jpg?1569592534",class:"details-photo__under__image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details-photo__under__image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_6.jpg?1569592534",class:"details-photo__under__image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details-photo__under__image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_1.jpg?1569592534",class:"details-photo__under__image"
-      .detaile-list
-        .detaile-list__box
-          .detaile-list__box__left
-            出品者
-          .detaile-list__box__right
-            .detaile-list__box__right__name
-            .detaile-list__box__right__face
-            .detaile-list__box__right__face
-            .detaile-list__box__right__face
-        .detaile-list__box    
-          .detaile-list__box__left
-            カテゴリー
-          .detaile-list__box__right
-            .detaile-list__box__right__name
-            .detaile-list__box__right__name
-            .detaile-list__box__right__name
-        .detaile-list__box    
-          .detaile-list__box__left
-            ブランド
-          .detaile-list__box__right
-        .detaile-list__box    
-          .detaile-list__box__left
-            商品サイズ
-          .detaile-list__box__right
-        .detaile-list__box    
-          .detaile-list__box__left
-            商品の状態
-          .detaile-list__box__right
-        .detaile-list__box    
-          .detaile-list__box__left
-            配送料の負担
-          .detaile-list__box__right
-        .detaile-list__box    
-          .detaile-list__box__left
-            配送の方法
-          .detaile-list__box__right
-        .detaile-list__box    
-          .detaile-list__box__left
-            配送元地域
-          .detaile-list__box__right
-            .detaile-list__box__right__name
-        .detaile-list__box    
-          .detaile-list__box__left
-            配送日の目安
-          .detaile-list__box__right
-      .pricebox
-        .pricebox__price
-          ¥1800
-        .pricebox__tax
-          (税込)
-        .pricebox__postage
-          送料込み
-      .buybtn
-        .buybtn__next
-      .comment
-      .underlist
-        .underlist__box
-          .underlist__box__iine
-            ♡いいね！ 0
-          .underlist__box__report
-            不適切な商品の報告
-        .underlist__box__safty
-          あんしん・あんぜんへの取り組み
+      .details__photo
+        .details__photo__main
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_1.jpg?1569592534",class:"details__photo__main__image"
+        .details__photo__under
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_2.jpg?1569592534",class:"details__photo__under__image"
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details__photo__under__image"
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_6.jpg?1569592534",class:"details__photo__under__image"
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details__photo__under__image"
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_1.jpg?1569592534",class:"details__photo__under__image"
+        .details__photo__under
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_2.jpg?1569592534",class:"details__photo__under__image"
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details__photo__under__image"
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_6.jpg?1569592534",class:"details__photo__under__image"
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details__photo__under__image"
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_1.jpg?1569592534",class:"details__photo__under__image"
+
+      %table.list
+        %tbody
+          %tr
+            %th 出品者
+            %td ユウ
+          %tr
+            %th カテゴリー
+            %td レディース
+          %tr
+            %th ブランド
+            %td ユニクロ
+          %tr
+            %th 商品サイズ
+            %td free 
+          %tr
+            %th 商品の状態
+            %td 新品、未使用
+          %tr
+            %th 配送料の負担
+            %td 送料込み（出品者負担）
+          %tr
+            %th 配送の方法
+            %td らくらくメルカリ便
+          %tr
+            %th 配送元地域
+            %td 愛知
+          %tr
+            %th 配送日の目安
+            %td 4~7日で発送
+
+      -# .list
+      -#   .list__box
+      -#     .list__box__left
+      -#       出品者
+      -#     .list__box__right
+      -#       .list__box__right__name
+      -#         ユウ
+      -#       .list__box__right__face
+      -#       .list__box__right__face
+      -#       .list__box__right__face
+      -#   .list__box    
+      -#     .list__box__left
+      -#       カテゴリー
+      -#     .list__box__right
+      -#       .list__box__right__name
+      -#       .list__box__right__name
+      -#       .list__box__right__name
+      -#   -# .list__box    
+      -#   -#   .list__box__left
+        -#     ブランド
+        -#   .list__box__right
+        -# .list__box    
+        -#   .list__box__left
+        -#     商品サイズ
+        -#   .list__box__right
+        -# .list__box    
+        -#   .list__box__left
+        -#     商品の状態
+        -#   .list__box__right
+        -# .list__box    
+        -#   .list__box__left
+        -#     配送料の負担
+        -#   .list__box__right
+        -# .list__box    
+        -#   .list__box__left
+        -#     配送の方法
+        -#   .list__box__right
+        -# .list__box    
+        -#   .list__box__left
+        -#     配送元地域
+        -#   .list__box__right
+        -#     .list__box__right__name
+        -# .list__box    
+        -#   .list__box__left
+        -#     配送日の目安
+        -#   .list__box__right
+    .pricebox
+      %span.pricebox__price
+        ¥1800
+      %span.pricebox__tax
+        (税込)
+      %span.pricebox__postage
+        送料込み
+    .buybtn
+      .buybtn__next
+        購入画面に進む
+    .commentbox
+      .commentbox__text
+        ポンチ素材のVネックプルオーバーです。
+        程良い張り感と艶がありきれいめな印象で、
+        デコルテをすっきり魅せるVネックと手首の見えるお袖丈です。
+        ON/OFF問わずお使い頂ける一着かと思います♪
+    .underlist
+      .underlist__box
+        .underlist__box__iine
+          = fa_icon "fal heart"
+          いいね！ 0
+        .underlist__box__report
+          = fa_icon "fa flag"
+          不適切な商品の報告
+      .underlist__box__safty
+        = fa_icon "fa unlock-alt"
+        あんしん・あんぜんへの取り組み
 
 
 
