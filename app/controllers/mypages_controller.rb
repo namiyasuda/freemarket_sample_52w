@@ -62,6 +62,11 @@ class MypagesController < ApplicationController
     @delivery_address = current_user.delivery_address.nil? ? DeliveryAddress.new : current_user.delivery_address
   end
 
+  def listing_product
+    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
+    @products = current_user.seller_products.where(buyer_id: nil, brand_id: nil).order('id DESC')
+  end
+
   private
   def user_address_params
     params.permit(:postcode, :prefecture_id, :city, :block, :building).merge(user_id: current_user.id)
