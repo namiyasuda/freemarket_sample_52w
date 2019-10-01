@@ -3,11 +3,11 @@
 %section
   .product-details
     .product-details__title
-      レディーストップス
+      = @product.name
     .details  
       .details__photo
         .details__photo__main
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_1.jpg?1569592534",class:"details__photo__main__image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_2.jpg?1569592534",class:"details__photo__main__image"
         .details__photo__under
           = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_2.jpg?1569592534",class:"details__photo__under__image"
           = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details__photo__under__image"
@@ -26,7 +26,7 @@
           %tr
             %th 出品者
             %td.list__name
-              ユウ
+              = @product.seller_id
               .list__icon 
                 .list__icon__good
                   = fa_icon "fa laugh"
@@ -40,32 +40,32 @@
           %tr
             %th カテゴリー
             %td
-              %a レディース
+              %a= @product.category.name
           %tr
             %th ブランド
-            %td ユニクロ
+            %td= @product.brand.name
           %tr
             %th 商品サイズ
-            %td free 
+            %td= @product.size_id
           %tr
             %th 商品の状態
-            %td 新品、未使用
+            %td= @product.state.name
           %tr
             %th 配送料の負担
-            %td 送料込み（出品者負担）
+            %td= @product.paying_side.name
           %tr
             %th 配送の方法
-            %td らくらくメルカリ便
+            %td= @product.delivery_method.name
           %tr
             %th 配送元地域
             %td 
-              %a 愛知
+              %a= @product.prefecture.name
           %tr
             %th 配送日の目安
-            %td 4~7日で発送
+            %td= @product.delivery_day.name
     .pricebox
       %span.pricebox__price
-        ¥1800
+        = "¥#{@product.price.to_s(:delimited, delimiter: ',')}"
       %span.pricebox__tax
         (税込)
       %span.pricebox__postage
@@ -75,10 +75,7 @@
         購入画面に進む
     .commentbox
       .commentbox__text
-        ポンチ素材のVネックプルオーバーです。
-        程良い張り感と艶がありきれいめな印象で、
-        デコルテをすっきり魅せるVネックと手首の見えるお袖丈です。
-        ON/OFF問わずお使い頂ける一着かと思います♪
+        = @product.description
     .underlist
       .underlist__box
         .underlist__box__iine
@@ -87,7 +84,7 @@
         .underlist__box__report
           = fa_icon "fa flag"
           不適切な商品の報告
-      .underlist__box__safty
+      .underlist__box__safety
         = fa_icon "fa unlock-alt"
         あんしん・あんぜんへの取り組み
 
