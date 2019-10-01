@@ -7,26 +7,18 @@
     .details  
       .details__photo
         .details__photo__main
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_2.jpg?1569592534",class:"details__photo__main__image"
+        = image_tag @images[0].name.url,class:"details__photo__main__image"
         .details__photo__under
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_2.jpg?1569592534",class:"details__photo__under__image"
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details__photo__under__image"
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_6.jpg?1569592534",class:"details__photo__under__image"
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details__photo__under__image"
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_1.jpg?1569592534",class:"details__photo__under__image"
-        .details__photo__under
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_2.jpg?1569592534",class:"details__photo__under__image"
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details__photo__under__image"
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_6.jpg?1569592534",class:"details__photo__under__image"
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_3.jpg?1569592534",class:"details__photo__under__image"
-          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m51342419699_1.jpg?1569592534",class:"details__photo__under__image"
-
+        - @images.each_with_index do |image, index|
+          = image_tag @images[index].name.url,class:"details__photo__under__image" 
+          
       %table.list
         %tbody
           %tr
             %th 出品者
-            %td.list__name
-              = @product.seller_id
+            %td.list__name 
+              = link_to "#",class:"list__name" do
+                = @product.seller.nickname
               .list__icon 
                 .list__icon__good
                   = fa_icon "fa laugh"
@@ -41,12 +33,22 @@
             %th カテゴリー
             %td
               %a= @product.category.name
-          %tr
-            %th ブランド
-            %td= @product.brand.name
-          %tr
-            %th 商品サイズ
-            %td= @product.size_id
+          - if @product.brand.nil?
+            %tr
+              %th ブランド
+              %td
+          - else 
+            %tr
+              %th ブランド 
+              %td= @product.brand.name
+          - if @product.size.nil?
+            %tr
+              %th 商品サイズ
+              %td
+          - else
+            %tr
+              %th 商品サイズ
+              %td= @product.size.name
           %tr
             %th 商品の状態
             %td= @product.state.name
@@ -58,8 +60,9 @@
             %td= @product.delivery_method.name
           %tr
             %th 配送元地域
-            %td 
-              %a= @product.prefecture.name
+            %td.list__name
+              = link_to "#",class:"list__name" do
+                = @product.prefecture.name
           %tr
             %th 配送日の目安
             %td= @product.delivery_day.name
@@ -69,26 +72,29 @@
       %span.pricebox__tax
         (税込)
       %span.pricebox__postage
-        送料込み
-    .buybtn
-      .buybtn__next
-        購入画面に進む
+        - if @product.paying_side_id == 1
+          送料込み
+        - else
+          着払い
+    - if current_user.id != @product.seller_id
+      = link_to'#',class:"buybtn" do
+        .buybtn__next
+          購入画面に進む
     .commentbox
       .commentbox__text
         = @product.description
-    .underlist
-      .underlist__box
-        .underlist__box__iine
-          = fa_icon "fal heart"
-          いいね！ 0
-        .underlist__box__report
-          = fa_icon "fa flag"
-          不適切な商品の報告
-      .underlist__box__safety
-        = fa_icon "fa unlock-alt"
-        あんしん・あんぜんへの取り組み
-
-
+    - if current_user.id != @product.seller_id
+      .underlist
+        .underlist__box
+          .underlist__box__iine
+            = fa_icon "fal heart"
+            いいね！ 0
+          .underlist__box__report
+            = fa_icon "fa flag"
+            不適切な商品の報告
+        .underlist__box__safety
+          = fa_icon "fa unlock-alt"
+          あんしん・あんぜんへの取り組み
 
 %footer
   = render 'shared/sub-footer'
