@@ -1,122 +1,153 @@
-.product-details{
+.product-details {
   width: 700px;
   padding: 24px 40px 40px;
-  background: #fff;
+  background: $white;
   margin: 40px auto 0;
-  &__title{
+  &__title {
     font-size: 24px;
     text-align: center;
     word-wrap: break-word;
     line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
 }
-.details{
+.details {
   display: flex;
   width: 620px;
-  height: 420px;
-  &__photo{
+  height: 440px;
+  &__photo {
     margin: 0 20px;
-    width: 360px;
+    width: 300px;
     height: 420px;
-    &__main__image{
-      widows: 250px;
+    &__main__image {
+      width: 260px;
       height:300px;
     }
-    &__under__image{
-      width: 50px;
+    &__under__image {
+      width: 51.5px;
       height: 60px;
       margin: -1.5px;
     }
   }
 }
-.list{
+.list {
   width: 100%;
-  max-width: 300px;
   height: 420px;
   margin:0 auto;
   table-layout: fixed;
+  &__name {
+    color: $blue;
+  }
+  &__icon {
+    display: flex;
+    &__good {
+      display: inline-block;
+      margin-top: 8px;
+      color: $font-black;
+      ::before {
+        color: #ef5185;
+      } 
+    }
+    &__better {
+      display: inline-block;
+      margin: 8px 0 0 16px;
+      color: $font-black;
+      ::before {
+        color: #fba933;
+      }
+    }  
+    &__bad {
+      display: inline-block;
+      margin: 8px 0 0 16px;
+      color: $font-black;
+      ::before {
+        color: #6ab5d8;
+      }
+    }
+  }
 }
 
-th{
-  background-color:#fafafa;
+th {
+  width: 39%;
+  background-color:$high-light-gray;
 }
-th,td{
-  padding: 14px;
-  border: solid 1px #f5f5f5;
+th,td {
+  padding: 8px;
+  border: solid 1px $bg-gray;
 }
 
-.pricebox{
-  margin-top: 24px;
+.pricebox {
+  margin-top: 30px;
   width: 620px;
   text-align: center;
   &__price {
     display: inline-block;
     margin-right: 16px;
     font-size: 50px;
-    font-weight: 600;
+    font-weight: bold;
     width: 150px;
   }
-  &__tax{
+  &__tax {
     font-size: 10px;
     margin-top: 10px;
     width: 100px;
   }
-  &__postage{
+  &__postage {
     width: 100px;
     font-size: 16px;
   }
 }
-.buybtn{
+.buybtn {
   display: block;
   margin-top: 16px;
-  background: #ea352d;
+  background: $red;
   font-size: 24px;
   line-height: 60px;
-  color: #fff;
+  color: $white;
   text-align: center;
-  font-weight: 600;
-  -webkit-transition: all ease-out .3s;
-  transition: all ease-out .3s;
+  font-weight: bold;
 }
-.commentbox{
+.commentbox {
   width: 620px;
-  padding-top: 32px;
-  &__text{
+  padding: 20px;
+  &__text {
     font-size: 18px;  
     line-height: 1.5;
     white-space: pre-wrap;
   }
 }
-.underlist{
+.underlist {
   display: flex;
   margin-top: 16px;
-  &__box{
+  &__box {
     &__iine{
-      color: #333;
-      border: 1px solid #f5f5f5;
-      background: #f5f5f5;
+      color: $font-black;
+      border: 1px solid $bg-gray;
+      background-color: $bg-gray;
       display: inline-block;
       padding: 8px 16px;
       border-radius: 40px;
-      .fa{
+      .fa {
         font-weight: 400;
-        color: #ccc;
+        color: $gray;
       }
     }
-    &__report{
-      color: #333;
-      border: 1px solid #f5f5f5;
-      background: #f5f5f5;
+    &__report {
+      color: $font-black;
+      border: 1px solid $bg-gray;
+      background-color: $bg-gray;
       display: inline-block;
       padding: 8px 16px;
       border-radius: 40px;
-      .fa{
+      margin-left: 10px;
+      .fa {
         font-weight: 400;
       }
     }
-    &__safty{
-      margin: 10px 0 0 90px;
-      color: #0099e8;
+    &__safty {
+      margin: 10px 0 0 80px;
+      color: $blue;
     }
   }
 }

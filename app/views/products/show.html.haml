@@ -25,10 +25,22 @@
         %tbody
           %tr
             %th 出品者
-            %td ユウ
+            %td.list__name
+              ユウ
+              .list__icon 
+                .list__icon__good
+                  = fa_icon "fa laugh"
+                  10
+                .list__icon__better
+                  = fa_icon "fa meh"
+                  1
+                .list__icon__bad
+                  = fa_icon "fa frown"
+                  0
           %tr
             %th カテゴリー
-            %td レディース
+            %td
+              %a レディース
           %tr
             %th ブランド
             %td ユニクロ
@@ -46,57 +58,11 @@
             %td らくらくメルカリ便
           %tr
             %th 配送元地域
-            %td 愛知
+            %td 
+              %a 愛知
           %tr
             %th 配送日の目安
             %td 4~7日で発送
-
-      -# .list
-      -#   .list__box
-      -#     .list__box__left
-      -#       出品者
-      -#     .list__box__right
-      -#       .list__box__right__name
-      -#         ユウ
-      -#       .list__box__right__face
-      -#       .list__box__right__face
-      -#       .list__box__right__face
-      -#   .list__box    
-      -#     .list__box__left
-      -#       カテゴリー
-      -#     .list__box__right
-      -#       .list__box__right__name
-      -#       .list__box__right__name
-      -#       .list__box__right__name
-      -#   -# .list__box    
-      -#   -#   .list__box__left
-        -#     ブランド
-        -#   .list__box__right
-        -# .list__box    
-        -#   .list__box__left
-        -#     商品サイズ
-        -#   .list__box__right
-        -# .list__box    
-        -#   .list__box__left
-        -#     商品の状態
-        -#   .list__box__right
-        -# .list__box    
-        -#   .list__box__left
-        -#     配送料の負担
-        -#   .list__box__right
-        -# .list__box    
-        -#   .list__box__left
-        -#     配送の方法
-        -#   .list__box__right
-        -# .list__box    
-        -#   .list__box__left
-        -#     配送元地域
-        -#   .list__box__right
-        -#     .list__box__right__name
-        -# .list__box    
-        -#   .list__box__left
-        -#     配送日の目安
-        -#   .list__box__right
     .pricebox
       %span.pricebox__price
         ¥1800
