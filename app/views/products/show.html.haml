@@ -33,6 +33,18 @@
             %th カテゴリー
             %td
               %a= @product.category.name
+            %td.category
+              = link_to "#",class:"list__name__blue" do
+                = @category_parent
+              = link_to "#",class:"list__name__blue" do
+                .list__name__blue
+                  = fa_icon "chevron-right"
+                  = @category_child
+              - if @product.category
+                = link_to "#",class:"list__name__blue" do
+                  .list__name__blue
+                    = fa_icon "chevron-right"
+                    = @product.category.name
           - if @product.brand.nil?
             %tr
               %th ブランド
