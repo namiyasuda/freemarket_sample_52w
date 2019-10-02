@@ -51,6 +51,7 @@ Rails.application.routes.draw do
         get 'during_trade'
         get 'sold'
         get 'buyed_product'
+        get 'past_trade'
       end
     end
   end

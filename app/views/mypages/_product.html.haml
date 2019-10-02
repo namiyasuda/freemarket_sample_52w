@@ -13,8 +13,11 @@
           %i.far.fa-comment-alt
           0
         -# 評価カラムが未実装の為、暫定的にbrand_idで実装しています
-        - if product.brand_id.present?
-          .product__item__info__reaction__mark--sold
+        - if product.brand_id.present? && product.buyer_id == current_user.id
+          .product__item__info__reaction__mark--traded
+            購入済
+        - elsif product.brand_id.present?
+          .product__item__info__reaction__mark--traded
             売却済
         - elsif product.buyer_id.present?
           .product__item__info__reaction__mark--waiting

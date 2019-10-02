@@ -78,8 +78,13 @@ class MypagesController < ApplicationController
   end
 
   def buyed_product
-    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています    
+    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
     @products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
+  end
+
+  def past_trade
+    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
+    @products = current_user.buyer_products.where.not(brand_id: nil).order('id DESC')
   end
 
   private

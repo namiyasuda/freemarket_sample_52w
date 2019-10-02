@@ -50,3 +50,8 @@ crumb :buyed_product do
   link "購入した商品 - 取引中", buyed_product_user_mypage_path
   parent :mypage
 end
+
+crumb :past_trade do
+  link "購入した商品 - 過去の取引", past_trade_user_mypage_path
+  parent :mypage
+end

@@ -40,7 +40,7 @@
         &__mark--stoping {
           @include product-status-mark($red);
         }
-        &__mark--sold {
+        &__mark--traded {
           @include product-status-mark($btn-gray);
         }
       }
