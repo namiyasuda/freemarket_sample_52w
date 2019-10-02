@@ -48,6 +48,7 @@ Rails.application.routes.draw do
         post 'personal_info' => 'mypages#create_user_address'
         get 'listing_product'
         get 'delivery_address'
+        get 'during_trade'
       end
     end
   end
