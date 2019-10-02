@@ -20,7 +20,7 @@
         %li.tab-container__list__item.active--purchased
           = link_to '取引中', during_trade_user_mypage_path, class: "tab-container__list__item__text"
         %li.tab-container__list__item
-          = link_to '売却済み', "#", class: "tab-container__list__item__text"
+          = link_to '売却済み', sold_user_mypage_path, class: "tab-container__list__item__text"
     
     - if @products.present?
       %section.listing-product

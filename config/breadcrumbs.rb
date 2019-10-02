@@ -40,3 +40,8 @@ crumb :during_trade do
   link "出品した商品 - 取引中", during_trade_user_mypage_path
   parent :mypage
 end
+
+crumb :sold do
+  link "出品した商品 - 売却済み", sold_user_mypage_path
+  parent :mypage
+end

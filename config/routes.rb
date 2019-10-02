@@ -49,6 +49,7 @@ Rails.application.routes.draw do
         get 'listing_product'
         get 'delivery_address'
         get 'during_trade'
+        get 'sold'
       end
     end
   end
