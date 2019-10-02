@@ -19,12 +19,15 @@
   &__photo {
     margin: 0 20px;
     width: 300px;
-    height: 420px;
+    height: fit-content;
+    background-color: $high-light-gray;
     &__main__image {
+      object-fit: cover;
       width: 260px;
       height: 300px;
     }
     &__under__image {
+      object-fit: cover;
       width: 51.5px;
       height: 60px;
       margin: -1.5px;
@@ -37,32 +40,35 @@
   margin: 0 auto;
   table-layout: fixed;
   &__name {
-    color: $blue;
+    &__blue {
+      color: $blue;
+      &:hover {
+        text-decoration: underline;
+        opacity: .8;
+      }
+    }
   }
   &__icon {
     display: flex;
     &__good {
       display: inline-block;
       margin-top: 8px;
-      color: $font-black;
       ::before {
-        color: #ef5185;
+        color: $evaluation_good_red;
       } 
     }
     &__better {
       display: inline-block;
       margin: 8px 0 0 16px;
-      color: $font-black;
       ::before {
-        color: #fba933;
+        color: $evaluation_better_yellow;
       }
     }  
     &__bad {
       display: inline-block;
       margin: 8px 0 0 16px;
-      color: $font-black;
       ::before {
-        color: #6ab5d8;
+        color: $evaluation_bad_blue;
       }
     }
   }
