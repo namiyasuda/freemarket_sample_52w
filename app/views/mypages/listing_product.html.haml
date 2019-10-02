@@ -32,6 +32,3 @@
             = image_tag "logo-gray.png", class: 'not-found__icon'
             .not-found__text
               出品中の商品がありません
-
-    -# 暫定的に出品した商品ページで商品削除を実装しています
-    = link_to 'この商品を削除する', product_path(current_user), class: "product_delete_btn", id: "product_delete_btn", method: :delete

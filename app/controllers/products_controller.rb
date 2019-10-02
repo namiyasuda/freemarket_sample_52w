@@ -91,8 +91,7 @@ class ProductsController < ApplicationController
   end
   
   def destroy
-    # 暫定的にログインユーザーの出品した商品で一番古い物を消す様にしてあります
-    my_product = Product.where(seller_id: current_user.id).first
+    my_product = Product.find(params[:id])
     begin
       my_product.destroy!
       flash[:success] = '商品を削除しました'
@@ -100,6 +99,20 @@ class ProductsController < ApplicationController
       flash[:danger] = '商品を削除できませんでした'
     end
     redirect_to listing_product_user_mypage_path(current_user)
+  end
+
+  def stop_listing
+    product = Product.find(params[:id])
+    product.update(listing_stop: true)
+    flash[:product_success] = 'この商品の出品を停止しました'
+    redirect_to product_path(product)
+  end
+
+  def restart_listing
+    product = Product.find(params[:id])
+    product.update(listing_stop: false)
+    flash[:product_success] = 'この商品の出品を再開しました'
+    redirect_to product_path(product)
   end
   
    # 親カテゴリーが選択された後に動くアクションAjax

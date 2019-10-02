@@ -1,4 +1,6 @@
--# 画像表示確認用ページ
+- flash.each do |message_type, message|
+  %div{class: "flash #{message_type}"}= message
+
 .product
   -# = image_tag @product.images[0].name.url
   -# = @product.name
@@ -6,3 +8,4 @@
     = image_tag image.name.url
     %p ------------------------------
 
+= render 'products/listing-item-change-box', product: @product
