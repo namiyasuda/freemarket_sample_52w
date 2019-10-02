@@ -54,21 +54,21 @@
       display: inline-block;
       margin-top: 8px;
       ::before {
-        color: $evaluation_good_red;
+        color: $evaluation-good-red;
       } 
     }
     &__better {
       display: inline-block;
       margin: 8px 0 0 16px;
       ::before {
-        color: $evaluation_better_yellow;
+        color: $evaluation-better-yellow;
       }
     }  
     &__bad {
       display: inline-block;
       margin: 8px 0 0 16px;
       ::before {
-        color: $evaluation_bad_blue;
+        color: $evaluation-bad-blue;
       }
     }
   }
