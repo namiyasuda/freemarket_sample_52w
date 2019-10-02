@@ -7,11 +7,5 @@
     %h2.deleted-item-name 
       ="#{@product.id} この商品は削除されました"
 -else
-  .product
-    -# = image_tag @product.images[0].name.url
-    -# = @product.name
-    - @images.each do |image|
-      = image_tag image.name.url
-      %p ------------------------------
   -if current_user.id == @product.seller_id
     = render 'products/listing-item-change-box', product: @product
