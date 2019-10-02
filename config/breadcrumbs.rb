@@ -45,3 +45,8 @@ crumb :sold do
   link "出品した商品 - 売却済み", sold_user_mypage_path
   parent :mypage
 end
+
+crumb :buyed_product do
+  link "購入した商品 - 取引中", buyed_product_user_mypage_path
+  parent :mypage
+end

@@ -77,6 +77,11 @@ class MypagesController < ApplicationController
     @products = current_user.seller_products.where.not(buyer_id: nil, brand_id: nil).order('id DESC')
   end
 
+  def buyed_product
+    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています    
+    @products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
+  end
+
   private
   def user_address_params
     params.permit(:postcode, :prefecture_id, :city, :block, :building).merge(user_id: current_user.id)
