@@ -1,0 +1,28 @@
+.product
+  = link_to "#", class: 'product__item' do
+    .product__item__images-area
+      = image_tag product.images[0].name.url, class: 'product__item__images-area__image'
+    .product__item__info
+      .product__item__info__name
+        = product.name
+      .product__item__info__reaction
+        %span.product__item__info__reaction__count
+          %i.far.fa-heart
+          0
+        %span.product__item__info__reaction__count
+          %i.far.fa-comment-alt
+          0
+        -# 評価カラムが未実装の為、暫定的にbrand_idで実装しています
+        - if product.brand_id.present?
+          .product__item__info__reaction__mark--sold
+            売却済
+        - elsif product.buyer_id.present?
+          .product__item__info__reaction__mark--waiting
+            評価待ち
+        - elsif product.listing_stop === true
+          .product__item__info__reaction__mark--stoping
+            公開停止中
+        - else
+          .product__item__info__reaction__mark--listing
+            出品中
+  = fa_icon'chevron-right'
