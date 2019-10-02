@@ -25,10 +25,10 @@
           %p.user-info__btn__number__text
             出品数
             %span.user-info__btn__number__text__count
-              = @products.count
+              = @listing_product.count
     .notice-todo
       = render 'norice-todo'
 
     .purchased
-      = render 'purchased'
+      = render 'purchased', { buyed_products: @buyed_products, past_trade_products: @past_trade_products }
       

@@ -2,7 +2,10 @@ class MypagesController < ApplicationController
   before_action :move_to_login, :set_card_path
 
   def show
-    @products = Product.where(seller_id: current_user.id)
+    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
+    @listing_product = current_user.seller_products
+    @buyed_products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
+    @past_trade_products = current_user.buyer_products.where.not(brand_id: nil).order('id DESC')
   end
 
   def profile
