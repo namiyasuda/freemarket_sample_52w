@@ -26,8 +26,8 @@ Rails.application.routes.draw do
       get 'get_size', defaults: { format: 'json' }
       get 'get_delivery_method', defaults: { format: 'json' }
       get 'dropzone'
-      patch ':id/stop_listing' => 'products#stop_listing'
-      patch ':id/restart_listing' => 'products#restart_listing'
+      patch ':id/stop_listing', to: 'products#stop_listing'
+      patch ':id/restart_listing', to: 'products#restart_listing'
     end
     resource :buys, only: [:show] do
       collection do

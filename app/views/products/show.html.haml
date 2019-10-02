@@ -1,11 +1,17 @@
 - flash.each do |message_type, message|
   %div{class: "flash #{message_type}"}= message
 
-.product
-  -# = image_tag @product.images[0].name.url
-  -# = @product.name
-  - @images.each do |image|
-    = image_tag image.name.url
-    %p ------------------------------
-
-= render 'products/listing-item-change-box', product: @product
+-# スタイルは商品詳細ページにマージ後変更
+-if @product.listing_stop == true && current_user.id != @product.seller_id
+  .listing-item-change-box
+    %h2.deleted-item-name 
+      ="#{@product.id} この商品は削除されました"
+-else
+  .product
+    -# = image_tag @product.images[0].name.url
+    -# = @product.name
+    - @images.each do |image|
+      = image_tag image.name.url
+      %p ------------------------------
+  -if current_user.id == @product.seller_id
+    = render 'products/listing-item-change-box', product: @product
