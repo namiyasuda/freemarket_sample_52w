@@ -1,0 +1,56 @@
+.product {
+  position: relative;
+  height: 80px;
+  background-color: $white;
+  &__item {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    color: $font-black;
+    &:hover {
+      background-color: $high-light-gray;
+    }
+    &__images-area {
+      width: 48px;
+      height: 48px;
+      &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    &__info {
+      margin-left: 20px;
+      &__reaction {
+        margin-top: 12px;
+        color: $font-gray;
+        &__count {
+          margin-right: 6px;
+          .far {
+            color: $gray;
+          }
+        }
+        &__mark--listing, &__mark--waiting {
+          @include product-status-mark($blue);
+        }
+        &__mark--stoping {
+          @include product-status-mark($red);
+        }
+        &__mark--sold {
+          @include product-status-mark($btn-gray);
+        }
+      }
+    }
+  }
+  .fa {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translate(0, -50%);
+    pointer-events: none;
+  }
+}

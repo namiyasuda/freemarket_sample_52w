@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @images = @product.images
+    @category_parent = Category.find(@product.parent_id).name
+    @category_child = Category.find(@product.child_id).name
   end
 
   def new
