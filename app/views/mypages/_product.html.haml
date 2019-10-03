@@ -1,5 +1,5 @@
 .product
-  = link_to "#", class: 'product__item' do
+  = link_to product_path(product), class: 'product__item' do
     .product__item__images-area
       = image_tag product.images[0].name.url, class: 'product__item__images-area__image'
     .product__item__info
