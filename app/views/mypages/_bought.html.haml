@@ -4,20 +4,20 @@
 
 %section.tab-container
   %ul.tab-container__list
-    %li.tab-container__list__item.tab--purchased.active--purchased
+    %li.tab-container__list__item.tab--bought.active--bought
       %span.tab-container__list__item__text
         取引中
-    %li.tab-container__list__item.tab--purchased
+    %li.tab-container__list__item.tab--bought
       %span.tab-container__list__item__text
         過去の取引
 
 %section.tab-contents
   - if buyed_products.present?
-    %ul.trade-list.tab-contents--purchased.show--purchased
+    %ul.trade-list.tab-contents--bought.show--bought
       %section.listing-product
         = render partial: "product", collection: buyed_products
   - else
-    %ul.trade-list.tab-contents--purchased.show--purchased
+    %ul.trade-list.tab-contents--bought.show--bought
       %li.trade-list__item
         %section.not-found
           = image_tag "logo-gray.png", class: 'not-found__icon'
@@ -25,12 +25,12 @@
             取引中の商品がありません
 
   - if past_trade_products.present?
-    %ul.trade-list.tab-contents--purchased
+    %ul.trade-list.tab-contents--bought
       %section.listing-product
         = render partial: "product", collection: past_trade_products
     
   - else  
-    %ul.past-trade-list.tab-contents--purchased
+    %ul.past-trade-list.tab-contents--bought
       %li.past-trade-list__item
         %section.not-found
           = image_tag "logo-gray.png", class: 'not-found__icon'

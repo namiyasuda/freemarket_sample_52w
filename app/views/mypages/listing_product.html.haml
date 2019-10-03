@@ -18,7 +18,7 @@
 
     %section.tab-container
       %ul.tab-container__list
-        %li.tab-container__list__item.active--purchased
+        %li.tab-container__list__item.active--bought
           = link_to '出品中', listing_product_user_mypage_path, class: "tab-container__list__item__text"
         %li.tab-container__list__item
           = link_to '取引中', during_trade_user_mypage_path, class: "tab-container__list__item__text"
@@ -30,7 +30,7 @@
         = render partial: "product", collection: @products
     - else
       %section.tab-contents
-        %ul.trade-list.show--purchased
+        %ul.trade-list.show--bought
           %li.trade-list__item
             %section.not-found
               = image_tag "logo-gray.png", class: 'not-found__icon'

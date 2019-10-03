@@ -7,11 +7,11 @@ $(function() {
 		$('.tab-contents--notice-todo').eq(index).addClass('show--notice-todo');
   });
   
-	$('.tab--purchased').click(function(){
-		$('.active--purchased').removeClass('active--purchased');
-		$(this).addClass('active--purchased');
-		$('.show--purchased').removeClass('show--purchased');
+	$('.tab--bought').click(function(){
+		$('.active--bought').removeClass('active--bought');
+		$(this).addClass('active--bought');
+		$('.show--bought').removeClass('show--bought');
 		let index = $(this).index();
-		$('.tab-contents--purchased').eq(index).addClass('show--purchased');
+		$('.tab-contents--bought').eq(index).addClass('show--bought');
 	});
 });
