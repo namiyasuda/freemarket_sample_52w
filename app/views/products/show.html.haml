@@ -11,6 +11,9 @@
         .details__photo__under
           - @images.each_with_index do |image, index|
             = image_tag @images[index].name.url,class:"details__photo__under__image" 
+          - if @product.buyer_id.present?
+            .details__photo__soldout
+              %div SOLD
       %table.list
         %tbody
           %tr
@@ -50,8 +53,7 @@
             %tr
               %th ブランド 
               %td= @product.brand.name
-          - if @product.size.nil?
-          - else
+          - if @product.size.present?
             %tr
               %th 商品サイズ
               %td= @product.size.name
@@ -82,10 +84,13 @@
           送料込み
         - else
           着払い
-    - if current_user.id != @product.seller_id
+    - if current_user.id != @product.seller_id && @product.buyer_id.nil?
       = link_to'#',class:"buybtn" do
         .buybtn__next
           購入画面に進む
+    - elsif current_user.id != @product.seller_id && @product.buyer_id.present?
+      .buybtn__soldout
+        売り切れました
     .commentbox
       .commentbox__text
         = @product.description

@@ -17,6 +17,7 @@
   width: 620px;
   height: 440px;
   &__photo {
+    position: relative;
     margin: 0 20px;
     width: 300px;
     height: fit-content;
@@ -31,6 +32,32 @@
       width: 51.5px;
       height: 60px;
       margin: -1.5px;
+    }
+    &__soldout {
+      div {
+      position: absolute;
+      left: 0;
+      z-index: 2;
+      color: #fff;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      letter-spacing: 2px;
+      font-weight: 600;
+      top: 24px;
+      font-size: 24px;
+      }
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 0;
+        height: 0;
+        display: block;
+        content: "";
+        border-bottom: 120px solid transparent;
+        border-left: 120px solid $red;
+      }
     }
   }
 }
@@ -105,6 +132,7 @@ th,td {
   }
 }
 .buybtn {
+  &__next {
   display: block;
   margin-top: 16px;
   background: $red;
@@ -113,6 +141,17 @@ th,td {
   color: $white;
   text-align: center;
   font-weight: bold;
+  }
+  &__soldout {
+    display: block;
+    margin-top: 16px;
+    background: $font-gray;
+    font-size: 24px;
+    line-height: 60px;
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+  }
 }
 .commentbox {
   width: 620px;
