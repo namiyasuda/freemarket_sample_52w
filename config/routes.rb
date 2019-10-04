@@ -50,7 +50,7 @@ Rails.application.routes.draw do
         get 'delivery_address'
         get 'during_trade'
         get 'sold'
-        get 'buyed_product'
+        get 'bought_product'
         get 'past_trade'
       end
     end

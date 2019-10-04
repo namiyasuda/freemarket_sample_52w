@@ -12,10 +12,10 @@
         過去の取引
 
 %section.tab-contents
-  - if buyed_products.present?
+  - if bought_products.present?
     %ul.trade-list.tab-contents--bought.show--bought
       %section.listing-product
-        = render partial: "product", collection: buyed_products
+        = render partial: "product", collection: bought_products
   - else
     %ul.trade-list.tab-contents--bought.show--bought
       %li.trade-list__item

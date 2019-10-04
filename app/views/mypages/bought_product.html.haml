@@ -2,7 +2,7 @@
   = render 'shared/sub-header'
 
 %section
-  - breadcrumb :buyed_product
+  - breadcrumb :bought_product
   = render 'shared/breadcrumb'
 
 .mypage-main
@@ -16,7 +16,7 @@
     %section.tab-container
       %ul.tab-container__list
         %li.tab-container__list__item.active--bought
-          = link_to '取引中', buyed_product_user_mypage_path, class: "tab-container__list__item__text"
+          = link_to '取引中', bought_product_user_mypage_path, class: "tab-container__list__item__text"
         %li.tab-container__list__item
           = link_to '過去の取引', past_trade_user_mypage_path, class: "tab-container__list__item__text"
     

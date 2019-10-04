@@ -4,7 +4,7 @@ class MypagesController < ApplicationController
   def show
     # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
     @listing_product = current_user.seller_products
-    @buyed_products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
+    @bought_products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
     @past_trade_products = current_user.buyer_products.where.not(brand_id: nil).order('id DESC')
   end
 
@@ -80,7 +80,7 @@ class MypagesController < ApplicationController
     @products = current_user.seller_products.where.not(buyer_id: nil, brand_id: nil).order('id DESC')
   end
 
-  def buyed_product
+  def bought_product
     # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
     @products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
   end
