@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   before_action :set_product, only:[:show, :destroy, :stop_listing, :restart_listing]
 
   def show
-    @product = Product.find(params[:id])
     @images = @product.images
     @category_parent = Category.find(@product.parent_id).name
     @category_child = Category.find(@product.child_id).name
@@ -148,7 +147,7 @@ class ProductsController < ApplicationController
   private
 
   def set_product
-    @product = Product.find(params[:id])
+    redirect_to root_path unless @product = Product.find_by(id: params[:id]) 
   end
 
   def product_params
