@@ -1,5 +1,5 @@
 class BuysController < ApplicationController
-  before_action :get_product, :forbid_buy_myself, only: [:show, :pay]
+  before_action :move_to_login, :get_product, :forbid_buy_myself, only: [:show, :pay]
 
   def show
     @image = @product.images.first
