@@ -1,0 +1,142 @@
+.main-header {
+  height: 100px;
+  width: 100%;
+  background: #fff;
+  padding-top: 8px;
+
+  &__top {
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-flex-pack: justify;
+    width: 1021px;
+    margin: 0 auto;
+    box-pack: justify;
+
+    h1 a img {
+      height: 40px;
+      width: 200px;
+      vertical-align: middle;
+    }
+
+    &--form {
+      height: 48px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #f5f5f5;
+
+      input {
+        width: 790px;
+        border: 0;
+        padding: 0 42px 0 10px;
+        background: #f5f5f5;
+        font-size: 16px;
+        line-height: 48px;
+
+        i {
+          padding: 10px 16px 88px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__under {
+    align-items: center;
+    box-pack: justify;
+    display: flex;
+    justify-content: space-between;
+    height: 44px;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 44px;
+
+    &--left {
+      float: left;
+
+      &--nav {
+        display: inline-block;
+        position: relative;
+        padding: 0 11px;
+        line-height: 44px;
+        cursor: pointer;
+
+        li {
+          display: inline-block;
+          position: relative;
+          height: 44px;
+          margin: 7px 3px 0;
+          padding: 14px 11px 0;
+          line-height: 44px;
+          cursor: pointer;
+
+          h2 {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.4;
+
+            i {
+              color: #f00;
+            }
+
+            span {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+
+    &--right {
+      float: right;
+
+      li {
+        display: inline-block;
+        height: 44px;
+        margin: 7px 3px 3px auto;
+
+        i {
+          opacity: .7;
+        }
+
+        span {
+          padding-right: 14px;
+        }
+
+        .face {
+          width: 32px;
+          margin-right: 10px;
+          border-radius: 50%;
+          vertical-align: middle;
+        }
+      }
+
+      .new span {
+        background-color: $red;
+        color: $white;
+        font-size: 14px;
+        border: 1px solid;
+        border-color: $red;
+        border-radius: 4px;
+        padding: 8px 10px;
+        }
+
+      .logged span {
+        background-color: $white;
+        color: $blue;
+        font-size: 14px;
+        border: 1px solid;
+        border-color: $blue;
+        border-radius: 4px;
+        padding: 8px 10px;
+      }
+    }
+  }
+
+}

@@ -21,13 +21,21 @@
               %span ブランドから探す
             
     %ul.main-header__under--right
-      %li
-        %i.far.fa-bell
-        %span お知らせ
-      %li
-        %i.fa.fa-check
-        %span やることリスト
-      %li
-        =link_to user_mypage_path(current_user) do
-          = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "face"
-          %span マイページ
+      -if user_signed_in?
+        %li
+          %i.far.fa-bell
+          %span お知らせ
+        %li
+          %i.fa.fa-check
+          %span やることリスト
+        %li
+          =link_to user_mypage_path(current_user) do
+            = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "face"
+            %span マイページ
+      -else
+        %li.new
+          = link_to new_signup_path(current_user) do
+            %span 新規会員登録
+        %li.logged
+          = link_to new_user_session_path(current_user) do
+            %span ログイン
