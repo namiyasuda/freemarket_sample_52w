@@ -23,6 +23,9 @@
             - if @product.buyer_id.present?
               .details__photo__soldout
                 %div SOLD
+            - elsif @product.listing_stop == true
+              .details__photo__listing-stop
+                %div 公開停止中
         %table.list
           %tbody
             %tr
