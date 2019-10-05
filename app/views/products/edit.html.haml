@@ -73,9 +73,14 @@
           .entry-content__select-box#category-child-1
             = fa_icon 'chevron-down'
             = f.collection_select :child_id, @category_children, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'child_category', required: true}
-          .entry-content__select-box#category-child-2
-            = fa_icon 'chevron-down'
-            = f.collection_select :category_id, @category_grandchildren, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'grandchild_category', required: true}
+          - if @category_grandchildren.present?
+            .entry-content__select-box#category-child-2
+              = fa_icon 'chevron-down'
+              = f.collection_select :category_id, @category_grandchildren, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'grandchild_category', required: true}
+          - else 
+            .entry-content__select-box#category-child-2.hide
+              = fa_icon 'chevron-down'
+              = f.collection_select :category_id, @category_grandchildren, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'grandchild_category', required: true}
         - if @product.size_id.present?
           .sell-content__group#product-size
             %label.entry-content__text サイズ
