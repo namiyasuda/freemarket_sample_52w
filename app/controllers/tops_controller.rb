@@ -64,6 +64,6 @@ class TopsController < ApplicationController
   end
 
   def get_publishing_products
-    @publishing_products = Product.where.not(listing_stop: true)
+    @publishing_products = Product.where(buyer_id: nil, listing_stop: false)
   end
 end
