@@ -1,9 +1,6 @@
 .all-nav
   %header
-    -if user_signed_in?
-      = render partial: 'shared/header-log'
-    -else
-      = render partial: 'shared/header-notlog'
+    = render partial: 'shared/main-header'
   .search-container
     = render partial: 'shared/search-side'
     = render partial: 'shared/search-list'
