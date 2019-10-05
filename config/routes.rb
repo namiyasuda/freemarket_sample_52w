@@ -24,13 +24,14 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: [:show, :new, :create, :edit, :update, :destroy] do
-    # Ajaxで動作するルーティングを設定
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_size', defaults: { format: 'json' }
       get 'get_delivery_method', defaults: { format: 'json' }
       get 'dropzone'
+      patch ':id/stop_listing', to: 'products#stop_listing'
+      patch ':id/restart_listing', to: 'products#restart_listing'
     end
     resource :buys, only: [:show] do
       collection do

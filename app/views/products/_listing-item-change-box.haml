@@ -1,0 +1,8 @@
+.listing-item-change-box
+  = link_to '商品を編集する', edit_product_path(product), class: 'listing-item-change-box__edit-btn'
+  %p.listing-item-change-box__text or
+  - if product.listing_stop == false
+    = link_to '出品を一旦停止する', "/products/#{product.id}/stop_listing", class: 'listing-item-change-box__stop-btn', method: :patch
+  -else
+    = link_to '出品を再開する', "/products/#{product.id}/restart_listing", class: 'listing-item-change-box__restart-btn', method: :patch
+  = link_to 'この商品を削除する', product_path(product), class: 'listing-item-change-box__delete-btn',id: "product_delete_btn", method: :delete
