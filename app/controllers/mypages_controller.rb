@@ -90,6 +90,10 @@ class MypagesController < ApplicationController
     @products = current_user.buyer_products.where.not(brand_id: nil).order('id DESC')
   end
 
+  def todo
+    @products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
+  end
+
   private
   def user_address_params
     params.permit(:postcode, :prefecture_id, :city, :block, :building).merge(user_id: current_user.id)
