@@ -1,0 +1,224 @@
+.product-details {
+  width: 700px;
+  padding: 24px 40px 40px;
+  background: $white;
+  margin: 40px auto 0;
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+.details {
+  display: flex;
+  width: 620px;
+  height: 440px;
+  &__photo {
+    position: relative;
+    margin: 0 20px;
+    width: 300px;
+    height: fit-content;
+    background-color: $high-light-gray;
+    &__main__image {
+      object-fit: cover;
+      width: 260px;
+      height: 300px;
+    }
+    &__under__image {
+      object-fit: cover;
+      width: 51.5px;
+      height: 60px;
+      margin: -1.5px;
+    }
+    &__soldout {
+      div {
+        position: absolute;
+        left: 0;
+        z-index: 2;
+        color: $white;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        letter-spacing: 2px;
+        font-weight: 600;
+        top: 24px;
+        font-size: 24px;
+        }
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 0;
+        height: 0;
+        display: block;
+        content: "";
+        border-bottom: 120px solid transparent;
+        border-left: 120px solid $red;
+      }
+    }
+    &__listing-stop {
+      div {
+        position: absolute;
+        left: -5px;
+        top: 34px;
+        z-index: 2;
+        color: $white;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 18px;
+        }
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 0;
+        height: 0;
+        display: block;
+        content: "";
+        border-bottom: 120px solid transparent;
+        border-left: 120px solid $font-gray;
+      }
+    }
+  }
+}
+.list {
+  width: 100%;
+  height: 420px;
+  margin: 0 auto;
+  table-layout: fixed;
+  &__name {
+    &__blue {
+      color: $blue;
+      &:hover {
+        text-decoration: underline;
+        opacity: .8;
+      }
+    }
+  }
+  &__icon {
+    display: flex;
+    &__good {
+      display: inline-block;
+      margin-top: 8px;
+      ::before {
+        color: $evaluation-good-red;
+      } 
+    }
+    &__better {
+      display: inline-block;
+      margin: 8px 0 0 16px;
+      ::before {
+        color: $evaluation-better-yellow;
+      }
+    }  
+    &__bad {
+      display: inline-block;
+      margin: 8px 0 0 16px;
+      ::before {
+        color: $evaluation-bad-blue;
+      }
+    }
+  }
+}
+
+th {
+  width: 39%;
+  background-color:$high-light-gray;
+}
+th,td {
+  padding: 8px;
+  border: solid 1px $bg-gray;
+}
+
+.pricebox {
+  margin-top: 30px;
+  width: 620px;
+  text-align: center;
+  &__price {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 50px;
+    font-weight: bold;
+    width: 150px;
+  }
+  &__tax {
+    font-size: 10px;
+    margin-top: 10px;
+    width: 100px;
+  }
+  &__postage {
+    width: 100px;
+    font-size: 16px;
+  }
+}
+.buybtn {
+  &__next {
+    display: block;
+    margin-top: 16px;
+    background: $red;
+    font-size: 24px;
+    line-height: 60px;
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+    }
+  &__soldout {
+    display: block;
+    margin-top: 16px;
+    background: $font-gray;
+    font-size: 24px;
+    line-height: 60px;
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+.commentbox {
+  width: 620px;
+  padding: 20px;
+  &__text {
+    font-size: 18px;  
+    line-height: 1.5;
+    white-space: pre-wrap;
+  }
+}
+.underlist {
+  display: flex;
+  margin-top: 16px;
+  &__box {
+    &__iine {
+      color: $font-black;
+      border: 1px solid $bg-gray;
+      background-color: $bg-gray;
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 40px;
+      .fa {
+        font-weight: 400;
+        color: $gray;
+      }
+    }
+    &__report {
+      color: $font-black;
+      border: 1px solid $bg-gray;
+      background-color: $bg-gray;
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 40px;
+      margin-left: 10px;
+      .fa {
+        font-weight: 400;
+      }
+    }
+    &__safety {
+      margin: 10px 0 0 80px;
+      color: $blue;
+    }
+  }
+}

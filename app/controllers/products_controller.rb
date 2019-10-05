@@ -1,9 +1,11 @@
 class ProductsController < ApplicationController
   before_action :move_to_login , except: :show
+  before_action :set_product, only:[:show, :destroy, :stop_listing, :restart_listing]
 
   def show
-    @product = Product.find(params[:id])
     @images = @product.images
+    @category_parent = Category.find(@product.parent_id).name
+    @category_child = Category.find(@product.child_id).name
   end
 
   def new
@@ -91,15 +93,25 @@ class ProductsController < ApplicationController
   end
   
   def destroy
-    # 暫定的にログインユーザーの出品した商品で一番古い物を消す様にしてあります
-    my_product = Product.where(seller_id: current_user.id).first
     begin
-      my_product.destroy!
+      @product.destroy!
       flash[:success] = '商品を削除しました'
     rescue
       flash[:danger] = '商品を削除できませんでした'
     end
     redirect_to listing_product_user_mypage_path(current_user)
+  end
+
+  def stop_listing
+    @product.update(listing_stop: true)
+    flash[:product_success] = 'この商品の出品を停止しました'
+    redirect_to product_path(@product)
+  end
+
+  def restart_listing
+    @product.update(listing_stop: false)
+    flash[:product_success] = 'この商品の出品を再開しました'
+    redirect_to product_path(@product)
   end
   
    # 親カテゴリーが選択された後に動くアクションAjax
@@ -133,6 +145,10 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def set_product
+    redirect_to root_path unless @product = Product.find_by(id: params[:id]) 
+  end
 
   def product_params
     params.require(:product).permit(
