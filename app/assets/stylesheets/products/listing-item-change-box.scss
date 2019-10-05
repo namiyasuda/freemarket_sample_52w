@@ -1,0 +1,22 @@
+.listing-item-change-box {
+  width: 700px;
+  margin: 24px auto;
+  padding: 8px 16px;
+  background-color: $white;
+  &__edit-btn {
+    @include submit-btn(16px 0, 100%, $red);
+  }
+  &__text {
+    font-size: 16px;
+    text-align: center;
+  }
+  &__stop-btn {
+    @include submit-btn(16px 0, 100%, $red);
+  }
+  &__restart-btn {
+    @include submit-btn(16px 0, 100%, $btn-gray);
+  }
+  &__delete-btn {
+    @include submit-btn(16px 0, 100%, $btn-gray);
+  }
+}
