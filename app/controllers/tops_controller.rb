@@ -28,8 +28,12 @@ class TopsController < ApplicationController
     @products7 = @publishing_products.where(brand_id: ranking2[2]).order('id DESC').limit(4)
     
     @brand4 = Brand.find_by(id: ranking2[3])
-    @products8 = @publishing_products.where(brand_id: ranking2[3]).order('id DESC').limit(4)
 
+    @products8 = Product.where(brand_id: ranking2[3]).order('id DESC').limit(4)
+  end
+
+  def search
+    
   end
 
   def get_publishing_products

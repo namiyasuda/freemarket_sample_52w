@@ -1,0 +1,18 @@
+.search-list
+  %h2.result kesasakuの検索結果
+  %h2.case 0件表示
+  %section.pickup
+    %section.pickup__container
+      -unless @category1.nil?
+        .pickup__container--content
+          - @products1.each do |product|
+            %section.item
+              %figure.item__photo
+                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
+              .item__body
+                %h3.item__body--name.font-2 
+                  = product.name
+                .item__body--num
+                  .price.font-5 
+                    ¥
+                    = product.price
