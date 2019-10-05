@@ -2,7 +2,7 @@
   main {
     height: 390px;
     width: 100%;
-    background: url('main.jpg');
+    background-image: image-url('main.jpg');
 
     .background {
       width: 1030px;
@@ -164,7 +164,7 @@
 .banners-nav {
   height: 260px;
   width: 100%;
-  background: url('home.jpg');
+  background-image: image-url('home.jpg');
 
   .banners {
     position: relative;

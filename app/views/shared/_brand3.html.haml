@@ -1,0 +1,17 @@
+-unless @brand3.nil?
+  %h3.pickup__container--text-center
+    = link_to(@brand3.name+" 新着アイテム" , "")
+  .pickup__container--content
+    - @products7.each do |product|
+      %section.item
+        %figure.item__photo
+          = link_to image_tag(product.images[0].name.url, alt: "実装その1", class: "lazyload"), product_path(product.id)
+        .item__body
+          %h3.item__body--name.font-2 
+            = product.name
+          .item__body--num
+            .price.font-5 
+              ¥
+              = product.price
+  .view-all
+    = link_to("すべての商品を見る", "")

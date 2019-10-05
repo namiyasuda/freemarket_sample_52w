@@ -21,152 +21,29 @@
   %section.pickup
     %h2.pickup__head 商品一覧
     %section.pickup__container
-      -unless @category1.nil?
-        %h3.pickup__container--text-center
-          = link_to(@category1.name+" 新着アイテム" , "")
-        .pickup__container--content
-          - @products1.each do |product|
-            %section.item
-              %figure.item__photo
-                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-              .item__body
-                %h3.item__body--name.font-2 
-                  = product.name
-                .item__body--num
-                  .price.font-5 
-                    ¥
-                    = product.price
-          .view-all
-            = link_to("すべての商品を見る", "")
+      = render partial: 'shared/category1'
         
     %section.pickup__container
-      -unless @category2.nil?
-        %h3.pickup__container--text-center
-          = link_to(@category2.name+" 新着アイテム" , "")
-        .pickup__container--content
-          - @products2.each do |product|
-            %section.item
-              %figure.item__photo
-                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-              .item__body
-                %h3.item__body--name.font-2 
-                  = product.name
-                .item__body--num
-                  .price.font-5 
-                    ¥
-                    = product.price
-        .view-all
-          = link_to("すべての商品を見る", "")
+      = render partial: 'shared/category2'
+
     %section.pickup__container
-      -unless @category3.nil?
-        %h3.pickup__container--text-center
-          = link_to(@category3.name+" 新着アイテム" , "")
-        .pickup__container--content
-          - @products3.each do |product|
-            %section.item
-              %figure.item__photo
-                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-              .item__body
-                %h3.item__body--name.font-2 
-                  = product.name
-                .item__body--num
-                  .price.font-5 
-                    ¥
-                    = product.price
-        .view-all
-          = link_to("すべての商品を見る", "")
+      = render partial: 'shared/category3'
+
     %section.pickup__container
-      -unless @category4.nil?
-        %h3.pickup__container--text-center
-          = link_to(@category4.name+" 新着アイテム" , "")
-        .pickup__container--content
-          - @products4.each do |product|
-            %section.item
-              %figure.item__photo
-                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-              .item__body
-                %h3.item__body--name.font-2 
-                  = product.name
-                .item__body--num
-                  .price.font-5 
-                    ¥
-                    = product.price
-        .view-all
-          = link_to("すべての商品を見る", "")
-  %section.pickup
-    -unless @brand1.nil?
-      %h2.pickup__head ピックアップブランド
-      %section.pickup__container
-        %h3.pickup__container--text-center
-          = link_to(@brand1.name+" 新着アイテム" , "")
-        .pickup__container--content
-          - @products5.each do |product|
-            %section.item
-              %figure.item__photo
-                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-              .item__body
-                %h3.item__body--name.font-2 
-                  = product.name
-                .item__body--num
-                  .price.font-5 
-                    ¥
-                    = product.price
-        .view-all
-          = link_to("すべての商品を見る", "")
+      = render partial: 'shared/category4'
+
+    %section.pickup
+      = render partial: 'shared/brand1'
+      
     %section.pickup__container
-      -unless @brand2.nil?
-        %h3.pickup__container--text-center
-          = link_to(@brand2.name+" 新着アイテム" , "")
-        .pickup__container--content
-          - @products6.each do |product|
-            %section.item
-              %figure.item__photo
-                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-              .item__body
-                %h3.item__body--name.font-2 
-                  = product.name
-                .item__body--num
-                  .price.font-5 
-                    ¥
-                    = product.price
-        .view-all
-          = link_to("すべての商品を見る", "")
+      = render partial: 'shared/brand2'
+      
     %section.pickup__container
-      -unless @brand3.nil?
-        %h3.pickup__container--text-center
-          = link_to(@brand3.name+" 新着アイテム" , "")
-        .pickup__container--content
-          - @products7.each do |product|
-            %section.item
-              %figure.item__photo
-                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-              .item__body
-                %h3.item__body--name.font-2 
-                  = product.name
-                .item__body--num
-                  .price.font-5 
-                    ¥
-                    = product.price
-        .view-all
-          = link_to("すべての商品を見る", "")
+      = render partial: 'shared/brand3'
+
     %section.pickup__container
-      -unless @brand4.nil?
-        %h3.pickup__container--text-center
-          = link_to(@brand4.name+" 新着アイテム" , "/")
-        .pickup__container--content
-          - @products8.each do |product|
-            %section.item
-              %figure.item__photo
-                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-              .item__body
-                %h3.item__body--name.font-2 
-                  = product.name
-                .item__body--num
-                  .price.font-5 
-                    ¥
-                    = product.price
-        .view-all
-          = link_to("すべての商品を見る", "")
+      = render partial: 'shared/brand4'
+      
   %aside.banners-nav
     .banners
       .banners__left
