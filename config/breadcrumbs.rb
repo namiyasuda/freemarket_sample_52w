@@ -35,3 +35,23 @@ crumb :delivery_address do
   link "発送元・お届け先住所変更", delivery_address_user_mypage_path
   parent :mypage
 end
+
+crumb :during_trade do
+  link "出品した商品 - 取引中", during_trade_user_mypage_path
+  parent :mypage
+end
+
+crumb :sold do
+  link "出品した商品 - 売却済み", sold_user_mypage_path
+  parent :mypage
+end
+
+crumb :bought_product do
+  link "購入した商品 - 取引中", bought_product_user_mypage_path
+  parent :mypage
+end
+
+crumb :past_trade do
+  link "購入した商品 - 過去の取引", past_trade_user_mypage_path
+  parent :mypage
+end
