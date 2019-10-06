@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_092709) do
+ActiveRecord::Schema.define(version: 2019_10_06_092905) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["name"], name: "index_brands_on_name"
   end
 
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 2019_09_21_092709) do
     t.integer "parent_id", null: false
     t.integer "child_id", null: false
     t.integer "delivery_method_id", null: false
+    t.integer "evaluation"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
     t.index ["category_id"], name: "index_products_on_category_id"
@@ -105,8 +106,8 @@ ActiveRecord::Schema.define(version: 2019_09_21_092709) do
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "uid", null: false
-    t.string "provider", null: false
+    t.string "uid"
+    t.string "provider"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
