@@ -1,0 +1,40 @@
+%header
+  = render 'shared/main-header'
+
+%section
+  - breadcrumb :todo
+  = render 'shared/breadcrumb'
+
+.mypage-main
+  = render 'shared/mypage-side-menu'
+
+  .mypage
+    %section.tab-container
+      %ul.tab-container__list
+        %li.tab-container__list__item
+          %span.tab-container__list__item__text
+            お知らせ
+        %li.tab-container__list__item.active--notice-todo
+          %span.tab-container__list__item__text
+            やることリスト
+          - if @products.present?
+            .tab-container__list__item__count
+              = @products.count
+
+    - if @products.present?
+      %ul.todo-list.show--bought
+        %section.listing-product
+          = render partial: "product-todo", collection: @products, as: "product"
+
+    - else      
+      %ul.todo-list.show--bought
+        %li.todo-list__item
+          %section.not-found
+            = image_tag "logo-gray.png", class: 'not-found__icon'
+            .not-found__text
+              現在、やることリストはありません
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'

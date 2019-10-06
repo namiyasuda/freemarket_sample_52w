@@ -1,5 +1,5 @@
 %header
-  = render 'shared/sub-header'
+  = render 'shared/main-header'
 
 %section
   - breadcrumb :profile
@@ -17,9 +17,15 @@
     
     = form_with model: current_user, local: true do |f|
       %section.user-image
-        = image_tag "user-icon.png", class: 'user-image__icon'
-        = f.text_field :nickname, class: 'user-image__nickname'
+        .user-image__area
+          = image_tag "user-icon.png", class: 'user-image__area__icon'
+          = f.text_field :nickname, class: 'user-image__area__nickname'
 
       %section.profile
         = f.text_area :profile, class: 'profile__textarea', placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
         = f.submit '変更する', class:'profile__submit'
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'

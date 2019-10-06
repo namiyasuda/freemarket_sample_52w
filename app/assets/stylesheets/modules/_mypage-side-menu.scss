@@ -20,6 +20,21 @@
         color: $font-black;
         transition: all .5s ease 0s;
       }
+      &__count {
+        position: absolute;
+        top: 50%;
+        right: 35px;
+        width: 25px;
+        height: 25px;
+        background-color: $red;
+        border-radius: 50%;
+        font-size: 16px;
+        color: $white;
+        font-weight: bold;
+        text-align: center;
+        line-height: 25px;
+        transform: translateY(-50%);
+      }
       &__btn {
         position: absolute;
         top: 0;

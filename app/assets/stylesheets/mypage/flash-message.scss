@@ -1,9 +1,9 @@
 .success {
-  @include flash-message($flash-bg-green, $flash-font-green, 130px);
+  @include flash-message($flash-bg-green, $flash-font-green, 100px);
 }
 
 .danger {
-  @include flash-message($flash-bg-red, $flash-font-red, 130px);
+  @include flash-message($flash-bg-red, $flash-font-red, 100px);
 }
 
 .product_success {
