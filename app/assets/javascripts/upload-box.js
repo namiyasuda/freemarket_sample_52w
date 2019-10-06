@@ -1,5 +1,5 @@
 $(function() {  
-  var saved_image_num = $('.upload-box__body__item').length; //DBに保存してある画像の数
+  var saved_image_num = $('.saved-image-num').data('num'); //DBに保存してある画像の数
   var image_count = saved_image_num + 1;  //アップロードされた画像の通し番号
 
   // プレビュー画像HTMLを生成する
@@ -61,12 +61,18 @@ $(function() {
     var target_upload_num = $(this).attr('data-image');
     target_list.remove();
     
-    // DBから存在する、プレビュー表示から消した画像を配列に記録
+    // 削除する画像が、保存済みか追加したものかで条件分岐
     if (target_upload_num <= saved_image_num) {
+      // 保存済みの場合、対応する配列要素の値を0にする
       $('#saved-image-'+target_upload_num).val(0);
+    } else {
+      // 追加したものの場合、削除画像と同じ番号のアップロードボックスを削除する
+      $(".upload-box__body__drop-box").each(function(index, element){
+        if ($(element).data('image')==target_upload_num) {
+          $(element).remove();
+        }
+      });
     }
-    // クリックしたプレビューと同じ番号のアップロードボックスを削除する
-    $("upload-box__body__drop-box[data-image = target_upload_num]").remove();
     // 現在表示中のupload-boxの大きさを調整するためクラス名を削除・追加
     $('.upload-box__body__drop-box').last().removeClass(function(index, className) {
       return (className.match(/\bhave-item-\S+/g) || []).join(' ');

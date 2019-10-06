@@ -14,6 +14,7 @@
       %p
         最大10枚までアップロードできます
       .upload-box__body
+        .saved-image-num.hide{data: {num: @images.length}}
         = f.fields_for :image do |i|
           %ul.upload-box__body__items#item-container1
             - @images.each_with_index do |image, index|
@@ -80,7 +81,7 @@
           - else 
             .entry-content__select-box#category-child-2.hide
               = fa_icon 'chevron-down'
-              = f.collection_select :category_id, @category_grandchildren, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'grandchild_category', required: true}
+              = f.collection_select :category_id, @category_grandchildren, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'grandchild_category'}
         - if @product.size_id.present?
           .sell-content__group#product-size
             %label.entry-content__text サイズ
