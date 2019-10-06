@@ -51,6 +51,14 @@
                 %br
                 -# または
                 クリックしてファイルをアップロード
+          - else
+            .upload-box__body__drop-box{class:"have-item-#{@images.length} hide", data: {image: @images.length+1}}
+              = i.file_field :image , name: 'images[image][]', id: "upload-image#{@images.length+1}", class: "upload-image"
+              .upload-box__body__drop-box__text
+                -# ドラッグアンドドロップ
+                %br
+                -# または
+                クリックしてファイルをアップロード
     .sell-content
       .sell-content__group
         %label.entry-content__text 商品名
