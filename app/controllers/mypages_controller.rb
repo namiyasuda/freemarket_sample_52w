@@ -111,6 +111,6 @@ class MypagesController < ApplicationController
 
   def set_todo_count
     # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
-    @todo_count = current_user.buyer_products.where(brand_id: nil).order('id DESC')
+    @todo_count = current_user.buyer_products.where(brand_id: nil).count
   end
 end
