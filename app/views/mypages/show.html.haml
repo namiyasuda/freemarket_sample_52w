@@ -2,7 +2,7 @@
   %div{class: "flash #{message_type}"}= message
 
 %header
-  = render 'shared/sub-header'
+  = render 'shared/main-header'
 
 %section
   - breadcrumb :mypage
@@ -32,3 +32,7 @@
     .bought
       = render 'bought', { bought_products: @bought_products, past_trade_products: @past_trade_products }
       
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'

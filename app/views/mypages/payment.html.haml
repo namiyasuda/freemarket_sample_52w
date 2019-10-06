@@ -1,5 +1,5 @@
 %header
-  = render 'shared/sub-header'
+  = render 'shared/main-header'
 
 %section
   - breadcrumb :card_show
@@ -25,3 +25,8 @@
       .payment-about
         = link_to '支払い方法について', '#', class: '.payment-about'
         =fa_icon'chevron-right'
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'

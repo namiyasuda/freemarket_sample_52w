@@ -1,5 +1,5 @@
 %header
-  = render 'shared/sub-header'
+  = render 'shared/main-header'
 
 %section
   - breadcrumb :todo
@@ -33,3 +33,8 @@
             = image_tag "logo-gray.png", class: 'not-found__icon'
             .not-found__text
               現在、やることリストはありません
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'

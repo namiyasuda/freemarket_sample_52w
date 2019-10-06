@@ -5,8 +5,10 @@
   background-color: $white;
   &__list {
     display: flex;
-    margin: 0 15%;
+    padding: 0 16px;
     &__item {
+      width: 1010px;
+      margin: 0 auto;
       font-size: 18px;
       line-height: 48px;
       letter-spacing: .5px;
