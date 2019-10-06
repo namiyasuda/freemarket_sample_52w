@@ -1,5 +1,5 @@
 $(function() {  
-  var saved_image_num = $('.saved-image-num').data('num'); //DBに保存してある画像の数
+  var saved_image_num = $('.upload-box__body').data('num'); //DBに保存してある画像の数
   var image_count = saved_image_num + 1;  //アップロードされた画像の通し番号
 
   // プレビュー画像HTMLを生成する

@@ -13,8 +13,7 @@
         %span.entry-content__require 必須
       %p
         最大10枚までアップロードできます
-      .upload-box__body
-        .saved-image-num.hide{data: {num: @images.length}}
+      .upload-box__body{data: {num: @images.length}}
         = f.fields_for :image do |i|
           %ul.upload-box__body__items#item-container1
             - @images.each_with_index do |image, index|
