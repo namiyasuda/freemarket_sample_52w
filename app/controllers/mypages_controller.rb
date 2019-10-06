@@ -1,5 +1,5 @@
 class MypagesController < ApplicationController
-  before_action :move_to_login, :set_card_path
+  before_action :move_to_login, :set_card_path, :set_todo_count
 
   def show
     # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
@@ -91,6 +91,7 @@ class MypagesController < ApplicationController
   end
 
   def todo
+    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
     @products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
   end
 
@@ -106,5 +107,10 @@ class MypagesController < ApplicationController
     else
       @card_path = card_show_user_mypage_path
     end
+  end
+
+  def set_todo_count
+    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
+    @todo_count = current_user.buyer_products.where(brand_id: nil).order('id DESC')
   end
 end

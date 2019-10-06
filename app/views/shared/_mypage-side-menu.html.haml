@@ -10,6 +10,9 @@
       = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
     %li.mypage-side-menu__list__item
       やることリスト
+      - if @todo_count.present?
+        .mypage-side-menu__list__item__count
+          = @todo_count.count
       = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"
       = link_to '', todo_user_mypage_path, { class: "mypage-side-menu__list__item__btn" }
     %li.mypage-side-menu__list__item
