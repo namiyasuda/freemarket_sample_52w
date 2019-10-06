@@ -1,5 +1,5 @@
 %header
-  = render 'shared/sub-header'
+  = render 'shared/main-header'
 
 %section
   - breadcrumb :listing_product
@@ -36,3 +36,8 @@
               = image_tag "logo-gray.png", class: 'not-found__icon'
               .not-found__text
                 出品中の商品がありません
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'

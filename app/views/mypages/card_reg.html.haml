@@ -1,5 +1,5 @@
 %header
-  = render 'shared/sub-header'
+  = render 'shared/main-header'
 
 %section
   - breadcrumb :card_show
@@ -54,3 +54,8 @@
                   = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/signup/seq-card.png?575670517', width: '240'
               .entry-bottom__next#card_token
                 = f.submit "追加する", class: "entry-bottom__next__btn",id:'token_submit'
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'

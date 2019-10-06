@@ -1,5 +1,5 @@
 %header
-  = render 'shared/sub-header'
+  = render 'shared/main-header'
 
 %section
   - breadcrumb :past_trade
@@ -31,3 +31,8 @@
               = image_tag "logo-gray.png", class: 'not-found__icon'
               .not-found__text
                 過去に取引した商品がありません
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'
