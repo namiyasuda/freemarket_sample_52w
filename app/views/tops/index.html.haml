@@ -21,28 +21,30 @@
   %section.pickup
     %h2.pickup__head 商品一覧
     %section.pickup__container
-      = render partial: 'shared/category1'
+      = render partial: 'shared/products', locals: { type: @category1, products: @products1 }
         
     %section.pickup__container
-      = render partial: 'shared/category2'
+      = render partial: 'shared/products', locals: { type: @category2, products: @products2 }
 
     %section.pickup__container
-      = render partial: 'shared/category3'
+      = render partial: 'shared/products', locals: { type: @category3, products: @products4 }
 
     %section.pickup__container
-      = render partial: 'shared/category4'
+      = render partial: 'shared/products', locals: { type: @category4, products: @products4 }
 
-    %section.pickup
-      = render partial: 'shared/brand1'
+  %section.pickup
+    %h2.pickup__head ピックアップブランド
+    %section.pickup__container
+      = render partial: 'shared/products', locals: { type: @brand1, products: @products5 }
       
     %section.pickup__container
-      = render partial: 'shared/brand2'
+      = render partial: 'shared/products', locals: { type: @brand2, products: @products6 }
       
     %section.pickup__container
-      = render partial: 'shared/brand3'
+      = render partial: 'shared/products', locals: { type: @brand3, products: @products7 }
 
     %section.pickup__container
-      = render partial: 'shared/brand4'
+      = render partial: 'shared/products', locals: { type: @brand4, products: @products8 }
       
   %aside.banners-nav
     .banners

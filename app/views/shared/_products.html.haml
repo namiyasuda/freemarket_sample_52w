@@ -1,8 +1,8 @@
--unless @category4.nil?
+-unless type.nil?
   %h3.pickup__container--text-center
     = link_to(@category4.name+" 新着アイテム" , "")
   .pickup__container--content
-    - @products4.each do |product|
+    - products.each do |product|
       %section.item
         %figure.item__photo
           = link_to image_tag(product.images[0].name.url, alt: "実装その1", class: "lazyload"), product_path(product.id)
