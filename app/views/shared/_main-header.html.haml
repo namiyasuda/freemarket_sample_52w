@@ -13,7 +13,7 @@
           %h2
             = link_to "" do
               %i.fas.fa-list
-              %span カテゴリーから探す              
+              %span カテゴリーから探す
         %li
           %h2
             = link_to "" do
@@ -39,3 +39,23 @@
         %li.logged
           = link_to new_user_session_path(current_user) do
             %span ログイン
+%ul.category-meun
+  %ul.category-meun__left
+    -@products.each_with_index do |parent_product, m|
+      .category-meun__left__parent{class: "#{parent_product.name}"}
+        = parent_product.name
+  %ul.category-meun__center
+    -@products.each_with_index do |parent_product, m|
+      .parent{class: "#{parent_product.name}"}
+        -parent_product.children.each_with_index do |child_product, i|
+          .category-meun__center__children{class: "#{i}"}
+            = child_product.name
+  %ul.category-meun__right
+    -@products.each_with_index do |parent_product, m|
+      -parent_product.children.each_with_index do |child_product, i|
+        .child{class: "#{child_product.name}"}
+          -child_product.children.each_with_index do |grand_product, n|
+            .category-meun__right__grandchildren{class: "#{n}"}
+              = grand_product.name
+    
+    
