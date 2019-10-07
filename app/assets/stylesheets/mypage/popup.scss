@@ -1,6 +1,11 @@
 .popup-mypage {
+  position: absolute;
+  display: none;
+  top: 45px;
+  right: 0;
   width: 350px;
   background-color: $white;
+  z-index: 20;
   &__user-info {
     position: relative;
     height: 90px;
@@ -15,6 +20,7 @@
       color: $font-black;
       text-align: center;
       text-decoration: none;
+      line-height: 1;
       &__icon {
         @include mypage-user-icon;
       }
@@ -58,6 +64,9 @@
           transform: translateY(-50%);
         }
         &:hover {
+          color: $font-gray;
+        }
+        &:hover > .popup-mypage__user-info__area__earning__count {
           color: $font-gray;
         }
       }

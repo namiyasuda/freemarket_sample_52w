@@ -22,16 +22,17 @@
             
     %ul.main-header__under--right
       -if user_signed_in?
-        %li
+        %li.main-header__under--right__li
           %i.far.fa-bell
           %span お知らせ
-        %li
+        %li.main-header__under--right__li
           %i.fa.fa-check
           %span やることリスト
-        %li
+        %li#myapage-popup.main-header__under--right__li 
           =link_to user_mypage_path(current_user) do
             = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "face"
             %span マイページ
+          = render 'mypages/popup'
       -else
         %li.new
           = link_to new_signup_path(current_user) do

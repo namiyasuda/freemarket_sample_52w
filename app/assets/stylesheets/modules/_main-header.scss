@@ -81,7 +81,8 @@
     }
     &--right {
       float: right;
-      li {
+      &__li {
+        position: relative;
         display: inline-block;
         height: 44px;
         margin: 7px 3px 3px auto;
