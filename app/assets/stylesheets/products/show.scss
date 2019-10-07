@@ -31,7 +31,6 @@
       object-fit: cover;
       width: 51.5px;
       height: 60px;
-      margin: -1.5px;
     }
     &__soldout {
       div {
@@ -138,14 +137,13 @@ th,td {
 
 .pricebox {
   margin-top: 30px;
-  width: 620px;
+  width: 100%;
   text-align: center;
   &__price {
     display: inline-block;
     margin-right: 30px;
     font-size: 50px;
     font-weight: bold;
-    width: 150px;
   }
   &__tax {
     font-size: 10px;

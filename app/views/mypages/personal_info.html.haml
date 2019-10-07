@@ -1,5 +1,5 @@
 %header
-  = render 'shared/sub-header'
+  = render 'shared/main-header'
 
 %section
   - breadcrumb :personal_info
@@ -95,3 +95,8 @@
             本人情報の登録について
             = fa_icon 'chevron-right'
             %span<>
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'
