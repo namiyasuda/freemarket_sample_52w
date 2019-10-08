@@ -1,4 +1,4 @@
-= link_to "#", class: 'product-todo' do
+= link_to evaluation_product_path(product), class: 'product-todo' do
   .product-todo__images-area
     = image_tag product.images[0].name.url, class: 'product-todo__images-area__image'
   .product-todo__message
