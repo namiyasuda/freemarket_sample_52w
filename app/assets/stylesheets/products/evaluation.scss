@@ -1,0 +1,98 @@
+.evaluation {
+  width: 700px;
+  margin: 0 auto;
+  background-color: $white;
+  border-top: 10px solid $bg-gray;
+  text-align: center;
+  &__title {
+    padding: 10px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  &__head {
+    background-color: $beige;
+    &__top {
+      padding: 20px 0 10px 0;
+      color: $red;
+      &__icon {
+        font-size: 28px;
+      }
+      &__text {
+        font-size: 17px;
+        font-weight: bold;
+        line-height: 28px;
+      }
+    }
+    &__under {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__body {
+    padding: 10px;
+    text-align: left;
+    &__helps {
+      text-align: right;
+    }
+    &__form {
+      margin: 0 auto;
+      padding: 10px 0;
+      width: 300px;
+      &__check-box {
+        padding: 10px 0;
+      }
+      &__radio-box {
+        margin: 20px 0;
+        font-size: 28px;
+        display: flex;
+        justify-content: space-between;
+        .radio-btn {
+          text-align: center;
+          label {
+            display: inline-block;
+            height: 70px;
+            width: 70px;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid $light-gray;
+            border-radius: 5px; 
+          }
+          input[type=radio] {
+            display: none;
+            &:checked + label {
+              border: 3px solid $blue;
+            }
+          }
+          &--good {
+            color: $evaluation-good-red;
+          }
+          &--better {
+            color: $evaluation-better-yellow;
+          }
+          &--bad {
+            color: $evaluation-bad-blue;
+          }
+          p {
+            padding-top: 5px;
+            font-size: 16px;
+            color: $font-black;
+          }
+        }
+      }
+      &__text-box {
+        &__head {
+          padding: 10px 0;
+        }
+        &__area {
+          padding: 10px;
+          width: 300px;
+          font-size:17px;
+        }
+      }
+      &__submit {
+        @include submit-btn(10px 0, 100%, $btn-gray);
+      }
+    }
+  }
+}
