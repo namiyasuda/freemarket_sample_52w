@@ -41,6 +41,12 @@
       width: 300px;
       &__check-box {
         padding: 10px 0;
+        input[type=checkbox] {
+          margin-right: 5px;
+          -ms-transform: scale(1.5, 1.5);
+          -webkit-transform: scale(1.5, 1.5);
+          transform: scale(1.5, 1.5);
+        }
       }
       &__radio-box {
         margin: 20px 0;

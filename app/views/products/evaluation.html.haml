@@ -20,7 +20,7 @@
     = form_with model:@product, url:evaluate_product_path(@product), local: true, html:{class:'evaluation__body__form'} do |f|
       .evaluation__body__form__check-box
         = f.check_box :confirmation, {class: 'evaluation__body__form__check-box__input', required: true}
-        = f.label '商品の中身を確認しました。', {}
+        = f.label :confirmation, '商品の中身を確認しました。', {}
       .evaluation__body__form__radio-box
         .radio-btn
           = f.radio_button :evaluation, :good, {}
