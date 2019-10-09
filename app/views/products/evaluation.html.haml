@@ -29,12 +29,12 @@
             = fa_icon "fa laugh"
             %p 良い
         .radio-btn
-          = f.radio_button :evaluation, :better, {}
+          = f.radio_button :evaluation, :better, {class: 'evaluation-radio-btn'}
           = f.label :evaluation_better, '普通',{class: 'radio-btn--better'} do
             = fa_icon "fa meh"
             %p 普通
         .radio-btn
-          = f.radio_button :evaluation, :bad, {}
+          = f.radio_button :evaluation, :bad, {class: 'evaluation-radio-btn'}
           = f.label :evaluation_bad, '悪い', {class: 'radio-btn--bad'} do
             = fa_icon "fa frown" 
             %p 悪い
