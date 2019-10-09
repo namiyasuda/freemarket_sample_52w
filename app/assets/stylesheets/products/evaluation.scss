@@ -48,6 +48,9 @@
           transform: scale(1.5, 1.5);
         }
       }
+      &__alert {
+        color: $red;
+      }
       &__radio-box {
         margin: 20px 0;
         font-size: 28px;
