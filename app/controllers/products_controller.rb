@@ -152,11 +152,10 @@ class ProductsController < ApplicationController
   def evaluate
     if @product.update(evaluation_params)
       flash[:success] = '取引が完了しました。'
-      redirect_to user_mypage_path(current_user)
     else
       flash[:danger] = '評価に失敗しました。'
-      redirect_to user_mypage_path(current_user)
     end
+    redirect_to user_mypage_path(current_user)
   end
 
   private
