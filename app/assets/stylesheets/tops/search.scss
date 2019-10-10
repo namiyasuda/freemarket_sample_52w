@@ -145,7 +145,117 @@
       font-size: 12px;
       color: $font-gray;
     }
+
+    .picks {
+      &__head {
+        margin-top: 13px;
+        font-size: 28px;
+        line-height: 1.4;
+        text-align: center;
+      }
+  
+      &__container {
+        width: 900px;
+        margin: 0 auto;
+        text-align: center;
+  
+        &--text-center {
+          display: block;
+          margin: 26px 11px;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 0;
+          margin-inline-end: 0;
+          font-weight: bold;
+          font-size: 1.17em;
+          text-align: center;
+  
+          a {
+            color: #00f;
+            font-size: 22px;
+            text-decoration: none;
+          }
+        }
+  
+        &--content {
+          width: auto;
+          padding: 0 10px;
+
+          .item {
+            display: inline-block;
+            box-shadow: -1px 1px 10px #979797;
+            margin: 10px 20px;
+            overflow: hidden;
+            width: 20%;
+  
+            &__photo {
+              position: relative;
+              height: 0;
+              width: 100%;
+              padding-bottom: 100%;
+              overflow: hidden;
+              margin: 0;
+  
+                .lazyload {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
+                  z-index: 1;
+                  height: 100%;
+                  width: 100%;
+                  object-fit: cover;
+                }
+            }
+  
+            &__body {
+              height: 110px;
+              padding: 8px;
+              background-color: #fff;
+  
+              &--name {
+                position: relative;
+                height: 3em;
+                overflow: hidden;
+                font-weight: 400;
+                line-height: 1.5;
+                white-space: normal;
+                word-break: break-word;
+  
+                .font-2 {
+                  color: #333;
+                  font-size: 16px;
+                  font-weight: 400;
+                }
+              }
+  
+              &--num {
+                align-items: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                justify-content: space-between;
+                -ms-flex-align: center;
+                -ms-flex-pack: justify;
+                -webkit-box-align: center;
+                -webkit-box-pack: justify;
+                margin-top: 8px;
+  
+                .price.font-5 {
+                  color: #333;
+                  font-size: 20px;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
+
+  
 
   .root {
     width: 1020px;
@@ -155,3 +265,4 @@
     white-space: normal;
   }
 }
+
