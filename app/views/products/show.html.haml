@@ -16,10 +16,11 @@
       .details  
         .details__photo
           .details__photo__main
-            = image_tag @images[0].name.url,class:"details__photo__main__image"
+            = image_tag @images[0].name.url,class:"details__photo__main__image",id:"mainphoto"
           .details__photo__under
             - @images.each_with_index do |image, index|
-              = image_tag @images[index].name.url,class:"details__photo__under__image" 
+              = image_tag @images[index].name.url,class:"details__photo__under__image"
+              %span<>
             - if @product.buyer_id.present?
               .details__photo__soldout
                 %div SOLD
