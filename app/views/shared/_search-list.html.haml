@@ -1,6 +1,8 @@
 .search-list
-  %h2.result kesasakuの検索結果
-  %h2.case 0件表示
+  %h2.result 
+    = params[:keyword]+"の検索結果"
+  %h2.case
+    =  "1 -"+@products.count.to_s+"件表示"
   %section.picks
     %section.picks__container
       -if @products
