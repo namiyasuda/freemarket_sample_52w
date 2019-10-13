@@ -96,6 +96,13 @@
             .entry-content__select-box
               = fa_icon 'chevron-down'
               = f.collection_select :size_id, @sizes, :id, :name, {prompt: "---"}, class:'entry-content__select-box__default', id: 'select-size'
+        - else
+          .sell-content__group#product-size.hide
+            %label.entry-content__text サイズ
+            %span.entry-content__require 必須
+            .entry-content__select-box
+              = fa_icon 'chevron-down'
+              = f.collection_select :size_id, {}, :id, :name, {prompt: "---"}, class:'entry-content__select-box__default', id: 'select-size'
         .sell-content__group#product-brand
           = f.fields model: @brand do |brand|
             %label.entry-content__text ブランド
