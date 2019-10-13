@@ -10,7 +10,7 @@
       = link_to '', "#", { class: "mypage-side-menu__list__item__btn" }
     %li.mypage-side-menu__list__item
       やることリスト
-      - if @todo_count.present?
+      - unless @todo_count == 0
         .mypage-side-menu__list__item__count
           = @todo_count
       = fa_icon "angle-right", class: "mypage-side-menu__list__item__icon"

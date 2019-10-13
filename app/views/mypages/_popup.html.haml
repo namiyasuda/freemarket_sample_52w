@@ -1,0 +1,52 @@
+.popup-mypage
+  .popup-mypage__user-info
+    .popup-mypage__user-info__area
+      = image_tag "user-icon.png", class: 'popup-mypage__user-info__area__icon'
+      %h2.popup-mypage__user-info__area__nickname
+        = current_user.nickname
+      .popup-mypage__user-info__area__number
+        = link_to "#", class: "popup-mypage__user-info__area__number__text" do
+          評価:
+          %span.popup-mypage__user-info__area__number__text__count
+            0
+        = link_to listing_product_user_mypage_path(current_user), class: "popup-mypage__user-info__area__number__text" do
+          出品数:
+          %span.popup-mypage__user-info__area__number__text__count
+            = current_user.seller_products.count
+      = link_to "#", class: "popup-mypage__user-info__area__earning" do
+        売上金
+        %span.popup-mypage__user-info__area__earning__count
+          ¥0
+        = fa_icon "angle-right", class: "popup-mypage__user-info__area__earning__icon"
+      = link_to "#", class: "popup-mypage__user-info__area__earning" do
+        ポイント
+        %span.popup-mypage__user-info__area__earning__count
+          P0
+        = fa_icon "angle-right", class: "popup-mypage__user-info__area__earning__icon"
+
+
+  %ul.popup-mypage__menu
+    %li.popup-mypage__menu__list
+      いいね！一覧
+      = fa_icon "angle-right", class: "popup-mypage__menu__list__icon"
+      = link_to '', "#", { class: "popup-mypage__menu__list__btn" }
+    %li.popup-mypage__menu__list
+      出品した商品 - 出品中
+      = fa_icon "angle-right", class: "popup-mypage__menu__list__icon"
+      = link_to '', listing_product_user_mypage_path(current_user), { class: "popup-mypage__menu__list__btn" }
+    %li.popup-mypage__menu__list
+      出品した商品 - 取引中
+      = fa_icon "angle-right", class: "popup-mypage__menu__list__icon"
+      = link_to '', during_trade_user_mypage_path(current_user), { class: "popup-mypage__menu__list__btn" }
+    %li.popup-mypage__menu__list
+      出品した商品 - 売却済み
+      = fa_icon "angle-right", class: "popup-mypage__menu__list__icon"
+      = link_to '', sold_user_mypage_path(current_user), { class: "popup-mypage__menu__list__btn" }
+    %li.popup-mypage__menu__list
+      購入した商品 - 取引中
+      = fa_icon "angle-right", class: "popup-mypage__menu__list__icon"
+      = link_to '', bought_product_user_mypage_path(current_user), { class: "popup-mypage__menu__list__btn" }
+    %li.popup-mypage__menu__list
+      購入した商品 - 過去の取引
+      = fa_icon "angle-right", class: "popup-mypage__menu__list__icon"
+      = link_to '', past_trade_user_mypage_path(current_user), { class: "popup-mypage__menu__list__btn" }
