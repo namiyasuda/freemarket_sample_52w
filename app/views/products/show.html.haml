@@ -37,13 +37,13 @@
                 .list__icon 
                   .list__icon__good
                     = fa_icon "fa laugh"
-                    10
+                    = @evaluation["good"] ? @evaluation["good"] : 0
                   .list__icon__better
                     = fa_icon "fa meh"
-                    1
+                    = @evaluation["better"] ? @evaluation["better"] : 0
                   .list__icon__bad
                     = fa_icon "fa frown"
-                    0
+                    = @evaluation["bad"] ? @evaluation["bad"] : 0
             %tr
               %th カテゴリー
               %td.category

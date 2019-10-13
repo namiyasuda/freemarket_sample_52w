@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
     @images = @product.images
     @category_parent = Category.find(@product.parent_id).name
     @category_child = Category.find(@product.child_id).name
+    # 出品者の過去の取引の評価をハッシュで取得
+    @evaluation = @product.seller.seller_products.group(:evaluation).count(:evaluation)
   end
 
   def new
