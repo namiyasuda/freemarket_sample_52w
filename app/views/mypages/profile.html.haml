@@ -19,7 +19,7 @@
       %section.user-image
         .user-image__area
           = image_tag "user-icon.png", class: 'user-image__area__icon'
-          = f.text_field :nickname, class: 'user-image__area__nickname'
+          = f.text_field :nickname, class: 'user-image__area__nickname', required: ""
 
       %section.profile
         = f.text_area :profile, class: 'profile__textarea', placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"

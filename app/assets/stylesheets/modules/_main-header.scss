@@ -81,7 +81,8 @@
     }
     &--right {
       float: right;
-      li {
+      &__li {
+        position: relative;
         display: inline-block;
         height: 44px;
         margin: 7px 3px 3px auto;
@@ -99,7 +100,9 @@
           vertical-align: middle;
         }
       }
-      .new span {
+      .new {
+        display: inline-block;
+        span {
         background-color: $red;
         color: $white;
         font-size: 14px;
@@ -108,7 +111,10 @@
         border-radius: 4px;
         padding: 8px 10px;
         }
-      .logged span {
+      }
+      .logged {
+        display: inline-block;
+        span {
         background-color: $white;
         color: $blue;
         font-size: 14px;
@@ -116,6 +122,7 @@
         border-color: $blue;
         border-radius: 4px;
         padding: 8px 10px;
+        }
       }
     }
   }

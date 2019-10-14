@@ -90,8 +90,11 @@
 |listing_stop|boolean|null: false, default: false|
 |parent_id|integer|null: false, index: true|
 |child_id|integer|null: false, index: true|
+|evaluation|integer||
 
 add_index :products, [:name, :description]
+
+*enum evaluation:を追加
 
 ### Association
 - belongs_to :seller, class_name: 'User', :foreign_key => 'seller_id'

@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
   before_action :move_to_login , except: :show
-  before_action :set_product, only:[:show, :destroy, :stop_listing, :restart_listing]
+  before_action :set_product, only:[:show, :destroy, :stop_listing, :restart_listing, :evaluation, :evaluate]
 
   def show
     @images = @product.images
     @category_parent = Category.find(@product.parent_id).name
     @category_child = Category.find(@product.child_id).name
+    # 出品者の過去の取引の評価をハッシュで取得
+    @evaluation = @product.seller.seller_products.group(:evaluation).count(:evaluation)
   end
 
   def new
@@ -144,6 +146,20 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def evaluation
+    @products = Category.where(ancestry: nil)
+    @evaluations = Product.evaluations
+  end
+
+  def evaluate
+    if @product.update(evaluation_params)
+      flash[:success] = '取引が完了しました。'
+    else
+      flash[:danger] = '評価に失敗しました。'
+    end
+    redirect_to user_mypage_path(current_user)
+  end
+
   private
 
   def set_product
@@ -167,6 +183,10 @@ class ProductsController < ApplicationController
       images_attributes: [:image],
       brand_attributes: [:brand]
       ).merge(seller_id: current_user.id)
+  end
+
+  def evaluation_params
+    params.require(:product).permit(:evaluation)
   end
 end
 

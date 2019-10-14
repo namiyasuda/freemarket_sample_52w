@@ -32,6 +32,12 @@ Rails.application.routes.draw do
       get 'get_delivery_method', defaults: { format: 'json' }
       get 'dropzone'
     end
+
+    member do
+      get 'evaluation'
+      patch 'evaluate'
+    end
+    
     resource :buys, only: [:show] do
       collection do
         patch 'pay'

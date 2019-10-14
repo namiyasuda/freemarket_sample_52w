@@ -2,10 +2,9 @@ class MypagesController < ApplicationController
   before_action :move_to_login, :set_card_path, :set_todo_count
 
   def show
-    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
     @listing_product = current_user.seller_products
-    @bought_products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
-    @past_trade_products = current_user.buyer_products.where.not(brand_id: nil).order('id DESC')
+    @bought_products = current_user.buyer_products.where(evaluation: nil).order('id DESC')
+    @past_trade_products = current_user.buyer_products.where.not(evaluation: nil).order('id DESC')
   end
 
   def profile
@@ -66,33 +65,27 @@ class MypagesController < ApplicationController
   end
 
   def listing_product
-    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
-    @products = current_user.seller_products.where(buyer_id: nil, brand_id: nil).order('id DESC')
+    @products = current_user.seller_products.where(buyer_id: nil, evaluation: nil).order('id DESC')
   end
 
   def during_trade
-    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
-    @products = current_user.seller_products.where(brand_id: nil).where.not(buyer_id: nil).order('id DESC')
+    @products = current_user.seller_products.where(evaluation: nil).where.not(buyer_id: nil).order('id DESC')
   end
 
   def sold
-    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
-    @products = current_user.seller_products.where.not(buyer_id: nil, brand_id: nil).order('id DESC')
+    @products = current_user.seller_products.where.not(buyer_id: nil, evaluation: nil).order('id DESC')
   end
 
   def bought_product
-    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
-    @products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
+    @products = current_user.buyer_products.where(evaluation: nil).order('id DESC')
   end
 
   def past_trade
-    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
-    @products = current_user.buyer_products.where.not(brand_id: nil).order('id DESC')
+    @products = current_user.buyer_products.where.not(evaluation: nil).order('id DESC')
   end
 
   def todo
-    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
-    @products = current_user.buyer_products.where(brand_id: nil).order('id DESC')
+    @products = current_user.buyer_products.where(evaluation: nil).order('id DESC')
   end
 
   private
@@ -110,7 +103,6 @@ class MypagesController < ApplicationController
   end
 
   def set_todo_count
-    # 評価カラムが未実装の為、暫定的にbrand_idで実装しています
-    @todo_count = current_user.buyer_products.where(brand_id: nil).count
+    @todo_count = current_user.buyer_products.where(evaluation: nil).count
   end
 end

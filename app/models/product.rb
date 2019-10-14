@@ -26,4 +26,6 @@ class Product < ApplicationRecord
   validates :delivery_method_id, presence: true, numericality: { only_integer: true}
   validates :listing_stop, inclusion: {in: [true, false]}
 
+  enum evaluation: {good: 0, better: 1 , bad: 2}
+
 end

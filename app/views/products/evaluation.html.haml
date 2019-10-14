@@ -1,0 +1,46 @@
+
+.evaluation
+  .evaluation__title
+    取引画面
+  .evaluation__head
+    .evaluation__head__top
+      = fa_icon "fa laugh", {class: 'evaluation__head__top__icon'}
+      %span.evaluation__head__top__text 受取を評価してください
+    .evaluation__head__under
+      商品が発送されました。商品が到着したら、出品者の評価をしてください。
+  .evaluation__body
+    %ul.evaluation__body__helps
+      %li.evaluation__body__help
+        = link_to '#' do
+          購入した後の流れ
+          = fa_icon "chevron-right"
+      %li.evaluation__body__help
+        = link_to '#' do
+          購入者のよくある質問
+          = fa_icon "chevron-right"
+    = form_with model:@product, url:evaluate_product_path(@product), local: true, html:{class:'evaluation__body__form'} do |f|
+      .evaluation__body__form__check-box
+        = f.check_box :confirmation, {class: 'evaluation__body__form__check-box__input', required: true}
+        = f.label :confirmation, '商品の中身を確認しました。', {}
+      .evaluation__body__form__radio-box
+        .radio-btn
+          = f.radio_button :evaluation, :good, {class: 'evaluation-radio-btn', required: true}
+          = f.label :evaluation_good, '良い', {class: 'radio-btn--good'} do
+            = fa_icon "fa laugh"
+            %p 良い
+        .radio-btn
+          = f.radio_button :evaluation, :better, {class: 'evaluation-radio-btn'}
+          = f.label :evaluation_better, '普通',{class: 'radio-btn--better'} do
+            = fa_icon "fa meh"
+            %p 普通
+        .radio-btn
+          = f.radio_button :evaluation, :bad, {class: 'evaluation-radio-btn'}
+          = f.label :evaluation_bad, '悪い', {class: 'radio-btn--bad'} do
+            = fa_icon "fa frown" 
+            %p 悪い
+      .evaluation__body__form__alert.hide
+        選択されていません
+      .evaluation__body__form__text-box
+        .evaluation__body__form__text-box__head 評価のコメントを記入しましょう。
+        = f.text_area :text, {class: 'evaluation__body__form__text-box__area', placeholder: 'コメントはなくても構いませんが、お礼のメッセージなどを書くと喜ばれます。（＊未実装）', cols: 20,rows: 5}
+      = f.submit '評価を投稿する', class:'evaluation__body__form__submit'
