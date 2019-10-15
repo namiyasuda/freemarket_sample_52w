@@ -1,19 +1,21 @@
 %ul.category-meun
-  %ul.category-meun__left.active
+  %ul.category-meun__left.hide
     -@products.each_with_index do |parent_product, m|
       %li.category-meun__left__parent{class: "#{parent_product.name}"}
         = parent_product.name
-  %ul.category-meun__center.active
+        
+  %ul.category-meun__center.hide
     -@products.each_with_index do |parent_product, m|
-      .parent{class: "#{parent_product.name}"}
+      .category-meun__center__parent{class: "#{parent_product.name} hide"}
         -parent_product.children.each_with_index do |child_product, i|
-          .category-meun__center__children{class: "#{i}"}
-            %li= child_product.name
-  %ul.category-meun__right
+          %li.category-meun__center__children{class: "#{i}"}
+            = child_product.name
+  %ul.category-meun__right.hide
     -@products.each_with_index do |parent_product, m|
-      -parent_product.children.each_with_index do |child_product, i|
-        .child{class: "#{child_product.name}"}
-          -child_product.children.each_with_index do |grand_product, n|
-            .category-meun__right__grandchildren{class: "#{n}"}
-              %li= grand_product.name
+      .category-meun__right__parent
+        -parent_product.children.each_with_index do |child_product, i|
+          .category-meun__right__child{class: "#{child_product.name} hide"}
+            -child_product.children.each_with_index do |grand_product, n|
+              %li.category-meun__right__grandchildren{class: "#{n}"}
+                = grand_product.name
               
