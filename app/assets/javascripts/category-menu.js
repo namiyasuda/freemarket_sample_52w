@@ -27,6 +27,7 @@ $(function() {
     $('.category-meun__right').addClass('hide');
   },function() {
     $('.category-meun__center__parent').eq(left_index).addClass('hide');
+    $('.category-meun__center').addClass('hide');
   });
   
   $('.category-meun__center__children').hover(function() {
