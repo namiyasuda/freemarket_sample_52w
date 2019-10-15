@@ -5,6 +5,7 @@ $(function() {
   let index;
   // 親要素を表示する
   $('.category-search').hover(function() {
+    $('.category-search span').css('color','#0099e8')
     $('.category-meun__left').removeClass('hide');
     $('.category-meun__center').addClass('hide');
     $('.category-meun__right').addClass('hide');
@@ -16,6 +17,7 @@ $(function() {
     $('.category-meun__left').addClass('hide');
     $('.category-meun__center').addClass('hide');
     $('.category-meun__right').addClass('hide');
+    $('.category-search span').css('color','')
   });
   // 子要素を表示する
   $('.category-meun__left__parent').hover(function() {
@@ -69,4 +71,5 @@ $(function() {
   },function() {
     $('.category-meun__center__parent').eq(center_index).children().eq(center_children_index).css('background-color','');
   });
+  
 });

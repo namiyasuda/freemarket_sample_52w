@@ -1,3 +1,6 @@
+.category-search span{
+  color: red;
+}
 .category-meun {
   position: absolute;
   top: 100px;
@@ -15,10 +18,7 @@
       font-size: 14px;
       padding: 0 16px;
       line-height: 44px;
-      &:hover {
-        background-color: $red;
-        color: $white;
-      }
+      
     }
   }
   &__center {
@@ -34,9 +34,6 @@
       font-size: 14px;
       padding: 0 16px;
       line-height: 30px;
-      &:hover {
-        background-color: $light-gray;
-      }
     }
   }
   &__right {
@@ -50,9 +47,6 @@
       font-size: 14px;
       padding: 0 16px;
       line-height: 30px;
-      &:hover {
-        background-color: $light-gray;
-      }
     }
   }
 }
