@@ -10,4 +10,3 @@ describe TopsController, type: :controller do
     end
   end
 end
-

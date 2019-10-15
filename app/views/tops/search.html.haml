@@ -4,7 +4,9 @@
   .search-container
     = render partial: 'shared/search-side'
     = render partial: 'shared/search-list'
-    %h2.root 親要素>子要素
+    %h2.root 
+      メルカリ >
+      = params[:keyword]
   %footer
     = render partial: 'shared/footer'
   = render partial: 'shared/camera'

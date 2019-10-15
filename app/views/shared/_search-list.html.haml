@@ -2,10 +2,12 @@
   %h2.result 
     = params[:keyword]+"の検索結果"
   %h2.case
-    =  "1 -"+@products.count.to_s+"件表示"
+    =  (@products.offset_value+1).to_s + "-"+(@products.offset_value+@products.length).to_s+"件表示"
   %section.picks
     %section.picks__container
-      -if @products
+      -if @products.empty?
+        %h1.test 検索結果なし
+      -else
         .picks__container--content
           - @products.each do |product|
             %section.item
@@ -18,5 +20,4 @@
                   .price.font-5 
                     ¥
                     = product.price
-      -else
-        %h1.test 検索結果なし
+          = paginate @products

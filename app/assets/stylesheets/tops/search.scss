@@ -1,6 +1,7 @@
 .search-container {
-  margin: 40px auto;
+  height: 1600px;
   width: 1020px;
+  margin: 40px auto;
 
   .search {
     display: inline-block;
@@ -137,7 +138,8 @@
     width: 700px;
 
     .result {
-      font-size: 18px;
+      font-size: 30px;
+      font-weight: bold;
     }
 
     .case {
