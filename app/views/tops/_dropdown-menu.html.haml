@@ -1,21 +1,21 @@
 %ul.category-meun
   %ul.category-meun__left.hide
-    -@products.each_with_index do |parent_product, m|
+    -@categorys.each do |parent_product|
       %li.category-meun__left__parent{class: "#{parent_product.name}"}
         = parent_product.name
         
   %ul.category-meun__center.hide
-    -@products.each_with_index do |parent_product, m|
+    -@categorys.each do |parent_product|
       .category-meun__center__parent{class: "#{parent_product.name} hide"}
-        -parent_product.children.each_with_index do |child_product, i|
-          %li.category-meun__center__children{class: "#{i}"}
+        -parent_product.children.each do |child_product|
+          %li.category-meun__center__children
             = child_product.name
   %ul.category-meun__right.hide
-    -@products.each_with_index do |parent_product, m|
+    -@categorys.each do |parent_product|
       .category-meun__right__parent
-        -parent_product.children.each_with_index do |child_product, i|
+        -parent_product.children.each do |child_product|
           .category-meun__right__child{class: "#{child_product.name} hide"}
-            -child_product.children.each_with_index do |grand_product, n|
-              %li.category-meun__right__grandchildren{class: "#{n}"}
+            -child_product.children.each do |grand_product|
+              %li.category-meun__right__grandchildren
                 = grand_product.name
               
