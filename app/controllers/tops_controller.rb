@@ -67,9 +67,5 @@ class TopsController < ApplicationController
   def get_publishing_products
     @publishing_products = Product.where(buyer_id: nil, listing_stop: false)
   end
-
-  def downlist_children
-    @category_children = Category.find(params[:parent_id]).children
-  end
 end
 
