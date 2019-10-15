@@ -47,4 +47,7 @@ class ApplicationController < ActionController::Base
     @card_src = Card.set_card_brand_icon(@card_brand)
   end
   
+  def set_category
+    @categorys = Category.where(ancestry: nil)
+  end
 end

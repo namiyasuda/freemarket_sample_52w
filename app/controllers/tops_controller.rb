@@ -1,8 +1,7 @@
 class TopsController < ApplicationController
-  before_action :get_publishing_products, only: [:index ,:search]
+  before_action :get_publishing_products,:set_category, only: [:index ,:search]
 
   def index
-    @products = Category.where(ancestry: nil)
     ranking1 = @publishing_products.group(:parent_id).order('count_parent_id DESC').limit(4).count(:parent_id).keys
     
     @category1 = Category.find_by(id: ranking1[0])
