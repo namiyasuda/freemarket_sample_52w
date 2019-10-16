@@ -14,14 +14,12 @@
             = link_to "" do
               %i.fas.fa-list
               %span カテゴリーから探す
-        %li
+          = render 'tops/dropdown-menu'    
+        %li.brand-search 
           %h2
             = link_to "" do
               %i.fas.fa-tag
               %span ブランドから探す
-    %section
-    = render 'tops/dropdown-menu'
-        
     %ul.main-header__under--right
       -if user_signed_in?
         %li
