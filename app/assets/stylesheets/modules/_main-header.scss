@@ -41,6 +41,7 @@
     }
   }
   &__under {
+    display: flex; 
     align-items: center;
     box-pack: justify;
     justify-content: space-between;
