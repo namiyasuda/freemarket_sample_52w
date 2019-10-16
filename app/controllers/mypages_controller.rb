@@ -1,5 +1,5 @@
 class MypagesController < ApplicationController
-  before_action :move_to_login, :set_card_path, :set_todo_count
+  before_action :move_to_login, :set_card_path, :set_todo_count,:set_category
 
   def show
     @listing_product = current_user.seller_products

@@ -1,0 +1,55 @@
+.category-meun {
+  position: absolute;
+  top: 44px;
+  display: flex;
+  background-color: $white;
+  color: $font-black;
+  z-index: 100;
+  box-shadow: rgba(0, 0, 0, 0.18) 1px 1px 2px;
+  &__left {
+    box-shadow: rgba(0, 0, 0, 0.18) 1px 1px 2px;
+    width: 230px;
+    min-height: 690px;
+    &__parent {
+      font-size: 14px;
+      padding: 0 16px;
+      line-height: 44px;
+      &:hover {
+        background-color: $red;
+        color: $white;
+      }
+    }
+  }
+  &__center {
+    box-shadow: rgba(0, 0, 0, 0.18) 1px 1px 2px;
+    width: 230px;
+    &__parent{
+      font-size: 14px;
+      line-height: 32px;
+      min-height: 690px;
+    }
+    &__children{
+      font-size: 14px;
+      padding: 0 16px;
+      line-height: 30px;
+      &:hover {
+        background-color: $light-gray;
+      }
+    }
+  }
+  &__right {
+    box-shadow: rgba(0, 0, 0, 0.18) 1px 1px 2px;
+    width: 270px;
+    &__child {
+      min-height: 690px;
+    }
+    &__grandchildren {
+      font-size: 14px;
+      padding: 0 16px;
+      line-height: 30px;
+      &:hover {
+        background-color: $light-gray;
+      }
+    }
+  }
+}

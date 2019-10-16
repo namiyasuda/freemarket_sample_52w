@@ -9,17 +9,17 @@
   .main-header__under
     %nav.main-header__under--left
       %ul.main-header__under--left--nav
-        %li
+        %li.category-search
           %h2
             = link_to "" do
               %i.fas.fa-list
-              %span カテゴリーから探す              
-        %li
+              %span カテゴリーから探す
+          = render 'tops/dropdown-menu'    
+        %li.brand-search 
           %h2
             = link_to "" do
               %i.fas.fa-tag
               %span ブランドから探す
-            
     %ul.main-header__under--right
       -if user_signed_in?
         %li.main-header__under--right__li
@@ -40,3 +40,6 @@
         %li.logged
           = link_to new_user_session_path(current_user) do
             %span ログイン
+
+    
+    

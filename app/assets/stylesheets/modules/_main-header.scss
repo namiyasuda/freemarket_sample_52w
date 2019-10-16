@@ -1,4 +1,5 @@
 .main-header {
+  position: relative;
   height: 100px;
   width: 100%;
   background: #fff;
@@ -40,9 +41,9 @@
     }
   }
   &__under {
+    display: flex; 
     align-items: center;
     box-pack: justify;
-    display: flex;
     justify-content: space-between;
     height: 44px;
     width: 1020px;
@@ -52,16 +53,15 @@
     &--left {
       float: left;
       &--nav {
-        display: inline-block;
         position: relative;
         padding: 0 11px;
         line-height: 44px;
         cursor: pointer;
-        li {
-          display: inline-block;
+        .category-search, .brand-search {
+          float: left;
           position: relative;
           height: 44px;
-          margin: 7px 3px 0;
+          margin: 0 3px 0; 
           padding: 14px 11px 0;
           line-height: 44px;
           cursor: pointer;
@@ -73,6 +73,7 @@
               color: $red;
             }
             span {
+              font-weight: bold;
               color: $font-black;
             }
           }

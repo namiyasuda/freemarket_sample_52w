@@ -1,5 +1,5 @@
 class TopsController < ApplicationController
-  before_action :get_publishing_products, only: [:index ,:search]
+  before_action :get_publishing_products,:set_category, only: [:index ,:search]
 
   def index
     ranking1 = @publishing_products.group(:parent_id).order('count_parent_id DESC').limit(4).count(:parent_id).keys
@@ -67,3 +67,4 @@ class TopsController < ApplicationController
     @publishing_products = Product.where(buyer_id: nil, listing_stop: false)
   end
 end
+
