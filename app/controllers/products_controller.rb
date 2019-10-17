@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :move_to_login , except: :show
-  before_action :set_product, only:[:show, :destroy, :stop_listing, :restart_listing, :evaluation, :evaluate]
+  before_action :set_product,:set_category, only:[:show, :destroy, :stop_listing, :restart_listing, :evaluation, :evaluate]
 
   def show
     @images = @product.images
