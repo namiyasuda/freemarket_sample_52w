@@ -78,6 +78,7 @@
   font-size: 14px;
   line-height: 60px;
   text-align: center;
+  z-index: 5;
 }
 
 @mixin product-status-mark($bg-color) {
