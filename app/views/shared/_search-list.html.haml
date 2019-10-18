@@ -10,14 +10,15 @@
       -else
         .picks__container--content
           - @products.each do |product|
-            %section.item
-              %figure.item__photo
-                = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
-              .item__body
-                %h3.item__body--name.font-2 
-                  = product.name
-                .item__body--num
-                  .price.font-5 
-                    ¥
-                    = product.price
+            = link_to product_path(product.id) do
+              %section.item
+                %figure.item__photo
+                  = image_tag product.images[0].name.url, alt: "実装その1", class: "lazyload"
+                .item__body
+                  %h3.item__body--name.font-2 
+                    = product.name
+                  .item__body--num
+                    .price.font-5 
+                      ¥
+                      = product.price
           = paginate @products
