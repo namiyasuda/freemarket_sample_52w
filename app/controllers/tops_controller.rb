@@ -33,7 +33,7 @@ class TopsController < ApplicationController
   end
 
   def search
-    @products = Product.where('name  LIKE(?) OR description LIKE(?) ', "%#{params[:keyword]}%","%#{params[:keyword]}%").page(params[:page]).per(20)
+    @products = @publishing_products.where('name  LIKE(?) OR description LIKE(?) ', "%#{params[:keyword]}%","%#{params[:keyword]}%").page(params[:page]).per(20)
   end
    
 

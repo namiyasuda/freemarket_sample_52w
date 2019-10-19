@@ -20,5 +20,5 @@
                   .item__body--num
                     .price.font-5 
                       ¥
-                      = product.price
+                      = product.price.to_s(:delimited, delimiter: ',')
           = paginate @products

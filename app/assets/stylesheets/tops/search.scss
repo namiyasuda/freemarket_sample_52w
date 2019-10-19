@@ -159,7 +159,6 @@
       &__container {
         width: 900px;
         margin: 0 auto;
-        text-align: center;
 
         &--text-center {
           display: block;
@@ -185,7 +184,7 @@
 
           .item {
             display: inline-block;
-            box-shadow: -1px 1px 10px $high-light-gray;
+            box-shadow: -1px 1px 10px #979797;
             margin: 10px 20px;
             overflow: hidden;
             width: 20%;
@@ -224,24 +223,17 @@
                 line-height: 1.5;
                 white-space: normal;
                 word-break: break-word;
+                color: $font-black;
+                text-align: center;
 
                 .font-2 {
-                  color: $font-black;
                   font-size: 16px;
                   font-weight: 400;
                 }
               }
 
               &--num {
-                align-items: center;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                justify-content: space-between;
-                -ms-flex-align: center;
-                -ms-flex-pack: justify;
-                -webkit-box-align: center;
-                -webkit-box-pack: justify;
+                text-align: center;
                 margin-top: 8px;
 
                 .price.font-5 {
