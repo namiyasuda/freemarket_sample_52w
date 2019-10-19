@@ -52,6 +52,6 @@ class ApplicationController < ActionController::Base
   end
 
   def get_evaluation_count
-    @evaluations_count = current_user&.seller_products.where.not(evaluation: nil).count
+    @evaluations_count = current_user&.seller_products&.where&.not(evaluation: nil)&.count
   end
 end
