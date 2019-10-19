@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :move_to_login , except: :show
   before_action :set_product, only:[:show, :destroy, :stop_listing, :restart_listing, :evaluation, :evaluate]
-  before_action :set_category,  only:[:show]
+  before_action :set_category, :get_evaluation_count, only:[:show]
   def show
     @images = @product.images
     @category_parent = Category.find(@product.parent_id).name

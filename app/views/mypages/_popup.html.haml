@@ -8,7 +8,7 @@
         = link_to "#", class: "popup-mypage__user-info__area__number__text" do
           評価:
           %span.popup-mypage__user-info__area__number__text__count
-            0
+            = @evaluations_count
         = link_to listing_product_user_mypage_path(current_user), class: "popup-mypage__user-info__area__number__text" do
           出品数:
           %span.popup-mypage__user-info__area__number__text__count
