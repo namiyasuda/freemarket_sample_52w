@@ -29,6 +29,9 @@
           = link_to todo_user_mypage_path(current_user) do
             %i.fa.fa-check
             %span やることリスト
+          - unless @todo_count == 0
+            .main-header__under--right__li__todo-count
+              = @todo_count
         %li#myapage-popup.main-header__under--right__li 
           = link_to user_mypage_path(current_user) do
             = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "face"

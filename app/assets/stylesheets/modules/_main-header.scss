@@ -87,6 +87,22 @@
         display: inline-block;
         height: 44px;
         margin: 7px 3px 3px auto;
+        &__todo-count {
+          position: absolute;
+          top: 25%;
+          left: 5px;
+          width: 20px;
+          height: 20px;
+          background-color: $red;
+          border-radius: 50%;
+          font-size: 15px;
+          color: $white;
+          font-weight: bold;
+          text-align: center;
+          line-height: 20px;
+          transform: translateY(-50%);
+          pointer-events: none;
+        }
         i {
           color: $font-black;
           opacity: .7;
