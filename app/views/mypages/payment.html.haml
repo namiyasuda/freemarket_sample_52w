@@ -19,9 +19,9 @@
         クレジットカード一覧
       .card-addbox
         .card-add
-          .card-add__btn
+          = link_to card_reg_user_mypage_path, { class: "card-add__btn" } do
             = fa_icon 'credit-card'
-            = link_to 'クレジットカードを追加する',card_reg_user_mypage_path, { class: "card-add__btn__red" }
+            クレジットカードを追加する
       .payment-about
         = link_to '支払い方法について', '#', class: '.payment-about'
         =fa_icon'chevron-right'

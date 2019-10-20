@@ -1,5 +1,5 @@
 class TopsController < ApplicationController
-  before_action :get_publishing_products,:set_category, :get_evaluation_count, only: [:index ,:search]
+  before_action :get_publishing_products, :set_category, :get_evaluation_count, :set_todo_count, only: [:index ,:search]
 
   def index
     ranking1 = @publishing_products.group(:parent_id).order('count_parent_id DESC').limit(4).count(:parent_id).keys

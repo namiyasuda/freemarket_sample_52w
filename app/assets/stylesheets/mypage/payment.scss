@@ -15,25 +15,18 @@
   border-bottom: 1px solid $bg-gray;
 }
 .card-add {
-  margin: 0 auto;
-  max-width: 320px;
+  margin: 5px auto 10px;
+  width: 320px;
   &__btn {
     display: block;
-    margin: 5px auto 10px;
-    width: 320px;
     background: $red;
     border: 1px solid $red;
     color: $white;
     font-size: 14px;
     line-height: 48px;
     text-align: center;
-    cursor: pointer;
-    transition: all ease-out .3s;
     .fa {
       margin-right: 16px;
-    }
-    &__red {
-      color: $white;
     }
   }
   &__number {
