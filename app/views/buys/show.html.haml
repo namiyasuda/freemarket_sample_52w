@@ -55,7 +55,7 @@
           = current_user.last_name 
           = current_user.first_name
           
-        =link_to "#", class: "address__box__change" do  
+        =link_to delivery_address_user_mypage_path(current_user), class: "address__box__change" do  
           変更する
           =fa_icon'chevron-right'
     .payment-card
@@ -74,7 +74,7 @@
           = exp_month + " / " + exp_year
           .payment-card__box__input__image
             = image_tag "#{@card_src}", width: '40', height: '20', alt: @card_brand, id: "card_image"
-        =link_to "#", class: "payment-card__box__change" do
+        =link_to card_show_user_mypage_path(current_user), class: "payment-card__box__change" do
           変更する
           =fa_icon'chevron-right'
 %footer

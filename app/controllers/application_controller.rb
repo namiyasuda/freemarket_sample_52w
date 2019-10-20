@@ -54,4 +54,8 @@ class ApplicationController < ActionController::Base
   def get_evaluation_count
     @evaluations_count = current_user&.seller_products&.where&.not(evaluation: nil)&.count
   end
+
+  def set_todo_count
+    @todo_count = current_user&.buyer_products&.where(evaluation: nil)&.count
+  end
 end
