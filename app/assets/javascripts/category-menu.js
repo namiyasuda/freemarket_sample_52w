@@ -10,6 +10,8 @@ $(function() {
     $('.category-meun__center').addClass('hide');
     $('.category-meun__right').addClass('hide');
   },function(){
+    $('.category-meun__left').addClass('hide');
+    $('.category-search span').css('color','#333')
   });
   // 親要素を非表示にする 
   $('.category-meun').hover(function() {
