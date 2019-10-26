@@ -102,7 +102,4 @@ class MypagesController < ApplicationController
     end
   end
 
-  # def set_todo_count
-  #   @todo_count = current_user.buyer_products.where(evaluation: nil).count
-  # end
 end
