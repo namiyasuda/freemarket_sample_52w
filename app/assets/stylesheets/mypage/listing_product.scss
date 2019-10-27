@@ -1,0 +1,3 @@
+.product_delete_btn {
+  @include submit-btn(20px auto, 90%, $btn-gray);
+}

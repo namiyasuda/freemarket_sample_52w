@@ -1,0 +1,13 @@
+= link_to evaluation_product_path(product), class: 'product-todo' do
+  .product-todo__images-area
+    = image_tag product.images[0].name.url, class: 'product-todo__images-area__image'
+  .product-todo__message
+    = "#{product.seller.nickname}さんから「#{product.name}」を購入しました。評価をして取引完了してください"
+    .product-todo__message__time
+      = fa_icon "clock-o", class: "product-todo__message__time__icon"
+      %span.product-todo__message__time__text
+        = time_ago_in_words(product.updated_at)
+        %span<>
+        前
+  = fa_icon 'chevron-right', class: 'product-todo__chevron-right'
+  
