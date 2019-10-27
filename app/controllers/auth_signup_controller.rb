@@ -41,7 +41,7 @@ class AuthSignupController < ApplicationController
         )
       end
       sign_in(@user)
-      redirect_to new_address_path
+      redirect_to new_delivery_address_path
     rescue
       redirect_to new_signup_path
     end
