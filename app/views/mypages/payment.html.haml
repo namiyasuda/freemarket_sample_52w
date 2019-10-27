@@ -1,0 +1,32 @@
+%header
+  = render 'shared/main-header'
+
+%section
+  - breadcrumb :card_show
+  = render 'shared/breadcrumb'
+
+- flash.each do |message_type, message|
+  %div{class: "flash #{message_type}"}= message
+
+.mypage-main
+  = render 'shared/mypage-side-menu'
+
+  .mypage
+    %h2.mypage__head
+      支払い方法
+    %section.payment
+      .payment__list
+        クレジットカード一覧
+      .card-addbox
+        .card-add
+          = link_to card_reg_user_mypage_path, { class: "card-add__btn" } do
+            = fa_icon 'credit-card'
+            クレジットカードを追加する
+      .payment-about
+        = link_to '支払い方法について', '#', class: '.payment-about'
+        =fa_icon'chevron-right'
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'

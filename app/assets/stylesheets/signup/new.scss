@@ -1,0 +1,85 @@
+.registration-panel {
+  width: 700px;
+  margin: 0 auto;
+  background-color:$white;
+}
+
+.create-new {
+  border-bottom: solid;
+  border-color: $bg-gray;
+  border-width: 1px;
+  font-weight: bolder;
+  font-size: 22px;
+  padding: 32px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.registration-form {
+  padding: 40px 40px 64px;
+  &__contents {
+    margin: 0 auto;
+    max-width: 343px;
+    &__btn {
+      text-decoration: none;
+      color: $white;
+      &__reg-mail {
+        position: relative;
+        border-radius: 4px;
+        background-color: $red;
+        .fa {
+          position: absolute;
+          top: 15px;
+          left: 20px;
+          font-size: 18px;
+          font-weight: 400;
+        }
+        &__btn-mail {
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          text-align: center;
+        }
+      }
+      &__reg-fb {
+        position: relative;
+        font-size: 26px;
+        border-radius: 4px;
+        margin: 16px 0 0;
+        background: $fb-blue;
+        display: block;
+        i {
+          position: absolute;
+          top: 12px;
+          left: 18px;
+        }
+        &__btn-fb {
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          text-align: center;
+        }
+      }
+    }
+    &__btn--g {
+      text-decoration: none;
+      color: $font-black;
+      &__reg-google {
+        position: relative;
+        border-radius: 4px;
+        margin: 16px 0 0;
+        border: $dark-gray solid 1px;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        text-align: center;
+        &__icon-google {
+          position: absolute;
+          top: 15px;
+          left: 18px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}   

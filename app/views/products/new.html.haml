@@ -1,0 +1,137 @@
+- flash.each do |message_type, message|
+  %div{class: "flash #{message_type}"}= message
+
+%header
+  = render 'shared/sub-header'
+%section.sell-container
+  .sell-container__head
+    商品の情報を入力
+  = form_with model:@product, local: true, html:{class:'sell-container__form'} do |f|
+    .upload-box
+      .upload-box__head
+        出品画像
+        %span.entry-content__require 必須
+      %p
+        最大10枚までアップロードできます
+      .upload-box__body{data: {num: 0}}
+        = f.fields_for :image do |image|
+          %ul.upload-box__body__items#item-container1
+          %ul.upload-box__body__items#item-container2.hide
+          .upload-box__body__drop-box{data:{image: 1}}
+            = image.file_field :image , name: 'images[image][]', id: "upload-image1", class: "upload-image", required: true
+            .upload-box__body__drop-box__text
+              -# ドラッグアンドドロップ
+              %br
+              -# または
+              クリックしてファイルをアップロード
+    .sell-content
+      .sell-content__group
+        %label.entry-content__text 商品名
+        %span.entry-content__require 必須
+        = f.text_field :name, class: 'entry-content__input-default', placeholder:"商品名（必須 40文字まで)", required: true, maxlength: 40
+      .sell-content__group
+        %label.entry-content__text 商品の説明
+        %span.entry-content__require 必須
+        = f.text_area :description, class:'entry-content__textarea-default', rows: '5', placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", required: true, maxlength: 1000
+    .sell-content--flex
+      .sell-content__head
+        商品の詳細
+      .sell-content__form-box
+        .sell-content__group
+          %label.entry-content__text カテゴリー
+          %span.entry-content__require 必須
+          .entry-content__select-box
+            = fa_icon 'chevron-down'
+            = f.collection_select :parent_id, @category_parents, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'parent_category', required: true}
+          .entry-content__select-box.hide#category-child-1
+            = fa_icon 'chevron-down'
+            = f.collection_select :child_id, {}, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'child_category', required: true}
+          .entry-content__select-box.hide#category-child-2
+            = fa_icon 'chevron-down'
+            = f.collection_select :category_id, {}, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id: 'grandchild_category'}
+        .sell-content__group.hide#product-size
+          %label.entry-content__text サイズ
+          %span.entry-content__require 必須
+          .entry-content__select-box
+            = fa_icon 'chevron-down'
+            = f.collection_select :size_id, {}, :id, :name, {prompt: "---"}, class:'entry-content__select-box__default', id: 'select-size'
+        .sell-content__group.hide#product-brand
+          = f.fields model: @brand do |brand|
+            %label.entry-content__text ブランド
+            %span.entry-content__any 任意
+            = brand.text_field :name, class: 'entry-content__input-default', placeholder: "例）シャネル"
+        .sell-content__group
+          %label.entry-content__text 商品の状態
+          %span.entry-content__require 必須
+          .entry-content__select-box
+            = fa_icon 'chevron-down'
+            = f.collection_select :state_id, State.all, :id, :name, {prompt: "---"}, class:'entry-content__select-box__default', required: true
+    .sell-content--flex
+      .sell-content__head
+        配送について
+        =link_to '?', "#", {class: 'form-question', target: '_blank'}
+      .sell-content__form-box
+        .sell-content__group
+          %label.entry-content__text 配送料の負担
+          %span.entry-content__require 必須
+          .entry-content__select-box
+            = fa_icon 'chevron-down'
+            = f.collection_select :paying_side_id, PayingSide.all, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', id:'paying-side-selection', required: true}
+        .sell-content__group.hide#delivery-method-box
+          %label.entry-content__text 配送の方法
+          %span.entry-content__require 必須
+          .entry-content__select-box
+            = fa_icon 'chevron-down'
+            = f.collection_select :delivery_method_id, {}, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default',id:'delivery-method-selection', required: true}
+        .sell-content__group
+          %label.entry-content__text 発送元の地域
+          %span.entry-content__require 必須
+          .entry-content__select-box
+            = fa_icon 'chevron-down'
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, class:'entry-content__select-box__default', required: true
+        .sell-content__group
+          %label.entry-content__text 発送までの日数
+          %span.entry-content__require 必須
+          .entry-content__select-box
+            = fa_icon 'chevron-down'
+            = f.collection_select :delivery_day_id, DeliveryDay.all, :id, :name, {prompt: "---"}, {class:'entry-content__select-box__default', required: true}
+    .selling-price
+      .selling-price__head
+        販売価格(300〜9,999,999)
+        =link_to '?', "#", {class: 'form-question', target: '_blank'}
+      .selling-price__form-box
+        .selling-price__group
+          .selling-price__group__left
+            %label.entry-content__text 価格
+            %span.entry-content__require 必須
+          .selling-price__group__right
+            ¥
+            = f.number_field :price, class:'entry-content__input-default',id:'sales-price', placeholder:"例）300", required: true, min:300, max:9999999
+        .selling-price__group--thin
+          .selling-price__group__left 販売手数料 (10%)
+          .selling-price__group__right 
+            %span#sales-fee -
+        .selling-price__group--bold
+          .selling-price__group--bold__left 販売利益
+          .selling-price__group--bold__right 
+            %span#sales-profit -
+    .sell-btn-box
+      .sell-btn-box__text
+        %p
+          =link_to '禁止されている出品', "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/", target: '_blank'
+          、
+          =link_to '行為', "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/", target: '_blank'
+          を必ずご確認ください。
+        %p
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          =link_to '偽ブランドの販売', "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/", target: '_blank'
+          は犯罪であり処罰される可能性があります。
+        %p
+          また、出品をもちまして
+          =link_to '加盟店規約', "https://www.mercari.com/jp/seller_terms/", target: '_blank'
+          に同意したことになります。
+      = f.submit '出品する', class:'sell-btn-box__submit'
+      =link_to 'もどる', 'javascript:history.back();', class:'sell-btn-box__return'
+
+%footer
+  = render 'shared/sub-footer'

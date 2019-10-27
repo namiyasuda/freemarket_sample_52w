@@ -1,0 +1,60 @@
+.personal-info {
+  padding: 64px;
+  background-color: $white;
+  font-size: 14px;
+  &__form {
+    &__description {
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+    &__help {
+      margin-top: 8px;
+      text-align: right;
+      &__text {
+        color: $blue;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+          opacity: .8;
+        }
+        .fa {
+          -webkit-font-smoothing: antialiased;
+          -webkit-text-stroke: 1px $white;
+        }
+      }
+    }
+    &__content {
+      margin-top: 40px;
+      &__text {
+        font-weight: bolder;
+      }
+      &__data {
+        margin-top: 8px;
+      }
+      &__require {
+        @include require-mark($gray);
+      }
+      &__input {
+        @include form-input(8px 0 0 0);
+      }
+      &__submit {
+        @include submit-btn(0 0 40px 0, 100%, $red);
+      }
+      &__prefecture {
+        position: relative;
+        .fa {
+          position: absolute;
+          right: 5px;
+          top: 40%;
+          width: 25px;
+          background: $white;
+          color: $font-gray;
+          font-size: 18px;
+          -webkit-font-smoothing: antialiased;
+          -webkit-text-stroke: 1px $white;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+%ul.category-meun
+  %ul.category-meun__left.hide
+    -@categorys.each do |parent_product|
+      %li.category-meun__left__parent{class: "#{parent_product.name}"}
+        = parent_product.name
+        
+  %ul.category-meun__center.hide
+    -@categorys.each do |parent_product|
+      .category-meun__center__parent{class: "#{parent_product.name} hide"}
+        -parent_product.children.each do |child_product|
+          %li.category-meun__center__children
+            = child_product.name
+  %ul.category-meun__right.hide
+    -@categorys.each do |parent_product|
+      .category-meun__right__parent
+        -parent_product.children.each do |child_product|
+          .category-meun__right__child{class: "#{child_product.name} hide"}
+            -child_product.children.each do |grand_product|
+              %li.category-meun__right__grandchildren
+                = grand_product.name
+              

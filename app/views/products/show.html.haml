@@ -1,0 +1,125 @@
+- flash.each do |message_type, message|
+  %div{class: "flash #{message_type}"}= message
+
+%header
+  = render partial: 'shared/main-header'
+-if @product.listing_stop == true && current_user&.id != @product.seller_id
+  .listing-item-change-box
+    %h2.deleted-item-name 
+      ="#{@product.id} この商品は削除されました"
+-else
+  %section
+    .product-details
+      .product-details__title
+        = @product.name
+      .details  
+        .details__photo
+          .details__photo__main
+            = image_tag @images[0].name.url,class:"details__photo__main__image",id:"mainphoto"
+          .details__photo__under
+            - @images.each_with_index do |image, index|
+              = image_tag @images[index].name.url,class:"details__photo__under__image"
+              %span<>
+            - if @product.buyer_id.present?
+              .details__photo__soldout
+                %div SOLD
+            - elsif @product.listing_stop == true
+              .details__photo__listing-stop
+                %div 公開停止中
+        %table.list
+          %tbody
+            %tr
+              %th 出品者
+              %td.list__name
+                = link_to "#",class:"list__name__blue" do
+                  = @product.seller.nickname
+                .list__icon 
+                  .list__icon__good
+                    = fa_icon "fa laugh"
+                    = @evaluation["good"] ? @evaluation["good"] : 0
+                  .list__icon__better
+                    = fa_icon "fa meh"
+                    = @evaluation["better"] ? @evaluation["better"] : 0
+                  .list__icon__bad
+                    = fa_icon "fa frown"
+                    = @evaluation["bad"] ? @evaluation["bad"] : 0
+            %tr
+              %th カテゴリー
+              %td.category
+                = link_to "#",class:"list__name__blue" do
+                  = @category_parent
+                = link_to "#",class:"list__name__blue" do
+                  .list__name__blue
+                    = fa_icon "chevron-right"
+                    = @category_child
+                - if @product.category
+                  = link_to "#",class:"list__name__blue" do
+                    .list__name__blue
+                      = fa_icon "chevron-right"
+                      = @product.category.name
+            - if @product.brand.nil?
+              %tr
+                %th ブランド
+                %td
+            - else 
+              %tr
+                %th ブランド 
+                %td= @product.brand.name
+            - if @product.size.present?
+              %tr
+                %th 商品サイズ
+                %td= @product.size.name
+            %tr
+              %th 商品の状態
+              %td= @product.state.name
+            %tr
+              %th 配送料の負担
+              %td= @product.paying_side.name
+            %tr
+              %th 配送の方法
+              %td= @product.delivery_method.name
+            %tr
+              %th 配送元地域
+              %td.list__name
+                = link_to "#",class:"list__name" do
+                  = @product.prefecture.name
+            %tr
+              %th 配送日の目安
+              %td= @product.delivery_day.name
+      .pricebox
+        %span.pricebox__price
+          = "¥#{@product.price.to_s(:delimited, delimiter: ',')}"
+        %span.pricebox__tax
+          (税込)
+        %span.pricebox__postage
+          - if @product.paying_side_id == 1
+            送料込み
+          - else
+            着払い
+      - if current_user&.id != @product.seller_id && @product.buyer_id.nil?
+        = link_to product_buys_path(@product),class:"buybtn" do
+          .buybtn__next
+            購入画面に進む
+      - elsif current_user&.id != @product.seller_id && @product.buyer_id.present?
+        .buybtn__soldout
+          売り切れました
+      .commentbox
+        .commentbox__text
+          = @product.description
+      - if current_user&.id != @product.seller_id
+        .underlist
+          .underlist__box
+            .underlist__box__iine
+              = fa_icon "fal heart"
+              いいね！ 0
+            .underlist__box__report
+              = fa_icon "fa flag"
+              不適切な商品の報告
+          .underlist__box__safety
+            = fa_icon "fa unlock-alt"
+            あんしん・あんぜんへの取り組み
+  -if current_user&.id == @product.seller_id
+    = render 'products/listing-item-change-box', product: @product
+%footer
+  = render 'shared/sub-footer'
+

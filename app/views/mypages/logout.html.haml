@@ -1,0 +1,19 @@
+%header
+  = render 'shared/main-header'
+
+%section
+  - breadcrumb :logout
+  = render 'shared/breadcrumb'
+
+.mypage-main
+  = render 'shared/mypage-side-menu'
+
+  .mypage
+    %section.logout
+      = link_to 'ログアウト', destroy_user_session_path, { class: "logout__btn" }
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'
+      

@@ -1,0 +1,20 @@
+.mypage-main {
+  display: flex;
+  width: 1020px;
+  margin: 40px auto 0;
+  padding-bottom: 40px;
+}
+
+.mypage {
+  width: 700px;
+  &__head {
+    height: 50px;
+    padding: 8px 24px;
+    background-color: $white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 34px;
+    border-bottom: 1px solid $bg-gray;
+  }
+}

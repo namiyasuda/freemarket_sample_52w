@@ -1,0 +1,33 @@
+= stylesheet_link_tag  'progress_bar/fifth', media: 'all'
+%header
+  = render 'shared/signup-header'
+%section
+  .customer-entry
+    .customer-entry__top
+      会員登録完了
+    .customer-entry__last
+      .customer-entry__last__message
+        ありがとうございます。 会員登録が完了しました。
+      =link_to "/tops", class: "entry-bottom__next" do
+        .entry-bottom__next__btn
+          メルカリをはじめる
+%footer
+  .complete-bottom
+    .complete-bottom__banner
+      =image_tag 'https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?94284397',width:'700px',height:'250px'
+      .banner
+        %h2.banner__text1 \ スマホでかんたんフリマアプリ /
+        %p.banner__text2 今すぐ無料でダウンロード！
+        .banner__icon
+          .banner__icon__mercari
+            =image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?3951034907',width:'68'
+          .banner__icon__app
+            =link_to "#", class: "banner__icon__app__apple" do
+              .banner__icon__app__apple
+                =image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3951034907',widht:'133',height:'40'
+            =link_to "#", class: "banner__icon__app__google" do
+              .banner__icon__app__google
+                =image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3951034907',widht:'133',height:'40'
+           
+      .banner-image
+        =image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?3951034907',width:'280px',height:'230px'

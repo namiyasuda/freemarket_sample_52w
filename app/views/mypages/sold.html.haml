@@ -1,0 +1,40 @@
+%header
+  = render 'shared/main-header'
+
+%section
+  - breadcrumb :sold
+  = render 'shared/breadcrumb'
+
+.mypage-main
+  = render 'shared/mypage-side-menu'
+
+  .mypage
+    %section.tab-head
+      %h2.tab-head__text
+        出品した商品
+
+    %section.tab-container
+      %ul.tab-container__list
+        %li.tab-container__list__item
+          = link_to '出品中', listing_product_user_mypage_path, class: "tab-container__list__item__text"
+        %li.tab-container__list__item
+          = link_to '取引中', during_trade_user_mypage_path, class: "tab-container__list__item__text"
+        %li.tab-container__list__item.active--bought
+          = link_to '売却済み', sold_user_mypage_path, class: "tab-container__list__item__text"
+    
+    - if @products.present?
+      %section.listing-product
+        = render partial: "product", collection: @products
+    - else
+      %section.tab-contents
+        %ul.trade-list.show--bought
+          %li.trade-list__item
+            %section.not-found
+              = image_tag "logo-gray.png", class: 'not-found__icon'
+              .not-found__text
+                売却済みの商品がありません
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'

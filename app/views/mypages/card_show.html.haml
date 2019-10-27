@@ -1,0 +1,39 @@
+%header
+  = render 'shared/main-header'
+
+%section
+  - breadcrumb :card_show
+  = render 'shared/breadcrumb'
+
+- flash.each do |message_type, message|
+  %div{class: "flash #{message_type}"}= message
+
+.mypage-main
+  = render 'shared/mypage-side-menu'
+
+  .mypage
+    %h2.mypage__head
+      支払い方法
+    %section
+      .payment
+        .payment__list
+          クレジットカード一覧
+        .card-addbox 
+          .card-add
+            = image_tag "#{@card_src}", width: '49', height: '20', alt: @card_brand, id: "card_image"
+            .card-add__number
+            = "**** **** **** " + @default_card_information.last4
+            .card-add__number
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            = link_to '削除する', "/cards/#{current_user.id}", class: "card-add__delete", method: :delete
+        
+        .payment-about
+          = link_to '支払い方法について', '#', class: 'payment-about'
+          = fa_icon'chevron-right'
+
+%footer
+  = render partial: 'shared/footer'
+  
+= render partial: 'shared/camera'

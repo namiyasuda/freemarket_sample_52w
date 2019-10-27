@@ -1,0 +1,49 @@
+.main-header
+  .main-header__top
+    %h1
+      = link_to root_path do
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2508029365", alt: "mercari"
+    = form_tag('/tops/search', method: :get,class: "main-header__top--form" ,name: :keyword) do
+      %input.input-default{ name: "keyword",  placeholder: "何かお探しですか？",  type: "search",  value: ""}/
+      %button.i.fas.fa-search
+  .main-header__under
+    %nav.main-header__under--left
+      %ul.main-header__under--left--nav
+        %li.category-search
+          %h2
+            = link_to "" do
+              %i.fas.fa-list
+              %span カテゴリーから探す
+          = render 'tops/dropdown-menu'    
+        %li.brand-search 
+          %h2
+            = link_to "" do
+              %i.fas.fa-tag
+              %span ブランドから探す
+    %ul.main-header__under--right
+      -if user_signed_in?
+        %li.main-header__under--right__li
+          %i.far.fa-bell
+          %span お知らせ
+        %li.main-header__under--right__li
+          = link_to todo_user_mypage_path(current_user) do
+            %i.fa.fa-check
+            %span やることリスト
+          - unless @todo_count == 0
+            .main-header__under--right__li__todo-count
+              = @todo_count
+        %li#myapage-popup.main-header__under--right__li 
+          = link_to user_mypage_path(current_user) do
+            = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "face"
+            %span マイページ
+          = render 'mypages/popup'
+      -else
+        %li.new
+          = link_to new_signup_path(current_user) do
+            %span 新規会員登録
+        %li.logged
+          = link_to new_user_session_path(current_user) do
+            %span ログイン
+
+    
+    
